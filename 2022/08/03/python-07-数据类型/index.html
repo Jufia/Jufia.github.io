@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>python-7.数据类型 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="数字整数十进制：二进制：以 0b 或者 0B 开头；0b010， -0B101八进制：以 0o 或者 0O 开头；十六进制：以 0x 或者 0X 开头； 浮点数 带有小数及小数点的数字； 浮点数取值范围和小数精度都存在限制； 取值范围数量级约： $-10^{308}$ 到 $10^{308}$, 精度数量级为 $10^{-16}$   浮点数间运算存在不确定尾数，不是 bug&gt;&gt;&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python-7.数据类型">
+<meta property="og:url" content="http://example.com/2022/08/03/python-07-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数字整数十进制：二进制：以 0b 或者 0B 开头；0b010， -0B101八进制：以 0o 或者 0O 开头；十六进制：以 0x 或者 0X 开头； 浮点数 带有小数及小数点的数字； 浮点数取值范围和小数精度都存在限制； 取值范围数量级约： $-10^{308}$ 到 $10^{308}$, 精度数量级为 $10^{-16}$   浮点数间运算存在不确定尾数，不是 bug&gt;&gt;&amp;gt">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/181770791-944510cd-27e9-415c-9356-31eb1b9c6eae.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/183048281-2800810f-4eb0-4f56-9f60-ea4d4b470de4.png">
+<meta property="article:published_time" content="2022-08-03T08:27:46.000Z">
+<meta property="article:modified_time" content="2022-08-06T11:04:02.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Language">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/73486724/181770791-944510cd-27e9-415c-9356-31eb1b9c6eae.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-python-07-数据类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/03/python-07-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2022-08-03T08:27:46.000Z" itemprop="datePublished">2022-08-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python-7.数据类型
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h1><h2 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h2><p>十进制：<br>二进制：以 0b 或者 0B 开头；0b010， -0B101<br>八进制：以 0o 或者 0O 开头；<br>十六进制：以 0x 或者 0X 开头；</p>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><ul>
+<li>带有小数及小数点的数字；</li>
+<li>浮点数取值范围和小数精度都存在限制；</li>
+<li>取值范围数量级约： $-10^{308}$ 到 $10^{308}$, 精度数量级为 $10^{-16}$</li>
+</ul>
+<blockquote>
+<p>浮点数间运算存在不确定尾数，不是 bug<br>&gt;&gt;&gt;0.1 + 0.2<br>0.3000000000004<br>小数用53位二进制表示，在计算机中，将浮点数现实的时候只输出了其中的16位小数。二进制表示小数，可以无限接近，但不完全相同。<br>&gt;&gt;&gt;0.2 + 0.2 &#x3D;&#x3D; 0.3<br>False </p>
+</blockquote>
+<p>二进制与十进制之间不存在严格的对应关系，浮点数间运算及比较可以通过<code>round</code>函数判断，不确定尾数一般发生在$10^{-16}$  左右，<code>round()</code>十分有效。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">0.1</span>+<span class="number">0.2</span>, <span class="number">1</span>) == <span class="number">0.3</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>round(x,d)</code>函数对 x 四舍五入，d 是小数截取位数<br><strong>科学计数法</strong><br>&lt;a&gt;e&lt;b&gt;： $a*10^{b}$</p>
+</blockquote>
+<h2 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h2><p>用 j 来表示虚数单位。  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">z = <span class="number">1.23e-4</span>+<span class="number">5.6e+89j</span></span><br><span class="line">z.real  获得实部</span><br><span class="line">z.imag  获得虚部</span><br></pre></td></tr></table></figure>
+
+<h2 id="数值操作符"><a href="#数值操作符" class="headerlink" title="数值操作符"></a>数值操作符</h2><table>
+<thead>
+<tr>
+<th align="left">操作符及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">y + x</td>
+<td align="left">加，x 与 y 之和</td>
+</tr>
+<tr>
+<td align="left">x - x</td>
+<td align="left">减，</td>
+</tr>
+<tr>
+<td align="left">x * y</td>
+<td align="left">乘</td>
+</tr>
+<tr>
+<td align="left">x &#x2F; y</td>
+<td align="left">除，x 与 y 的商，10&#x2F;3 &#x3D; 3.3333333</td>
+</tr>
+<tr>
+<td align="left">x &#x2F;&#x2F;y</td>
+<td align="left">整数除， x 与 y 的整数商,10&#x2F;&#x2F;3 &#x3D; 3</td>
+</tr>
+<tr>
+<td align="left">+x</td>
+<td align="left">x 本身</td>
+</tr>
+<tr>
+<td align="left">-y</td>
+<td align="left">y 的负值</td>
+</tr>
+<tr>
+<td align="left">x % y</td>
+<td align="left">余数， 10%3 &#x3D; 1</td>
+</tr>
+<tr>
+<td align="left">x**y</td>
+<td align="left">1. 幂运算，x 的 y 次幂，$x^y$;2. 当 y 是小数时，开平方运算， 10<em>*0.5: ${\quad}10</em>0.5 &#x3D; \sqrt{10}$</td>
+</tr>
+<tr>
+<td align="left">x +&#x3D; y</td>
+<td align="left">x &#x3D; x+x</td>
+</tr>
+<tr>
+<td align="left">x -&#x3D; y</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x *&#x3D; x</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x &#x2F;&#x3D; y</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x &#x2F;&#x2F;&#x3D; y</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x %&#x3D; y</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x **&#x3D;y</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>在其他编程语言中，两个整数除的结果是整数，而在 python 中是浮点数，若要得到整数结果则用整数除符号。<br>python 还提供了对二元运算符的增强运算</p>
+</blockquote>
+<p><strong>类型间可进行混合运算,生成结果为”最宽”类型</strong><br>复数 &gt; 浮点数 &gt; 整数  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">123</span> + <span class="number">4.0</span> = <span class="number">127.0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数值运算函数"><a href="#数值运算函数" class="headerlink" title="数值运算函数"></a>数值运算函数</h2><table>
+<thead>
+<tr>
+<th align="left">函数及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">abs(x)</td>
+<td align="left">x 的绝对值</td>
+</tr>
+<tr>
+<td align="left">divmod(x, y)</td>
+<td align="left">商余，(x&#x2F;&#x2F;y, x%y),同时输出商和余数</td>
+</tr>
+<tr>
+<td align="left">pow(x, y[, z])</td>
+<td align="left">幂余，(x**y)%z，[…]表示参数 z  可省略</td>
+</tr>
+<tr>
+<td align="left">round(x[, d])</td>
+<td align="left">四舍五入, d是保留小数位数,默认值为0</td>
+</tr>
+<tr>
+<td align="left">max(x1, x2, …, xn)</td>
+<td align="left">返回最大值</td>
+</tr>
+<tr>
+<td align="left">min(x1, x2, …, xn)</td>
+<td align="left">返回最小值</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">abs</span>(-<span class="number">10.01</span>)</span><br><span class="line"><span class="number">10.01</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">divmod</span>(<span class="number">10</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">pow</span>(<span class="number">3</span>, <span class="built_in">pow</span>(<span class="number">99</span>), <span class="number">10000</span>)</span><br><span class="line"><span class="number">4587</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">round</span>(-<span class="number">10.123</span>, <span class="number">2</span>)</span><br><span class="line">-<span class="number">10.12</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>(<span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">min</span>(<span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>数字类型转换函数</strong>  </p>
+<table>
+<thead>
+<tr>
+<th align="left">函数及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">int(x)</td>
+<td align="left">将x变成整数,舍弃小数部分无论小数部分是多少，并不进行四舍五入计算，直接变为整数；若输入字符串“123“， int 也能将其变为整数 123</td>
+</tr>
+<tr>
+<td align="left">float(x)</td>
+<td align="left">与int同理</td>
+</tr>
+<tr>
+<td align="left">complex(x)</td>
+<td align="left">将x变成复数，增加虚数部分</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">13.45</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="string">&quot;123&quot;</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="number">12</span>)</span><br><span class="line"><span class="number">12.0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="string">&quot;12.3&quot;</span>)</span><br><span class="line"><span class="number">12.3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">complex</span>(<span class="number">4</span>)</span><br><span class="line"><span class="number">4</span> + <span class="number">0j</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="字符、字符串"><a href="#字符、字符串" class="headerlink" title="字符、字符串"></a>字符、字符串</h1><ul>
+<li><p>由一对单引号或双引号表示,仅表示单行字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;低碳钢的屈服极限&quot;</span></span><br><span class="line"><span class="string">&#x27;C&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>由对三单引号或三双引号表示,可表示多行字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```不积跬步</span><br><span class="line">        无以至千里```</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>python 中没有真正提供多行注释的表示方式，三单引号构成的就是字符串，但是如果在程序中出现了字符串，且这个字符串并没有给到某个变量中，或者这个字符串没有进行操作，它也可以当作注释来使用。<br>如果在字符串中出现双引号，最外层的引号就要使用单引号；同理想要表示单引号就要用双引号。<br>若希望表示单引号和双引号，可以用三单引号作为字符串的表示。</p>
+</blockquote>
+</li>
+<li><p>转义符 :</p>
+<ul>
+<li>转义符表达特定字符的本意.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;这里有一个双引号（\&quot;）&quot;</span></span><br><span class="line">这里有一个双引号（<span class="string">&quot;）</span></span><br></pre></td></tr></table></figure></li>
+<li>转义符形成一 些组合,表达一些不可打印的含义<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;\b&quot;</span>    回退</span><br><span class="line"><span class="string">&quot;\n&quot;</span>    换行(光标移动到下行首)</span><br><span class="line"><span class="string">&quot;\r&quot;</span>    回车(光标移动到本行首)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>字符串索引的两种方式：1.正向递增序号；2.反向递减序号<br><img src="https://user-images.githubusercontent.com/73486724/181770791-944510cd-27e9-415c-9356-31eb1b9c6eae.png" alt="image"></p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>返回字符串中单个字符。&lt;字符串名&gt;[数字]，如：<code>“低碳钢的屈服极限”[0]</code> 或者 <code>TempStr[-1]</code>表示名为 TempStr 的字符串的倒数第一位字符。</p>
+<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>返回字符串中一段字符子串。&lt;字符串名&gt;[数字:数字]，<code>“低碳钢的屈服极限”[1:3]</code> 表示输出字符串的第1个字符到第2个字符，但不到第3个字符，即“碳钢”，或者 <code>TempStr[0:-1]</code> 表示从0开始但不到字符串的最后一个字符的字符串，相当于把字符串中的最后一个字符去掉。<br><code>&lt;字符串&gt;[M, N]</code>, M 缺失表示至开头，N 缺失表示至结尾。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;低碳钢的屈服极限&quot;</span>[:<span class="number">3</span>]</span><br><span class="line"><span class="string">&quot;低碳的&quot;</span></span><br></pre></td></tr></table></figure>
+<p><code>&lt;字符串&gt;[M, N, K]</code>，根据步长 K 对字符串切片</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;零一二三四五六七八九十&quot;</span>[<span class="number">1</span>:<span class="number">8</span>:<span class="number">2</span>]</span><br><span class="line"><span class="string">&quot;一三五七&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串从最开始到最结尾 MN 默认缺失的情况下，从最开头到最结尾，步长为 -1：从后向前逐一取出。**相当于将字符串逆序**</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;零一二三四五六七八九十&quot;</span>[::-<span class="number">1</span>]</span><br><span class="line"><span class="string">&quot;十九八七六五四三二一零&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串操作符"><a href="#字符串操作符" class="headerlink" title="字符串操作符"></a>字符串操作符</h2><table>
+<thead>
+<tr>
+<th align="left">操作符及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">x + y</td>
+<td align="left">连接两个字符串 x 和 y</td>
+</tr>
+<tr>
+<td align="left">n*x 或 x*n</td>
+<td align="left">n 为整数，复制 n 次字符串 x</td>
+</tr>
+<tr>
+<td align="left">x in S</td>
+<td align="left">如果 x 是 S 的子串，返回 True，否则返回 False</td>
+</tr>
+</tbody></table>
+<h2 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h2><table>
+<thead>
+<tr>
+<th align="left">函数及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">len(x)</td>
+<td align="left">返回字符串 x 的长度</td>
+</tr>
+<tr>
+<td align="left">str(x)</td>
+<td align="left">任意类型 x 所对应的字符串形式。相当于将任何类型的变量增加一个引号</td>
+</tr>
+<tr>
+<td align="left">hex(x), oct(x)</td>
+<td align="left">整数 x 的十六进制或八进制小写形式字符串</td>
+</tr>
+<tr>
+<td align="left">chr(u)</td>
+<td align="left">u 为 Unicode 编码，返回其对应的字符</td>
+</tr>
+<tr>
+<td align="left">ord(x)</td>
+<td align="left">x 为字符，返回其对应的 Unicode 编码</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hex</span>(<span class="number">425</span>)</span><br><span class="line"><span class="string">&quot;0x1a9&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">oct</span>(<span class="number">425</span>)</span><br><span class="line"><span class="string">&quot;0o651&quot;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Unicode 是 python 字符串的编码形式，python3 中所有的字符串、所有的代码，都是用 Unocode 实现的。Unicode 将世界上的所有字符纳入到一个大框架中，可以表示任意的一个字符。</p>
+</blockquote>
+<h2 id="字符串的处理方法"><a href="#字符串的处理方法" class="headerlink" title="字符串的处理方法"></a>字符串的处理方法</h2><ul>
+<li>方法是 python 中的一个专有名词，要用 <code>&lt;a&gt;.&lt;b&gt;()</code> 风格中的函数 <code>&lt;b&gt;()</code> ，是面向对象的一种风格使用: a 是对象，b 是某一个对象能够提供的功能，及方法。方法必须要用 . 的形式来执行。</li>
+<li>方法本身也是函数，但与 &lt;\a&gt; 有关</li>
+<li>字符串及变量也是 &lt;\a&gt;，存在一些方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">方法及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">str.lower() 或 str.upper()</td>
+<td align="left">返回字符串的副本,全部字符小写&#x2F;大写</td>
+</tr>
+<tr>
+<td align="left">str.split(stp &#x3D; None)</td>
+<td align="left">返回一个列表,由str根据sep被分隔的部分组成</td>
+</tr>
+<tr>
+<td align="left">str.count(sub)</td>
+<td align="left">返回子串 sub 在 str 中出现的次数</td>
+</tr>
+<tr>
+<td align="left">str.replace(old, new)</td>
+<td align="left">返回字符串 str 副本，所有的 old 子串被替换为 new</td>
+</tr>
+<tr>
+<td align="left">str.center(width[,fillchar])</td>
+<td align="left">字符串str根据宽度width居中, fillchar可选</td>
+</tr>
+<tr>
+<td align="left">str.strip(chars)</td>
+<td align="left">从str中去掉在其左侧和右侧chars中列出的字符</td>
+</tr>
+<tr>
+<td align="left">str.join(iter)</td>
+<td align="left">在 iter 变量除去最后元素外每个元素后增加一个 str ，主要用于字符串分割</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;AbCdEfGh&quot;</span>.lower()</span><br><span class="line"><span class="string">&quot;abcdefgh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;a,b,c&quot;</span>.split(<span class="string">&quot;,&quot;</span>)</span><br><span class="line">[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;an apple a day&quot;</span>.count(<span class="string">&quot;a&quot;</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;低碳钢&quot;</span>.replace(<span class="string">&quot;钢&quot;</span>,<span class="string">&quot;钢的屈服极限&quot;</span>)</span><br><span class="line"><span class="string">&quot;低碳钢的屈服极限&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;python&quot;</span>.center(<span class="number">20</span>, <span class="string">&quot;=&quot;</span>)</span><br><span class="line"><span class="string">&#x27;=======python=======&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;= python=&quot;</span>.strip(<span class="string">&quot; =np&quot;</span>)</span><br><span class="line"><span class="string">&quot;ytho&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;,&quot;</span>.join(<span class="string">&quot;12345&quot;</span>)</span><br><span class="line"><span class="string">&quot;1,2,3,4,5&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串类型的格式化"><a href="#字符串类型的格式化" class="headerlink" title="字符串类型的格式化"></a>字符串类型的格式化</h2><p><code>&lt;模板字符串&gt;.format(&lt;逗号分隔的参数&gt;)</code><br>槽：相当于一个占位信息符，用 {} 表示，只在字符串中有用。每一个槽所要添加的信息与 <code>.format</code> 方法中对应的参数相一致，在不指定的情况下顺序一致，参数序号从 0 开始。在确定槽中对应的关联参数之后，可以对这个参数的输出格式进行相关的控制，在槽内部使用格式化的标记来进行格式控制。<br>槽内部对格式化的配置方式：<code>&#123;&lt;参数序号:&lt;格式控制标记&gt;&#125;</code><br><img src="https://user-images.githubusercontent.com/73486724/183048281-2800810f-4eb0-4f56-9f60-ea4d4b470de4.png" alt="image"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;&#123;0:b&#125;, &#123;0:c&#125;, &#123;0: d&#125;, &#123;0: o&#125;, &#123;0: x&#125;, &#123;0: X&#125;&quot;</span>.<span class="built_in">format</span>(<span class="number">425</span>))</span><br><span class="line"><span class="string">&#x27;110101001, Ʃ,  425,  651,  1a9,  1A9&#x27;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/03/python-07-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="clcw2yryk002dywv0fj5d6srr" data-title="python-7.数据类型" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/08/06/python-08-time%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python-8.time库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/30/python-06-%E5%BA%8F%E5%88%97%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python-6.序列类型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/">Dilettantism</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/">文学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E8%89%BA%E6%9C%AF/">艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/">Electricity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E5%AF%BC%E8%88%AA%E5%8E%9F%E7%90%86/">导航原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/python/">python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6/">中学数学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/">Mechanics</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E5%A7%BF%E6%80%81/">姿态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/">结构动力学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/">高效工作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">文献管理</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dilettantism/" rel="tag">Dilettantism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frp/" rel="tag">Frp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/" rel="tag">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Dilettantism/" style="font-size: 12px;">Dilettantism</a> <a href="/tags/Frp/" style="font-size: 10px;">Frp</a> <a href="/tags/Language/" style="font-size: 20px;">Language</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/Physics/" style="font-size: 14px;">Physics</a> <a href="/tags/work/" style="font-size: 12px;">work</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16px;">专业课</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/">结构动力学-0前言</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/LaTeX/">LaTeX</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Hexo 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">罗德里格斯旋转公式推导</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

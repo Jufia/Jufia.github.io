@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-嵌入式原理及应用-01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/25/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-01/" class="article-date">
+  <time class="dt-published" datetime="2022-08-25T12:02:29.000Z" itemprop="datePublished">2022-08-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Electricity/">Electricity</a>►<a class="article-category-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/25/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-01/">嵌入式原理及应用(01)-绪论</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>本文档为hit梁慧敏教授2022年秋季学期《嵌入式系统原理及应用》随堂笔记</strong>  本人上外专业课，本文档笔记均为个人理解，若有错误欢迎邮箱讨论。</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>嵌入式系统是嵌入到对象系统中的专用计算机应用系统。其本质是将计算机嵌入到一个对象体系中，以实现对象体系智能化控制的计算机系统。<br>嵌入式系统，其本质是将计算机嵌入到一个对象体系中，以实现对象体系智能化控制的计算机系统。<br><strong>“嵌入性”、“专用性”与“计算机系统”是嵌入式系统的三个基本要素。</strong></p>
+<ul>
+<li>嵌入性：微控制器嵌入到物体中去;</li>
+<li>专用性：一个专门用在某类对象上的系统不能用在其他对象上;</li>
+<li>计算机系统：一个嵌入式系统就是一个小型计算机系统</li>
+</ul>
+<h1 id="单片机的概念"><a href="#单片机的概念" class="headerlink" title="单片机的概念"></a>单片机的概念</h1><p>单片机就是一块具有一台计算机属性的芯片，在一块硅片上集成了<font color = "red">微处理器</font>（CPU）、<font color = "red">存储器</font>（RAM,ROM,EPROM）和<font color = "red">各种输入、输出接口</font>（定时器&#x2F;计数器，并行I&#x2F;O口，串行口，A&#x2F;D转换器以及脉冲调制器PWM等），被称为单片微型计算机，简称单片机。<br>单片机主要体现在其控制属性上.  </p>
+<blockquote>
+<p>计算机只能处理数字量, 模拟量的数据需要通过模数转换(A&#x2F;D转换)变为数字量. 若单片机内部没有内置A&#x2F;D转换功能则需要外置A&#x2F;D转换芯片.</p>
+</blockquote>
+<p>1976～1978年，美国英特尔、仙童、莫斯特克等公司相继推出8位单片机。限于当时所能达到的集成度,这些8位单片机的性能只达到中、低档水平:内存寻址范围小于4千字节，只有并行的输入输出接口,只读存储器容量小于2千字节，随机存储器容量小于128字节，指令系统是专用的并以单字节指令为主。直至目前产量最大应用最广的仍为这类单片机，其中典型产品有英特尔公司的MCS48、仙童公司的F8和莫斯特克公司的3870等。1978～1983年期间各种高性能单片机相继问世。它们的寻址范围扩大到64～128千字节,只读存储器容量达4～8千字节,随机存储器容量达128～256字节,并增加了串行输入输出接口和模数转换器。这类高性能单片机可适用于更复杂的系统，如智能终端、局部网的接口等。典型产品有英特尔公司的MCS51,美国莫托洛拉公司的6801和泽洛格公司的Z8等。1983年以后，16位单片机问世。随着集成工艺水平的提高，有可能在一块芯片上集成十几万个管子,如英特尔公司的16位单片机MCS96的集成度达12万管子／片。它有5个8位并行输入输出接口,4个全双工串行接口,8级中断处理系统,4个16位可编程序定时器／计数器。莫托洛拉公司的16位单片机8096-A6有8个通道的10位模数转换器，指令系统能处理位、字节、字和双字的操作，16位加法计算时间达1微秒,指令平均执行时间为1～2微秒。它还配备面向工业控制的高级语言(如PL&#x2F;M、FORTH、C语言等),工作电压为5伏、功耗1瓦。一块16位单片机的功能已能达到一台多片机系统的水平。 </p>
+<h2 id="一些概念的辨析"><a href="#一些概念的辨析" class="headerlink" title="一些概念的辨析"></a>一些概念的辨析</h2><ol>
+<li>单片机是微处理器（CPU）、存储器（RAM、ROM、EPROM、flash存储器）、各种输入输出接口（定时&#x2F;计数器、串行口、并行I&#x2F;O口等），集成在一块集成电路芯片中，从而构成完整的微型计算机。</li>
+<li>单片机也是一种微型计算机，普通微机：主板、CPU、硬盘、I&#x2F;O口（键盘、鼠标）、定时&#x2F;计数器等，各部分相互分离。单片机也是微型计算机。</li>
+<li>微处理器、微处理机和CPU它们都是中央处理器的不同称谓，微处理器芯片本身不是计算机。而微计算机、单片机它们都是一个完整的计算机系统，单片机是集成在一个芯片上的用于测控目的的单片微计算机。</li>
+<li>广义上讲，凡是系统中嵌入了“嵌入式处理器”，如单片机、DSP、嵌入式微处理器，都称其为“嵌入式系统”。但多数人把 “嵌入”嵌入式微处理器的系统，称为“嵌入式系统”。 目前“嵌入式系统”还没有一个严格和权威的定义。目前人们所说的“嵌入式系统”，多指后者。</li>
+</ol>
+<h2 id="数字信号处理器-Digital-signal-processor-DSP"><a href="#数字信号处理器-Digital-signal-processor-DSP" class="headerlink" title="数字信号处理器(Digital signal processor, DSP)"></a>数字信号处理器(Digital signal processor, DSP)</h2><p>数字信号处理器( DSP ) 是一种专用微处理器芯片，其架构针对数字信号处理的操作需求进行了优化。DSP 是在MOS 集成电路芯片上制造的。  </p>
+<blockquote>
+<p>DSP用于数据处理应用; DSP的执行速度很快<br>MCU用于I&#x2F;O口控制<br>CMOS电路具有低功耗, 高密度的优点  </p>
+</blockquote>
+<p>DSP 的目标通常是测量、过滤或压缩连续的真实模拟信号。大多数通用微处理器也可以成功地执行数字信号处理算法，但可能无法实时连续地跟上这种处理。此外，专用 DSP 通常具有更好的功率效率，因此由于功耗限制，它们更适合用于移动电话等便携式设备。</p>
+<h2 id="现场可编程逻辑门阵列-Field-Programmable-Gate-Array-FPGA"><a href="#现场可编程逻辑门阵列-Field-Programmable-Gate-Array-FPGA" class="headerlink" title="现场可编程逻辑门阵列(Field Programmable Gate Array, FPGA)"></a>现场可编程逻辑门阵列(Field Programmable Gate Array, FPGA)</h2><p>FPGA 由若干基本门组成, 以硬件描述语言（Verilog或VHDL）描述的逻辑电路，可以利用逻辑合成和布局、布线工具软件，编程逻辑组件可以被用来实现一些基本的逻辑门数字电路（比如与门、或门、异或门、非门）或者更复杂一些的组合逻辑功能，比如译码器等。</p>
+<blockquote>
+<p>FPGA 的执行速度比 DSP 要更快.</p>
+</blockquote>
+<h1 id="ROM-FLASH和RAM的区别"><a href="#ROM-FLASH和RAM的区别" class="headerlink" title="ROM, FLASH和RAM的区别"></a>ROM, FLASH和RAM的区别</h1><h2 id="ROM-Read-Only-Memory-程序存储器"><a href="#ROM-Read-Only-Memory-程序存储器" class="headerlink" title="ROM (Read Only Memory)程序存储器"></a>ROM (Read Only Memory)程序存储器</h2><p>ROM全称Read Only Memory，顾名思义，它是一种只能读出事先所存的数据的固态半导体存储器。ROM中所存数据稳定，一旦存储数据就再也无法将之改变或者删除，断电后所存数据也不会消失。其结构简单，因而常用于存储各种固化程序和数据。<br>在单片机中用来存储程序数据及常量数据或变量数据，凡是c文件及h文件中所有代码、全局变量、局部变量、‘const’限定符定义的常量数据、startup.asm文件中的代码（类似ARM中的bootloader或者X86中的BIOS，一些低端的单片机是没有这个的）通通都存储在ROM中。<br>为了便于使用和大批量生产，进一步发展出了可编程只读存储器（PROM）、可擦除可编程只读存储器（EPROM）。EPROM需要用紫外线长时间照射才能擦除，使用很不方便。1980s又出现了电可擦除可编程只读存储器（EEPROM），它克服了EPROM的不足，但是集成度不高、价格较贵。于是又发展出了一种新型的存储单元结构同EPROM类似的快闪存储器（FLASH MEMORY）。FLASH集成度高、功耗低、体积小，又能在线快速擦除，因而获得了快速发展。  </p>
+<h1 id="FLASH-存储器"><a href="#FLASH-存储器" class="headerlink" title="FLASH 存储器"></a>FLASH 存储器</h1><p>Flash 存储器（FLASH EEPROM）又称闪存，快闪。它是EEPROM的一种。它结合了ROM和RAM的长处。不仅具备电子可擦除可编辑（EEPROM）的性能，还不会断电丢失数据同时可以快速读取数据。它于EEPROM的最大区别是，FLASH按扇区（block）操作，而EEPROM按照字节操作。FLASH的电路结构较简单，同样容量占芯片面积较小，成本自然比EEPROM低，因此适合用于做程序存储器。  </p>
+<h1 id="RAM-Random-Access-Memory-随机访问存储器"><a href="#RAM-Random-Access-Memory-随机访问存储器" class="headerlink" title="RAM (Random Access Memory)随机访问存储器"></a>RAM (Random Access Memory)随机访问存储器</h1><p>RAM又称随机存取存储器，存储单元的内容可按照需要随机取出或存入，且存取的速度与存储单元的位置无关。这种存储器在断电时，将丢失其存储内容，所以主要用于存储短时间使用的程序。<br>它主要用来存储程序中用到的变量。凡是整个程序中，所用到的需要被改写的量（包括全局变量、局部变量、堆栈段等），都存储在RAM中。  </p>
+<h1 id="ROM-FLASH和RAM的区别-1"><a href="#ROM-FLASH和RAM的区别-1" class="headerlink" title="ROM, FLASH和RAM的区别"></a>ROM, FLASH和RAM的区别</h1><p>对于RAM, ROM以及FLASH的区别，简单地说，在计算机中，RAM 、ROM都是数据存储器。RAM 是随机存取存储器，它的特点是易挥发性，即掉电失忆。   ROM 通常指固化存储器(一次写入，反复读取)，它的特点与RAM 相反。ROM又分一次性固化、光擦除和电擦除重写两种类型。<br>在应用中，常规上ROM是用来存储固化程序的，RAM是用来存放数据的。由于FLASH ROM比普通的ROM读写速度快，擦写方便，一般用来存储用户程序和需要永久保存的数据。譬如说，现在家用的电子式电度表，它的内核是一款单片机，该单片机的程序就是存放在ROM里的。电度表在工作过程中，是要运算数据的，要采集电压和电流，并根据电压和电流计算出电度来。电压和电流时一个适时的数据，用户不关心，它只是用来计算电度用，计算完后该次采集的数据就用完了，然后再采集下一次，因此这些值就没必要永久存储，就把它放在RAM里边。然而计算完的电度，是需要永久保存的，单片机会定时或者在停电的瞬间将电度数存入到FLASH里。  </p>
+<p>原文: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38339306">知乎: Choris- ROM, FLASH和RAM的区别</a></p>
+<h1 id="存储单位转换"><a href="#存储单位转换" class="headerlink" title="存储单位转换"></a>存储单位转换</h1><table>
+<thead>
+<tr>
+<th align="right">名称</th>
+<th align="left">字符表示</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">位</td>
+<td align="left">bit</td>
+<td align="center">一个二进制数据0或1，是1bit</td>
+</tr>
+<tr>
+<td align="right">机器字长</td>
+<td align="left">字</td>
+<td align="center">一个机器字长在32位系统中是4个字节, 在64位系统中是8个字节</td>
+</tr>
+<tr>
+<td align="right">字节</td>
+<td align="left">byte&#x2F;B</td>
+<td align="center">1 byte &#x3D; 8 bit一个8位的二进制数称为一个字节;存储空间的基本计量单位，如：MySQL中定义 VARCHAR(45)  即是指 45个字节；一个英文字符占一个字节(1 byte &#x3D; 8 bit)；一个汉字占2个字节2 byte &#x3D; 16 bit；</td>
+</tr>
+</tbody></table>
+<p>1 Byte &#x3D; 8 Bits<br>1 KB &#x3D; 1024 Bytes<br>1 MB &#x3D; 1024 KB<br>1 GB &#x3D; 1024 MB  </p>
+<h2 id="各种类型数据的占用大小"><a href="#各种类型数据的占用大小" class="headerlink" title="各种类型数据的占用大小"></a>各种类型数据的占用大小</h2><p>一个int型是4B，也就是4个字节，一个字节8bit（位），所以就是32位  </p>
+<p>参考: <a href="%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%84%E5%8D%95%E4%BD%8D%E9%97%B4%E8%BD%AC%E6%8D%A2%EF%BC%88%E4%BD%8D%EF%BC%8C%E5%AD%97%E8%8A%82%EF%BC%8C%E8%BF%9B%E5%88%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%EF%BC%89">计算机各单位间转换（位，字节，进制间转换）</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/25/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-01/" data-id="clcw2yryq002xywv00gunhwtc" data-title="嵌入式原理及应用(01)-绪论" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-10-函数的定义及使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/07/python-10-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-08-07T11:36:43.000Z" itemprop="datePublished">2022-08-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/07/python-10-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%BD%BF%E7%94%A8/">python-10-函数的定义及使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> &lt;函数名&gt;(&lt;参数(<span class="number">0</span>个或多个)&gt;):</span><br><span class="line">    &lt;函数体&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;返回值&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross</span>(<span class="params">n</span>):</span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">summer = cross(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(summer)</span><br><span class="line"></span><br><span class="line"><span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p><strong>希望在类或函数定义后有2行空行, 注意代码规范问题</strong></p>
+<h1 id="函数的使用以及调用过程"><a href="#函数的使用以及调用过程" class="headerlink" title="函数的使用以及调用过程"></a>函数的使用以及调用过程</h1><h1 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h1><p>函数可以有参数, 也可以没有参数, 无论函数定义的时候给不给参数, 都必须保留这个括号</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果没有参数就直接给空括号</span></span><br><span class="line"><span class="keyword">def</span> &lt;函数名&gt;():</span><br><span class="line">    &lt;函数体&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;返回值&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h2><p>函数定义时可以为某些参数指定默认值,构成可选参数  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> &lt;函数名&gt;(&lt;非可选参数&gt;, &lt;可选参数&gt;):</span><br><span class="line">    &lt;函数体&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;返回值&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可选参数必须放在非可选参数后面;</li>
+<li>非可选参数是调用函数时必须要有的参数;</li>
+<li>如果传入了非可选参数, 则用传入值, 若没有传入则用默认值.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross</span>(<span class="params">n, m=<span class="number">1</span></span>):</span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="keyword">return</span> s // m</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">3</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以通过在定义函数时使用函数的参数来赋值</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(m=<span class="number">2</span>, n=<span class="number">3</span>)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h2 id="可变参数传递"><a href="#可变参数传递" class="headerlink" title="可变参数传递"></a>可变参数传递</h2><p>函数定义时可以设计可变数量参数，既不确定参数总数量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> &lt;函数名&gt;(&lt;参数&gt;, *b):</span><br><span class="line">    &lt;函数体&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;返回值&gt;</span><br></pre></td></tr></table></figure>
+<p>定义函数中确定要给的参数放在前面, 最后增加一个 <code>*b</code> 来表达不确定的参数, 同理也可以用 <code>*c</code> , <code>*a</code> 等其他变量名 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross</span>(<span class="params">n, *b</span>):</span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> b:</span><br><span class="line">        s *= item</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">3</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>summer = cross(<span class="number">3</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="number">144</span></span><br></pre></td></tr></table></figure>
+<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><ul>
+<li>函数可以返回 0 个或多个结果， 函数定义可以有返回值也可以没有返回值, 可以使用 <code>return</code> 也可以不使用;</li>
+<li>若一个函数不需要返回任何值, 可以给出 <code>return</code> 但不给出任何返回信息, 也可以不使用 <code>return</code>;</li>
+<li>想要返回多个值的情况下, 返回值为元组类型, 用小括号包围;</li>
+<li>元组类型与列表类型很相似, 列表类型用方括号包围;</li>
+<li>也可以用几个用逗号分隔的变量, 获取返回值</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross</span>(<span class="params">n, m=<span class="number">1</span></span>):</span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="keyword">return</span> s//m, n, m</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line">(<span class="number">60</span>, <span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = cross(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(a, b, c)</span><br><span class="line"><span class="number">60</span> <span class="number">5</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h1 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h1><p>局部变量是函数内部使用的变量；<br>全局变量是函数外部整个程序使用的变量。</p>
+<ul>
+<li>局部变量是函数内部的占位符,与全局变量可能重名但不同；<ul>
+<li>函数运算结束后，局部变量被释放</li>
+<li>可以使用<code>global</code>保留字在函数内部使用全局变量</li>
+</ul>
+</li>
+<li>局部变量为组合数据类型且未创建,等同于全局变量</li>
+</ul>
+<blockquote>
+<p>在程序中间使用外部全局变量，通过保留字<code>global</code>在函数内部中声明变量是全局变量而不是局部变量</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 范例1</span></span><br><span class="line">n, s = <span class="number">10</span>, <span class="number">100</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fact</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="comment">#  fact()函数中使用global保留字声明此处s是全局变量s</span></span><br><span class="line">    <span class="keyword">global</span> s</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="comment"># 此处返回的是全局变量s的运算结果</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"><span class="built_in">print</span>(fact(n), s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 范例2</span></span><br><span class="line">ls = [<span class="string">&quot;F&quot;</span>, <span class="string">&quot;f&quot;</span>]</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">a</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="lambda-函数"><a href="#lambda-函数" class="headerlink" title="lambda 函数"></a>lambda 函数</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/07/python-10-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%BD%BF%E7%94%A8/" data-id="clcw2yryk002bywv05t4f5kvv" data-title="python-10-函数的定义及使用" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-09-random库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/07/python-09-random%E5%BA%93/" class="article-date">
+  <time class="dt-published" datetime="2022-08-07T10:22:07.000Z" itemprop="datePublished">2022-08-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/07/python-09-random%E5%BA%93/">python-9-random库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>random 库是使用随机数的 python 标准库.</p>
+<blockquote>
+<p>标准库: 是随着 python 的解释器所自带的库, 它不需要安装, 直接用 <code>import</code> 来使用它.<br><strong>在工程中, 有很多通过随机值的方法来快速测量的情况, 计算机的思维.</strong></p>
+</blockquote>
+<p>计算机不可能产生随机值, 或者简单理解为: 真正的随机数也是在各种复杂条件下产生的确定值, 只不过我们并不充分理解这些复杂条件, 或者已经超越了我们的理解能力. 计算机虽然不能产生真正的随机数, 但是能产生伪随机数 - 采用梅森旋转算法生成的(伪)随机序列中元素. </p>
+<h1 id="基本随机函数"><a href="#基本随机函数" class="headerlink" title="基本随机函数"></a>基本随机函数</h1><p>计算机要产生一个随机数, 是需要一个随机数种子 seed 的, 计算机根据 seed 运用梅森旋转算法, 就能够根据种子产生一系列唯一确定的数据, 只要种子相同, 产生的随机序列无论是每一个数还是数之间的关系都是确定的. </p>
+<h2 id="seed"><a href="#seed" class="headerlink" title="seed()"></a>seed()</h2><p>用 <code>random.seed()</code> 给定一个种子, 在使用随机数的时候也可以不调用这个函数, 直接调用 <code>random.random</code> 来产生随机数, 不需要使用 <code>seed</code> 函数, 此时它使用当前操作系统的默认的系统时间(精确到微秒)作为种子.</p>
+<h2 id="random"><a href="#random" class="headerlink" title="random()"></a>random()</h2><p>生成一个[0.0, 1.0)之间的随机小数.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()  </span><br><span class="line"><span class="number">0.45594588118356716</span></span><br></pre></td></tr></table></figure>
+<p>若编程中给出了随机种子, 下一次程序再次运行, 只要种子相同, 产生的随机数也相同, 对于使用随机数的种子可以复现程序运行的过程, 如果不使用随机数种子, 每次运行结果可能会改变.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> random</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.seed(<span class="number">4</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()</span><br><span class="line"><span class="number">0.23604808973743452</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()</span><br><span class="line"><span class="number">0.1031660342307158</span>  <span class="comment"># 注意这里</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> random</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.seed(<span class="number">4</span>)        </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()       </span><br><span class="line"><span class="number">0.23604808973743452</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.seed(<span class="number">4</span>)        </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random() </span><br><span class="line"><span class="number">0.23604808973743452</span>  <span class="comment"># 注意这里</span></span><br></pre></td></tr></table></figure>
+<p>只要调用了 <code>random.seed()</code> 设置种子的函数, 后续再调用 <code>random()</code> 函数的顺序只要相同, 产生的随机数也是相同的.</p>
+<h1 id="扩展随机函数"><a href="#扩展随机函数" class="headerlink" title="扩展随机函数"></a>扩展随机函数</h1><h2 id="randint"><a href="#randint" class="headerlink" title="randint()"></a>randint()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">randint</span>(<span class="params">self, a, b</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Return random integer in range [a, b], including both end points.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> self.randrange(a, b+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>生成一个位于 [a, b] 之间的整数. 每次调用会产生不同的随机数.</p>
+<h2 id="getrandbits"><a href="#getrandbits" class="headerlink" title="getrandbits()"></a>getrandbits()</h2><p>生成一个 k 比特长的随机整数, 它不是用十进制范围来确定, 而是用比特数的长度来确定, [0, $2^k$).</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">getrandbits</span>(<span class="params">self, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;getrandbits(k) -&gt; x.  Generates an int with k random bits.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> k &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&#x27;number of bits must be non-negative&#x27;</span>)</span><br><span class="line">    numbytes = (k + <span class="number">7</span>) // <span class="number">8</span>                       <span class="comment"># bits / 8 and rounded up</span></span><br><span class="line">    x = <span class="built_in">int</span>.from_bytes(_urandom(numbytes), <span class="string">&#x27;big&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt; (numbytes * <span class="number">8</span> - k)                <span class="comment"># trim excess bits</span></span><br></pre></td></tr></table></figure>
+<h2 id="uniform"><a href="#uniform" class="headerlink" title="uniform()"></a>uniform()</h2><p>生成一个[a, b]之间的随机小数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">uniform</span>(<span class="params">self, a, b</span>):</span><br><span class="line">    <span class="string">&quot;Get a random number in the range [a, b) or [a, b] depending on rounding.&quot;</span></span><br><span class="line">    <span class="keyword">return</span> a + (b - a) * self.random()</span><br></pre></td></tr></table></figure>
+<h2 id="randrange"><a href="#randrange" class="headerlink" title="randrange()"></a>randrange()</h2><p>生成一一个[start, stop)之间以 step 为步长的随机整数.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">randrange</span>(<span class="params">self, start, stop=<span class="literal">None</span>, step=_ONE</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Choose a random item from range(start, stop[, step]).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    This fixes the problem with randint() which includes the</span></span><br><span class="line"><span class="string">    endpoint; in Python this is usually not what you want.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># This code is a bit messy to make it fast for the</span></span><br><span class="line">    <span class="comment"># common case while still doing adequate error checking.</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        istart = _index(start)</span><br><span class="line">    <span class="keyword">except</span> TypeError:</span><br><span class="line">        istart = <span class="built_in">int</span>(start)</span><br><span class="line">        <span class="keyword">if</span> istart != start:</span><br><span class="line">            _warn(<span class="string">&#x27;randrange() will raise TypeError in the future&#x27;</span>,</span><br><span class="line">                  DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">&quot;non-integer arg 1 for randrange()&quot;</span>)</span><br><span class="line">        _warn(<span class="string">&#x27;non-integer arguments to randrange() have been deprecated &#x27;</span></span><br><span class="line">              <span class="string">&#x27;since Python 3.10 and will be removed in a subsequent &#x27;</span></span><br><span class="line">              <span class="string">&#x27;version&#x27;</span>,</span><br><span class="line">              DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">if</span> stop <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="comment"># We don&#x27;t check for &quot;step != 1&quot; because it hasn&#x27;t been</span></span><br><span class="line">        <span class="comment"># type checked and converted to an integer yet.</span></span><br><span class="line">        <span class="keyword">if</span> step <span class="keyword">is</span> <span class="keyword">not</span> _ONE:</span><br><span class="line">            <span class="keyword">raise</span> TypeError(<span class="string">&#x27;Missing a non-None stop argument&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> istart &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> self._randbelow(istart)</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;empty range for randrange()&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># stop argument supplied.</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        istop = _index(stop)</span><br><span class="line">    <span class="keyword">except</span> TypeError:</span><br><span class="line">        istop = <span class="built_in">int</span>(stop)</span><br><span class="line">        <span class="keyword">if</span> istop != stop:</span><br><span class="line">            _warn(<span class="string">&#x27;randrange() will raise TypeError in the future&#x27;</span>,</span><br><span class="line">                  DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">&quot;non-integer stop for randrange()&quot;</span>)</span><br><span class="line">        _warn(<span class="string">&#x27;non-integer arguments to randrange() have been deprecated &#x27;</span></span><br><span class="line">              <span class="string">&#x27;since Python 3.10 and will be removed in a subsequent &#x27;</span></span><br><span class="line">              <span class="string">&#x27;version&#x27;</span>,</span><br><span class="line">              DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">    width = istop - istart</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        istep = _index(step)</span><br><span class="line">    <span class="keyword">except</span> TypeError:</span><br><span class="line">        istep = <span class="built_in">int</span>(step)</span><br><span class="line">        <span class="keyword">if</span> istep != step:</span><br><span class="line">            _warn(<span class="string">&#x27;randrange() will raise TypeError in the future&#x27;</span>,</span><br><span class="line">                  DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">&quot;non-integer step for randrange()&quot;</span>)</span><br><span class="line">        _warn(<span class="string">&#x27;non-integer arguments to randrange() have been deprecated &#x27;</span></span><br><span class="line">              <span class="string">&#x27;since Python 3.10 and will be removed in a subsequent &#x27;</span></span><br><span class="line">              <span class="string">&#x27;version&#x27;</span>,</span><br><span class="line">              DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">    <span class="comment"># Fast path.</span></span><br><span class="line">    <span class="keyword">if</span> istep == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">if</span> width &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> istart + self._randbelow(width)</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;empty range for randrange() (%d, %d, %d)&quot;</span> % (istart, istop, width))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Non-unit step argument supplied.</span></span><br><span class="line">    <span class="keyword">if</span> istep &gt; <span class="number">0</span>:</span><br><span class="line">        n = (width + istep - <span class="number">1</span>) // istep</span><br><span class="line">    <span class="keyword">elif</span> istep &lt; <span class="number">0</span>:</span><br><span class="line">        n = (width + istep + <span class="number">1</span>) // istep</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;zero step for randrange()&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;empty range for randrange()&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> istart + istep * self._randbelow(n)</span><br></pre></td></tr></table></figure>
+<h2 id="choice"><a href="#choice" class="headerlink" title="choice()"></a>choice()</h2><p>从序列seq中随机选择一个元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">def</span> <span class="title function_">choice</span>(<span class="params">self, seq</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Choose a random element from a non-empty sequence.&quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># raises IndexError if seq is empty</span></span><br><span class="line">        <span class="keyword">return</span> seq[self._randbelow(<span class="built_in">len</span>(seq))]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.choice([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]) </span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure>
+<h2 id="shuffle"><a href="#shuffle" class="headerlink" title="shuffle()"></a>shuffle()</h2><p>将序列seq中元素随机排列,返回打乱后的序列. 要先赋值, 再传递给 <code>shuffle()</code> 函数, <code>shuffle()</code> 函数把打乱后的顺序给序列变量重新赋值.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">def</span> <span class="title function_">shuffle</span>(<span class="params">self, x, random=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;Shuffle list x in place, and return None.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Optional argument random is a 0-argument function returning a</span></span><br><span class="line"><span class="string">        random float in [0.0, 1.0); if it is the default None, the</span></span><br><span class="line"><span class="string">        standard random.random will be used.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> random <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            randbelow = self._randbelow</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(x))):</span><br><span class="line">                <span class="comment"># pick an element in x[:i+1] with which to exchange x[i]</span></span><br><span class="line">                j = randbelow(i + <span class="number">1</span>)</span><br><span class="line">                x[i], x[j] = x[j], x[i]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            _warn(<span class="string">&#x27;The *random* parameter to shuffle() has been deprecated\n&#x27;</span></span><br><span class="line">                  <span class="string">&#x27;since Python 3.9 and will be removed in a subsequent &#x27;</span></span><br><span class="line">                  <span class="string">&#x27;version.&#x27;</span>,</span><br><span class="line">                  DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">            floor = _floor</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(x))):</span><br><span class="line">                <span class="comment"># pick an element in x[:i+1] with which to exchange x[i]</span></span><br><span class="line">                j = floor(random() * (i + <span class="number">1</span>))</span><br><span class="line">                x[i], x[j] = x[j], x[i]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>] </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.shuffle(s) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(s) </span><br><span class="line">[<span class="number">3</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/07/python-09-random%E5%BA%93/" data-id="clcw2yryj0029ywv081pq4j3o" data-title="python-9-random库" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-08-time库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/06/python-08-time%E5%BA%93/" class="article-date">
+  <time class="dt-published" datetime="2022-08-06T06:44:15.000Z" itemprop="datePublished">2022-08-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/06/python-08-time%E5%BA%93/">python-8.time库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>对于一个程序来说, 80% 的时间只消耗在不到 10% 的代码上, 即: 循环代码, 看待一个程序的时候, 从性能角度上要关注循环, 可以用 <code>time</code> 库 <code>perf_counter</code> 对其中的循环进行测量, 对程序性能进行分析, 并优化它.</p>
+<h1 id="时间获取"><a href="#时间获取" class="headerlink" title="时间获取"></a>时间获取</h1><h2 id="time"><a href="#time" class="headerlink" title="time()"></a>time()</h2><p>能够获取当前系统的时间戳（当前系统中表示时间的一个浮点数，是计算机内部的时间值）。它表示从1970年1月1日0：00开始，到当前时刻为止的一个以秒为单位的数值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> time</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.time()</span><br><span class="line"><span class="number">1659768874.201174</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，它的可读性非常差。</p>
+<h2 id="ctime"><a href="#ctime" class="headerlink" title="ctime()"></a>ctime()</h2><p>以一种非常可读的方式表示时间，并且给出具体的时分秒时间，返回的是一个字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.ctime() </span><br><span class="line"><span class="string">&#x27;Sat Aug  6 14:59:20 2022&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="gmtime"><a href="#gmtime" class="headerlink" title="gmtime()"></a>gmtime()</h2><p>获取的是一种计算机程序能够处理的时间格式 - struct_time 格式.<br>gmtime()和 struct_time 定义:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">gmtime</span>(<span class="params">seconds=<span class="literal">None</span></span>): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    gmtime([seconds]) -&gt; (tm_year, tm_mon, tm_mday, tm_hour, tm_min,</span></span><br><span class="line"><span class="string">                           tm_sec, tm_wday, tm_yday, tm_isdst)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Convert seconds since the Epoch to a time tuple expressing UTC (a.k.a.</span></span><br><span class="line"><span class="string">    GMT).  When &#x27;seconds&#x27; is not passed in, convert the current time instead.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    If the platform supports the tm_gmtoff and tm_zone, they are available as</span></span><br><span class="line"><span class="string">    attributes only.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">struct_time</span>(<span class="title class_ inherited__">tuple</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    The time value as returned by gmtime(), localtime(), and strptime(), and</span></span><br><span class="line"><span class="string">     accepted by asctime(), mktime() and strftime().  May be considered as a</span></span><br><span class="line"><span class="string">     sequence of 9 integers.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">     Note that several fields&#x27; values are not the same as those defined by</span></span><br><span class="line"><span class="string">     the C language standard for struct tm.  For example, the value of the</span></span><br><span class="line"><span class="string">     field tm_year is the actual year, not year - 1900.  See individual</span></span><br><span class="line"><span class="string">     fields&#x27; descriptions for details.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, *args, **kwargs</span>): <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod </span><span class="comment"># known case of __new__</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">*args, **kwargs</span>): <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot; Create and return a new object.  See help(type) for accurate signature. &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__reduce__</span>(<span class="params">self, *args, **kwargs</span>): <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__repr__</span>(<span class="params">self, *args, **kwargs</span>): <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot; Return repr(self). &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    tm_gmtoff = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;offset from UTC in seconds&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_hour = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;hours, range [0, 23]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_isdst = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;1 if summer time is in effect, 0 if not, and -1 if unknown&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_mday = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;day of month, range [1, 31]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_min = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;minutes, range [0, 59]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_mon = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;month of year, range [1, 12]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_sec = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;seconds, range [0, 61])&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_wday = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;day of week, range [0, 6], Monday is 0&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_yday = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;day of year, range [1, 366]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_year = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;year, for example, 1993&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_zone = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;abbreviation of timezone name&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    n_fields = <span class="number">11</span></span><br><span class="line">    n_sequence_fields = <span class="number">9</span></span><br><span class="line">    n_unnamed_fields = <span class="number">0</span></span><br><span class="line">    __match_args__ = (</span><br><span class="line">        <span class="string">&#x27;tm_year&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_mon&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_mday&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_hour&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_min&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_sec&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_wday&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_yday&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_isdst&#x27;</span>,</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>示例: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.gmtime() </span><br><span class="line">time.struct_time(tm_year=<span class="number">2022</span>, tm_mon=<span class="number">8</span>, tm_mday=<span class="number">6</span>, tm_hour=<span class="number">7</span>, tm_min=<span class="number">3</span>, tm_sec=<span class="number">29</span>, tm_wday=<span class="number">5</span>, tm_yday=<span class="number">218</span>, tm_isdst=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h1><h2 id="strftime-format-t"><a href="#strftime-format-t" class="headerlink" title="strftime(format[, t])"></a>strftime(format[, t])</h2><p><code>strftime</code> 函数定义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">strftime</span>(<span class="params"><span class="built_in">format</span>, p_tuple=<span class="literal">None</span></span>): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    strftime(format[, tuple]) -&gt; string</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Convert a time tuple to a string according to a format specification.</span></span><br><span class="line"><span class="string">    See the library reference manual for formatting codes. When the time tuple</span></span><br><span class="line"><span class="string">    is not present, current time as returned by localtime() is used.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Commonly used format codes:</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    %Y  Year with century as a decimal number.</span></span><br><span class="line"><span class="string">    %m  Month as a decimal number [01,12].</span></span><br><span class="line"><span class="string">    %d  Day of the month as a decimal number [01,31].</span></span><br><span class="line"><span class="string">    %H  Hour (24-hour clock) as a decimal number [00,23].</span></span><br><span class="line"><span class="string">    %M  Minute as a decimal number [00,59].</span></span><br><span class="line"><span class="string">    %S  Second as a decimal number [00,61].</span></span><br><span class="line"><span class="string">    %z  Time zone offset from UTC.</span></span><br><span class="line"><span class="string">    %a  Locale&#x27;s abbreviated weekday name.</span></span><br><span class="line"><span class="string">    %A  Locale&#x27;s full weekday name.</span></span><br><span class="line"><span class="string">    %b  Locale&#x27;s abbreviated month name.</span></span><br><span class="line"><span class="string">    %B  Locale&#x27;s full month name.</span></span><br><span class="line"><span class="string">    %c  Locale&#x27;s appropriate date and time representation.</span></span><br><span class="line"><span class="string">    %I  Hour (12-hour clock) as a decimal number [01,12].</span></span><br><span class="line"><span class="string">    %p  Locale&#x27;s equivalent of either AM or PM.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Other codes may be available on your platform.  See documentation for</span></span><br><span class="line"><span class="string">    the C library strftime function.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>format: 格式化的模板字符串参数, 用于定义输出效果;<br>t: 计算机内部的时间类型的变量, 就是 <code>gmtime</code> 函数输出的值.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line"><span class="string">&#x27;2022-08-06 15:32:37&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = time.gmtime()                         </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, t)</span><br><span class="line"><span class="string">&#x27;2022-08-06 07:34:32&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="strptime"><a href="#strptime" class="headerlink" title="strptime()"></a>strptime()</h2><p><code>strptime</code> 和 <code>strftime</code> 是一个互补的关系, 它能够将一段字符串变成时间.<br><code>strptime</code> 函数定义:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">strptime</span>(<span class="params">string, <span class="built_in">format</span></span>): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    strptime(string, format) -&gt; struct_time</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    string 是字符串形式的时间值, format 是格式化的模板字符串, 用来定义输出效果.</span></span><br><span class="line"><span class="string">    Parse a string to a time tuple according to a format specification.</span></span><br><span class="line"><span class="string">    See the library reference manual for formatting codes (same as</span></span><br><span class="line"><span class="string">    strftime()).</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Commonly used format codes:</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    %Y  Year with century as a decimal number.</span></span><br><span class="line"><span class="string">    %m  Month as a decimal number [01,12].</span></span><br><span class="line"><span class="string">    %d  Day of the month as a decimal number [01,31].</span></span><br><span class="line"><span class="string">    %H  Hour (24-hour clock) as a decimal number [00,23].</span></span><br><span class="line"><span class="string">    %M  Minute as a decimal number [00,59].</span></span><br><span class="line"><span class="string">    %S  Second as a decimal number [00,61].</span></span><br><span class="line"><span class="string">    %z  Time zone offset from UTC.</span></span><br><span class="line"><span class="string">    %a  Locale&#x27;s abbreviated weekday name.</span></span><br><span class="line"><span class="string">    %A  Locale&#x27;s full weekday name.</span></span><br><span class="line"><span class="string">    %b  Locale&#x27;s abbreviated month name.</span></span><br><span class="line"><span class="string">    %B  Locale&#x27;s full month name.</span></span><br><span class="line"><span class="string">    %c  Locale&#x27;s appropriate date and time representation.</span></span><br><span class="line"><span class="string">    %I  Hour (12-hour clock) as a decimal number [01,12].</span></span><br><span class="line"><span class="string">    %p  Locale&#x27;s equivalent of either AM or PM.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Other codes may be available on your platform.  See documentation for</span></span><br><span class="line"><span class="string">    the C library strftime function.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> struct_time</span><br></pre></td></tr></table></figure>
+<p>示例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">timestr = <span class="string">&#x27;2022-08-06 15:32:37&#x27;</span></span><br><span class="line">tp = time.strptime(timestr, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;tp = &quot;</span>, tp)</span><br><span class="line"></span><br><span class="line">tp =  time.struct_time(tm_year=<span class="number">2022</span>, tm_mon=<span class="number">8</span>, tm_mday=<span class="number">6</span>, tm_hour=<span class="number">15</span>, tm_min=<span class="number">32</span>, tm_sec=<span class="number">37</span>, tm_wday=<span class="number">5</span>, tm_yday=<span class="number">218</span>, tm_isdst=-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="程序计时"><a href="#程序计时" class="headerlink" title="程序计时"></a>程序计时</h1><p><strong>测量起, 止动作所经历的时间过程, 即: 一段程序开始运行到结束, 经历了多少时间. 程序计时包括测量时间和产生时间两部分. 计算机中的 CPU 基频运行的时钟往往是以纳秒来计算的.</strong>  </p>
+<h2 id="sleep"><a href="#sleep" class="headerlink" title="sleep()"></a>sleep()</h2><p>产生时间函数, 它让程序去休眠或者产生一定的时间. 以秒为单位.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sleep</span>(<span class="params">seconds</span>): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    sleep(seconds)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Delay execution for a given number of seconds.  The argument may be</span></span><br><span class="line"><span class="string">    a floating point number for subsecond precision.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>定义一个 wait 函数, 只要调用了 wait 函数, 程序就休眠 3.3 秒, 休眠时间是可以用浮点数表示的.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wait</span>():</span><br><span class="line">    time.sleep(<span class="number">3.3</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="perf-counter"><a href="#perf-counter" class="headerlink" title="perf_counter()"></a>perf_counter()</h2><p>能够记录时间的流逝, 是一个非常精准的时间函数. 它可以获取计算机以基频运行的时钟.<br><code>perf_counter()</code> 函数并不是从零开始计时, 它可能从某一个确定的值开始计算, 所以要调用两次 <code>perf_counter</code> 函数, 然后再相减计算差值.  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">perf_counter</span>(): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    perf_counter() -&gt; float</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Performance counter for benchmarking.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.0</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">stat = time.perf_counter()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="built_in">sum</span> += i</span><br><span class="line">end = time.perf_counter()</span><br><span class="line"><span class="built_in">print</span>(end - stat)</span><br><span class="line"></span><br><span class="line"><span class="number">2.00001522898674e-06</span></span><br></pre></td></tr></table></figure>
+<p><font color = 'red'>在写程序的过程中, 有些函数不需要输入参数, 所以老是漏写必要的括号, 写在这里提醒自己.</font></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/06/python-08-time%E5%BA%93/" data-id="clcw2yryj0028ywv0gcq0hw7r" data-title="python-8.time库" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-07-数据类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/03/python-07-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2022-08-03T08:27:46.000Z" itemprop="datePublished">2022-08-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/03/python-07-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">python-7.数据类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h1><h2 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h2><p>十进制：<br>二进制：以 0b 或者 0B 开头；0b010， -0B101<br>八进制：以 0o 或者 0O 开头；<br>十六进制：以 0x 或者 0X 开头；</p>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><ul>
+<li>带有小数及小数点的数字；</li>
+<li>浮点数取值范围和小数精度都存在限制；</li>
+<li>取值范围数量级约： $-10^{308}$ 到 $10^{308}$, 精度数量级为 $10^{-16}$</li>
+</ul>
+<blockquote>
+<p>浮点数间运算存在不确定尾数，不是 bug<br>&gt;&gt;&gt;0.1 + 0.2<br>0.3000000000004<br>小数用53位二进制表示，在计算机中，将浮点数现实的时候只输出了其中的16位小数。二进制表示小数，可以无限接近，但不完全相同。<br>&gt;&gt;&gt;0.2 + 0.2 &#x3D;&#x3D; 0.3<br>False </p>
+</blockquote>
+<p>二进制与十进制之间不存在严格的对应关系，浮点数间运算及比较可以通过<code>round</code>函数判断，不确定尾数一般发生在$10^{-16}$  左右，<code>round()</code>十分有效。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">0.1</span>+<span class="number">0.2</span>, <span class="number">1</span>) == <span class="number">0.3</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>round(x,d)</code>函数对 x 四舍五入，d 是小数截取位数<br><strong>科学计数法</strong><br>&lt;a&gt;e&lt;b&gt;： $a*10^{b}$</p>
+</blockquote>
+<h2 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h2><p>用 j 来表示虚数单位。  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">z = <span class="number">1.23e-4</span>+<span class="number">5.6e+89j</span></span><br><span class="line">z.real  获得实部</span><br><span class="line">z.imag  获得虚部</span><br></pre></td></tr></table></figure>
+
+<h2 id="数值操作符"><a href="#数值操作符" class="headerlink" title="数值操作符"></a>数值操作符</h2><table>
+<thead>
+<tr>
+<th align="left">操作符及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">y + x</td>
+<td align="left">加，x 与 y 之和</td>
+</tr>
+<tr>
+<td align="left">x - x</td>
+<td align="left">减，</td>
+</tr>
+<tr>
+<td align="left">x * y</td>
+<td align="left">乘</td>
+</tr>
+<tr>
+<td align="left">x &#x2F; y</td>
+<td align="left">除，x 与 y 的商，10&#x2F;3 &#x3D; 3.3333333</td>
+</tr>
+<tr>
+<td align="left">x &#x2F;&#x2F;y</td>
+<td align="left">整数除， x 与 y 的整数商,10&#x2F;&#x2F;3 &#x3D; 3</td>
+</tr>
+<tr>
+<td align="left">+x</td>
+<td align="left">x 本身</td>
+</tr>
+<tr>
+<td align="left">-y</td>
+<td align="left">y 的负值</td>
+</tr>
+<tr>
+<td align="left">x % y</td>
+<td align="left">余数， 10%3 &#x3D; 1</td>
+</tr>
+<tr>
+<td align="left">x**y</td>
+<td align="left">1. 幂运算，x 的 y 次幂，$x^y$;2. 当 y 是小数时，开平方运算， 10<em>*0.5: ${\quad}10</em>0.5 &#x3D; \sqrt{10}$</td>
+</tr>
+<tr>
+<td align="left">x +&#x3D; y</td>
+<td align="left">x &#x3D; x+x</td>
+</tr>
+<tr>
+<td align="left">x -&#x3D; y</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x *&#x3D; x</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x &#x2F;&#x3D; y</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x &#x2F;&#x2F;&#x3D; y</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x %&#x3D; y</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">x **&#x3D;y</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>在其他编程语言中，两个整数除的结果是整数，而在 python 中是浮点数，若要得到整数结果则用整数除符号。<br>python 还提供了对二元运算符的增强运算</p>
+</blockquote>
+<p><strong>类型间可进行混合运算,生成结果为”最宽”类型</strong><br>复数 &gt; 浮点数 &gt; 整数  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">123</span> + <span class="number">4.0</span> = <span class="number">127.0</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数值运算函数"><a href="#数值运算函数" class="headerlink" title="数值运算函数"></a>数值运算函数</h2><table>
+<thead>
+<tr>
+<th align="left">函数及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">abs(x)</td>
+<td align="left">x 的绝对值</td>
+</tr>
+<tr>
+<td align="left">divmod(x, y)</td>
+<td align="left">商余，(x&#x2F;&#x2F;y, x%y),同时输出商和余数</td>
+</tr>
+<tr>
+<td align="left">pow(x, y[, z])</td>
+<td align="left">幂余，(x**y)%z，[…]表示参数 z  可省略</td>
+</tr>
+<tr>
+<td align="left">round(x[, d])</td>
+<td align="left">四舍五入, d是保留小数位数,默认值为0</td>
+</tr>
+<tr>
+<td align="left">max(x1, x2, …, xn)</td>
+<td align="left">返回最大值</td>
+</tr>
+<tr>
+<td align="left">min(x1, x2, …, xn)</td>
+<td align="left">返回最小值</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">abs</span>(-<span class="number">10.01</span>)</span><br><span class="line"><span class="number">10.01</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">divmod</span>(<span class="number">10</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">pow</span>(<span class="number">3</span>, <span class="built_in">pow</span>(<span class="number">99</span>), <span class="number">10000</span>)</span><br><span class="line"><span class="number">4587</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">round</span>(-<span class="number">10.123</span>, <span class="number">2</span>)</span><br><span class="line">-<span class="number">10.12</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>(<span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">min</span>(<span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>数字类型转换函数</strong>  </p>
+<table>
+<thead>
+<tr>
+<th align="left">函数及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">int(x)</td>
+<td align="left">将x变成整数,舍弃小数部分无论小数部分是多少，并不进行四舍五入计算，直接变为整数；若输入字符串“123“， int 也能将其变为整数 123</td>
+</tr>
+<tr>
+<td align="left">float(x)</td>
+<td align="left">与int同理</td>
+</tr>
+<tr>
+<td align="left">complex(x)</td>
+<td align="left">将x变成复数，增加虚数部分</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">13.45</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="string">&quot;123&quot;</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="number">12</span>)</span><br><span class="line"><span class="number">12.0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="string">&quot;12.3&quot;</span>)</span><br><span class="line"><span class="number">12.3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">complex</span>(<span class="number">4</span>)</span><br><span class="line"><span class="number">4</span> + <span class="number">0j</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="字符、字符串"><a href="#字符、字符串" class="headerlink" title="字符、字符串"></a>字符、字符串</h1><ul>
+<li><p>由一对单引号或双引号表示,仅表示单行字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;低碳钢的屈服极限&quot;</span></span><br><span class="line"><span class="string">&#x27;C&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>由对三单引号或三双引号表示,可表示多行字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```不积跬步</span><br><span class="line">        无以至千里```</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>python 中没有真正提供多行注释的表示方式，三单引号构成的就是字符串，但是如果在程序中出现了字符串，且这个字符串并没有给到某个变量中，或者这个字符串没有进行操作，它也可以当作注释来使用。<br>如果在字符串中出现双引号，最外层的引号就要使用单引号；同理想要表示单引号就要用双引号。<br>若希望表示单引号和双引号，可以用三单引号作为字符串的表示。</p>
+</blockquote>
+</li>
+<li><p>转义符 :</p>
+<ul>
+<li>转义符表达特定字符的本意.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;这里有一个双引号（\&quot;）&quot;</span></span><br><span class="line">这里有一个双引号（<span class="string">&quot;）</span></span><br></pre></td></tr></table></figure></li>
+<li>转义符形成一 些组合,表达一些不可打印的含义<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;\b&quot;</span>    回退</span><br><span class="line"><span class="string">&quot;\n&quot;</span>    换行(光标移动到下行首)</span><br><span class="line"><span class="string">&quot;\r&quot;</span>    回车(光标移动到本行首)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>字符串索引的两种方式：1.正向递增序号；2.反向递减序号<br><img src="https://user-images.githubusercontent.com/73486724/181770791-944510cd-27e9-415c-9356-31eb1b9c6eae.png" alt="image"></p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>返回字符串中单个字符。&lt;字符串名&gt;[数字]，如：<code>“低碳钢的屈服极限”[0]</code> 或者 <code>TempStr[-1]</code>表示名为 TempStr 的字符串的倒数第一位字符。</p>
+<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>返回字符串中一段字符子串。&lt;字符串名&gt;[数字:数字]，<code>“低碳钢的屈服极限”[1:3]</code> 表示输出字符串的第1个字符到第2个字符，但不到第3个字符，即“碳钢”，或者 <code>TempStr[0:-1]</code> 表示从0开始但不到字符串的最后一个字符的字符串，相当于把字符串中的最后一个字符去掉。<br><code>&lt;字符串&gt;[M, N]</code>, M 缺失表示至开头，N 缺失表示至结尾。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;低碳钢的屈服极限&quot;</span>[:<span class="number">3</span>]</span><br><span class="line"><span class="string">&quot;低碳的&quot;</span></span><br></pre></td></tr></table></figure>
+<p><code>&lt;字符串&gt;[M, N, K]</code>，根据步长 K 对字符串切片</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;零一二三四五六七八九十&quot;</span>[<span class="number">1</span>:<span class="number">8</span>:<span class="number">2</span>]</span><br><span class="line"><span class="string">&quot;一三五七&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串从最开始到最结尾 MN 默认缺失的情况下，从最开头到最结尾，步长为 -1：从后向前逐一取出。**相当于将字符串逆序**</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;零一二三四五六七八九十&quot;</span>[::-<span class="number">1</span>]</span><br><span class="line"><span class="string">&quot;十九八七六五四三二一零&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串操作符"><a href="#字符串操作符" class="headerlink" title="字符串操作符"></a>字符串操作符</h2><table>
+<thead>
+<tr>
+<th align="left">操作符及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">x + y</td>
+<td align="left">连接两个字符串 x 和 y</td>
+</tr>
+<tr>
+<td align="left">n*x 或 x*n</td>
+<td align="left">n 为整数，复制 n 次字符串 x</td>
+</tr>
+<tr>
+<td align="left">x in S</td>
+<td align="left">如果 x 是 S 的子串，返回 True，否则返回 False</td>
+</tr>
+</tbody></table>
+<h2 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h2><table>
+<thead>
+<tr>
+<th align="left">函数及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">len(x)</td>
+<td align="left">返回字符串 x 的长度</td>
+</tr>
+<tr>
+<td align="left">str(x)</td>
+<td align="left">任意类型 x 所对应的字符串形式。相当于将任何类型的变量增加一个引号</td>
+</tr>
+<tr>
+<td align="left">hex(x), oct(x)</td>
+<td align="left">整数 x 的十六进制或八进制小写形式字符串</td>
+</tr>
+<tr>
+<td align="left">chr(u)</td>
+<td align="left">u 为 Unicode 编码，返回其对应的字符</td>
+</tr>
+<tr>
+<td align="left">ord(x)</td>
+<td align="left">x 为字符，返回其对应的 Unicode 编码</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hex</span>(<span class="number">425</span>)</span><br><span class="line"><span class="string">&quot;0x1a9&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">oct</span>(<span class="number">425</span>)</span><br><span class="line"><span class="string">&quot;0o651&quot;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Unicode 是 python 字符串的编码形式，python3 中所有的字符串、所有的代码，都是用 Unocode 实现的。Unicode 将世界上的所有字符纳入到一个大框架中，可以表示任意的一个字符。</p>
+</blockquote>
+<h2 id="字符串的处理方法"><a href="#字符串的处理方法" class="headerlink" title="字符串的处理方法"></a>字符串的处理方法</h2><ul>
+<li>方法是 python 中的一个专有名词，要用 <code>&lt;a&gt;.&lt;b&gt;()</code> 风格中的函数 <code>&lt;b&gt;()</code> ，是面向对象的一种风格使用: a 是对象，b 是某一个对象能够提供的功能，及方法。方法必须要用 . 的形式来执行。</li>
+<li>方法本身也是函数，但与 &lt;\a&gt; 有关</li>
+<li>字符串及变量也是 &lt;\a&gt;，存在一些方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">方法及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">str.lower() 或 str.upper()</td>
+<td align="left">返回字符串的副本,全部字符小写&#x2F;大写</td>
+</tr>
+<tr>
+<td align="left">str.split(stp &#x3D; None)</td>
+<td align="left">返回一个列表,由str根据sep被分隔的部分组成</td>
+</tr>
+<tr>
+<td align="left">str.count(sub)</td>
+<td align="left">返回子串 sub 在 str 中出现的次数</td>
+</tr>
+<tr>
+<td align="left">str.replace(old, new)</td>
+<td align="left">返回字符串 str 副本，所有的 old 子串被替换为 new</td>
+</tr>
+<tr>
+<td align="left">str.center(width[,fillchar])</td>
+<td align="left">字符串str根据宽度width居中, fillchar可选</td>
+</tr>
+<tr>
+<td align="left">str.strip(chars)</td>
+<td align="left">从str中去掉在其左侧和右侧chars中列出的字符</td>
+</tr>
+<tr>
+<td align="left">str.join(iter)</td>
+<td align="left">在 iter 变量除去最后元素外每个元素后增加一个 str ，主要用于字符串分割</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;AbCdEfGh&quot;</span>.lower()</span><br><span class="line"><span class="string">&quot;abcdefgh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;a,b,c&quot;</span>.split(<span class="string">&quot;,&quot;</span>)</span><br><span class="line">[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;an apple a day&quot;</span>.count(<span class="string">&quot;a&quot;</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;低碳钢&quot;</span>.replace(<span class="string">&quot;钢&quot;</span>,<span class="string">&quot;钢的屈服极限&quot;</span>)</span><br><span class="line"><span class="string">&quot;低碳钢的屈服极限&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;python&quot;</span>.center(<span class="number">20</span>, <span class="string">&quot;=&quot;</span>)</span><br><span class="line"><span class="string">&#x27;=======python=======&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;= python=&quot;</span>.strip(<span class="string">&quot; =np&quot;</span>)</span><br><span class="line"><span class="string">&quot;ytho&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;,&quot;</span>.join(<span class="string">&quot;12345&quot;</span>)</span><br><span class="line"><span class="string">&quot;1,2,3,4,5&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串类型的格式化"><a href="#字符串类型的格式化" class="headerlink" title="字符串类型的格式化"></a>字符串类型的格式化</h2><p><code>&lt;模板字符串&gt;.format(&lt;逗号分隔的参数&gt;)</code><br>槽：相当于一个占位信息符，用 {} 表示，只在字符串中有用。每一个槽所要添加的信息与 <code>.format</code> 方法中对应的参数相一致，在不指定的情况下顺序一致，参数序号从 0 开始。在确定槽中对应的关联参数之后，可以对这个参数的输出格式进行相关的控制，在槽内部使用格式化的标记来进行格式控制。<br>槽内部对格式化的配置方式：<code>&#123;&lt;参数序号:&lt;格式控制标记&gt;&#125;</code><br><img src="https://user-images.githubusercontent.com/73486724/183048281-2800810f-4eb0-4f56-9f60-ea4d4b470de4.png" alt="image"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;&#123;0:b&#125;, &#123;0:c&#125;, &#123;0: d&#125;, &#123;0: o&#125;, &#123;0: x&#125;, &#123;0: X&#125;&quot;</span>.<span class="built_in">format</span>(<span class="number">425</span>))</span><br><span class="line"><span class="string">&#x27;110101001, Ʃ,  425,  651,  1a9,  1A9&#x27;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/03/python-07-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" data-id="clcw2yryk002dywv0fj5d6srr" data-title="python-7.数据类型" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-06-序列类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/30/python-06-%E5%BA%8F%E5%88%97%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2022-07-30T12:33:50.000Z" itemprop="datePublished">2022-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/30/python-06-%E5%BA%8F%E5%88%97%E7%B1%BB%E5%9E%8B/">python-6.序列类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>不可变序列类型</strong></p>
+<ul>
+<li>不可变序列类型普遍实现而可变序列类型未实现的唯一操作就是对 <code>hash()</code> 内置函数的支持。<br>hash(object)<br>返回该对象的哈希值（如果它有的话）。哈希值是整数。它们在字典查找元素时用来快速比较字典的键。相同大小的数字变量有相同的哈希值（即使它们类型不同，如 1 和 1.0）。</li>
+<li>这种支持允许不可变类型，例如 <code>tuple</code> 实例被用作 <code>dict</code> 键，以及存储在 <code>set</code> 和 <code>frozenset</code> 实例中。</li>
+<li>尝试对包含有不可哈希值的不可变序列进行哈希运算将会导致 <code>TypeError</code>。</li>
+</ul>
+<p><strong>可变序列类型</strong></p>
+<ul>
+<li>尝试对包含有不可哈希值的不可变序列进行哈希运算将会导致 <code>TypeError</code>。<br>见:<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#mutable-sequence-types">python 3.10.5 文档-可变序列类型</a></li>
+</ul>
+<h1 id="list"><a href="#list" class="headerlink" title="list"></a>list</h1><h1 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h1><h1 id="range"><a href="#range" class="headerlink" title="range"></a>range</h1><p>类型表示不可变的数字序列，通常用于在 <code>for</code> 循环中循环指定的次数.<br>详见:<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/stdtypes.html#ranges">python 3.10.5 文档-range 对象</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">range</span>(<span class="title class_ inherited__">stop</span>)</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">range</span>(start, stop[, step])</span><br><span class="line"></span><br><span class="line"><span class="built_in">range</span>(n)</span><br><span class="line">产生<span class="number">0</span>到n-<span class="number">1</span>的整数序列,共n个</span><br><span class="line"><span class="built_in">range</span>(m,n)</span><br><span class="line">产生m到n-<span class="number">1</span>的整数序列,共n-m个</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/30/python-06-%E5%BA%8F%E5%88%97%E7%B1%BB%E5%9E%8B/" data-id="clcw2yryl002gywv03424cd6j" data-title="python-6.序列类型" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-05-程序的控制" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/30/python-05-%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%8E%A7%E5%88%B6/" class="article-date">
+  <time class="dt-published" datetime="2022-07-30T10:56:22.000Z" itemprop="datePublished">2022-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/30/python-05-%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%8E%A7%E5%88%B6/">python-5.程序的控制</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="程序的分支结构"><a href="#程序的分支结构" class="headerlink" title="程序的分支结构"></a>程序的分支结构</h1><h2 id="单分支结构"><a href="#单分支结构" class="headerlink" title="单分支结构"></a>单分支结构</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;条件&gt;:</span><br><span class="line">    &lt;语句块&gt;</span><br><span class="line"></span><br><span class="line">summary = <span class="built_in">eval</span>(<span class="built_in">input</span>(<span class="string">&quot;输入总数：&quot;</span>))</span><br><span class="line">rank = <span class="built_in">eval</span>(<span class="built_in">input</span>(<span class="string">&quot;输入排名：&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> rank / summary &lt; <span class="number">0.25</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;能够保研&quot;</span>)</span><br><span class="line"></span><br><span class="line">输入总数：<span class="number">85</span></span><br><span class="line">输入排名：<span class="number">20</span></span><br><span class="line">能够保研</span><br></pre></td></tr></table></figure>
+<h2 id="双分支结构"><a href="#双分支结构" class="headerlink" title="双分支结构"></a>双分支结构</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;条件&gt;:</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>还有一种紧凑形式, 仅适用于表达简单逻辑的二分支结构的一种紧凑方式. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;表达式<span class="number">1</span>&gt; <span class="keyword">if</span> &lt;条件&gt; <span class="keyword">else</span> &lt;表达式<span class="number">2</span>&gt;</span><br><span class="line"><span class="comment"># 当条件成立了, 返回表达式1 的信息, 当条件不成立, else 后面的表达式2 被执行 </span></span><br><span class="line"></span><br><span class="line">guess = <span class="built_in">eval</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;猜&#123;&#125;了&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;对&quot;</span> <span class="keyword">if</span> guess == <span class="number">99</span> <span class="keyword">else</span> <span class="string">&quot;错&quot;</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意: 二分支结构中 if 和 else 对应的是表达式而不是语句<br>语句可以理解为带赋值形式的有等号构成的语句<br>表达式是语句中的一部分, 并不支持赋值的功能</p>
+</blockquote>
+<h2 id="多分支结构"><a href="#多分支结构" class="headerlink" title="多分支结构"></a>多分支结构</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> &lt;条件&gt;:</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">elif</span> &lt;条件&gt;:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br><span class="line">    ......</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    &lt;语句块n&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="条件判断及组合"><a href="#条件判断及组合" class="headerlink" title="条件判断及组合"></a>条件判断及组合</h2><p>不等于: !&#x3D;  </p>
+<table>
+<thead>
+<tr>
+<th align="right">操作符及使用</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">x and y</td>
+<td align="left">与</td>
+</tr>
+<tr>
+<td align="right">x or y</td>
+<td align="left">或</td>
+</tr>
+<tr>
+<td align="right">not x</td>
+<td align="left">非</td>
+</tr>
+</tbody></table>
+<h2 id="程序的异常处理"><a href="#程序的异常处理" class="headerlink" title="程序的异常处理"></a>程序的异常处理</h2><p>把一块要执行的程序放在 <code>try</code> 语句块1中, 如果它一旦出现了异常, 则执行 <code>except</code> 对应的语句块2, 若它不出现异常, 则不执行语句块2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增加异常类型标记, 只有在这种异常类型发生时, 才会执行语句块2</span></span><br><span class="line"><span class="keyword">try</span> :</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">except</span> &lt;异常类型&gt;:</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;</span><br><span class="line"></span><br><span class="line">例如:</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    &lt;...&gt;</span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">    &lt;...&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>异常类型的名字是 python 程序内部定义的, 不同于变量, 不需要对它增加字符串表示, 只需要给出异常名称即可.</p>
+</blockquote>
+<p>处理异常的高级手段:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> :</span><br><span class="line">    &lt;语句块<span class="number">1</span>&gt;</span><br><span class="line"><span class="keyword">except</span> :</span><br><span class="line">    &lt;语句块<span class="number">2</span>&gt;   <span class="comment"># 发生异常时执行</span></span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    &lt;语句块<span class="number">3</span>&gt;   <span class="comment"># 在不发生异常时执行</span></span><br><span class="line"><span class="keyword">finally</span> :</span><br><span class="line">    &lt;语句块<span class="number">4</span>&gt;   <span class="comment">#不管异常与否, 对应的语句块一定执行</span></span><br></pre></td></tr></table></figure>
+<h1 id="程序的循环结构"><a href="#程序的循环结构" class="headerlink" title="程序的循环结构"></a>程序的循环结构</h1><h2 id="遍历循环"><a href="#遍历循环" class="headerlink" title="遍历循环"></a>遍历循环</h2><p>遍历某一个结构形成的循环运行方式 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> &lt;变量&gt; <span class="keyword">in</span> <span class="built_in">range</span> (&lt;参数&gt;) :</span><br><span class="line">    &lt;被循环执行的语句&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>)</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> [<span class="number">123</span>, <span class="string">&#x27;py&#x27;</span>, <span class="number">456</span>]:</span><br><span class="line">    <span class="built_in">print</span>(item, end=<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="number">123</span>,py,<span class="number">456</span>,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>python 与 c 语言区别:python 函数内的执行语句不用花括号括入,用缩进表示</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;it is:&quot;</span>, i)</span><br><span class="line"></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">0</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">1</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">2</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">3</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在保留字后注意不要落下冒号<font color = 'red'> : </font></p>
+</blockquote>
+<p>for i in &lt;…&gt; 结构还能对文件进行遍历, 并且产生循环:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ilne <span class="keyword">in</span> fi:</span><br><span class="line">    &lt;语句块&gt; </span><br></pre></td></tr></table></figure>
+<p><code>fi</code> 是一个文件标识符, 遍历其每行, 产生循环.<br>文件标识符: 用户可以对一个外部文件通过 python 函数将文件打开, 若这个文件以字符形式打开, 它就会表示为一个文件的表示的名字, 相当于用一个变量来标识系统中的一个文件, 该变量就叫做文件标识符.</p>
+<blockquote>
+<p>只要后面的变量或者这个数据类型它是一个由多个元素构成的数据类型都可以使用 <code>for in</code> 的方式遍历它其中的每一个元素, 并且根据元素的个数形成相应的循环.</p>
+</blockquote>
+<h2 id="无限循环"><a href="#无限循环" class="headerlink" title="无限循环"></a>无限循环</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> &lt;条件&gt; :</span><br><span class="line">    &lt;语句块&gt;</span><br></pre></td></tr></table></figure>
+<p>反复执行语句块, 直到条件不满足时语循环结束.</p>
+<h2 id="循环控制保留字"><a href="#循环控制保留字" class="headerlink" title="循环控制保留字"></a>循环控制保留字</h2><p><code>continue</code> : 结束当次循环<br><code>break</code> : 结束整个循环. <strong>一个 <code>break</code> 只能跳出一层循环</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> <span class="string">&#x27;python&#x27;</span>:</span><br><span class="line">    <span class="keyword">if</span> c == <span class="string">&#x27;t&#x27;</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="built_in">print</span>(c, end=<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line"></span><br><span class="line">p,y,h,o,n,</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> <span class="string">&#x27;python&#x27;</span>:</span><br><span class="line">    <span class="keyword">if</span> c == <span class="string">&#x27;t&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(c, end=<span class="string">&#x27;,&#x27;</span>)</span><br><span class="line"></span><br><span class="line">p,y,</span><br><span class="line"></span><br><span class="line">s = <span class="string">&#x27;python&#x27;</span></span><br><span class="line"><span class="keyword">while</span> s != <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">        <span class="built_in">print</span>(c, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    s = s[:-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">pythonpythopythpytpyp</span><br><span class="line"></span><br><span class="line">s = <span class="string">&#x27;python&#x27;</span></span><br><span class="line"><span class="keyword">while</span> s != <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">        <span class="keyword">if</span> c == <span class="string">&#x27;t&#x27;</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="built_in">print</span>(c, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    s = s[:-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">pypypypypyp</span><br></pre></td></tr></table></figure>
+<h2 id="循环的高级用法"><a href="#循环的高级用法" class="headerlink" title="循环的高级用法"></a>循环的高级用法</h2><p>循环与 <code>else</code> 联合使用.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/30/python-05-%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%8E%A7%E5%88%B6/" data-id="clcw2yryh001xywv0eeg8c8zz" data-title="python-5.程序的控制" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-04-python库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/30/python-04-python%E5%BA%93/" class="article-date">
+  <time class="dt-published" datetime="2022-07-30T08:40:13.000Z" itemprop="datePublished">2022-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/30/python-04-python%E5%BA%93/">python-4.python库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>Python计算生态&#x3D;标准库+第三方库</strong></p>
+<ul>
+<li>标准库:随解释器直接安装到操作系统中的功能模块</li>
+<li>第三方库:需要经过安装才能使用的功能模块</li>
+<li>库Library、包Package、模块Module</li>
+</ul>
+<p>以 <code>turtle</code> 库为例:</p>
+<h1 id="调用库的几种方法"><a href="#调用库的几种方法" class="headerlink" title="调用库的几种方法"></a>调用库的几种方法</h1><h2 id="form-lt-库名-gt-import-lt-函数名-gt"><a href="#form-lt-库名-gt-import-lt-函数名-gt" class="headerlink" title="form &lt;库名&gt; import &lt;函数名&gt;"></a>form &lt;库名&gt; import &lt;函数名&gt;</h2><h2 id="import-调用库"><a href="#import-调用库" class="headerlink" title="import 调用库"></a>import 调用库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br></pre></td></tr></table></figure>
+<p><strong>&lt;库名&gt;.&lt;函数名&gt; 使用库函数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">turtle.setup()</span><br><span class="line">turtle.goto()</span><br><span class="line">turtle.fd()</span><br><span class="line">turtle.bk()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这种方法比较繁琐,每次调用都要带上<code>&lt;库名&gt;.</code><br>但好处是特指此函数是库中的函数, 不会出现函数重名的问题</p>
+</blockquote>
+<h2 id="from-lt-库名-gt-import"><a href="#from-lt-库名-gt-import" class="headerlink" title="from &lt;库名&gt; import*"></a>from &lt;库名&gt; import*</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">form turtle <span class="keyword">import</span>*</span><br></pre></td></tr></table></figure>
+<p>这种方式比较简洁,不需要每次都加上<code>库名.</code>来调用函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setup()</span><br><span class="line">goto()</span><br><span class="line">fd()</span><br><span class="line">bk()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>虽然该方法调用函数比较简单,但是有发生函数重名的可能性</p>
+</blockquote>
+<h2 id="import-lt-库名-gt-as-lt-库别名-gt"><a href="#import-lt-库名-gt-as-lt-库别名-gt" class="headerlink" title="import &lt;库名&gt; as &lt;库别名&gt;"></a>import &lt;库名&gt; as &lt;库别名&gt;</h2><p>给调用的外部库关联一 个更短、更适合自己的名字</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</span><br><span class="line"></span><br><span class="line">t.setup()</span><br><span class="line">t.goto()</span><br><span class="line">t.fd()</span><br><span class="line">t.bk()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>用这种方式,冗余的代码量最少,同时又防止了库重名的问题.<br><strong>推荐</strong></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/30/python-04-python%E5%BA%93/" data-id="clcw2yryh001zywv00x591da4" data-title="python-4.python库" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-03-eval" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/30/python-03-eval/" class="article-date">
+  <time class="dt-published" datetime="2022-07-30T08:06:14.000Z" itemprop="datePublished">2022-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/30/python-03-eval/">python-3.eval</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>去掉参数最外侧引|号并执行余下语句的函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">eval</span>(<span class="string">&quot;1&quot;</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>将字符串 “1+2” 外侧的引号去掉,变成了python可以理解的语句,在python中运行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">eval</span>(<span class="string">&quot;1+2&quot;</span>)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>将<strong>最外侧</strong>的引号去掉,无论是单引号还是双引号,剩下一个双引号括住的 “1+2”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">eval</span>(<span class="string">&#x27;&quot;1+2&quot;&#x27;</span>)</span><br><span class="line"><span class="string">&quot;1+2&quot;</span></span><br></pre></td></tr></table></figure>
+<p>去掉最外侧的引号,然后以 python 的语句形式来执行剩下的内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">eval</span>(<span class="string">&#x27;print(&quot;Hello&quot;)&#x27;</span>)</span><br><span class="line">Hello</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/30/python-03-eval/" data-id="clcw2yryd001jywv0dfx0cklf" data-title="python-3.eval" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-python-02-输入输出" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="article-date">
+  <time class="dt-published" datetime="2022-07-30T07:53:43.000Z" itemprop="datePublished">2022-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">python-2.输入输出</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><h2 id="input"><a href="#input" class="headerlink" title="input"></a>input</h2><p>大多数情况下都使用 <code>input()</code> 函数从控制台获得用户输入。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;变量&gt; = input(&lt;提示信息字符串&gt;)</span><br><span class="line">TempStr = input(&quot;请输入：&quot;)</span><br><span class="line">input 括号中表达的信息是提示信息字符串，并不作为 变量 字符串中的一部分</span><br></pre></td></tr></table></figure>
+
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><h2 id="print"><a href="#print" class="headerlink" title="print"></a>print</h2><p>以字符形式向控制台输出结果的函数. <code>print</code> 函数默认输出字符串之后会换行, 想要不换行, 就要在 <code>print</code> 函数中增加一定的控制.<br>python 中的定义:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print</span>(<span class="params">self, *args, sep=<span class="string">&#x27; &#x27;</span>, end=<span class="string">&#x27;\n&#x27;</span>, file=<span class="literal">None</span></span>): <span class="comment"># known special case of print</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    print(value, ..., sep=&#x27; &#x27;, end=&#x27;\n&#x27;, file=sys.stdout, flush=False)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Prints the values to a stream, or to sys.stdout by default.</span></span><br><span class="line"><span class="string">    Optional keyword arguments:</span></span><br><span class="line"><span class="string">    file:  a file-like object (stream); defaults to the current sys.stdout.</span></span><br><span class="line"><span class="string">    sep:   string inserted between values, default a space.</span></span><br><span class="line"><span class="string">    end:   string appended after the last value, default a newline.</span></span><br><span class="line"><span class="string">    flush: whether to forcibly flush the stream.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>\r</code> : 打印后光标退回到之前的位置;</li>
+<li><code>\n</code> : 打印后换行.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(&lt;拟输出字符串变量&gt;)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;低碳钢的屈服极限&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print 函数的格式化</span></span><br><span class="line"><span class="built_in">print</span>((<span class="string">&quot;转换后的温度是&#123;:.2f&#125;C&quot;</span>.<span class="built_in">format</span>(C)))</span><br><span class="line"><span class="comment"># &#123;:.2f&#125;表示将变量C填充到这个位置时取小数点后2位,并不会四舍五入</span></span><br><span class="line"></span><br><span class="line">dayup = <span class="built_in">pow</span>(<span class="number">1.001</span>, <span class="number">365</span>)</span><br><span class="line">daydown = <span class="built_in">pow</span>(<span class="number">0.999</span>, <span class="number">365</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;向上&#123;:.2f&#125;, 向下&#123;:.2f&#125;&quot;</span>. <span class="built_in">format</span>&#123;dayup, daydown&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span>  random</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    x, y = random(), random()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;(x, y) = (&#123;&#125;, &#123;&#125;)&quot;</span>.<span class="built_in">format</span>(x, y))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>{:.2f}表示将变量C填充到这个位置时取小数点后2位,并不会四舍五入</p>
+</blockquote>
+</li>
+</ul>
+<p>print 内加逗号<font color = 'red'>,</font> 起到空格的作用.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;it is:&quot;</span>, i)</span><br><span class="line"></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">0</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">1</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">2</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">3</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>在原逗号的位置,逗号消失,变成了空格.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-id="clcw2yryf001sywv03ajz5vpv" data-title="python-2.输入输出" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/">Dilettantism</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/">文学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E8%89%BA%E6%9C%AF/">艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/">Electricity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E5%AF%BC%E8%88%AA%E5%8E%9F%E7%90%86/">导航原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/python/">python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6/">中学数学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/">Mechanics</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E5%A7%BF%E6%80%81/">姿态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/">结构动力学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/">高效工作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">文献管理</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dilettantism/" rel="tag">Dilettantism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frp/" rel="tag">Frp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/" rel="tag">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Dilettantism/" style="font-size: 12px;">Dilettantism</a> <a href="/tags/Frp/" style="font-size: 10px;">Frp</a> <a href="/tags/Language/" style="font-size: 20px;">Language</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/Physics/" style="font-size: 14px;">Physics</a> <a href="/tags/work/" style="font-size: 12px;">work</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16px;">专业课</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/">结构动力学-0前言</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/LaTeX/">LaTeX</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Hexo 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">罗德里格斯旋转公式推导</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

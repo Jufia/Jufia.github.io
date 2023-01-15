@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>python-2.输入输出 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="输入input大多数情况下都使用 input() 函数从控制台获得用户输入。 123&lt;变量&gt; &#x3D; input(&lt;提示信息字符串&gt;)TempStr &#x3D; input(&quot;请输入：&quot;)input 括号中表达的信息是提示信息字符串，并不作为 变量 字符串中的一部分  输出print以字符形式向控制台输出结果的函数. print 函数默认输出字符串之后会换行, 想要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python-2.输入输出">
+<meta property="og:url" content="http://example.com/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="输入input大多数情况下都使用 input() 函数从控制台获得用户输入。 123&lt;变量&gt; &#x3D; input(&lt;提示信息字符串&gt;)TempStr &#x3D; input(&quot;请输入：&quot;)input 括号中表达的信息是提示信息字符串，并不作为 变量 字符串中的一部分  输出print以字符形式向控制台输出结果的函数. print 函数默认输出字符串之后会换行, 想要">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-30T07:53:43.000Z">
+<meta property="article:modified_time" content="2022-08-08T14:45:26.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Language">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-python-02-输入输出" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="article-date">
+  <time class="dt-published" datetime="2022-07-30T07:53:43.000Z" itemprop="datePublished">2022-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python-2.输入输出
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><h2 id="input"><a href="#input" class="headerlink" title="input"></a>input</h2><p>大多数情况下都使用 <code>input()</code> 函数从控制台获得用户输入。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;变量&gt; = input(&lt;提示信息字符串&gt;)</span><br><span class="line">TempStr = input(&quot;请输入：&quot;)</span><br><span class="line">input 括号中表达的信息是提示信息字符串，并不作为 变量 字符串中的一部分</span><br></pre></td></tr></table></figure>
+
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><h2 id="print"><a href="#print" class="headerlink" title="print"></a>print</h2><p>以字符形式向控制台输出结果的函数. <code>print</code> 函数默认输出字符串之后会换行, 想要不换行, 就要在 <code>print</code> 函数中增加一定的控制.<br>python 中的定义:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print</span>(<span class="params">self, *args, sep=<span class="string">&#x27; &#x27;</span>, end=<span class="string">&#x27;\n&#x27;</span>, file=<span class="literal">None</span></span>): <span class="comment"># known special case of print</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    print(value, ..., sep=&#x27; &#x27;, end=&#x27;\n&#x27;, file=sys.stdout, flush=False)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Prints the values to a stream, or to sys.stdout by default.</span></span><br><span class="line"><span class="string">    Optional keyword arguments:</span></span><br><span class="line"><span class="string">    file:  a file-like object (stream); defaults to the current sys.stdout.</span></span><br><span class="line"><span class="string">    sep:   string inserted between values, default a space.</span></span><br><span class="line"><span class="string">    end:   string appended after the last value, default a newline.</span></span><br><span class="line"><span class="string">    flush: whether to forcibly flush the stream.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>\r</code> : 打印后光标退回到之前的位置;</li>
+<li><code>\n</code> : 打印后换行.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(&lt;拟输出字符串变量&gt;)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;低碳钢的屈服极限&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print 函数的格式化</span></span><br><span class="line"><span class="built_in">print</span>((<span class="string">&quot;转换后的温度是&#123;:.2f&#125;C&quot;</span>.<span class="built_in">format</span>(C)))</span><br><span class="line"><span class="comment"># &#123;:.2f&#125;表示将变量C填充到这个位置时取小数点后2位,并不会四舍五入</span></span><br><span class="line"></span><br><span class="line">dayup = <span class="built_in">pow</span>(<span class="number">1.001</span>, <span class="number">365</span>)</span><br><span class="line">daydown = <span class="built_in">pow</span>(<span class="number">0.999</span>, <span class="number">365</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;向上&#123;:.2f&#125;, 向下&#123;:.2f&#125;&quot;</span>. <span class="built_in">format</span>&#123;dayup, daydown&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span>  random</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    x, y = random(), random()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;(x, y) = (&#123;&#125;, &#123;&#125;)&quot;</span>.<span class="built_in">format</span>(x, y))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>{:.2f}表示将变量C填充到这个位置时取小数点后2位,并不会四舍五入</p>
+</blockquote>
+</li>
+</ul>
+<p>print 内加逗号<font color = 'red'>,</font> 起到空格的作用.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;it is:&quot;</span>, i)</span><br><span class="line"></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">0</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">1</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">2</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">3</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>在原逗号的位置,逗号消失,变成了空格.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-id="clcw2yryf001sywv03ajz5vpv" data-title="python-2.输入输出" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/30/python-03-eval/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python-3.eval
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/29/python-01-%E6%A0%BC%E5%BC%8F%E6%A1%86%E6%9E%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python-1.格式框架</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/">Dilettantism</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/">文学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E8%89%BA%E6%9C%AF/">艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/">Electricity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E5%AF%BC%E8%88%AA%E5%8E%9F%E7%90%86/">导航原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/python/">python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6/">中学数学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/">Mechanics</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E5%A7%BF%E6%80%81/">姿态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/">结构动力学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/">高效工作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">文献管理</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dilettantism/" rel="tag">Dilettantism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frp/" rel="tag">Frp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/" rel="tag">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Dilettantism/" style="font-size: 12px;">Dilettantism</a> <a href="/tags/Frp/" style="font-size: 10px;">Frp</a> <a href="/tags/Language/" style="font-size: 20px;">Language</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/Physics/" style="font-size: 14px;">Physics</a> <a href="/tags/work/" style="font-size: 12px;">work</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16px;">专业课</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/">结构动力学-0前言</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/LaTeX/">LaTeX</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Hexo 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">罗德里格斯旋转公式推导</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

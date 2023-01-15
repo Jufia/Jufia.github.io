@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>python-8.time库 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="对于一个程序来说, 80% 的时间只消耗在不到 10% 的代码上, 即: 循环代码, 看待一个程序的时候, 从性能角度上要关注循环, 可以用 time 库 perf_counter 对其中的循环进行测量, 对程序性能进行分析, 并优化它. 时间获取time()能够获取当前系统的时间戳（当前系统中表示时间的一个浮点数，是计算机内部的时间值）。它表示从1970年1月1日0：00开始，到当前时刻为止的一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python-8.time库">
+<meta property="og:url" content="http://example.com/2022/08/06/python-08-time%E5%BA%93/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对于一个程序来说, 80% 的时间只消耗在不到 10% 的代码上, 即: 循环代码, 看待一个程序的时候, 从性能角度上要关注循环, 可以用 time 库 perf_counter 对其中的循环进行测量, 对程序性能进行分析, 并优化它. 时间获取time()能够获取当前系统的时间戳（当前系统中表示时间的一个浮点数，是计算机内部的时间值）。它表示从1970年1月1日0：00开始，到当前时刻为止的一">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-06T06:44:15.000Z">
+<meta property="article:modified_time" content="2022-08-08T14:54:00.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Language">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-python-08-time库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/06/python-08-time%E5%BA%93/" class="article-date">
+  <time class="dt-published" datetime="2022-08-06T06:44:15.000Z" itemprop="datePublished">2022-08-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Language/">Language</a>►<a class="article-category-link" href="/categories/Language/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python-8.time库
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>对于一个程序来说, 80% 的时间只消耗在不到 10% 的代码上, 即: 循环代码, 看待一个程序的时候, 从性能角度上要关注循环, 可以用 <code>time</code> 库 <code>perf_counter</code> 对其中的循环进行测量, 对程序性能进行分析, 并优化它.</p>
+<h1 id="时间获取"><a href="#时间获取" class="headerlink" title="时间获取"></a>时间获取</h1><h2 id="time"><a href="#time" class="headerlink" title="time()"></a>time()</h2><p>能够获取当前系统的时间戳（当前系统中表示时间的一个浮点数，是计算机内部的时间值）。它表示从1970年1月1日0：00开始，到当前时刻为止的一个以秒为单位的数值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> time</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.time()</span><br><span class="line"><span class="number">1659768874.201174</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，它的可读性非常差。</p>
+<h2 id="ctime"><a href="#ctime" class="headerlink" title="ctime()"></a>ctime()</h2><p>以一种非常可读的方式表示时间，并且给出具体的时分秒时间，返回的是一个字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.ctime() </span><br><span class="line"><span class="string">&#x27;Sat Aug  6 14:59:20 2022&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="gmtime"><a href="#gmtime" class="headerlink" title="gmtime()"></a>gmtime()</h2><p>获取的是一种计算机程序能够处理的时间格式 - struct_time 格式.<br>gmtime()和 struct_time 定义:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">gmtime</span>(<span class="params">seconds=<span class="literal">None</span></span>): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    gmtime([seconds]) -&gt; (tm_year, tm_mon, tm_mday, tm_hour, tm_min,</span></span><br><span class="line"><span class="string">                           tm_sec, tm_wday, tm_yday, tm_isdst)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Convert seconds since the Epoch to a time tuple expressing UTC (a.k.a.</span></span><br><span class="line"><span class="string">    GMT).  When &#x27;seconds&#x27; is not passed in, convert the current time instead.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    If the platform supports the tm_gmtoff and tm_zone, they are available as</span></span><br><span class="line"><span class="string">    attributes only.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">struct_time</span>(<span class="title class_ inherited__">tuple</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    The time value as returned by gmtime(), localtime(), and strptime(), and</span></span><br><span class="line"><span class="string">     accepted by asctime(), mktime() and strftime().  May be considered as a</span></span><br><span class="line"><span class="string">     sequence of 9 integers.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">     Note that several fields&#x27; values are not the same as those defined by</span></span><br><span class="line"><span class="string">     the C language standard for struct tm.  For example, the value of the</span></span><br><span class="line"><span class="string">     field tm_year is the actual year, not year - 1900.  See individual</span></span><br><span class="line"><span class="string">     fields&#x27; descriptions for details.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, *args, **kwargs</span>): <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod </span><span class="comment"># known case of __new__</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">*args, **kwargs</span>): <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot; Create and return a new object.  See help(type) for accurate signature. &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__reduce__</span>(<span class="params">self, *args, **kwargs</span>): <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__repr__</span>(<span class="params">self, *args, **kwargs</span>): <span class="comment"># real signature unknown</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot; Return repr(self). &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    tm_gmtoff = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;offset from UTC in seconds&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_hour = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;hours, range [0, 23]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_isdst = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;1 if summer time is in effect, 0 if not, and -1 if unknown&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_mday = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;day of month, range [1, 31]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_min = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;minutes, range [0, 59]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_mon = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;month of year, range [1, 12]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_sec = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;seconds, range [0, 61])&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_wday = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;day of week, range [0, 6], Monday is 0&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_yday = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;day of year, range [1, 366]&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_year = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;year, for example, 1993&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    tm_zone = <span class="built_in">property</span>(<span class="keyword">lambda</span> self: <span class="built_in">object</span>(), <span class="keyword">lambda</span> self, v: <span class="literal">None</span>, <span class="keyword">lambda</span> self: <span class="literal">None</span>)  <span class="comment"># default</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;abbreviation of timezone name&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    n_fields = <span class="number">11</span></span><br><span class="line">    n_sequence_fields = <span class="number">9</span></span><br><span class="line">    n_unnamed_fields = <span class="number">0</span></span><br><span class="line">    __match_args__ = (</span><br><span class="line">        <span class="string">&#x27;tm_year&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_mon&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_mday&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_hour&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_min&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_sec&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_wday&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_yday&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;tm_isdst&#x27;</span>,</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>示例: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.gmtime() </span><br><span class="line">time.struct_time(tm_year=<span class="number">2022</span>, tm_mon=<span class="number">8</span>, tm_mday=<span class="number">6</span>, tm_hour=<span class="number">7</span>, tm_min=<span class="number">3</span>, tm_sec=<span class="number">29</span>, tm_wday=<span class="number">5</span>, tm_yday=<span class="number">218</span>, tm_isdst=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h1><h2 id="strftime-format-t"><a href="#strftime-format-t" class="headerlink" title="strftime(format[, t])"></a>strftime(format[, t])</h2><p><code>strftime</code> 函数定义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">strftime</span>(<span class="params"><span class="built_in">format</span>, p_tuple=<span class="literal">None</span></span>): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    strftime(format[, tuple]) -&gt; string</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Convert a time tuple to a string according to a format specification.</span></span><br><span class="line"><span class="string">    See the library reference manual for formatting codes. When the time tuple</span></span><br><span class="line"><span class="string">    is not present, current time as returned by localtime() is used.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Commonly used format codes:</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    %Y  Year with century as a decimal number.</span></span><br><span class="line"><span class="string">    %m  Month as a decimal number [01,12].</span></span><br><span class="line"><span class="string">    %d  Day of the month as a decimal number [01,31].</span></span><br><span class="line"><span class="string">    %H  Hour (24-hour clock) as a decimal number [00,23].</span></span><br><span class="line"><span class="string">    %M  Minute as a decimal number [00,59].</span></span><br><span class="line"><span class="string">    %S  Second as a decimal number [00,61].</span></span><br><span class="line"><span class="string">    %z  Time zone offset from UTC.</span></span><br><span class="line"><span class="string">    %a  Locale&#x27;s abbreviated weekday name.</span></span><br><span class="line"><span class="string">    %A  Locale&#x27;s full weekday name.</span></span><br><span class="line"><span class="string">    %b  Locale&#x27;s abbreviated month name.</span></span><br><span class="line"><span class="string">    %B  Locale&#x27;s full month name.</span></span><br><span class="line"><span class="string">    %c  Locale&#x27;s appropriate date and time representation.</span></span><br><span class="line"><span class="string">    %I  Hour (12-hour clock) as a decimal number [01,12].</span></span><br><span class="line"><span class="string">    %p  Locale&#x27;s equivalent of either AM or PM.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Other codes may be available on your platform.  See documentation for</span></span><br><span class="line"><span class="string">    the C library strftime function.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>format: 格式化的模板字符串参数, 用于定义输出效果;<br>t: 计算机内部的时间类型的变量, 就是 <code>gmtime</code> 函数输出的值.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line"><span class="string">&#x27;2022-08-06 15:32:37&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = time.gmtime()                         </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, t)</span><br><span class="line"><span class="string">&#x27;2022-08-06 07:34:32&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="strptime"><a href="#strptime" class="headerlink" title="strptime()"></a>strptime()</h2><p><code>strptime</code> 和 <code>strftime</code> 是一个互补的关系, 它能够将一段字符串变成时间.<br><code>strptime</code> 函数定义:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">strptime</span>(<span class="params">string, <span class="built_in">format</span></span>): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    strptime(string, format) -&gt; struct_time</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    string 是字符串形式的时间值, format 是格式化的模板字符串, 用来定义输出效果.</span></span><br><span class="line"><span class="string">    Parse a string to a time tuple according to a format specification.</span></span><br><span class="line"><span class="string">    See the library reference manual for formatting codes (same as</span></span><br><span class="line"><span class="string">    strftime()).</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Commonly used format codes:</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    %Y  Year with century as a decimal number.</span></span><br><span class="line"><span class="string">    %m  Month as a decimal number [01,12].</span></span><br><span class="line"><span class="string">    %d  Day of the month as a decimal number [01,31].</span></span><br><span class="line"><span class="string">    %H  Hour (24-hour clock) as a decimal number [00,23].</span></span><br><span class="line"><span class="string">    %M  Minute as a decimal number [00,59].</span></span><br><span class="line"><span class="string">    %S  Second as a decimal number [00,61].</span></span><br><span class="line"><span class="string">    %z  Time zone offset from UTC.</span></span><br><span class="line"><span class="string">    %a  Locale&#x27;s abbreviated weekday name.</span></span><br><span class="line"><span class="string">    %A  Locale&#x27;s full weekday name.</span></span><br><span class="line"><span class="string">    %b  Locale&#x27;s abbreviated month name.</span></span><br><span class="line"><span class="string">    %B  Locale&#x27;s full month name.</span></span><br><span class="line"><span class="string">    %c  Locale&#x27;s appropriate date and time representation.</span></span><br><span class="line"><span class="string">    %I  Hour (12-hour clock) as a decimal number [01,12].</span></span><br><span class="line"><span class="string">    %p  Locale&#x27;s equivalent of either AM or PM.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Other codes may be available on your platform.  See documentation for</span></span><br><span class="line"><span class="string">    the C library strftime function.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> struct_time</span><br></pre></td></tr></table></figure>
+<p>示例:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">timestr = <span class="string">&#x27;2022-08-06 15:32:37&#x27;</span></span><br><span class="line">tp = time.strptime(timestr, <span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;tp = &quot;</span>, tp)</span><br><span class="line"></span><br><span class="line">tp =  time.struct_time(tm_year=<span class="number">2022</span>, tm_mon=<span class="number">8</span>, tm_mday=<span class="number">6</span>, tm_hour=<span class="number">15</span>, tm_min=<span class="number">32</span>, tm_sec=<span class="number">37</span>, tm_wday=<span class="number">5</span>, tm_yday=<span class="number">218</span>, tm_isdst=-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="程序计时"><a href="#程序计时" class="headerlink" title="程序计时"></a>程序计时</h1><p><strong>测量起, 止动作所经历的时间过程, 即: 一段程序开始运行到结束, 经历了多少时间. 程序计时包括测量时间和产生时间两部分. 计算机中的 CPU 基频运行的时钟往往是以纳秒来计算的.</strong>  </p>
+<h2 id="sleep"><a href="#sleep" class="headerlink" title="sleep()"></a>sleep()</h2><p>产生时间函数, 它让程序去休眠或者产生一定的时间. 以秒为单位.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sleep</span>(<span class="params">seconds</span>): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    sleep(seconds)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Delay execution for a given number of seconds.  The argument may be</span></span><br><span class="line"><span class="string">    a floating point number for subsecond precision.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>定义一个 wait 函数, 只要调用了 wait 函数, 程序就休眠 3.3 秒, 休眠时间是可以用浮点数表示的.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wait</span>():</span><br><span class="line">    time.sleep(<span class="number">3.3</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="perf-counter"><a href="#perf-counter" class="headerlink" title="perf_counter()"></a>perf_counter()</h2><p>能够记录时间的流逝, 是一个非常精准的时间函数. 它可以获取计算机以基频运行的时钟.<br><code>perf_counter()</code> 函数并不是从零开始计时, 它可能从某一个确定的值开始计算, 所以要调用两次 <code>perf_counter</code> 函数, 然后再相减计算差值.  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">perf_counter</span>(): <span class="comment"># real signature unknown; restored from __doc__</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    perf_counter() -&gt; float</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Performance counter for benchmarking.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.0</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">stat = time.perf_counter()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="built_in">sum</span> += i</span><br><span class="line">end = time.perf_counter()</span><br><span class="line"><span class="built_in">print</span>(end - stat)</span><br><span class="line"></span><br><span class="line"><span class="number">2.00001522898674e-06</span></span><br></pre></td></tr></table></figure>
+<p><font color = 'red'>在写程序的过程中, 有些函数不需要输入参数, 所以老是漏写必要的括号, 写在这里提醒自己.</font></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/06/python-08-time%E5%BA%93/" data-id="clcw2yryj0028ywv0gcq0hw7r" data-title="python-8.time库" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Language/" rel="tag">Language</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/08/07/python-09-random%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python-9-random库
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/08/03/python-07-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python-7.数据类型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/">Dilettantism</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/">文学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E8%89%BA%E6%9C%AF/">艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/">Electricity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E5%AF%BC%E8%88%AA%E5%8E%9F%E7%90%86/">导航原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/python/">python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6/">中学数学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/">Mechanics</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E5%A7%BF%E6%80%81/">姿态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/">结构动力学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/">高效工作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">文献管理</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dilettantism/" rel="tag">Dilettantism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frp/" rel="tag">Frp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/" rel="tag">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Dilettantism/" style="font-size: 12px;">Dilettantism</a> <a href="/tags/Frp/" style="font-size: 10px;">Frp</a> <a href="/tags/Language/" style="font-size: 20px;">Language</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/Physics/" style="font-size: 14px;">Physics</a> <a href="/tags/work/" style="font-size: 12px;">work</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16px;">专业课</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/">结构动力学-0前言</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/LaTeX/">LaTeX</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Hexo 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">罗德里格斯旋转公式推导</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

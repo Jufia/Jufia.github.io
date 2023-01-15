@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>结构动力学-2单自由度系统的强迫振动 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="受迫振动受迫振动(Forced Vibration)：即振动系统在外界干扰力或干扰位移作用下产生的振动。外界不断对振动系统输入能量，才能使振动得以维持而不至于因阻尼存在而随时间衰减。对于线性系统, 根据叠加原理, 可以分别求系统对于初始条件的响应和对于外部激励的响应, 然后再合成为系统的总响应。外激励可能为：力 - 位移 - 加速度形式例如：车的上下颠簸是位移形式 简谐激励的响应运动方程：$$m\">
+<meta property="og:type" content="article">
+<meta property="og:title" content="结构动力学-2单自由度系统的强迫振动">
+<meta property="og:url" content="http://example.com/2022/07/23/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-2%E5%8D%95%E8%87%AA%E7%94%B1%E5%BA%A6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%BA%E8%BF%AB%E6%8C%AF%E5%8A%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="受迫振动受迫振动(Forced Vibration)：即振动系统在外界干扰力或干扰位移作用下产生的振动。外界不断对振动系统输入能量，才能使振动得以维持而不至于因阻尼存在而随时间衰减。对于线性系统, 根据叠加原理, 可以分别求系统对于初始条件的响应和对于外部激励的响应, 然后再合成为系统的总响应。外激励可能为：力 - 位移 - 加速度形式例如：车的上下颠簸是位移形式 简谐激励的响应运动方程：$$m\">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/180642284-0f3d2028-188d-4803-9e9a-2ece1186b4df.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/180647423-f3fe7ea6-99b8-4999-a216-1f9681c9e90d.png">
+<meta property="article:published_time" content="2022-07-23T12:34:36.000Z">
+<meta property="article:modified_time" content="2022-07-24T12:42:46.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Physics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/73486724/180642284-0f3d2028-188d-4803-9e9a-2ece1186b4df.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-结构动力学-2单自由度系统的强迫振动" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/23/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-2%E5%8D%95%E8%87%AA%E7%94%B1%E5%BA%A6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%BA%E8%BF%AB%E6%8C%AF%E5%8A%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-07-23T12:34:36.000Z" itemprop="datePublished">2022-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Mechanics/">Mechanics</a>►<a class="article-category-link" href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/">结构动力学</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      结构动力学-2单自由度系统的强迫振动
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="受迫振动"><a href="#受迫振动" class="headerlink" title="受迫振动"></a>受迫振动</h1><p>受迫振动(Forced Vibration)：即振动系统在外界干扰力或干扰位移作用下产生的振动。外界不断对振动系统输入能量，才能使振动得以维持而不至于因阻尼存在而随时间衰减。<br>对于线性系统, 根据叠加原理, 可以分别求系统对于初始条件的响应和对于外部激励的响应, 然后再合成为系统的总响应。<br>外激励可能为：力 - 位移 - 加速度形式<br>例如：车的上下颠簸是位移形式</p>
+<h1 id="简谐激励的响应"><a href="#简谐激励的响应" class="headerlink" title="简谐激励的响应"></a>简谐激励的响应</h1><p>运动方程：<br>$$<br>m\ddot{x} + C\dot{x} + kx &#x3D; F(t) &#x3D; F_0\cos \omega t<br>$$<br>是一个显含时间的线性常系数非齐次微分方程。<br>$$<br>\frac{F(t)}{m} &#x3D; \frac{k}{m} \cdot \frac{F(t)}{k} &#x3D;\omega_n^2 \delta_{st} \cos \omega t<br>$$<br>经过标准化：<br>$$<br>\ddot{x} + 2\zeta \omega_n \dot{x} + \omega_n^2 x &#x3D; \omega_n^2 \delta_{st} \cos \omega t<br>$$<br><strong>瞬态响应：</strong> 在受迫振动中由于阻尼因素导致的能量损耗, 自由振动响应将随时间衰减而最后消失，是非齐次微分方程的通解部分。<br><strong>稳态响应：</strong> 强迫振动响应不随时间衰减，是非齐次微分方程的特解部分。  </p>
+<blockquote>
+<p>微分方程的特解与系统的初始条件无关 — 所以稳态响应又称为系统对激励的<strong>零初始状态响应</strong>。</p>
+</blockquote>
+<h2 id="数学分析解法"><a href="#数学分析解法" class="headerlink" title="数学分析解法"></a>数学分析解法</h2><p>先修知识：<a target="_blank" rel="noopener" href="https://lyuehua.github.io/2022/07/13/%E5%BE%AE%E7%A7%AF%E5%88%86-2%E8%A7%A3%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/#%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B">常系数非齐次线性微分方程</a><br>方程非齐次部分为：$F(t) &#x3D; \omega_n^2 \delta_{st} \cos \omega t$<br>对比一般非齐次项：$f(x) &#x3D; e^{\alpha x}[P(x)cos \beta x + Q(x)sin \beta x]$<br>和非齐次方程的特解：$y_* &#x3D; x^k e^{\alpha x}[R(x)cos \beta x+ Q(x)sin\beta x]$<br>$\alpha &#x3D; 0$,   $\beta &#x3D; \omega$, $P(x) &#x3D; \omega_n^2 \delta_{st}$, $m &#x3D; 0$<br>可设特解为：$A_1 \cos \omega t + A_2 \sin \omega t &#x3D; A\cos(\omega t - \varphi)$<br>带入到微分方程中，可得：<br>$$<br>A[(\omega_n^2 - \omega^2)\cos \omega t - 2\zeta \omega_n \omega \sin \omega t] &#x3D; \omega_n^2 \delta_{st} \cos \omega t<br>$$<br>解得：<br>$$<br>\begin{array}{l}<br>    A &#x3D; \frac{\delta_{st}}{\sqrt{(1 - \overline{\omega}^2)^2 + (2\zeta \omega)^2}} \cr<br>    \varphi &#x3D; \arctan (\frac{2\zeta \overline{\omega}}{1 - \overline{\omega}^2}) &#x3D; \arctan(\frac{C\omega}{k - m\omega^2}) \cr<br>    \overline{\omega} &#x3D; \frac{\omega}{\omega_n}<br>\end{array}<br>$$<br><img src="https://user-images.githubusercontent.com/73486724/180642284-0f3d2028-188d-4803-9e9a-2ece1186b4df.png" alt="image"><br>有阻尼简谐振动既改变幅值大小又改变相位，简谐激励下的有阻尼单自由度系统的稳态振动有如下规律:</p>
+<ol>
+<li>系统对谐波激励的响应仍是等幅 $B$ 简谐波: 运动规律由激励力的频率 $\omega$ 和振幅 $F_0$ 以及响应的滞后相位 $\varphi(\in[0, \pi])$ 共同确定;</li>
+<li><strong>响应频率与激励频率相同</strong>; 响应滞后激励的相位 $\varphi$ 则与激励频率与系 统固有频率之比及阻尼的大小有关(无阻尼时 $\varphi \equiv 0$);</li>
+<li>强迫振动响应的振幅仅与系统的物理参数( $m -k -c$ )以及激励力大小和频率有关, 而与初始条件无关。</li>
+</ol>
+<h2 id="复数解法"><a href="#复数解法" class="headerlink" title="复数解法"></a>复数解法</h2><p>根据欧拉公式：$e^{ix} &#x3D; \cos x + i\sin x$<br>运动微分方程：<br>$$<br>\ddot{x} + 2\zeta \omega_n \dot{x} + \omega_n^2 x &#x3D; \omega_n^2 \delta_{st} \cos \omega t<br>$$<br>经过变换可化为：<br>$$<br>\ddot{x} + 2\zeta \omega_n \dot{x} + \omega_n^2 x &#x3D; Re(\omega_n^2 \delta_{st} e^{i\omega t})<br>$$<br>可令$x(t) &#x3D; Re(Be^{i\omega t - \varphi}) &#x3D; Re(B\cdot X(t))$<br>$$<br>\begin{array}{l}<br>    B(-\omega^2 + i2\zeta \omega_n \omega + \omega_n^2 )e^{i\omega t} &#x3D; \omega_n^2 \delta_{st} e^{i\omega t} \cr<br>    B &#x3D; \frac{\delta_{st}}{1 - \overline{\omega}^2 + i2\overline{\omega}} \cr<br>    A &#x3D; \left\lvert B \right\lvert &#x3D; \frac{\delta_{st}}{\sqrt{(1 - \overline{\omega}^2)^2 + (2\zeta \omega)^2}} \cr<br>    \varphi &#x3D; \arctan (\frac{2\zeta \overline{\omega}}{1 - \overline{\omega}^2}) &#x3D; \arctan(\frac{C\omega}{k - m\omega^2}) \cr<br>\end{array}<br>$$<br>$H(\omega) &#x3D; \frac{X(t)}{F(t)} &#x3D; \frac{1}{1 - \overline{\omega}^2 + i2\overline{\omega}}$ 为（复）频响应函数，此值包含了相位信息，是激励频率 $\omega$ 的函数。<br>$\left\lvert H(\omega) \right\lvert$ 称幅值因子，对 $\left\lvert H(\omega) \right\lvert$ 关于 $\overline{\omega}$ 求导，得极值点为 $\overline{\omega}_r &#x3D; \frac{1}{\sqrt{1 - 2\zeta^2}}$<br>极大值为： $\left\lvert H(\omega) \right\lvert _{max} &#x3D; \frac{1}{2\zeta\sqrt{1 - \zeta^2}}$， 小阻尼情况下约等于 $\frac{1}{2\zeta}$<br>引入符号 $Q \equiv \left\lvert H(\omega) \right\lvert _{max}$ ,在工程上称为品质因子(quality factor)。  </p>
+<blockquote>
+<p><strong>在有阻尼系统中，外激励 $\omega \rightarrow \omega_n$ 时，响应振幅会显著增大，其大小为与阻尼比有关的极限值。</strong></p>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/73486724/180647423-f3fe7ea6-99b8-4999-a216-1f9681c9e90d.png" alt="image"><br>有阻尼系统在余弦激励下的全解：<br>$$<br>x(t) &#x3D; e^{-\zeta \omega_n t}(C_1 \cos \omega_d t + C_2 \sin \omega_d t) + A\cos (\omega t - \varphi)<br>$$<br>$$<br>A &#x3D; \frac{\delta_{st}}{\sqrt{(1 - \overline{\omega}^2)^2 + (2\zeta \omega)^2}} {\quad} {\qquad}<br>    \varphi &#x3D; \arctan (\frac{2\zeta \overline{\omega}}{1 - \overline{\omega}^2})<br>$$<br>用初始条件确定待定常数 $C_1,C_2$, 可得系统的解为:<br>$$<br>\begin{array}{llr}<br>    x(t) &amp; &#x3D; e^{-\zeta \omega_n t}(x_0 \cos \omega_d t + \frac{\dot{x}+\zeta \omega_n x_0}{\omega_d}\sin \omega_d t) &amp; (1)\cr<br>    &amp; - e^{-\zeta \omega_n t}(\cos \varphi \cos \omega_d t + \frac{\zeta \omega_n \cos \varphi + \omega \sin \varphi}{\omega_d}\sin \omega_d t) &amp; (2) \cr<br>    &amp; + A\cos(\omega t - \varphi) &amp; (3)<br>\end{array}<br>$$<br>说明：</p>
+<ul>
+<li>前两项指数衰减, 称为系统的瞬态响应, 第 (2) 项称为激励伴生自由振动响应;</li>
+<li>瞬态响应过程结束后, 响应以第 (3) 项为主, 其运动状态稳定, 称为稳态响应;</li>
+<li>振动从初始到接近稳态响应阶段, 称为振动的过渡过程或暂态过程, 该阶段瞬态响应不可忽略, 该过程的持续时间与阻尼比及系统的固有频率大小有关。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/23/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-2%E5%8D%95%E8%87%AA%E7%94%B1%E5%BA%A6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%BA%E8%BF%AB%E6%8C%AF%E5%8A%A8/" data-id="clcw2yrxj0016ywv098gwfkdi" data-title="结构动力学-2单自由度系统的强迫振动" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/25/%E5%BE%AE%E7%A7%AF%E5%88%86-1%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          微积分-1函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/14/%E5%BE%AE%E7%A7%AF%E5%88%86-3%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">微积分-3三角函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/">Dilettantism</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/">文学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E8%89%BA%E6%9C%AF/">艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/">Electricity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E5%AF%BC%E8%88%AA%E5%8E%9F%E7%90%86/">导航原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/python/">python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6/">中学数学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/">Mechanics</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E5%A7%BF%E6%80%81/">姿态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/">结构动力学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/">高效工作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">文献管理</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dilettantism/" rel="tag">Dilettantism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frp/" rel="tag">Frp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/" rel="tag">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Dilettantism/" style="font-size: 12px;">Dilettantism</a> <a href="/tags/Frp/" style="font-size: 10px;">Frp</a> <a href="/tags/Language/" style="font-size: 20px;">Language</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/Physics/" style="font-size: 14px;">Physics</a> <a href="/tags/work/" style="font-size: 12px;">work</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16px;">专业课</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/">结构动力学-0前言</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/LaTeX/">LaTeX</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Hexo 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">罗德里格斯旋转公式推导</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

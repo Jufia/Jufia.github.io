@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>微积分-1函数 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="函数的概念实数与数轴实数具有两个性质：  有序性（全序性）：任意两个互异的实数 $a$、$b$ 都可以比较大小，实数按照由小到大的顺序排列在数轴上； 完备性：任意两个有理点 $a$、$b$ 之间都有一个有理点 $\frac{a+b}{2}$ , 从而它们之间有无穷多个有理点，即有理点处处稠密。因为有理数与无理数的和为无理数，所以无理点也处处稠密。实数充满整个数轴没有空隙就是实数的完备性。   复数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微积分-1函数">
+<meta property="og:url" content="http://example.com/2022/07/25/%E5%BE%AE%E7%A7%AF%E5%88%86-1%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="函数的概念实数与数轴实数具有两个性质：  有序性（全序性）：任意两个互异的实数 $a$、$b$ 都可以比较大小，实数按照由小到大的顺序排列在数轴上； 完备性：任意两个有理点 $a$、$b$ 之间都有一个有理点 $\frac{a+b}{2}$ , 从而它们之间有无穷多个有理点，即有理点处处稠密。因为有理数与无理数的和为无理数，所以无理点也处处稠密。实数充满整个数轴没有空隙就是实数的完备性。   复数">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/180767994-75feef4d-e94f-4c5b-bb47-3b327554d4d0.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/180777597-aeee127c-d563-4c64-a197-a1f3f4d5ef37.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/180777109-d46f9d0e-d34d-4aab-99e0-255127996c9d.png">
+<meta property="article:published_time" content="2022-07-25T01:51:46.000Z">
+<meta property="article:modified_time" content="2022-07-29T11:12:04.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Math">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/73486724/180767994-75feef4d-e94f-4c5b-bb47-3b327554d4d0.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-微积分-1函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/25/%E5%BE%AE%E7%A7%AF%E5%88%86-1%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-07-25T01:51:46.000Z" itemprop="datePublished">2022-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/math/">math</a>►<a class="article-category-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      微积分-1函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="函数的概念"><a href="#函数的概念" class="headerlink" title="函数的概念"></a>函数的概念</h1><h2 id="实数与数轴"><a href="#实数与数轴" class="headerlink" title="实数与数轴"></a>实数与数轴</h2><p>实数具有两个性质：</p>
+<ol>
+<li><strong>有序性（全序性）</strong>：任意两个互异的实数 $a$、$b$ 都可以比较大小，实数按照由小到大的顺序排列在数轴上；</li>
+<li><strong>完备性</strong>：任意两个有理点 $a$、$b$ 之间都有一个有理点 $\frac{a+b}{2}$ , 从而它们之间有无穷多个有理点，即有理点处处稠密。因为有理数与无理数的和为无理数，所以无理点也处处稠密。实数充满整个数轴没有空隙就是实数的完备性。</li>
+</ol>
+<blockquote>
+<p>复数没有有序性；<br>若说有理数或无理数充满整个数轴没有间隙是错误的；<br>所有的分数都是有理数，无限不循环小数才是无理数，而分数都可以化为有限小数或无限循环小数。</p>
+</blockquote>
+<h2 id="数集与界"><a href="#数集与界" class="headerlink" title="数集与界"></a>数集与界</h2><p>自然数集：<strong>N</strong> ，整数集：<strong>Z</strong> ，有理数集：<strong>Q</strong> ，实数集：<strong>R</strong>  </p>
+<!-- <font color='MidnightBlue'>**区间** <font> -->
+<p><strong>区间</strong>：介于两个实数之间的集合。<br><strong>邻域</strong>：设 $\delta&gt;0$ ,称<font color = 'Red'>开区间</font>$(x_0 - \delta, x_0 + \delta) &#x3D; {x| \left \lvert x - x_0 \right \lvert &lt; \delta, x \in R}$ 为<strong>点 $x_0$ 的 $\delta$ 邻域</strong>，记作 $U_{\delta}(x_0)$<br><strong>去心邻域</strong>：称集合 $(x_0 - \delta, x_0)\bigcup (x_0, x_0 + \delta)$ 为 <strong>$x_0$ 的去心 $\delta$ 邻域</strong>， 记作 $U_\delta^{\circ}(x_0)$。  </p>
+<p><strong>定义1.1</strong> ${\qquad}$ 对于数集 $X$，若有常数 $M(m)$ 使得<br>$$<br>x\leq M ,{\quad} \forall x \in Z<br>$$<br>则说数集 <font color = 'red'>$X$ 有上（下）界</font>，并称 $M(m)$ 为数集 $X$ 的一个<font color = 'red'>上（下）界</font>。<br>对于既有上界又有下界的数集叫做<strong>有界数集</strong>，否则为<strong>无界数集</strong>。<br>如果某数集上有上（下）界，那么就会有无穷个上（下）界。  </p>
+<p><strong>公理</strong> ${\quad}$ 凡<font color = 'red'>非空有上界</font>的数集 $X$ 一定有最小上界 $\mu$ ，称为数集 $X$ 的<strong>上确界</strong>，记作 $\mu &#x3D; \sup X$。<br><strong>命题</strong> ${\quad}$ <font color = 'red'>非空有下界</font>的数集 $X$ 一定有最大下界 $\mu$ ，称为数集 $X$ 的<strong>下确界</strong>，记作 $\gamma &#x3D; \inf X$。  </p>
+<p>$\mu$ 是集合 $X$ 的上确界等价于：  </p>
+<ol>
+<li>$\forall ~x \in X$ ，必须满足 $x \leq \mu$</li>
+<li>$\forall ~\epsilon &gt; 0, ~~ \exist ~x \in X$ ，使得 $x &gt; \mu - \epsilon$</li>
+<li>对于最小下确界同理</li>
+</ol>
+<h2 id="绝对值"><a href="#绝对值" class="headerlink" title="绝对值"></a>绝对值</h2><p>表示 $x$ 到原点的距离，绝对值的性质：  </p>
+<ol>
+<li>$\left \lvert x \right \lvert &#x3D; \sqrt{x^2}$</li>
+<li>$\left \lvert x \right \lvert \geqslant 0$</li>
+<li>$\left \lvert -x \right \lvert &#x3D; \left \lvert x \right \lvert$</li>
+<li>$-\left \lvert x \right \lvert \leqslant x \leqslant \left \lvert x \right \lvert$</li>
+<li>$\left \lvert x+y \right \lvert \leqslant \left \lvert x \right \lvert + \left \lvert y \right \lvert$</li>
+<li>$\left \lvert x-y \right \lvert \geqslant \left \lvert \left \lvert x \right \lvert - \left \lvert y \right \lvert \right \lvert$</li>
+<li>$\left \lvert xy \right \lvert &#x3D; \left \lvert x \right \lvert \left \lvert y \right \lvert$</li>
+<li>$\left \lvert \frac{x}{y} \right \lvert &#x3D; \frac{\left \lvert x \right \lvert}{\left \lvert y \right \lvert}$</li>
+<li>当 $a&gt;0$ 时， $\left \lvert x \right \lvert &lt; a \Leftrightarrow -a &lt; x&lt; a$</li>
+<li>当 $b&gt;0$ 时， $\left \lvert x \right \lvert &gt; b \Leftrightarrow x&lt; -b ~~ or ~~ x &gt; b$</li>
+</ol>
+<h2 id="函数的概念-1"><a href="#函数的概念-1" class="headerlink" title="函数的概念"></a>函数的概念</h2><p><strong>定义1.2</strong> ${\quad}$ 如果两个变量 $x$ 和 $y$ 之间有一个数值对应规律，使得变量 $x$ 在其可取值的数集 $X$ 内取得每一个值时，变量 $y$ 就依照这个规律确定对应的值，则说 <strong>$y$ 是 $x$ 的函数</strong>。记作：<br>$$<br>y &#x3D; f(x), {\quad} x \in X<br>$$</p>
+<blockquote>
+<p>函数概念中有两个要素：1. 对应规律； 2. 定义域。所以说函数 $y &#x3D; \lg x^2$ 与 $y &#x3D; 2\lg x$ 是两个不同的函数。定义域不一样<br>没有说明定义域时，为天然定义域，即：使函数有意义的所有实数的集合。<br>正函数的值域就是反函数的定义域。</p>
+</blockquote>
+<h1 id="几个常用的概念"><a href="#几个常用的概念" class="headerlink" title="几个常用的概念"></a>几个常用的概念</h1><h2 id="函数的几种性质"><a href="#函数的几种性质" class="headerlink" title="函数的几种性质"></a>函数的几种性质</h2><p><strong>(1) 奇偶性</strong>  </p>
+<p>奇函数：$f(x) &#x3D; -f(x)$,<br>偶函数：$f(-x) &#x3D; f(x)$<br>奇函数的和仍为奇函数，偶函数的和仍为偶函数；两个奇函数的积或两个偶函数的积都是偶函数；一个奇函数和一个偶函数的积为奇函数。  </p>
+<p><strong>(2) 周期性</strong>   </p>
+<p>设函数的定义域为 $X$ ，若有常数 $T \neq 0$ ，使得当 $x \in X$ 时，必有 $x \pm T \in X$ 且：<br>$$<br>f(x+ t) &#x3D; f(x)<br>$$<br>则称 $y &#x3D; f(x)$ 是<strong>周期函数</strong>，并称常数 $T$ 是它的一个<strong>周期</strong>。 </p>
+<blockquote>
+<p>并不是所有的周期函数都有基本周期。<br>eg: 常值函数 $f(x) &#x3D; 2$ ，所有的正实数都是其周期，没有最小正周期。  </p>
+</blockquote>
+<p><strong>(3) 单调性</strong>  </p>
+<p>对于 $x_1 &lt; x_2$<br>单调函数：$f(x_1) \leqslant f(x_2),  ~~~ f(x_1) \geqslant f(x_2)$<br>严格单调函数：$f(x_1) &lt; f(x_2),  ~~~ f(x_1) &gt; f(x_2)$</p>
+<p><strong>(4) 有界性</strong></p>
+<p>在定义域上有界（等同于既有上界又有下界）的函数叫做 <strong>有界函数</strong>。</p>
+<h2 id="隐函数和参数方程表示的函数"><a href="#隐函数和参数方程表示的函数" class="headerlink" title="隐函数和参数方程表示的函数"></a>隐函数和参数方程表示的函数</h2><p>若变量 $x, ~y$ 之间的函数关系由一个含有 $x, ~y$ 的方程：<br>$$<br>F(x, ~y) &#x3D; 0<br>$$<br>给定，则说 $y$ 是 $x$ 的<strong>隐函数</strong>。相应的，把由自变量的算式表示出因变量的函数叫做<strong>显函数</strong>。如果能将 $y$ 从隐函数中解出来，就得到它的显函数形式，但不是所有隐函数都能表示成显函数。<br>注意，也并不是任意一个含有 $x, y$ 的式子就是一个隐函数，如：$x^2 + y^2 + 1 &#x3D; 0$ 就不是隐函数。  </p>
+<p>$F(x, ~y)$ 只有一个量在动，所决定的是曲线；<br>$F(x, ~y, ~z)$ 两个量在动，所决定的是曲面。 </p>
+<blockquote>
+<p><strong>例题</strong> ${\quad}$ 设函数 $f(x)$ 满足关系<br>$$<br>af(x) + bf(\frac{1}{x}) &#x3D; \frac{c}{x}<br>$$<br>其中 $a,~ b,<del>,</del>c$ 为常数，$\left\vert a \right\vert \neq \left\vert b \right\vert$，求函数 $f(x)$。<br>解： 由所给关系式知，若 $f(x)$ 在点 $x$ 处有定义，则在点 $\frac{1}{x}$ 处也有定义。由所给关系式得：<br> $$af(\frac{1}{x}) + bf(x) &#x3D; cx$$<br>两式联立，解代数方程组得<br>$$f(x) &#x3D; \frac{c}{b^2 - a^2} (bx - \frac{a}{x})$$</p>
+</blockquote>
+<h2 id="单值函数与多值函数、反函数"><a href="#单值函数与多值函数、反函数" class="headerlink" title="单值函数与多值函数、反函数"></a>单值函数与多值函数、反函数</h2><p>$$<br>\begin{array}{rl}<br>    \forall x \in X &amp; g(f(x)) &#x3D; x \cr<br>    \forall y \in Y &amp; f(g(y)) &#x3D; Y \cr<br>    g(y) &#x3D; &amp;f^{-1}(x)<br>\end{array}<br>$$<br><strong>反函数</strong>：两个不但涉及到的自变量与因变量对换，且涉及到的运算顺序都是相反的函数。</p>
+<ul>
+<li>反函数的图形关于直线 $y &#x3D; x$ 对称</li>
+<li>单值单调的函数有反函数，其反函数也是单值单调的函数。</li>
+</ul>
+<h1 id="初等函数"><a href="#初等函数" class="headerlink" title="初等函数"></a>初等函数</h1><h2 id="基本初等函数"><a href="#基本初等函数" class="headerlink" title="基本初等函数"></a>基本初等函数</h2><p><strong>幂函数</strong>：$y &#x3D; x^\mu$<br><img src="https://user-images.githubusercontent.com/73486724/180767994-75feef4d-e94f-4c5b-bb47-3b327554d4d0.png" alt="image"><br><strong>指数函数</strong>：$y &#x3D; a^x$<br><img src="https://user-images.githubusercontent.com/73486724/180777597-aeee127c-d563-4c64-a197-a1f3f4d5ef37.png" alt="image"><br><strong>对数函数</strong>：$y &#x3D; \log_a x ~~~ (a&gt;0,~ a \neq 1)$<br><img src="https://user-images.githubusercontent.com/73486724/180777109-d46f9d0e-d34d-4aab-99e0-255127996c9d.png" alt="image"><br><strong>三角函数</strong><br>$y &#x3D; \sin x ,~ ~ y &#x3D; \cos x, ~ <del>, y &#x3D; \tan x, ~ ~y &#x3D; \cot x,</del> ~  y &#x3D; \sec x, ~ ~y &#x3D; \csc x$…<br><strong>和差化积</strong><br>$$<br>\begin{array}{l}<br>{\displaystyle \sin \alpha +\sin \beta &#x3D;2\sin {\frac {\alpha +\beta }{2}}\cos {\frac {\alpha -\beta }{2}}} \cr<br>{\displaystyle \sin \alpha -\sin \beta &#x3D;2\cos {\alpha +\beta  \over 2}\sin {\alpha -\beta  \over 2}} \cr<br>{\displaystyle \cos \alpha +\cos \beta &#x3D;2\cos {\frac {\alpha +\beta }{2}}\cos {\frac {\alpha -\beta }{2}}} \cr<br>{\displaystyle \cos \alpha -\cos \beta &#x3D;-2\sin {\alpha +\beta  \over 2}\sin {\alpha -\beta  \over 2}}<br>\end{array}<br>$$</p>
+<p><strong>积化和差</strong><br>$$<br>\begin{array}{l}<br>{\displaystyle \sin \alpha \cos \beta &#x3D;{\sin(\alpha +\beta )+\sin(\alpha -\beta ) \over 2}} \cr<br>{\displaystyle \cos \alpha \sin \beta &#x3D;{\sin(\alpha +\beta )-\sin(\alpha -\beta ) \over 2}} \cr<br>{\displaystyle \cos \alpha \cos \beta &#x3D;{\cos(\alpha +\beta )+\cos(\alpha -\beta ) \over 2}} \cr<br>{\displaystyle \sin \alpha \sin \beta &#x3D;-{\cos(\alpha +\beta )-\cos(\alpha -\beta ) \over 2}} \cr<br>\end{array}<br>$$</p>
+<blockquote>
+<p>三角函数无反函数，确定在某一个单调区间上有，但此时已不是原来的函数了。</p>
+</blockquote>
+<h2 id="复合函数与初等函数"><a href="#复合函数与初等函数" class="headerlink" title="复合函数与初等函数"></a>复合函数与初等函数</h2><p>$$<br>y &#x3D; f[\varphi(x)], ~~~ x\in D<br>$$<br>称为由函数 $y &#x3D; f(u)$ 和 $u &#x3D; \varphi (x)$ 构成的<strong>复合函数</strong>， $u$ 叫做中间变量。<br><strong>初等函数</strong>：由基本初等函数经过四则运算和有限次符合而来，并能用一个式子表达的函数。<br>双曲正弦：$sh &#x3D; \frac{1}{2}(e^x - e^{-x}), ~~x\in (-\infty, + \infty)$<br>双曲余弦：$ch &#x3D; \frac{1}{2}(e^x + e^{-x}), ~~x\in (-\infty, + \infty)$<br>双曲正切：$th &#x3D; \frac{sh x}{ch s} &#x3D; \frac{e^x - e^{-x}}{e^x + e^{-x}}, ~~x\in (-\infty, + \infty)$<br>双曲余切：$cth x &#x3D; \frac{sh x}{ch x} &#x3D; \frac{e^x + e^{-x}}{e^x - e^{-x}}, ~~x\in (-\infty, + \infty)$</p>
+<h1 id="极坐标"><a href="#极坐标" class="headerlink" title="极坐标"></a>极坐标</h1><p>M 为平面上任意不在极点的点，**极径 $r$<strong>：由 $O$ 到 $M$ 的距离；</strong>极角 $\theta$**：射线从 $Ox$ 第一次逆时针旋转到 $OM$ 位置所转过的角度。  </p>
+<h2 id="极坐标与直角坐标的关系"><a href="#极坐标与直角坐标的关系" class="headerlink" title="极坐标与直角坐标的关系"></a>极坐标与直角坐标的关系</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/25/%E5%BE%AE%E7%A7%AF%E5%88%86-1%E5%87%BD%E6%95%B0/" data-id="clcw2yrye001oywv0h9ix4mpo" data-title="微积分-1函数" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/29/python-01-%E6%A0%BC%E5%BC%8F%E6%A1%86%E6%9E%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python-1.格式框架
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/23/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-2%E5%8D%95%E8%87%AA%E7%94%B1%E5%BA%A6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%BA%E8%BF%AB%E6%8C%AF%E5%8A%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">结构动力学-2单自由度系统的强迫振动</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/">Dilettantism</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/">文学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E8%89%BA%E6%9C%AF/">艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/">Electricity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E5%AF%BC%E8%88%AA%E5%8E%9F%E7%90%86/">导航原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/python/">python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6/">中学数学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/">Mechanics</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E5%A7%BF%E6%80%81/">姿态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/">结构动力学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/">高效工作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">文献管理</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dilettantism/" rel="tag">Dilettantism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frp/" rel="tag">Frp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/" rel="tag">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Dilettantism/" style="font-size: 12px;">Dilettantism</a> <a href="/tags/Frp/" style="font-size: 10px;">Frp</a> <a href="/tags/Language/" style="font-size: 20px;">Language</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/Physics/" style="font-size: 14px;">Physics</a> <a href="/tags/work/" style="font-size: 12px;">work</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16px;">专业课</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/">结构动力学-0前言</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/LaTeX/">LaTeX</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Hexo 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">罗德里格斯旋转公式推导</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

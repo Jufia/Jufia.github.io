@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>嵌入式原理及应用(05)-MCS51指令系统的寻址方式 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。   寄存器寻址可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 直接寻址方式指令中的第二操作数为立即数。51">
+<meta property="og:type" content="article">
+<meta property="og:title" content="嵌入式原理及应用(05)-MCS51指令系统的寻址方式">
+<meta property="og:url" content="http://example.com/2022/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-05-MCS51%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。   寄存器寻址可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 直接寻址方式指令中的第二操作数为立即数。51">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-09-15T02:39:00.000Z">
+<meta property="article:modified_time" content="2022-09-25T13:20:20.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="专业课">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-嵌入式原理及应用-05-MCS51指令系统的寻址方式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-05-MCS51%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/" class="article-date">
+  <time class="dt-published" datetime="2022-09-15T02:39:00.000Z" itemprop="datePublished">2022-09-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Electricity/">Electricity</a>►<a class="article-category-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      嵌入式原理及应用(05)-MCS51指令系统的寻址方式
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.<br><strong><font color = '#1234'>寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。</font></strong>  </p>
+<h1 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h1><p>可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span>   A,<span class="built_in">R1</span></span><br></pre></td></tr></table></figure>
+<h1 id="直接寻址方式"><a href="#直接寻址方式" class="headerlink" title="直接寻址方式"></a>直接寻址方式</h1><p>指令中的第二操作数为立即数。51指令中的立即数应冠以前缀’#’，且若立即数的首位为A~F，前面还要加零。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span>  A,<span class="number">#40</span>H</span><br><span class="line"><span class="keyword">mov</span>  A,<span class="number">#0</span>A5H</span><br></pre></td></tr></table></figure>
+
+<h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><p>指令中直接给出操作数所在的单元地址, 该单元地址中的内容就是操作数, 直接操作数单元地址用 ‘direct’ 表示.<br><strong>直接寻址方式是对片内所有特殊功能寄存器访问的唯一方式.</strong>  </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span> A, <span class="number">#40</span>H<span class="comment">;  将内部 RAM 40H 单元的内容送到 A</span></span><br><span class="line"><span class="keyword">MOV</span> <span class="number">42</span>H, <span class="number">62</span>H<span class="comment">; 将内部 RAM 62H 单元内容转给 42H 单元中</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>访问 SFR 可用:<br>寄存器寻址<br>直接寻址</p>
+</blockquote>
+<h1 id="寄存器间接寻址"><a href="#寄存器间接寻址" class="headerlink" title="寄存器间接寻址"></a>寄存器间接寻址</h1><p>在寄存器中存放的是操作数的地址, 从寄存器中找到操作数的地址, 再按照该地址找到操作数.<br>用于访问内部RAM和外部数据区，包括52系列单片机的高128字节RAM，只有R0,R1可以作为间址寄存器。<br>在寄存器间接寻址方式中应在寄存器前加 ‘@’</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span>   <span class="built_in">R0</span>,<span class="number">#40</span>H<span class="comment">;  访问低128字节RAM</span></span><br><span class="line"><span class="keyword">MOV</span>   A,<span class="comment">@R0;    先从R0中找到源操作数所在地址 40H 然后把 40H 中的内容传给 A</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">MOV</span>   <span class="built_in">R0</span>,<span class="number">#90</span>H<span class="comment">;  访问高128字节RAM</span></span><br><span class="line"><span class="keyword">MOV</span>   A,<span class="comment">@R0 </span></span><br></pre></td></tr></table></figure>
+
+<h1 id="基址寄存器加变址寄存器间接寻址"><a href="#基址寄存器加变址寄存器间接寻址" class="headerlink" title="基址寄存器加变址寄存器间接寻址"></a>基址寄存器加变址寄存器间接寻址</h1><p>基址寄存器加变址寄存器间接寻址以 DPTR 或者 PC 作为基址寄存器, 以累加器 A 作为变址寄存器, 并以两者内容相加形成新的16位地作为目的地址进行寻址.</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">MOVC</span> A, <span class="comment">@A+DPTR;    DPTR: 数据指针</span></span><br><span class="line"><span class="symbol">MOVC</span> A, <span class="comment">@A+PC;      PC: 程序指针</span></span><br><span class="line"><span class="comment">;上两条适用于读程序存储器中的固定数据, 例如按照固定的, 一定顺序排列的表格参数</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">JMP</span> <span class="comment">@A+DPTR;    散转指令, A 中的内容为程序运行后的动态结果, 可根据 A 的内容不同来实现向不同程序入口的跳转.</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>DPTR 是 16 位寄存器, 只有 DPRT 可以传入 16 位数, 常用于存储地址位<br>MCS-51 地址位为 16 位的原因: 有 16 根地址总线</p>
+</blockquote>
+<h1 id="位寻址方式"><a href="#位寻址方式" class="headerlink" title="位寻址方式"></a>位寻址方式</h1><p><strong>内部 RAM 和特殊功能寄存器中的可寻址位</strong><br>位寻址是指对内部 RAM 和特殊功能寄存器具有位寻址功能的某位内容进行置 1 和清 0 操作. 位地址一般以直接的位地址给出, 符号为 ‘bit’.  </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span> C, bit</span><br><span class="line"><span class="keyword">MOV</span> C, <span class="number">40</span>H<span class="comment">; 把位地址为 40H 的位值 0 或 1 送给进位位 C. </span></span><br></pre></td></tr></table></figure>
+
+<h1 id="相对寻址方式"><a href="#相对寻址方式" class="headerlink" title="相对寻址方式"></a>相对寻址方式</h1><p><strong>相对寻址方式是为了解决程序跳转而专门设置的, 为转移指令所用.</strong><br>程序跳转到目的地址:<br><strong><font color = '#a024c2'>目的地址 &#x3D; 跳转指令所在地址(PC值) + 转移字节数(跳转指令下一条指令的首地址) + 偏移量 rel</font></strong><br>相对偏移 rel 是单字节的带符号的 8 位二进制数的补码数. 它所能表示的数字范围是 -128 ~ + 127.  </p>
+<blockquote>
+<p>在实际编写程序时, 只需要在转移指令中直接写上要转向的地址标号即可</p>
+</blockquote>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">SJMP</span> rel</span><br><span class="line"><span class="comment">; 跳转指令的 PC 值加 2 (因为 SJMP rel 指令占用两个字节数) </span></span><br><span class="line"><span class="comment">; 再加上相对偏移量 rel 后的目的地址, 其中 rel 为 8 位带符号的补码.</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">SJMP</span> LOOP<span class="comment">; 直接写上转移标号</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-05-MCS51%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/" data-id="clcw2yrza003uywv05uw8eung" data-title="嵌入式原理及应用(05)-MCS51指令系统的寻址方式" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/09/23/Windows-%E4%B8%8B-FPR-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%AE%A1%E5%88%92/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Windows 下 FRP 内网穿透计划
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-04-MCS51%E7%9A%84%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">嵌入式原理及应用(04)-MCS51的指令系统</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/">Dilettantism</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/">文学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E8%89%BA%E6%9C%AF/">艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/">Electricity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E5%AF%BC%E8%88%AA%E5%8E%9F%E7%90%86/">导航原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/python/">python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6/">中学数学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/">Mechanics</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E5%A7%BF%E6%80%81/">姿态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/">结构动力学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/">高效工作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">文献管理</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dilettantism/" rel="tag">Dilettantism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frp/" rel="tag">Frp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/" rel="tag">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Dilettantism/" style="font-size: 12px;">Dilettantism</a> <a href="/tags/Frp/" style="font-size: 10px;">Frp</a> <a href="/tags/Language/" style="font-size: 20px;">Language</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/Physics/" style="font-size: 14px;">Physics</a> <a href="/tags/work/" style="font-size: 12px;">work</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16px;">专业课</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/">结构动力学-0前言</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/LaTeX/">LaTeX</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Hexo 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">罗德里格斯旋转公式推导</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

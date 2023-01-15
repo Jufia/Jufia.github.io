@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>微积分-1二元积分 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="积分格林公式格林定理给出了沿封闭曲线 C 的线积分与以 C 为边界的平面区域 D 上的双重积分的联系。格林定理是斯托克斯定理的二维特例。设闭区域 D 由分段光滑的简单曲线 L 围成，函数 P(x,y)及 Q(x,y)在 D 上有一阶连续偏导数，则有：$$\oint _{L^+}(P;dx + Q;dy) &#x3D; \iint (\frac{\partial Q}{\partial x} - \">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微积分-1二元积分">
+<meta property="og:url" content="http://example.com/2022/06/22/%E5%BE%AE%E7%A7%AF%E5%88%86-1%E4%BA%8C%E5%85%83%E7%A7%AF%E5%88%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="积分格林公式格林定理给出了沿封闭曲线 C 的线积分与以 C 为边界的平面区域 D 上的双重积分的联系。格林定理是斯托克斯定理的二维特例。设闭区域 D 由分段光滑的简单曲线 L 围成，函数 P(x,y)及 Q(x,y)在 D 上有一阶连续偏导数，则有：$$\oint _{L^+}(P;dx + Q;dy) &#x3D; \iint (\frac{\partial Q}{\partial x} - \">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-22T08:11:02.000Z">
+<meta property="article:modified_time" content="2022-07-25T02:06:44.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Math">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-微积分-1二元积分" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/22/%E5%BE%AE%E7%A7%AF%E5%88%86-1%E4%BA%8C%E5%85%83%E7%A7%AF%E5%88%86/" class="article-date">
+  <time class="dt-published" datetime="2022-06-22T08:11:02.000Z" itemprop="datePublished">2022-06-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/math/">math</a>►<a class="article-category-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      微积分-1二元积分
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h1><h2 id="格林公式"><a href="#格林公式" class="headerlink" title="格林公式"></a>格林公式</h2><p>格林定理给出了沿封闭曲线 C 的线积分与以 C 为边界的平面区域 D 上的双重积分的联系。格林定理是斯托克斯定理的二维特例。<br>设闭区域 D 由分段光滑的简单曲线 L 围成，函数 P(x,y)及 Q(x,y)在 D 上有一阶连续偏导数，则有：<br>$$\oint _{L^+}(P;dx + Q;dy) &#x3D; \iint (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y});dxdy $$<br>其中闭环曲线L逆时针旋转时取正。它给出了沿着闭曲线C的曲线积分与C所包围的区域D上的二重积分之间的关系。另见格林恒等式。格林公式还可以用来计算平面图形的面积。</p>
+<h3 id="斯托克斯定理"><a href="#斯托克斯定理" class="headerlink" title="斯托克斯定理"></a>斯托克斯定理</h3><h3 id="散度-div-quad-overrightarrow-v"><a href="#散度-div-quad-overrightarrow-v" class="headerlink" title="散度 $div {\quad} \overrightarrow{v}$"></a>散度 $div {\quad} \overrightarrow{v}$</h3><p>散度的物理意义表示流体微团在在运动过程中体积相对变化率的极限。<br>将各速度分量在其分量方向上的方向导数和称为<strong>速度矢量的散度</strong><br>即： $\nabla \cdot \overrightarrow{v} &#x3D; div \overrightarrow{v} &#x3D; \frac{\partial v_x}{\partial x} + \frac{\partial v_y}{\partial y} + \frac{\partial v_z}{\partial z}$</p>
+<h3 id="旋度"><a href="#旋度" class="headerlink" title="旋度"></a>旋度</h3><p>$$<br>\begin{array}{rl}<br>    \nabla \times  \overrightarrow{v} &amp;&#x3D; rot \overrightarrow{v} \cr<br>    &amp; &#x3D; \iint_{S}\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)dydz+\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)dzdx+\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy \cr<br>    &amp; &#x3D;\oint _{\Gamma }Pdx+Qdy+Rdz<br>\end{array}<br>$$</p>
+<h3 id="斯托克斯定理-1"><a href="#斯托克斯定理-1" class="headerlink" title="斯托克斯定理"></a>斯托克斯定理</h3><p>$$<br>\begin{array}{l}<br>    \iint_{S}\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)dydz+\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)dzdx+\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dxdy \cr<br>    &#x3D; \oint _{\Gamma }Pdx+Qdy+Rdz<br>\end{array}<br>$$</p>
+<h2 id="曲线积分"><a href="#曲线积分" class="headerlink" title="曲线积分"></a>曲线积分</h2><h3 id="第一类曲线积分"><a href="#第一类曲线积分" class="headerlink" title="第一类曲线积分"></a>第一类曲线积分</h3><p>是对一段曲线（弧）$L$的积分。积分微元为弧微分$ds$，被积函数由于在弧线上取值，因此是二元函数$f(x, y)$.积分值记为$\int_L f(x, y) ds$.<br>其中被积函数$f(x, y)$在$L$上取值。<br>弧$L$上的点满足的方程可以由两种形式给出，一种是$y &#x3D; y(x)$,另一种则是参数方程的形式$x &#x3D; \phi (t), y &#x3D; \psi (t)$<br>对于第一种形式，被积函数可以写成只和$x$有关的一元函数，即$f(x, y(x))$，弧微分可以写成$ds &#x3D; \sqrt{(dx)^2 + (dy)^2 &#x3D; \sqrt{1 + y’(x)^2}dx}$,<br>则曲线积分化为一重积分$\int_{x_1}^{x_2} f(x, y(x)) \sqrt{1 + y’(x)^2}dx$.<br>对于第二种形式，被积函数可以写成只和$t$有关的一元函数，即$f(\phi (t),\psi (t))$ ，弧微分可以写成$ds &#x3D; \sqrt{(dx)^2+ (dy)^2 } \sqrt{\phi’(t)^2 + \psi’(t)^2}dt$<br>这就是第一类曲线积分，可用于求解不均匀曲线段的质量，被积函数即为线质量密度。</p>
+<h3 id="第二类曲线积分"><a href="#第二类曲线积分" class="headerlink" title="第二类曲线积分"></a>第二类曲线积分</h3><h1 id="解微分方程"><a href="#解微分方程" class="headerlink" title="解微分方程"></a>解微分方程</h1><h2 id="可分离变量类型-frac-dy-dx-x3D-frac-f-x-g-y"><a href="#可分离变量类型-frac-dy-dx-x3D-frac-f-x-g-y" class="headerlink" title="可分离变量类型$\frac{dy}{dx} &#x3D; \frac{f(x)}{g(y)}$"></a>可分离变量类型$\frac{dy}{dx} &#x3D; \frac{f(x)}{g(y)}$</h2><p>$g(y)dy &#x3D; f(x)dx$<br>$\int g(y) ,dy &#x3D; \int f(x) ,dx + C$</p>
+<h2 id="齐次方程-frac-dy-dx-x3D-f-frac-y-x"><a href="#齐次方程-frac-dy-dx-x3D-f-frac-y-x" class="headerlink" title="齐次方程$\frac{dy}{dx} &#x3D; f(\frac{y}{x})$"></a>齐次方程$\frac{dy}{dx} &#x3D; f(\frac{y}{x})$</h2><p>等式左边为导数，右边为$f(\frac{y}{x})$的函数，这也是很特殊的形式。<br>令$u(x) &#x3D; \frac{y(x)}{x}$，则$y(x) &#x3D; x u(x)$。<br>由乘积求导法则，有$\frac{dy(x)}{dx} &#x3D; u(x) + x \frac{du(x)}{dx} &#x3D; f(u(x))$。<br>    $\frac{du(x)}{dx} &#x3D; \frac{f(u(x)) - u(x)}{x}$<br>    $\Rightarrow \int ,du&#x3D; \int \frac{f(u(x)) - u(x)}{x},dx$<br>    由$y(x) &#x3D; xu(x)$即可得到$y(x)$   </p>
+<h2 id="一阶常微分方程-frac-dy-dx-P-x-y-x3D-Q-x"><a href="#一阶常微分方程-frac-dy-dx-P-x-y-x3D-Q-x" class="headerlink" title="一阶常微分方程$\frac{dy}{dx} + P(x)y &#x3D; Q(x)$"></a>一阶常微分方程$\frac{dy}{dx} + P(x)y &#x3D; Q(x)$</h2><p>$y &#x3D; e^{-\int P,dx}[ \int e^{\int P,dx}Q(x) ,dx + C ]$</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/22/%E5%BE%AE%E7%A7%AF%E5%88%86-1%E4%BA%8C%E5%85%83%E7%A7%AF%E5%88%86/" data-id="clcw2yrud0000ywv036xtcmgo" data-title="微积分-1二元积分" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/06/25/MATLAB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MATLAB
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/">Dilettantism</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/">文学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dilettantism/%E8%89%BA%E6%9C%AF/">艺术</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/">Electricity</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E5%AF%BC%E8%88%AA%E5%8E%9F%E7%90%86/">导航原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/">硬件</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Language/">Language</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Language/python/">python</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Math/">Math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Math/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6/">中学数学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/">Mechanics</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E5%A7%BF%E6%80%81/">姿态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/">结构动力学</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/">高效工作</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">文献管理</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dilettantism/" rel="tag">Dilettantism</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Frp/" rel="tag">Frp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/" rel="tag">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Physics/" rel="tag">Physics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" rel="tag">专业课</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">云服务器</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Dilettantism/" style="font-size: 12px;">Dilettantism</a> <a href="/tags/Frp/" style="font-size: 10px;">Frp</a> <a href="/tags/Language/" style="font-size: 20px;">Language</a> <a href="/tags/Math/" style="font-size: 18px;">Math</a> <a href="/tags/Physics/" style="font-size: 14px;">Physics</a> <a href="/tags/work/" style="font-size: 12px;">work</a> <a href="/tags/%E4%B8%93%E4%B8%9A%E8%AF%BE/" style="font-size: 16px;">专业课</a> <a href="/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 10px;">云服务器</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/">结构动力学-0前言</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/LaTeX/">LaTeX</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Hexo 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/14/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">罗德里格斯旋转公式推导</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
