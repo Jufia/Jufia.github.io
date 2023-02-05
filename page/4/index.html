@@ -156,6 +156,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jufia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hola! World!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="post-title-link" itemprop="url">python-2.输入输出</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-30 15:53:43" itemprop="dateCreated datePublished" datetime="2022-07-30T15:53:43+08:00">2022-07-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-08 22:45:26" itemprop="dateModified" datetime="2022-08-08T22:45:26+08:00">2022-08-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><h2 id="input"><a href="#input" class="headerlink" title="input"></a>input</h2><p>大多数情况下都使用 <code>input()</code> 函数从控制台获得用户输入。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;变量&gt; = input(&lt;提示信息字符串&gt;)</span><br><span class="line">TempStr = input(&quot;请输入：&quot;)</span><br><span class="line">input 括号中表达的信息是提示信息字符串，并不作为 变量 字符串中的一部分</span><br></pre></td></tr></table></figure>
+
+<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><h2 id="print"><a href="#print" class="headerlink" title="print"></a>print</h2><p>以字符形式向控制台输出结果的函数. <code>print</code> 函数默认输出字符串之后会换行, 想要不换行, 就要在 <code>print</code> 函数中增加一定的控制.<br>python 中的定义:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print</span>(<span class="params">self, *args, sep=<span class="string">&#x27; &#x27;</span>, end=<span class="string">&#x27;\n&#x27;</span>, file=<span class="literal">None</span></span>): <span class="comment"># known special case of print</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    print(value, ..., sep=&#x27; &#x27;, end=&#x27;\n&#x27;, file=sys.stdout, flush=False)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Prints the values to a stream, or to sys.stdout by default.</span></span><br><span class="line"><span class="string">    Optional keyword arguments:</span></span><br><span class="line"><span class="string">    file:  a file-like object (stream); defaults to the current sys.stdout.</span></span><br><span class="line"><span class="string">    sep:   string inserted between values, default a space.</span></span><br><span class="line"><span class="string">    end:   string appended after the last value, default a newline.</span></span><br><span class="line"><span class="string">    flush: whether to forcibly flush the stream.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>\r</code> : 打印后光标退回到之前的位置;</li>
+<li><code>\n</code> : 打印后换行.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(&lt;拟输出字符串变量&gt;)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;低碳钢的屈服极限&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print 函数的格式化</span></span><br><span class="line"><span class="built_in">print</span>((<span class="string">&quot;转换后的温度是&#123;:.2f&#125;C&quot;</span>.<span class="built_in">format</span>(C)))</span><br><span class="line"><span class="comment"># &#123;:.2f&#125;表示将变量C填充到这个位置时取小数点后2位,并不会四舍五入</span></span><br><span class="line"></span><br><span class="line">dayup = <span class="built_in">pow</span>(<span class="number">1.001</span>, <span class="number">365</span>)</span><br><span class="line">daydown = <span class="built_in">pow</span>(<span class="number">0.999</span>, <span class="number">365</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;向上&#123;:.2f&#125;, 向下&#123;:.2f&#125;&quot;</span>. <span class="built_in">format</span>&#123;dayup, daydown&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span>  random</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    x, y = random(), random()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;(x, y) = (&#123;&#125;, &#123;&#125;)&quot;</span>.<span class="built_in">format</span>(x, y))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>{:.2f}表示将变量C填充到这个位置时取小数点后2位,并不会四舍五入</p>
+</blockquote>
+</li>
+</ul>
+<p>print 内加逗号<font color = 'red'>,</font> 起到空格的作用.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;it is:&quot;</span>, i)</span><br><span class="line"></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">0</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">1</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">2</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">3</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>在原逗号的位置,逗号消失,变成了空格.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/29/python-01-%E6%A0%BC%E5%BC%8F%E6%A1%86%E6%9E%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2351,7 +2444,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
