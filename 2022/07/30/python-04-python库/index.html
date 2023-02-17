@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Python计算生态&#x3D;标准库+第三方库  标准库:随解释器直接安装到操作系统中的功能模块 第三方库:需要经过安装才能使用的功能模块 库Library、包Package、模块Module  以 turtle 库为例: 调用库的几种方法form &lt;库名&gt; import &lt;函数名&gt;import 调用库1import turtle &lt;库名&gt;.&lt;函数名&amp;g">
+  <meta name="description" content="Python计算生态&#x3D;标准库+第三方库  标准库:随解释器直接安装到操作系统中的功能模块 第三方库:需要经过安装才能使用的功能模块 库Library、包Package、模块Module  以 turtle 库为例: ¶调用库的几种方法 ¶form &lt;库名&gt; import &lt;函数名&gt; ¶import 调用库 1import turtle &lt;库名&gt;.&lt;函数名&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python-4.python库">
 <meta property="og:url" content="http://example.com/2022/07/30/python-04-python%E5%BA%93/index.html">
 <meta property="og:site_name" content="Hola! World!">
-<meta property="og:description" content="Python计算生态&#x3D;标准库+第三方库  标准库:随解释器直接安装到操作系统中的功能模块 第三方库:需要经过安装才能使用的功能模块 库Library、包Package、模块Module  以 turtle 库为例: 调用库的几种方法form &lt;库名&gt; import &lt;函数名&gt;import 调用库1import turtle &lt;库名&gt;.&lt;函数名&amp;g">
+<meta property="og:description" content="Python计算生态&#x3D;标准库+第三方库  标准库:随解释器直接安装到操作系统中的功能模块 第三方库:需要经过安装才能使用的功能模块 库Library、包Package、模块Module  以 turtle 库为例: ¶调用库的几种方法 ¶form &lt;库名&gt; import &lt;函数名&gt; ¶import 调用库 1import turtle &lt;库名&gt;.&lt;函数名&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-30T08:40:13.000Z">
 <meta property="article:modified_time" content="2022-08-06T11:00:38.000Z">
@@ -77,7 +77,119 @@
   </style>
 </noscript>
 
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -219,29 +331,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>Python计算生态&#x3D;标准库+第三方库</strong></p>
+        <p><strong>Python计算生态=标准库+第三方库</strong></p>
 <ul>
 <li>标准库:随解释器直接安装到操作系统中的功能模块</li>
 <li>第三方库:需要经过安装才能使用的功能模块</li>
 <li>库Library、包Package、模块Module</li>
 </ul>
 <p>以 <code>turtle</code> 库为例:</p>
-<h1 id="调用库的几种方法"><a href="#调用库的几种方法" class="headerlink" title="调用库的几种方法"></a>调用库的几种方法</h1><h2 id="form-lt-库名-gt-import-lt-函数名-gt"><a href="#form-lt-库名-gt-import-lt-函数名-gt" class="headerlink" title="form &lt;库名&gt; import &lt;函数名&gt;"></a>form &lt;库名&gt; import &lt;函数名&gt;</h2><h2 id="import-调用库"><a href="#import-调用库" class="headerlink" title="import 调用库"></a>import 调用库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br></pre></td></tr></table></figure>
+<h1 id="调用库的几种方法"><a class="header-anchor" href="#调用库的几种方法">¶</a>调用库的几种方法</h1>
+<h2 id="form-库名-import-函数名"><a class="header-anchor" href="#form-库名-import-函数名">¶</a>form &lt;库名&gt; import &lt;函数名&gt;</h2>
+<h2 id="import-调用库"><a class="header-anchor" href="#import-调用库">¶</a>import 调用库</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br></pre></td></tr></table></figure>
 <p><strong>&lt;库名&gt;.&lt;函数名&gt; 使用库函数</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">turtle.setup()</span><br><span class="line">turtle.goto()</span><br><span class="line">turtle.fd()</span><br><span class="line">turtle.bk()</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>这种方法比较繁琐,每次调用都要带上<code>&lt;库名&gt;.</code><br>但好处是特指此函数是库中的函数, 不会出现函数重名的问题</p>
+<p>这种方法比较繁琐,每次调用都要带上<code>&lt;库名&gt;.</code><br>
+但好处是特指此函数是库中的函数, 不会出现函数重名的问题</p>
 </blockquote>
-<h2 id="from-lt-库名-gt-import"><a href="#from-lt-库名-gt-import" class="headerlink" title="from &lt;库名&gt; import*"></a>from &lt;库名&gt; import*</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">form turtle <span class="keyword">import</span>*</span><br></pre></td></tr></table></figure>
+<h2 id="from-库名-import"><a class="header-anchor" href="#from-库名-import">¶</a>from &lt;库名&gt; import*</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">form turtle <span class="keyword">import</span>*</span><br></pre></td></tr></table></figure>
 <p>这种方式比较简洁,不需要每次都加上<code>库名.</code>来调用函数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setup()</span><br><span class="line">goto()</span><br><span class="line">fd()</span><br><span class="line">bk()</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>虽然该方法调用函数比较简单,但是有发生函数重名的可能性</p>
 </blockquote>
-<h2 id="import-lt-库名-gt-as-lt-库别名-gt"><a href="#import-lt-库名-gt-as-lt-库别名-gt" class="headerlink" title="import &lt;库名&gt; as &lt;库别名&gt;"></a>import &lt;库名&gt; as &lt;库别名&gt;</h2><p>给调用的外部库关联一 个更短、更适合自己的名字</p>
+<h2 id="import-库名-as-库别名"><a class="header-anchor" href="#import-库名-as-库别名">¶</a>import &lt;库名&gt; as &lt;库别名&gt;</h2>
+<p>给调用的外部库关联一 个更短、更适合自己的名字</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</span><br><span class="line"></span><br><span class="line">t.setup()</span><br><span class="line">t.goto()</span><br><span class="line">t.fd()</span><br><span class="line">t.bk()</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>用这种方式,冗余的代码量最少,同时又防止了库重名的问题.<br><strong>推荐</strong></p>
+<p>用这种方式,冗余的代码量最少,同时又防止了库重名的问题.<br>
+<strong>推荐</strong></p>
 </blockquote>
 
     </div>
@@ -326,7 +445,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">调用库的几种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#form-lt-%E5%BA%93%E5%90%8D-gt-import-lt-%E5%87%BD%E6%95%B0%E5%90%8D-gt"><span class="nav-number">1.1.</span> <span class="nav-text">form &lt;库名&gt; import &lt;函数名&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import-%E8%B0%83%E7%94%A8%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">import 调用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#from-lt-%E5%BA%93%E5%90%8D-gt-import"><span class="nav-number">1.3.</span> <span class="nav-text">from &lt;库名&gt; import*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import-lt-%E5%BA%93%E5%90%8D-gt-as-lt-%E5%BA%93%E5%88%AB%E5%90%8D-gt"><span class="nav-number">1.4.</span> <span class="nav-text">import &lt;库名&gt; as &lt;库别名&gt;</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E5%BA%93%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">调用库的几种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#form-%E5%BA%93%E5%90%8D-import-%E5%87%BD%E6%95%B0%E5%90%8D"><span class="nav-number">1.1.</span> <span class="nav-text">form &lt;库名&gt; import &lt;函数名&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import-%E8%B0%83%E7%94%A8%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">import 调用库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#from-%E5%BA%93%E5%90%8D-import"><span class="nav-number">1.3.</span> <span class="nav-text">from &lt;库名&gt; import*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#import-%E5%BA%93%E5%90%8D-as-%E5%BA%93%E5%88%AB%E5%90%8D"><span class="nav-number">1.4.</span> <span class="nav-text">import &lt;库名&gt; as &lt;库别名&gt;</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -340,14 +459,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -448,10 +567,58 @@
 
   
       
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
-  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
 
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'true';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

@@ -166,6 +166,29 @@
 
       
     <div class="collection-year">
+      <span class="collection-header">2023</span>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-02-17T21:31:22+08:00"
+              content="2023-02-17">
+          02-17
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/02/17/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" itemprop="url">
+            <span itemprop="name">线性代数-特征值与特征向量</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+    <div class="collection-year">
       <span class="collection-header">2022</span>
     </div>
 
@@ -242,7 +265,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/2022/09/04/%E6%A6%82%E7%8E%87%E8%AE%BA-99%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%BB%93%E8%AE%BA%E7%9A%84%E6%8E%A8%E5%AF%BC/" itemprop="url">
-            <span itemprop="name">概率论-99一些常用结论的推导</span>
+            <span itemprop="name">概率论(99)-一些常用结论的推导</span>
           </a>
       </div>
 
@@ -262,7 +285,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/2022/07/25/%E5%BE%AE%E7%A7%AF%E5%88%86-1%E5%87%BD%E6%95%B0/" itemprop="url">
-            <span itemprop="name">微积分-1函数</span>
+            <span itemprop="name">微积分(1)-函数</span>
           </a>
       </div>
 
@@ -282,7 +305,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/2022/07/14/%E5%BE%AE%E7%A7%AF%E5%88%86-3%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0/" itemprop="url">
-            <span itemprop="name">微积分-3三角函数</span>
+            <span itemprop="name">微积分(4)-三角函数</span>
           </a>
       </div>
 
@@ -302,7 +325,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/2022/07/13/%E5%BE%AE%E7%A7%AF%E5%88%86-2%E8%A7%A3%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" itemprop="url">
-            <span itemprop="name">微积分-2解微分方程</span>
+            <span itemprop="name">微积分(3)-解微分方程</span>
           </a>
       </div>
 
@@ -322,7 +345,7 @@
 
       <div class="post-title">
           <a class="post-title-link" href="/2022/06/22/%E5%BE%AE%E7%A7%AF%E5%88%86-1%E4%BA%8C%E5%85%83%E7%A7%AF%E5%88%86/" itemprop="url">
-            <span itemprop="name">微积分-1二元积分</span>
+            <span itemprop="name">微积分(2)-二元积分</span>
           </a>
       </div>
 
@@ -400,14 +423,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -508,10 +531,58 @@
 
   
       
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
-  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
 
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'true';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

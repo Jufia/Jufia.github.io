@@ -77,7 +77,119 @@
   </style>
 </noscript>
 
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -222,9 +334,12 @@
         <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> &lt;函数名&gt;(&lt;参数(<span class="number">0</span>个或多个)&gt;):</span><br><span class="line">    &lt;函数体&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;返回值&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross</span>(<span class="params">n</span>):</span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">summer = cross(<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(summer)</span><br><span class="line"></span><br><span class="line"><span class="number">6</span></span><br></pre></td></tr></table></figure>
 <p><strong>希望在类或函数定义后有2行空行, 注意代码规范问题</strong></p>
-<h1 id="函数的使用以及调用过程"><a href="#函数的使用以及调用过程" class="headerlink" title="函数的使用以及调用过程"></a>函数的使用以及调用过程</h1><h1 id="函数的参数传递"><a href="#函数的参数传递" class="headerlink" title="函数的参数传递"></a>函数的参数传递</h1><p>函数可以有参数, 也可以没有参数, 无论函数定义的时候给不给参数, 都必须保留这个括号</p>
+<h1 id="函数的使用以及调用过程"><a class="header-anchor" href="#函数的使用以及调用过程">¶</a>函数的使用以及调用过程</h1>
+<h1 id="函数的参数传递"><a class="header-anchor" href="#函数的参数传递">¶</a>函数的参数传递</h1>
+<p>函数可以有参数, 也可以没有参数, 无论函数定义的时候给不给参数, 都必须保留这个括号</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果没有参数就直接给空括号</span></span><br><span class="line"><span class="keyword">def</span> &lt;函数名&gt;():</span><br><span class="line">    &lt;函数体&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;返回值&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h2><p>函数定义时可以为某些参数指定默认值,构成可选参数  </p>
+<h2 id="可选参数"><a class="header-anchor" href="#可选参数">¶</a>可选参数</h2>
+<p>函数定义时可以为某些参数指定默认值,构成可选参数</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> &lt;函数名&gt;(&lt;非可选参数&gt;, &lt;可选参数&gt;):</span><br><span class="line">    &lt;函数体&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;返回值&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>可选参数必须放在非可选参数后面;</li>
@@ -232,11 +347,13 @@
 <li>如果传入了非可选参数, 则用传入值, 若没有传入则用默认值.</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross</span>(<span class="params">n, m=<span class="number">1</span></span>):</span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="keyword">return</span> s // m</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">3</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以通过在定义函数时使用函数的参数来赋值</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(m=<span class="number">2</span>, n=<span class="number">3</span>)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
-<h2 id="可变参数传递"><a href="#可变参数传递" class="headerlink" title="可变参数传递"></a>可变参数传递</h2><p>函数定义时可以设计可变数量参数，既不确定参数总数量</p>
+<h2 id="可变参数传递"><a class="header-anchor" href="#可变参数传递">¶</a>可变参数传递</h2>
+<p>函数定义时可以设计可变数量参数，既不确定参数总数量</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> &lt;函数名&gt;(&lt;参数&gt;, *b):</span><br><span class="line">    &lt;函数体&gt;</span><br><span class="line">    <span class="keyword">return</span> &lt;返回值&gt;</span><br></pre></td></tr></table></figure>
-<p>定义函数中确定要给的参数放在前面, 最后增加一个 <code>*b</code> 来表达不确定的参数, 同理也可以用 <code>*c</code> , <code>*a</code> 等其他变量名 </p>
+<p>定义函数中确定要给的参数放在前面, 最后增加一个 <code>*b</code> 来表达不确定的参数, 同理也可以用 <code>*c</code> , <code>*a</code> 等其他变量名</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross</span>(<span class="params">n, *b</span>):</span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> b:</span><br><span class="line">        s *= item</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">3</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">12</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>summer = cross(<span class="number">3</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="number">144</span></span><br></pre></td></tr></table></figure>
-<h1 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h1><ul>
+<h1 id="函数的返回值"><a class="header-anchor" href="#函数的返回值">¶</a>函数的返回值</h1>
+<ul>
 <li>函数可以返回 0 个或多个结果， 函数定义可以有返回值也可以没有返回值, 可以使用 <code>return</code> 也可以不使用;</li>
 <li>若一个函数不需要返回任何值, 可以给出 <code>return</code> 但不给出任何返回信息, 也可以不使用 <code>return</code>;</li>
 <li>想要返回多个值的情况下, 返回值为元组类型, 用小括号包围;</li>
@@ -244,9 +361,12 @@
 <li>也可以用几个用逗号分隔的变量, 获取返回值</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">cross</span>(<span class="params">n, m=<span class="number">1</span></span>):</span><br><span class="line">    s = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="keyword">return</span> s//m, n, m</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cross(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line">(<span class="number">60</span>, <span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = cross(<span class="number">5</span>, <span class="number">2</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(a, b, c)</span><br><span class="line"><span class="number">60</span> <span class="number">5</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<h1 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h1><p>局部变量是函数内部使用的变量；<br>全局变量是函数外部整个程序使用的变量。</p>
+<h1 id="局部变量和全局变量"><a class="header-anchor" href="#局部变量和全局变量">¶</a>局部变量和全局变量</h1>
+<p>局部变量是函数内部使用的变量；<br>
+全局变量是函数外部整个程序使用的变量。</p>
 <ul>
-<li>局部变量是函数内部的占位符,与全局变量可能重名但不同；<ul>
+<li>局部变量是函数内部的占位符,与全局变量可能重名但不同；
+<ul>
 <li>函数运算结束后，局部变量被释放</li>
 <li>可以使用<code>global</code>保留字在函数内部使用全局变量</li>
 </ul>
@@ -256,8 +376,9 @@
 <blockquote>
 <p>在程序中间使用外部全局变量，通过保留字<code>global</code>在函数内部中声明变量是全局变量而不是局部变量</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 范例1</span></span><br><span class="line">n, s = <span class="number">10</span>, <span class="number">100</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fact</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="comment">#  fact()函数中使用global保留字声明此处s是全局变量s</span></span><br><span class="line">    <span class="keyword">global</span> s</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="comment"># 此处返回的是全局变量s的运算结果</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"><span class="built_in">print</span>(fact(n), s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 范例2</span></span><br><span class="line">ls = [<span class="string">&quot;F&quot;</span>, <span class="string">&quot;f&quot;</span>]</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">a</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="lambda-函数"><a href="#lambda-函数" class="headerlink" title="lambda 函数"></a>lambda 函数</h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 范例1</span></span><br><span class="line">n, s = <span class="number">10</span>, <span class="number">100</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fact</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="comment">#  fact()函数中使用global保留字声明此处s是全局变量s</span></span><br><span class="line">    <span class="keyword">global</span> s</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>):</span><br><span class="line">        s *= i</span><br><span class="line">    <span class="comment"># 此处返回的是全局变量s的运算结果</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"><span class="built_in">print</span>(fact(n), s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 范例2</span></span><br><span class="line">ls = [<span class="string">"F"</span>, <span class="string">"f"</span>]</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">a</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="lambda-函数"><a class="header-anchor" href="#lambda-函数">¶</a>lambda 函数</h1>
+
     </div>
 
     
@@ -354,14 +475,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -462,10 +583,58 @@
 
   
       
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
-  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
 
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'true';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

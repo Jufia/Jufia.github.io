@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="¶摘要 itemize无序列表、enumerate有序列表、标号形状、列表缩进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX(08)-有序列表和无序列表">
+<meta property="og:url" content="http://example.com/2023/02/17/LaTeX-08-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8%E5%92%8C%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8/index.html">
+<meta property="og:site_name" content="Hola! World!">
+<meta property="og:description" content="¶摘要 itemize无序列表、enumerate有序列表、标号形状、列表缩进">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149621273-50da4d48-c273-4c9e-bdbb-8a81fec78c11.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149621305-cc024c47-5193-4052-8080-9f40b8243039.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149621343-0a3fb47f-5d67-4bef-81eb-9b1d8a5586e6.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149621363-8a04e2f2-ae23-4ab4-a542-f17b34fed11a.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149621385-c02b0947-bd33-43c0-8b03-51f45b23950d.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149621446-b1477dcf-7ee2-47ec-a444-57050ab26831.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149621458-a899880b-a115-4c7e-a812-bc5faf06aaeb.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149621496-8f6d8943-58cd-492b-ae26-81b1bdee1280.png">
+<meta property="article:published_time" content="2023-02-17T13:19:32.000Z">
+<meta property="article:modified_time" content="2023-02-17T13:21:20.000Z">
+<meta property="article:author" content="Jufia">
+<meta property="article:tag" content="Language">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/73486724/149621273-50da4d48-c273-4c9e-bdbb-8a81fec78c11.png">
+
+<link rel="canonical" href="http://example.com/2023/02/17/LaTeX-08-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8%E5%92%8C%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>LaTeX(08)-有序列表和无序列表 | Hola! World!</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hola! World!</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Hola! World!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-08-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8%E5%92%8C%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jufia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hola! World!">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LaTeX(08)-有序列表和无序列表
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-17 21:19:32 / 修改时间：21:21:20" itemprop="dateCreated datePublished" datetime="2023-02-17T21:19:32+08:00">2023-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>itemize无序列表、enumerate有序列表、标号形状、列表缩进</p>
+<span id="more"></span>
+<h1 id="itemize无序列表"><a class="header-anchor" href="#itemize无序列表">¶</a>itemize无序列表</h1>
+<blockquote>
+<p>{itemize}命令对文本进行简单的排列，不是采用序号，默认是用实心圆点符号进行排列。这个命令需要和\item配合使用。<br>
+<strong>itemize 默认采用实心点编号</strong></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin{itemize}</span><br><span class="line">    \item one</span><br><span class="line">    \item two</span><br><span class="line">    \item ...</span><br><span class="line">\end{itemize}</span><br></pre></td></tr></table></figure>
+<h1 id="有序列表"><a class="header-anchor" href="#有序列表">¶</a>有序列表</h1>
+<p>{enumerate}产生所需要的编号，<strong>默认是采用数字1,2,3……进行排列</strong>。使用其他形式的编号需要先加载包，使用命令\usepackage{enumerate}</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{enumerate}</span><br><span class="line">    <span class="keyword">\item</span> one</span><br><span class="line">    <span class="keyword">\item</span> two</span><br><span class="line">    <span class="keyword">\item</span> ...</span><br><span class="line"><span class="keyword">\end</span>{enumerate}</span><br><span class="line"><span class="comment">% 其他形式</span></span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[i)]</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[1)]</span><br><span class="line"><span class="comment">% 自定义编号形式</span></span><br><span class="line"><span class="keyword">\begin</span>{description}</span><br><span class="line">    <span class="keyword">\item</span>[Step1] one</span><br><span class="line">    <span class="keyword">\item</span>[Step2] two</span><br><span class="line">    <span class="keyword">\item</span>[Step3] ...</span><br><span class="line"><span class="keyword">\end</span>{description}</span><br></pre></td></tr></table></figure>
+<h1 id="Label-and-cross-references-format"><a class="header-anchor" href="#Label-and-cross-references-format">¶</a>Label and cross references format</h1>
+<p><code>label=&lt;commands&gt;</code><br>
+设置要在当前关卡中使用的标签。 \alph、\Alph、\arabic、\roman 和 \Roman 的一组星号版本，不带参数代表枚举中的当前计数器。<br>
+它也适用于 \value（前提是不计算最宽标签或最宽标签） * 使用，见下文）。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{enumerate}[label=<span class="keyword">\emph</span>{<span class="keyword">\alph</span>*})]</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[label=<span class="keyword">\protect</span><span class="keyword">\fcolorbox</span>{blue}{yellow}{<span class="keyword">\protect</span><span class="keyword">\ding</span>{<span class="keyword">\value</span>*}}]</span><br></pre></td></tr></table></figure>
+<p><code>label*=&lt;commands&gt;</code><br>
+与标签类似，但其值附加到父标签。 例如，以下定义了一个合法列表（1.、1.1.、1.1.1. 等）：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\newlist</span>{legal}{enumerate}{10}</span><br><span class="line"><span class="keyword">\setlist</span>[legal]{label*=<span class="keyword">\arabic</span>*.}</span><br></pre></td></tr></table></figure>
+<p><code>ref=&lt;commands&gt;</code><br>
+默认情况下，标签集也是交叉引用和 \the… 的形式（覆盖父层次级别中的设置），但您可以使用此键定义不同的格式。 例如，要删除右括号：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{enumerate}[label=<span class="keyword">\emph</span>{<span class="keyword">\alph</span>*}), ref=<span class="keyword">\emph</span>{<span class="keyword">\alph</span>*}]</span><br></pre></td></tr></table></figure>
+<h1 id="Injecting-code"><a class="header-anchor" href="#Injecting-code">¶</a>Injecting code</h1>
+<p>在列表开始之前执行代码（更准确地说，在用于定义它们的列表环境的第二个参数中）。 未加星号的形式设置要执行的代码，覆盖任何以前的值，而加星号的形式将代码添加到现有的（在设置<br>
+层次结构，见下文，与封闭列表/文本无关）。 例如，它可以包含规则和文本，但这还没有经过广泛的测试。 所有计算已完成，您可以访问和操作列表参数。</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">En un lugar de la Mancha, de cuyo nombre no quiero acordarme,</span><br><span class="line">no ha mucho tiempo que viv<span class="keyword">\’</span>{<span class="keyword">\i</span>}a un hidalgo de los de</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[labelindent=<span class="keyword">\parindent</span>,leftmargin=*]  <span class="comment">% 注意此行</span></span><br><span class="line"><span class="keyword">\item</span> lanza en astillero,</span><br><span class="line"><span class="keyword">\item</span> adarna antigua,</span><br><span class="line"><span class="keyword">\item</span> roc<span class="keyword">\’</span>{<span class="keyword">\i</span>}n flaco, y</span><br><span class="line"><span class="keyword">\item</span> galgo corredor.</span><br><span class="line"><span class="keyword">\end</span>{enumerate}</span><br><span class="line">Una olla de algo m<span class="keyword">\’</span>{a}s vaca que carnero, salpic<span class="keyword">\’</span>{o}n las m<span class="keyword">\’</span>{a}s</span><br><span class="line">noches, duelos y quebrantos los s<span class="keyword">\’</span>{a}bados...</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149621273-50da4d48-c273-4c9e-bdbb-8a81fec78c11.png" alt="image"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">En un lugar de la Mancha, de cuyo nombre no quiero acordarme,</span><br><span class="line">no ha mucho tiempo que viv<span class="keyword">\’</span>{<span class="keyword">\i</span>}a un hidalgo de los de</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[leftmargin=*] <span class="comment">% labelindent=0pt by default, 注意此行</span></span><br><span class="line"><span class="keyword">\item</span> lanza en astillero,</span><br><span class="line"><span class="keyword">\item</span> adarna antigua,</span><br><span class="line"><span class="keyword">\item</span> roc<span class="keyword">\’</span>{<span class="keyword">\i</span>}n flaco, y</span><br><span class="line"><span class="keyword">\item</span> galgo corredor.</span><br><span class="line"><span class="keyword">\end</span>{enumerate}</span><br><span class="line">Una olla de algo m<span class="keyword">\’</span>{a}s vaca que carnero, salpic<span class="keyword">\’</span>{o}n las m<span class="keyword">\’</span>{a}s</span><br><span class="line">noches, duelos y quebrantos los s<span class="keyword">\’</span>{a}bados...</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149621305-cc024c47-5193-4052-8080-9f40b8243039.png" alt="image"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">En un lugar de la Mancha, de cuyo nombre no quiero acordarme,</span><br><span class="line">no ha mucho tiempo que viv<span class="keyword">\’</span>{<span class="keyword">\i</span>}a un hidalgo de los de</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[leftmargin=<span class="keyword">\parindent</span>]  <span class="comment">% 注意此行</span></span><br><span class="line"><span class="keyword">\item</span> lanza en astillero,</span><br><span class="line"><span class="keyword">\item</span> adarna antigua,</span><br><span class="line"><span class="keyword">\item</span> roc<span class="keyword">\’</span>{<span class="keyword">\i</span>}n flaco, y</span><br><span class="line"><span class="keyword">\item</span> galgo corredor.</span><br><span class="line"><span class="keyword">\end</span>{enumerate}</span><br><span class="line">Una olla de algo m<span class="keyword">\’</span>{a}s vaca que carnero, salpic<span class="keyword">\’</span>{o}n las m<span class="keyword">\’</span>{a}s</span><br><span class="line">noches, duelos y quebrantos los s<span class="keyword">\’</span>{a}bados...</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149621343-0a3fb47f-5d67-4bef-81eb-9b1d8a5586e6.png" alt="image"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">En un lugar de la Mancha, de cuyo nombre no quiero acordarme,</span><br><span class="line">no ha mucho tiempo que viv<span class="keyword">\’</span>{<span class="keyword">\i</span>}a un hidalgo de los de</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[labelindent=<span class="keyword">\parindent</span>, leftmargin=*, label=<span class="keyword">\Roman</span>*., widest=III,align=left] <span class="comment">% 注意此行</span></span><br><span class="line"><span class="keyword">\item</span> lanza en astillero,</span><br><span class="line"><span class="keyword">\item</span> adarna antigua,</span><br><span class="line"><span class="keyword">\item</span> roc<span class="keyword">\’</span>{<span class="keyword">\i</span>}n flaco, y</span><br><span class="line"><span class="keyword">\item</span> galgo corredor.</span><br><span class="line"><span class="keyword">\end</span>{enumerate}</span><br><span class="line">Una olla de algo m<span class="keyword">\’</span>{a}s vaca que carnero, salpic<span class="keyword">\’</span>{o}n las m<span class="keyword">\’</span>{a}s</span><br><span class="line">noches, duelos y quebrantos los s<span class="keyword">\’</span>{a}bados...</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149621363-8a04e2f2-ae23-4ab4-a542-f17b34fed11a.png" alt="image"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">En un lugar de la Mancha, de cuyo nombre no quiero acordarme,</span><br><span class="line">no ha mucho tiempo que viv<span class="keyword">\’</span>{<span class="keyword">\i</span>}a un hidalgo de los de</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[label=<span class="keyword">\fbox</span>{<span class="keyword">\arabic</span>*}]   <span class="comment">% 注意此行</span></span><br><span class="line"><span class="keyword">\item</span> lanza en astillero,</span><br><span class="line"><span class="keyword">\item</span> adarna antigua,</span><br><span class="line"><span class="keyword">\item</span> roc<span class="keyword">\’</span>{<span class="keyword">\i</span>}n flaco, y</span><br><span class="line"><span class="keyword">\item</span> galgo corredor.</span><br><span class="line"><span class="keyword">\end</span>{enumerate}</span><br><span class="line">Una olla de algo m<span class="keyword">\’</span>{a}s vaca que carnero, salpic<span class="keyword">\’</span>{o}n las m<span class="keyword">\’</span>{a}s</span><br><span class="line">noches, duelos y quebrantos los s<span class="keyword">\’</span>{a}bados...</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149621385-c02b0947-bd33-43c0-8b03-51f45b23950d.png" alt="image"></p>
+<p><strong>使用嵌套表格</strong></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">En un lugar de la Mancha, de cuyo nombre no quiero acordarme,</span><br><span class="line">no ha mucho tiempo que viv<span class="keyword">\’</span>{<span class="keyword">\i</span>}a un hidalgo de los de</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[label=(<span class="keyword">\alph</span>*), labelindent=<span class="keyword">\parindent</span>,</span><br><span class="line">leftmargin=*, start=12]</span><br><span class="line"><span class="keyword">\item</span> lanza en astillero,</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[label=(<span class="keyword">\alph</span>{enumi}.<span class="keyword">\roman</span>*), leftmargin=*, start=7]</span><br><span class="line"><span class="keyword">\item</span> adarna antigua,</span><br><span class="line"><span class="keyword">\end</span>{enumerate}</span><br><span class="line"><span class="keyword">\item</span> roc<span class="keyword">\’</span>{<span class="keyword">\i</span>}n flaco, y</span><br><span class="line"><span class="keyword">\begin</span>{enumerate}[label=(<span class="keyword">\alph</span>{enumi}.<span class="keyword">\roman</span>*), leftmargin=*, resume]</span><br><span class="line"><span class="keyword">\item</span> galgo corredor.</span><br><span class="line"><span class="keyword">\end</span>{enumerate}</span><br><span class="line"><span class="keyword">\end</span>{enumerate}</span><br><span class="line">Una olla de algo m<span class="keyword">\’</span>{a}s vaca que carnero, salpic<span class="keyword">\’</span>{o}n las m<span class="keyword">\’</span>{a}s</span><br><span class="line">noches, duelos y quebrantos los s<span class="keyword">\’</span>{a}bados...</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149621446-b1477dcf-7ee2-47ec-a444-57050ab26831.png" alt="image"></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">En un lugar de la Mancha, de cuyo nombre no quiero acordarme,</span><br><span class="line">no ha mucho tiempo que viv<span class="keyword">\’</span>{<span class="keyword">\i</span>}a un hidalgo de los de</span><br><span class="line"><span class="keyword">\begin</span>{description}[font=<span class="keyword">\sffamily</span><span class="keyword">\bfseries</span>, leftmargin=3cm,</span><br><span class="line">style=nextline]</span><br><span class="line"><span class="keyword">\item</span>[Lo primero que ten<span class="keyword">\’</span>{<span class="keyword">\i</span>}a el Quijote] lanza en astillero,</span><br><span class="line"><span class="keyword">\item</span>[Lo segundo] adarna antigua,</span><br><span class="line"><span class="keyword">\item</span>[Lo tercero] roc<span class="keyword">\’</span>{<span class="keyword">\i</span>}n flaco, y</span><br><span class="line"><span class="keyword">\item</span>[Y por <span class="keyword">\’</span>{u}ltimo, lo cuarto] galgo corredor.</span><br><span class="line"><span class="keyword">\end</span>{description}</span><br><span class="line">Una olla de algo m<span class="keyword">\’</span>{a}s vaca que carnero, salpic<span class="keyword">\’</span>{o}n las m<span class="keyword">\’</span>{a}s</span><br><span class="line">noches, duelos y quebrantos los s<span class="keyword">\’</span>{a}bados...</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149621458-a899880b-a115-4c7e-a812-bc5faf06aaeb.png" alt="image"><br>
+<img src="https://user-images.githubusercontent.com/73486724/149621496-8f6d8943-58cd-492b-ae26-81b1bdee1280.png" alt="image"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Language/" rel="tag"># Language</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/17/LaTeX-07-%E8%A1%A8%E6%A0%BC/" rel="prev" title="LaTeX(07)-表格booktabs">
+      <i class="fa fa-chevron-left"></i> LaTeX(07)-表格booktabs
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/17/LaTeX-09-%E7%BE%8E%E8%B5%9B%E5%8C%85/" rel="next" title="LaTeX(09)-美赛包 easymcm">
+      LaTeX(09)-美赛包 easymcm <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#itemize%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">itemize无序列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Label-and-cross-references-format"><span class="nav-number">4.</span> <span class="nav-text">Label and cross references format</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Injecting-code"><span class="nav-number">5.</span> <span class="nav-text">Injecting code</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jufia</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Lyuehua" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Lyuehua" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lyhua4759@gmail.com" title="E-Mail → mailto:lyhua4759@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jufia</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'true';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>

@@ -72,7 +72,119 @@
   </style>
 </noscript>
 
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -156,7 +268,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/05/Pycharm%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -170,7 +282,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/02/05/Pycharm%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">Pycharm使用技巧</a>
+            <a href="/2023/02/17/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/" class="post-title-link" itemprop="url">线性代数-特征值与特征向量</a>
         </h2>
 
         <div class="post-meta">
@@ -181,7 +293,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-02-05 11:29:41 / 修改时间：11:46:16" itemprop="dateCreated datePublished" datetime="2023-02-05T11:29:41+08:00">2023-02-05</time>
+              <time title="创建时间：2023-02-17 21:31:22 / 修改时间：22:26:38" itemprop="dateCreated datePublished" datetime="2023-02-17T21:31:22+08:00">2023-02-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -189,92 +301,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">高效工作</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在使用 Pycharm 时，高效的使用方法能够提高科研效率</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/02/05/Pycharm%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jufia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hola! World!">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/15/%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/" class="post-title-link" itemprop="url">学术论文写作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-01-15 20:21:52" itemprop="dateCreated datePublished" datetime="2023-01-15T20:21:52+08:00">2023-01-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-19 10:37:44" itemprop="dateModified" datetime="2023-01-19T10:37:44+08:00">2023-01-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">高效工作</span></a>
+                  <a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E5%AD%A6%E6%9C%AF%E5%86%99%E4%BD%9C%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">学术写作相关</span></a>
+                  <a href="/categories/Math/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" itemprop="url" rel="index"><span itemprop="name">线性代数</span></a>
                 </span>
             </span>
 
@@ -289,10 +320,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          有东西被加密了, 请输入密码查看.
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2023/01/15/%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/#more" rel="contents">
+              <a class="btn" href="/2023/02/17/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0-%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -316,7 +347,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-10-%E5%B7%A5%E5%A4%A7%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E6%A8%A1%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -330,259 +361,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/" class="post-title-link" itemprop="url">结构动力学-0前言</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-01-14 23:05:32" itemprop="dateCreated datePublished" datetime="2023-01-14T23:05:32+08:00">2023-01-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-15 23:54:34" itemprop="dateModified" datetime="2023-01-15T23:54:34+08:00">2023-01-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mechanics/" itemprop="url" rel="index"><span itemprop="name">Mechanics</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mechanics/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">结构动力学</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="结构动力学基本内容与意义"><a href="#结构动力学基本内容与意义" class="headerlink" title="结构动力学基本内容与意义"></a>结构动力学基本内容与意义</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/14/LaTeX/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jufia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hola! World!">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/14/LaTeX/" class="post-title-link" itemprop="url">LaTeX</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-01-14 23:05:32" itemprop="dateCreated datePublished" datetime="2023-01-14T23:05:32+08:00">2023-01-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-16 18:20:02" itemprop="dateModified" datetime="2023-02-16T18:20:02+08:00">2023-02-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/01/14/LaTeX/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jufia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hola! World!">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Hexo 学习笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-01-14 23:05:32" itemprop="dateCreated datePublished" datetime="2023-01-14T23:05:32+08:00">2023-01-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-15 23:55:06" itemprop="dateModified" datetime="2023-01-15T23:55:06+08:00">2023-01-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">高效工作</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>用于存放 Hexo 操作速查</p>
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">node -v	#查看node版本   </span><br><span class="line">npm -v	#查看npm版本   </span><br><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org	#安装淘宝的cnpm 管理器   </span><br><span class="line">cnpm -v	#查看cnpm版本   </span><br><span class="line">cnpm install -g hexo-cli    #安装hexo框架   </span><br><span class="line">hexo -v	#查看hexo版本   </span><br><span class="line">mkdir blog	#创建blog目录   </span><br><span class="line">cd blog	 #进入blog目录   </span><br><span class="line">sudo hexo init 	#生成博客 初始化博客   </span><br><span class="line">http://localhost:4000/	#本地访问地址   </span><br><span class="line">hexo n &quot;我的第一篇文章&quot; #创建新的文章     </span><br><span class="line">#返回blog目录   </span><br><span class="line">#Github创建一个新的仓库 YourGithubName.github.io</span><br><span class="line">cnpm install --save hexo-deployer-git #在blog目录下安装git部署插件  </span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jufia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hola! World!">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/" class="post-title-link" itemprop="url">罗德里格斯旋转公式推导</a>
+            <a href="/2023/02/17/LaTeX-10-%E5%B7%A5%E5%A4%A7%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">LaTeX(10)-工大毕业论文模板 hithesis</a>
         </h2>
 
         <div class="post-meta">
@@ -593,192 +372,8 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-01-11 21:24:42 / 修改时间：21:28:04" itemprop="dateCreated datePublished" datetime="2023-01-11T21:24:42+08:00">2023-01-11</time>
+              <time title="创建时间：2023-02-17 21:25:39 / 修改时间：21:27:36" itemprop="dateCreated datePublished" datetime="2023-02-17T21:25:39+08:00">2023-02-17</time>
             </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mechanics/" itemprop="url" rel="index"><span itemprop="name">Mechanics</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mechanics/%E5%A7%BF%E6%80%81/" itemprop="url" rel="index"><span itemprop="name">姿态</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <div id="main">
-    <div id="mainContent">
-    <div class="forFlow">
-        <div id="post_detail">
-    <!--done-->
-    <div id="topics">
-        <div class="post">
-            <h1 class = "postTitle">
-                
-<a id="cb_post_title_url" class="postTitle2 vertical-middle" target="_blank" rel="noopener" href="https://www.cnblogs.com/wtyuan/p/12324495.html">
-    <span role="heading" aria-level="2">罗德里格斯旋转公式（Rodrigues&#39; rotation formula）推导</span>
-    
-</a>
-
-  </h1>
-  <div class="clear"></div>
-  <div class="postBody">
-      <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
-
-
-
-<p>转载： <a href="">博客园-wtyuan：罗德里格斯旋转公式（Rodrigues’ rotation formula）推导</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/05/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jufia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hola! World!">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/05/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">文献管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-01-05 00:09:07" itemprop="dateCreated datePublished" datetime="2023-01-05T00:09:07+08:00">2023-01-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-19 10:32:30" itemprop="dateModified" datetime="2023-01-19T10:32:30+08:00">2023-01-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">高效工作</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">文献管理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          有东西被加密了, 请输入密码查看.
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/01/05/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/24/python-ERRORandWORMING/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jufia">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hola! World!">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/24/python-ERRORandWORMING/" class="post-title-link" itemprop="url">python-ERRORandWORMING</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-11-24 17:38:43" itemprop="dateCreated datePublished" datetime="2022-11-24T17:38:43+08:00">2022-11-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-15 23:55:48" itemprop="dateModified" datetime="2023-01-15T23:55:48+08:00">2023-01-15</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -789,7 +384,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Language/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
                 </span>
             </span>
 
@@ -804,11 +399,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Error"><a href="#Error" class="headerlink" title="Error"></a>Error</h1><h2 id="No-module-named-numpy"><a href="#No-module-named-numpy" class="headerlink" title="No module named numpy"></a>No module named numpy</h2><p>在输入</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br></pre></td></tr></table></figure>
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>下载渠道、使用方法、使用说明、插图图片、交叉引用、bib、公式编号</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/11/24/python-ERRORandWORMING/#more" rel="contents">
+              <a class="btn" href="/2023/02/17/LaTeX-10-%E5%B7%A5%E5%A4%A7%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E6%A8%A1%E6%9D%BF/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -832,7 +427,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%84-%E5%A5%87%E9%A3%8E%E5%B2%81%E6%9C%88/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-09-%E7%BE%8E%E8%B5%9B%E5%8C%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -846,7 +441,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%84-%E5%A5%87%E9%A3%8E%E5%B2%81%E6%9C%88/" class="post-title-link" itemprop="url">奇风岁月/罗伯特·麦卡蒙</a>
+            <a href="/2023/02/17/LaTeX-09-%E7%BE%8E%E8%B5%9B%E5%8C%85/" class="post-title-link" itemprop="url">LaTeX(09)-美赛包 easymcm</a>
         </h2>
 
         <div class="post-meta">
@@ -855,27 +450,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-10-31 17:15:36" itemprop="dateCreated datePublished" datetime="2022-10-31T17:15:36+08:00">2022-10-31</time>
+              <time title="创建时间：2023-02-17 21:22:40 / 修改时间：21:25:08" itemprop="dateCreated datePublished" datetime="2023-02-17T21:22:40+08:00">2023-02-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-15 16:52:12" itemprop="dateModified" datetime="2023-01-15T16:52:12+08:00">2023-01-15</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dilettantism/" itemprop="url" rel="index"><span itemprop="name">Dilettantism</span></a>
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">文学</span></a>
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
                 </span>
             </span>
 
@@ -890,10 +479,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          有东西被加密了, 请输入密码查看.
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>是美赛官方latex模板<br>
+参考文献引用、外部网址链接、交叉引用（图片、公式、表格）、三线表、插入图片</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%84-%E5%A5%87%E9%A3%8E%E5%B2%81%E6%9C%88/#more" rel="contents">
+              <a class="btn" href="/2023/02/17/LaTeX-09-%E7%BE%8E%E8%B5%9B%E5%8C%85/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -917,7 +508,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%842022/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-08-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8%E5%92%8C%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -931,7 +522,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%842022/" class="post-title-link" itemprop="url">2022 年随笔摘抄</a>
+            <a href="/2023/02/17/LaTeX-08-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8%E5%92%8C%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8/" class="post-title-link" itemprop="url">LaTeX(08)-有序列表和无序列表</a>
         </h2>
 
         <div class="post-meta">
@@ -940,27 +531,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-10-31 17:02:16" itemprop="dateCreated datePublished" datetime="2022-10-31T17:02:16+08:00">2022-10-31</time>
+              <time title="创建时间：2023-02-17 21:19:32 / 修改时间：21:21:20" itemprop="dateCreated datePublished" datetime="2023-02-17T21:19:32+08:00">2023-02-17</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-15 14:01:18" itemprop="dateModified" datetime="2023-01-15T14:01:18+08:00">2023-01-15</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dilettantism/" itemprop="url" rel="index"><span itemprop="name">Dilettantism</span></a>
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">文学</span></a>
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
                 </span>
             </span>
 
@@ -975,10 +560,490 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          有东西被加密了, 请输入密码查看.
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>itemize无序列表、enumerate有序列表、标号形状、列表缩进</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%842022/#more" rel="contents">
+              <a class="btn" href="/2023/02/17/LaTeX-08-%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8%E5%92%8C%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-07-%E8%A1%A8%E6%A0%BC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jufia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hola! World!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/17/LaTeX-07-%E8%A1%A8%E6%A0%BC/" class="post-title-link" itemprop="url">LaTeX(07)-表格booktabs</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-17 21:13:16 / 修改时间：21:18:34" itemprop="dateCreated datePublished" datetime="2023-02-17T21:13:16+08:00">2023-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>表格booktabs、tabular、长表longtables、并排排列表格 \minipage、三线表、修改表格的线条、合并单元格、元素缩进…</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/02/17/LaTeX-07-%E8%A1%A8%E6%A0%BC/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-06-%E4%BB%A3%E7%A0%81%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jufia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hola! World!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/17/LaTeX-06-%E4%BB%A3%E7%A0%81%E5%9D%97/" class="post-title-link" itemprop="url">LaTeX(06)-代码块 listings</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-17 21:10:46 / 修改时间：21:14:32" itemprop="dateCreated datePublished" datetime="2023-02-17T21:10:46+08:00">2023-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>代码高亮、行号</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/02/17/LaTeX-06-%E4%BB%A3%E7%A0%81%E5%9D%97/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-05-%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jufia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hola! World!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/17/LaTeX-05-%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">LaTeX(05)-页面设置 geometry</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-17 21:09:38 / 修改时间：21:10:34" itemprop="dateCreated datePublished" datetime="2023-02-17T21:09:38+08:00">2023-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>页面大小、页眉、页脚</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/02/17/LaTeX-05-%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-04-%E5%9B%BE%E7%89%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jufia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hola! World!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/17/LaTeX-04-%E5%9B%BE%E7%89%87/" class="post-title-link" itemprop="url">LaTeX(04)-图片 graphicx</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-17 21:08:14 / 修改时间：21:09:18" itemprop="dateCreated datePublished" datetime="2023-02-17T21:08:14+08:00">2023-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/02/17/LaTeX-04-%E5%9B%BE%E7%89%87/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-03-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jufia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hola! World!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/17/LaTeX-03-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">LaTeX(03)-字体设置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-17 21:06:05 / 修改时间：21:07:30" itemprop="dateCreated datePublished" datetime="2023-02-17T21:06:05+08:00">2023-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>字体、页码、页面</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/02/17/LaTeX-03-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-02-%E7%AB%A0%E8%8A%82%E6%AE%B5%E8%90%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jufia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hola! World!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/17/LaTeX-02-%E7%AB%A0%E8%8A%82%E6%AE%B5%E8%90%BD/" class="post-title-link" itemprop="url">LaTeX(02)-章节段落</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-17 21:02:34 / 修改时间：21:06:34" itemprop="dateCreated datePublished" datetime="2023-02-17T21:02:34+08:00">2023-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>latex文档章节的定义</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/02/17/LaTeX-02-%E7%AB%A0%E8%8A%82%E6%AE%B5%E8%90%BD/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1001,7 +1066,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1067,14 +1132,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1175,10 +1240,58 @@
 
   
       
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
-  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
 
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'true';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 

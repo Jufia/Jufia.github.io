@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="¶摘要 代码高亮、行号">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LaTeX(06)-代码块 listings">
+<meta property="og:url" content="http://example.com/2023/02/17/LaTeX-06-%E4%BB%A3%E7%A0%81%E5%9D%97/index.html">
+<meta property="og:site_name" content="Hola! World!">
+<meta property="og:description" content="¶摘要 代码高亮、行号">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149059456-ab8d3d22-7a1f-4823-a09a-26667a7cc215.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149057367-0249c5a1-870b-41ef-96b1-31691c6ef3ca.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149065546-8c81c726-a0c4-42d6-8c7a-e0331d4d9e64.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149059892-e4d481e9-f016-48c7-a953-90a72185e6fd.png">
+<meta property="article:published_time" content="2023-02-17T13:10:46.000Z">
+<meta property="article:modified_time" content="2023-02-17T13:14:32.000Z">
+<meta property="article:author" content="Jufia">
+<meta property="article:tag" content="Language">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/73486724/149059456-ab8d3d22-7a1f-4823-a09a-26667a7cc215.png">
+
+<link rel="canonical" href="http://example.com/2023/02/17/LaTeX-06-%E4%BB%A3%E7%A0%81%E5%9D%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>LaTeX(06)-代码块 listings | Hola! World!</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hola! World!</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Hola! World!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/17/LaTeX-06-%E4%BB%A3%E7%A0%81%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jufia">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hola! World!">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LaTeX(06)-代码块 listings
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-02-17 21:10:46 / 修改时间：21:14:32" itemprop="dateCreated datePublished" datetime="2023-02-17T21:10:46+08:00">2023-02-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/LaTeX/" itemprop="url" rel="index"><span itemprop="name">LaTeX</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>代码高亮、行号</p>
+<span id="more"></span>
+<h1 id="说明"><a class="header-anchor" href="#说明">¶</a>说明</h1>
+<p>“listing”这个名字比较短，的确。 但是其他包已经使用该名称定义环境。 <strong>为了与此类包兼容，所有命令清单包的环境和环境使用前缀“lst”</strong></p>
+<p>最小格式如下</p>
+ <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{article}</span><br><span class="line"><span class="keyword">\usepackage</span>{listings}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\lstset</span>{language=Pascal}</span><br><span class="line"></span><br><span class="line">  Insert Pascal examples here.</span><br><span class="line">  </span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149059456-ab8d3d22-7a1f-4823-a09a-26667a7cc215.png" alt="image"></p>
+<h1 id="代码片段"><a class="header-anchor" href="#代码片段">¶</a>代码片段</h1>
+<p>代码片段是指在 paragraphs 间的代码片段</p>
+<p>环境提供了一个可选参数。 它告诉包执行特殊任务，例如，仅打印第 2-5 行：</p>
+ <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">\begin</span>{lstlisting}[firstline=2,</span><br><span class="line">                  lastline=5]</span><br><span class="line">  for i:=maxint to 0 do</span><br><span class="line">  begin</span><br><span class="line">      { do nothing }</span><br><span class="line">  end;</span><br><span class="line">  </span><br><span class="line">  Write(’Case insensitive ’);</span><br><span class="line">  WritE(’Pascal keywords.’);</span><br><span class="line"><span class="keyword">\end</span>{lstlisting}</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149057367-0249c5a1-870b-41ef-96b1-31691c6ef3ca.png" alt="image"></p>
+<p><em>默认存在框架，此例中第五行为空行，框架显示空行不打印。但事实上有时候我们或许并不需要框格，或者需要显示空行，就必须告诉 listing宏包不能丢弃他们。关键‘showlines’‘showspeace’ 控制这些空行</em></p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\lstset</span>{showspaces=true,      <span class="comment">%显示空格：开</span></span><br><span class="line">        showtabs=true,        <span class="comment">%显示tab：开</span></span><br><span class="line">        tab=<span class="keyword">\rightarrowfill</span>}  <span class="comment">%tab格式为右箭头</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149065546-8c81c726-a0c4-42d6-8c7a-e0331d4d9e64.png" alt="image"></p>
+<h1 id="默认设置"><a class="header-anchor" href="#默认设置">¶</a>默认设置</h1>
+<p>关键字：粗体排版，斜体注释；<br>
+字符串中的空格用‘.’显示</p>
+<p>修改设置：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\lstset</span>{<span class="comment">% general command to set parameter(s)</span></span><br><span class="line">  basicstyle=<span class="keyword">\small</span>,  <span class="comment">% print whole listing small</span></span><br><span class="line">  keywordstyle=<span class="keyword">\color</span>{black}<span class="keyword">\bfseries</span><span class="keyword">\underbar</span>,</span><br><span class="line">                     <span class="comment">% underlined bold black keywords</span></span><br><span class="line">  identifierstyle=,  <span class="comment">% nothing happens</span></span><br><span class="line">  commentstyle=<span class="keyword">\color</span>{white}, <span class="comment">% white comments</span></span><br><span class="line">  stringstyle=<span class="keyword">\ttfamily</span>, <span class="comment">% typewriter type for strings</span></span><br><span class="line">  showstringspaces=false} <span class="comment">% no special string spaces</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/73486724/149059892-e4d481e9-f016-48c7-a953-90a72185e6fd.png" alt="image"></p>
+<p>您请求了白色评论，但我可以在左侧看到评论。<br>
+有几个可能的原因：<br>
+(1)您将文档打印在非白色上纸。<br>
+(2) 如果您以 .dvi 文件的形式查看本文档，您的查看器似乎有颜色特价的问题。 尝试在白纸上打印页面。<br>
+(3) 如果打印输出白皮书显示评论，颜色特价不适合您的打印机或打印机司机。 重新创建文档并再试一次——并确保颜色包是配置良好。</p>
+<h1 id="行号"><a class="header-anchor" href="#行号">¶</a>行号</h1>
+<p>设置：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\lstset</span>{</span><br><span class="line">  numbers=left, </span><br><span class="line">  numberstyle=<span class="keyword">\tiny</span>, </span><br><span class="line">  stepnumber=2, </span><br><span class="line">  numbersep=5pt</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="布局元素"><a class="header-anchor" href="#布局元素">¶</a>布局元素</h1>
+<h2 id="垂直空间"><a class="header-anchor" href="#垂直空间">¶</a>垂直空间</h2>
+<p>The keys <code>aboveskip</code> and <code>belowskip</code> control the vertical space above and below displayed listings.<br>
+Both keys get a dimension or skip as value and are initialized to <code>\medskipamount</code>.</p>
+<h2 id="框架"><a class="header-anchor" href="#框架">¶</a>框架</h2>
+<p>The key <code>frame</code> takes the verbose values <code>none</code>, <code>leftline</code>, <code>topline</code>, <code>bottomline</code>, <code>lines (top and bottom)</code>, <code>single for single frames</code>, or <code>shadowbox</code>.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Language/" rel="tag"># Language</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/17/LaTeX-05-%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE/" rel="prev" title="LaTeX(05)-页面设置 geometry">
+      <i class="fa fa-chevron-left"></i> LaTeX(05)-页面设置 geometry
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/02/17/LaTeX-07-%E8%A1%A8%E6%A0%BC/" rel="next" title="LaTeX(07)-表格booktabs">
+      LaTeX(07)-表格booktabs <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5"><span class="nav-number">3.</span> <span class="nav-text">代码片段</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">默认设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%8C%E5%8F%B7"><span class="nav-number">5.</span> <span class="nav-text">行号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%83%E5%B1%80%E5%85%83%E7%B4%A0"><span class="nav-number">6.</span> <span class="nav-text">布局元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9E%82%E7%9B%B4%E7%A9%BA%E9%97%B4"><span class="nav-number">6.1.</span> <span class="nav-text">垂直空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%86%E6%9E%B6"><span class="nav-number">6.2.</span> <span class="nav-text">框架</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jufia</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Lyuehua" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Lyuehua" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lyhua4759@gmail.com" title="E-Mail → mailto:lyhua4759@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jufia</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'true';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
