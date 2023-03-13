@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂. 寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。 ¶寄存器寻址 可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 ¶直接寻址方式 指令中的第二操作数为立即数">
+  <meta name="description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。   寄存器寻址可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 直接寻址方式指令中的第二操作数为立即数。51">
 <meta property="og:type" content="article">
 <meta property="og:title" content="嵌入式原理及应用(05)-MCS51指令系统的寻址方式">
 <meta property="og:url" content="http://example.com/2022/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-05-MCS51%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hola! World!">
-<meta property="og:description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂. 寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。 ¶寄存器寻址 可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 ¶直接寻址方式 指令中的第二操作数为立即数">
+<meta property="og:description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。   寄存器寻址可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 直接寻址方式指令中的第二操作数为立即数。51">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-15T02:39:00.000Z">
 <meta property="article:modified_time" content="2022-09-25T13:20:20.000Z">
@@ -331,44 +331,30 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.<br>
-<strong><font color="#1234">寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。</font></strong></p>
-<h1 id="寄存器寻址"><a class="header-anchor" href="#寄存器寻址">¶</a>寄存器寻址</h1>
-<p>可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。</p>
+        <p>寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.<br><strong><font color="#1234">寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。</font></strong>  </p>
+<h1 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h1><p>可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span>   A,<span class="built_in">R1</span></span><br></pre></td></tr></table></figure>
-<h1 id="直接寻址方式"><a class="header-anchor" href="#直接寻址方式">¶</a>直接寻址方式</h1>
-<p>指令中的第二操作数为立即数。51指令中的立即数应冠以前缀’#'，且若立即数的首位为A~F，前面还要加零。</p>
+<h1 id="直接寻址方式"><a href="#直接寻址方式" class="headerlink" title="直接寻址方式"></a>直接寻址方式</h1><p>指令中的第二操作数为立即数。51指令中的立即数应冠以前缀’#’，且若立即数的首位为A~F，前面还要加零。</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span>  A,<span class="number">#40</span>H</span><br><span class="line"><span class="keyword">mov</span>  A,<span class="number">#0</span>A5H</span><br></pre></td></tr></table></figure>
-<h1 id="直接寻址"><a class="header-anchor" href="#直接寻址">¶</a>直接寻址</h1>
-<p>指令中直接给出操作数所在的单元地址, 该单元地址中的内容就是操作数, 直接操作数单元地址用 ‘direct’ 表示.<br>
-<strong>直接寻址方式是对片内所有特殊功能寄存器访问的唯一方式.</strong></p>
+
+<h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><p>指令中直接给出操作数所在的单元地址, 该单元地址中的内容就是操作数, 直接操作数单元地址用 ‘direct’ 表示.<br><strong>直接寻址方式是对片内所有特殊功能寄存器访问的唯一方式.</strong>  </p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span> A, <span class="number">#40</span>H<span class="comment">;  将内部 RAM 40H 单元的内容送到 A</span></span><br><span class="line"><span class="keyword">MOV</span> <span class="number">42</span>H, <span class="number">62</span>H<span class="comment">; 将内部 RAM 62H 单元内容转给 42H 单元中</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>访问 SFR 可用:<br>
-寄存器寻址<br>
-直接寻址</p>
+<p>访问 SFR 可用:<br>寄存器寻址<br>直接寻址</p>
 </blockquote>
-<h1 id="寄存器间接寻址"><a class="header-anchor" href="#寄存器间接寻址">¶</a>寄存器间接寻址</h1>
-<p>在寄存器中存放的是操作数的地址, 从寄存器中找到操作数的地址, 再按照该地址找到操作数.<br>
-用于访问内部RAM和外部数据区，包括52系列单片机的高128字节RAM，只有R0,R1可以作为间址寄存器。<br>
-在寄存器间接寻址方式中应在寄存器前加 ‘@’</p>
+<h1 id="寄存器间接寻址"><a href="#寄存器间接寻址" class="headerlink" title="寄存器间接寻址"></a>寄存器间接寻址</h1><p>在寄存器中存放的是操作数的地址, 从寄存器中找到操作数的地址, 再按照该地址找到操作数.<br>用于访问内部RAM和外部数据区，包括52系列单片机的高128字节RAM，只有R0,R1可以作为间址寄存器。<br>在寄存器间接寻址方式中应在寄存器前加 ‘@’</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span>   <span class="built_in">R0</span>,<span class="number">#40</span>H<span class="comment">;  访问低128字节RAM</span></span><br><span class="line"><span class="keyword">MOV</span>   A,<span class="comment">@R0;    先从R0中找到源操作数所在地址 40H 然后把 40H 中的内容传给 A</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">MOV</span>   <span class="built_in">R0</span>,<span class="number">#90</span>H<span class="comment">;  访问高128字节RAM</span></span><br><span class="line"><span class="keyword">MOV</span>   A,<span class="comment">@R0 </span></span><br></pre></td></tr></table></figure>
-<h1 id="基址寄存器加变址寄存器间接寻址"><a class="header-anchor" href="#基址寄存器加变址寄存器间接寻址">¶</a>基址寄存器加变址寄存器间接寻址</h1>
-<p>基址寄存器加变址寄存器间接寻址以 DPTR 或者 PC 作为基址寄存器, 以累加器 A 作为变址寄存器, 并以两者内容相加形成新的16位地作为目的地址进行寻址.</p>
+
+<h1 id="基址寄存器加变址寄存器间接寻址"><a href="#基址寄存器加变址寄存器间接寻址" class="headerlink" title="基址寄存器加变址寄存器间接寻址"></a>基址寄存器加变址寄存器间接寻址</h1><p>基址寄存器加变址寄存器间接寻址以 DPTR 或者 PC 作为基址寄存器, 以累加器 A 作为变址寄存器, 并以两者内容相加形成新的16位地作为目的地址进行寻址.</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">MOVC</span> A, <span class="comment">@A+DPTR;    DPTR: 数据指针</span></span><br><span class="line"><span class="symbol">MOVC</span> A, <span class="comment">@A+PC;      PC: 程序指针</span></span><br><span class="line"><span class="comment">;上两条适用于读程序存储器中的固定数据, 例如按照固定的, 一定顺序排列的表格参数</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">JMP</span> <span class="comment">@A+DPTR;    散转指令, A 中的内容为程序运行后的动态结果, 可根据 A 的内容不同来实现向不同程序入口的跳转.</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>DPTR 是 16 位寄存器, 只有 DPRT 可以传入 16 位数, 常用于存储地址位<br>
-MCS-51 地址位为 16 位的原因: 有 16 根地址总线</p>
+<p>DPTR 是 16 位寄存器, 只有 DPRT 可以传入 16 位数, 常用于存储地址位<br>MCS-51 地址位为 16 位的原因: 有 16 根地址总线</p>
 </blockquote>
-<h1 id="位寻址方式"><a class="header-anchor" href="#位寻址方式">¶</a>位寻址方式</h1>
-<p><strong>内部 RAM 和特殊功能寄存器中的可寻址位</strong><br>
-位寻址是指对内部 RAM 和特殊功能寄存器具有位寻址功能的某位内容进行置 1 和清 0 操作. 位地址一般以直接的位地址给出, 符号为 ‘bit’.</p>
+<h1 id="位寻址方式"><a href="#位寻址方式" class="headerlink" title="位寻址方式"></a>位寻址方式</h1><p><strong>内部 RAM 和特殊功能寄存器中的可寻址位</strong><br>位寻址是指对内部 RAM 和特殊功能寄存器具有位寻址功能的某位内容进行置 1 和清 0 操作. 位地址一般以直接的位地址给出, 符号为 ‘bit’.  </p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span> C, bit</span><br><span class="line"><span class="keyword">MOV</span> C, <span class="number">40</span>H<span class="comment">; 把位地址为 40H 的位值 0 或 1 送给进位位 C. </span></span><br></pre></td></tr></table></figure>
-<h1 id="相对寻址方式"><a class="header-anchor" href="#相对寻址方式">¶</a>相对寻址方式</h1>
-<p><strong>相对寻址方式是为了解决程序跳转而专门设置的, 为转移指令所用.</strong><br>
-程序跳转到目的地址:<br>
-<strong><font color="#a024c2">目的地址 = 跳转指令所在地址(PC值) + 转移字节数(跳转指令下一条指令的首地址) + 偏移量 rel</font></strong><br>
-相对偏移 rel 是单字节的带符号的 8 位二进制数的补码数. 它所能表示的数字范围是 -128 ~ + 127.</p>
+
+<h1 id="相对寻址方式"><a href="#相对寻址方式" class="headerlink" title="相对寻址方式"></a>相对寻址方式</h1><p><strong>相对寻址方式是为了解决程序跳转而专门设置的, 为转移指令所用.</strong><br>程序跳转到目的地址:<br><strong><font color="#a024c2">目的地址 = 跳转指令所在地址(PC值) + 转移字节数(跳转指令下一条指令的首地址) + 偏移量 rel</font></strong><br>相对偏移 rel 是单字节的带符号的 8 位二进制数的补码数. 它所能表示的数字范围是 -128 ~ + 127.  </p>
 <blockquote>
 <p>在实际编写程序时, 只需要在转移指令中直接写上要转向的地址标号即可</p>
 </blockquote>
