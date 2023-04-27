@@ -12,20 +12,23 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+冀枝叶之峻茂兮，愿俟时乎吾将刈。
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto&display=swap" rel="stylesheet">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。   寄存器寻址可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 直接寻址方式指令中的第二操作数为立即数。51">
+  <meta name="description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂. 寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。 ¶寄存器寻址 可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 ¶直接寻址方式 指令中的第二操作数为立即数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="嵌入式原理及应用(05)-MCS51指令系统的寻址方式">
 <meta property="og:url" content="http://example.com/2022/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-05-MCS51%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Hola! World!">
-<meta property="og:description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。   寄存器寻址可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 直接寻址方式指令中的第二操作数为立即数。51">
+<meta property="og:description" content="寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂. 寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。 ¶寄存器寻址 可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。 1MOV   A,R1 ¶直接寻址方式 指令中的第二操作数为立即数">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-15T02:39:00.000Z">
 <meta property="article:modified_time" content="2022-09-25T13:20:20.000Z">
@@ -212,7 +215,7 @@ mjx-container[display="true"] + br {
       <h1 class="site-title">Hola! World!</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">Hola! World!</p>
+      <p class="site-subtitle" itemprop="description">花门楼前见秋草，岂能贫贱相看老</p>
   </div>
 
   <div class="site-nav-right">
@@ -231,19 +234,24 @@ mjx-container[display="true"] + br {
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">24</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
 
   </li>
   </ul>
@@ -261,6 +269,8 @@ mjx-container[display="true"] + br {
     <span>0%</span>
   </div>
 
+  <a href="/jufiaa@qq.com" class="github-corner" title="Contract me with Email" aria-label="Contract me with Email"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
 
     <main class="main">
       <div class="main-inner">
@@ -277,7 +287,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-05-MCS51%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
       <meta itemprop="name" content="Jufia">
       <meta itemprop="description" content="">
     </span>
@@ -321,6 +331,13 @@ mjx-container[display="true"] + br {
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -331,30 +348,44 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.<br><strong><font color="#1234">寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。</font></strong>  </p>
-<h1 id="寄存器寻址"><a href="#寄存器寻址" class="headerlink" title="寄存器寻址"></a>寄存器寻址</h1><p>可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。</p>
+        <p>寻址方式是指寻找、确定参与操作的数据的地址的方式，一般来说, 寻址方式越多, 单片机的功能就越强, 灵活性就越大, 指令系统就越复杂.<br>
+<strong><font color="#1234">寻址方式所要解决的主要问题就是如何在整个存储器和寄存器的寻址空间内, 灵活方便、快速的找到指定的操作数。</font></strong></p>
+<h1 id="寄存器寻址"><a class="header-anchor" href="#寄存器寻址">¶</a>寄存器寻址</h1>
+<p>可用于访问选定寄存器区的8个工作寄存器R0~R7、A、B、DPTR、Cy等。</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span>   A,<span class="built_in">R1</span></span><br></pre></td></tr></table></figure>
-<h1 id="直接寻址方式"><a href="#直接寻址方式" class="headerlink" title="直接寻址方式"></a>直接寻址方式</h1><p>指令中的第二操作数为立即数。51指令中的立即数应冠以前缀’#’，且若立即数的首位为A~F，前面还要加零。</p>
+<h1 id="直接寻址方式"><a class="header-anchor" href="#直接寻址方式">¶</a>直接寻址方式</h1>
+<p>指令中的第二操作数为立即数。51指令中的立即数应冠以前缀’#'，且若立即数的首位为A~F，前面还要加零。</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span>  A,<span class="number">#40</span>H</span><br><span class="line"><span class="keyword">mov</span>  A,<span class="number">#0</span>A5H</span><br></pre></td></tr></table></figure>
-
-<h1 id="直接寻址"><a href="#直接寻址" class="headerlink" title="直接寻址"></a>直接寻址</h1><p>指令中直接给出操作数所在的单元地址, 该单元地址中的内容就是操作数, 直接操作数单元地址用 ‘direct’ 表示.<br><strong>直接寻址方式是对片内所有特殊功能寄存器访问的唯一方式.</strong>  </p>
+<h1 id="直接寻址"><a class="header-anchor" href="#直接寻址">¶</a>直接寻址</h1>
+<p>指令中直接给出操作数所在的单元地址, 该单元地址中的内容就是操作数, 直接操作数单元地址用 ‘direct’ 表示.<br>
+<strong>直接寻址方式是对片内所有特殊功能寄存器访问的唯一方式.</strong></p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span> A, <span class="number">#40</span>H<span class="comment">;  将内部 RAM 40H 单元的内容送到 A</span></span><br><span class="line"><span class="keyword">MOV</span> <span class="number">42</span>H, <span class="number">62</span>H<span class="comment">; 将内部 RAM 62H 单元内容转给 42H 单元中</span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p>访问 SFR 可用:<br>寄存器寻址<br>直接寻址</p>
+<p>访问 SFR 可用:<br>
+寄存器寻址<br>
+直接寻址</p>
 </blockquote>
-<h1 id="寄存器间接寻址"><a href="#寄存器间接寻址" class="headerlink" title="寄存器间接寻址"></a>寄存器间接寻址</h1><p>在寄存器中存放的是操作数的地址, 从寄存器中找到操作数的地址, 再按照该地址找到操作数.<br>用于访问内部RAM和外部数据区，包括52系列单片机的高128字节RAM，只有R0,R1可以作为间址寄存器。<br>在寄存器间接寻址方式中应在寄存器前加 ‘@’</p>
+<h1 id="寄存器间接寻址"><a class="header-anchor" href="#寄存器间接寻址">¶</a>寄存器间接寻址</h1>
+<p>在寄存器中存放的是操作数的地址, 从寄存器中找到操作数的地址, 再按照该地址找到操作数.<br>
+用于访问内部RAM和外部数据区，包括52系列单片机的高128字节RAM，只有R0,R1可以作为间址寄存器。<br>
+在寄存器间接寻址方式中应在寄存器前加 ‘@’</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span>   <span class="built_in">R0</span>,<span class="number">#40</span>H<span class="comment">;  访问低128字节RAM</span></span><br><span class="line"><span class="keyword">MOV</span>   A,<span class="comment">@R0;    先从R0中找到源操作数所在地址 40H 然后把 40H 中的内容传给 A</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">MOV</span>   <span class="built_in">R0</span>,<span class="number">#90</span>H<span class="comment">;  访问高128字节RAM</span></span><br><span class="line"><span class="keyword">MOV</span>   A,<span class="comment">@R0 </span></span><br></pre></td></tr></table></figure>
-
-<h1 id="基址寄存器加变址寄存器间接寻址"><a href="#基址寄存器加变址寄存器间接寻址" class="headerlink" title="基址寄存器加变址寄存器间接寻址"></a>基址寄存器加变址寄存器间接寻址</h1><p>基址寄存器加变址寄存器间接寻址以 DPTR 或者 PC 作为基址寄存器, 以累加器 A 作为变址寄存器, 并以两者内容相加形成新的16位地作为目的地址进行寻址.</p>
+<h1 id="基址寄存器加变址寄存器间接寻址"><a class="header-anchor" href="#基址寄存器加变址寄存器间接寻址">¶</a>基址寄存器加变址寄存器间接寻址</h1>
+<p>基址寄存器加变址寄存器间接寻址以 DPTR 或者 PC 作为基址寄存器, 以累加器 A 作为变址寄存器, 并以两者内容相加形成新的16位地作为目的地址进行寻址.</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">MOVC</span> A, <span class="comment">@A+DPTR;    DPTR: 数据指针</span></span><br><span class="line"><span class="symbol">MOVC</span> A, <span class="comment">@A+PC;      PC: 程序指针</span></span><br><span class="line"><span class="comment">;上两条适用于读程序存储器中的固定数据, 例如按照固定的, 一定顺序排列的表格参数</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">JMP</span> <span class="comment">@A+DPTR;    散转指令, A 中的内容为程序运行后的动态结果, 可根据 A 的内容不同来实现向不同程序入口的跳转.</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>DPTR 是 16 位寄存器, 只有 DPRT 可以传入 16 位数, 常用于存储地址位<br>MCS-51 地址位为 16 位的原因: 有 16 根地址总线</p>
+<p>DPTR 是 16 位寄存器, 只有 DPRT 可以传入 16 位数, 常用于存储地址位<br>
+MCS-51 地址位为 16 位的原因: 有 16 根地址总线</p>
 </blockquote>
-<h1 id="位寻址方式"><a href="#位寻址方式" class="headerlink" title="位寻址方式"></a>位寻址方式</h1><p><strong>内部 RAM 和特殊功能寄存器中的可寻址位</strong><br>位寻址是指对内部 RAM 和特殊功能寄存器具有位寻址功能的某位内容进行置 1 和清 0 操作. 位地址一般以直接的位地址给出, 符号为 ‘bit’.  </p>
+<h1 id="位寻址方式"><a class="header-anchor" href="#位寻址方式">¶</a>位寻址方式</h1>
+<p><strong>内部 RAM 和特殊功能寄存器中的可寻址位</strong><br>
+位寻址是指对内部 RAM 和特殊功能寄存器具有位寻址功能的某位内容进行置 1 和清 0 操作. 位地址一般以直接的位地址给出, 符号为 ‘bit’.</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">MOV</span> C, bit</span><br><span class="line"><span class="keyword">MOV</span> C, <span class="number">40</span>H<span class="comment">; 把位地址为 40H 的位值 0 或 1 送给进位位 C. </span></span><br></pre></td></tr></table></figure>
-
-<h1 id="相对寻址方式"><a href="#相对寻址方式" class="headerlink" title="相对寻址方式"></a>相对寻址方式</h1><p><strong>相对寻址方式是为了解决程序跳转而专门设置的, 为转移指令所用.</strong><br>程序跳转到目的地址:<br><strong><font color="#a024c2">目的地址 = 跳转指令所在地址(PC值) + 转移字节数(跳转指令下一条指令的首地址) + 偏移量 rel</font></strong><br>相对偏移 rel 是单字节的带符号的 8 位二进制数的补码数. 它所能表示的数字范围是 -128 ~ + 127.  </p>
+<h1 id="相对寻址方式"><a class="header-anchor" href="#相对寻址方式">¶</a>相对寻址方式</h1>
+<p><strong>相对寻址方式是为了解决程序跳转而专门设置的, 为转移指令所用.</strong><br>
+程序跳转到目的地址:<br>
+<strong><font color="#a024c2">目的地址 = 跳转指令所在地址(PC值) + 转移字节数(跳转指令下一条指令的首地址) + 偏移量 rel</font></strong><br>
+相对偏移 rel 是单字节的带符号的 8 位二进制数的补码数. 它所能表示的数字范围是 -128 ~ + 127.</p>
 <blockquote>
 <p>在实际编写程序时, 只需要在转移指令中直接写上要转向的地址标号即可</p>
 </blockquote>
@@ -447,6 +478,8 @@ mjx-container[display="true"] + br {
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jufia"
+      src="/%5Cimages%5Crura.jpg">
   <p class="site-author-name" itemprop="name">Jufia</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -475,10 +508,10 @@ mjx-container[display="true"] + br {
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Lyuehua" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Lyuehua" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Jufia" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Jufia" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:lyhua4759@gmail.com" title="E-Mail → mailto:lyhua4759@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:jufiaa@qq.com" title="E-Mail → mailto:jufiaa@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
@@ -502,17 +535,56 @@ mjx-container[display="true"] + br {
 
 <div class="copyright">
   
-  &copy; 
+  &copy; 2022 – 
   <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-feather"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Jufia</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/04/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
