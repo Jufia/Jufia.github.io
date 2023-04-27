@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="¶为什么使用 FRP 实验室里规定 21: 25 就可以走了, 但是我是自愿加班的, 操场 23:00 关闭, 但是人要 12 点睡, 就意味着还有一个小时左右的时间, 但是操场离寝室近离实验室远, 冬天又太冷了… 所以一般就直接回宿舍了. (其实就是懒狗想要早点下班) 实验室有自己的局域网, 寝室里的电脑连的是校园网, 这个时候 Windows 自带的远程桌面就派不上用场了. 但是有时候坐在寝室">
+  <meta name="description" content="为什么使用 FRP实验室里规定 21: 25 就可以走了, 但是我是自愿加班的, 操场 23:00 关闭, 但是人要 12 点睡, 就意味着还有一个小时左右的时间, 但是操场离寝室近离实验室远, 冬天又太冷了…. 所以一般就直接回宿舍了. (其实就是懒狗想要早点下班) 实验室有自己的局域网, 寝室里的电脑连的是校园网, 这个时候 Windows 自带的远程桌面就派不上用场了.但是有时候坐在寝室里突">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows 下 FRP 内网穿透计划">
 <meta property="og:url" content="http://example.com/2022/09/23/Windows-%E4%B8%8B-FPR-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%AE%A1%E5%88%92/index.html">
 <meta property="og:site_name" content="Hola! World!">
-<meta property="og:description" content="¶为什么使用 FRP 实验室里规定 21: 25 就可以走了, 但是我是自愿加班的, 操场 23:00 关闭, 但是人要 12 点睡, 就意味着还有一个小时左右的时间, 但是操场离寝室近离实验室远, 冬天又太冷了… 所以一般就直接回宿舍了. (其实就是懒狗想要早点下班) 实验室有自己的局域网, 寝室里的电脑连的是校园网, 这个时候 Windows 自带的远程桌面就派不上用场了. 但是有时候坐在寝室">
+<meta property="og:description" content="为什么使用 FRP实验室里规定 21: 25 就可以走了, 但是我是自愿加班的, 操场 23:00 关闭, 但是人要 12 点睡, 就意味着还有一个小时左右的时间, 但是操场离寝室近离实验室远, 冬天又太冷了…. 所以一般就直接回宿舍了. (其实就是懒狗想要早点下班) 实验室有自己的局域网, 寝室里的电脑连的是校园网, 这个时候 Windows 自带的远程桌面就派不上用场了.但是有时候坐在寝室里突">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://user-images.githubusercontent.com/73486724/193377566-e2442ef5-2444-4d91-9138-c6f820ab54a6.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/73486724/193376900-9b297480-fe34-4fc9-bb80-8278f6943443.png">
@@ -373,47 +373,26 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="为什么使用-FRP"><a class="header-anchor" href="#为什么使用-FRP">¶</a>为什么使用 FRP</h1>
-<p>实验室里规定 21: 25 就可以走了, 但是我是自愿加班的, 操场 23:00 关闭, 但是人要 12 点睡, 就意味着还有一个小时左右的时间, 但是操场离寝室近离实验室远, 冬天又太冷了… 所以一般就直接回宿舍了. (其实就是懒狗想要早点下班) 实验室有自己的局域网, 寝室里的电脑连的是校园网, 这个时候 Windows 自带的远程桌面就派不上用场了.<br>
-但是有时候坐在寝室里突然间灵光一闪要用实验室的电脑, 这个时候要是碰不到电脑的话, 这个偶然涌出的想法可能就要消失了! 所以能够让我随时随地用到实验室的电脑是一件必须的事情, 于是开始网上冲浪, 找出在寝室访问实验室电脑的方法.</p>
+        <h1 id="为什么使用-FRP"><a href="#为什么使用-FRP" class="headerlink" title="为什么使用 FRP"></a>为什么使用 FRP</h1><p>实验室里规定 21: 25 就可以走了, 但是我是自愿加班的, 操场 23:00 关闭, 但是人要 12 点睡, 就意味着还有一个小时左右的时间, 但是操场离寝室近离实验室远, 冬天又太冷了…. 所以一般就直接回宿舍了. (其实就是懒狗想要早点下班) 实验室有自己的局域网, 寝室里的电脑连的是校园网, 这个时候 Windows 自带的远程桌面就派不上用场了.<br>但是有时候坐在寝室里突然间灵光一闪要用实验室的电脑, 这个时候要是碰不到电脑的话, 这个偶然涌出的想法可能就要消失了! 所以能够让我随时随地用到实验室的电脑是一件必须的事情, 于是开始网上冲浪, 找出在寝室访问实验室电脑的方法.</p>
 <span id="more"></span>
-<h1 id="FRP-原理"><a class="header-anchor" href="#FRP-原理">¶</a>FRP 原理</h1>
-<p>附上: <a target="_blank" rel="noopener" href="https://gofrp.org/docs/">FPR文档</a><br>
-frp 主要由 <strong>客户端(frpc)</strong> 和 <strong>服务端(frps)</strong> 组成，服务端通常部署在具有公网 IP 的机器上，客户端通常部署在需要穿透的内网服务所在的机器上。<br>
-内网服务由于没有公网 IP，不能被非局域网内的其他用户访问。<br>
-用户通过访问服务端的 frps，由 frp 负责根据请求的端口或其他信息将请求路由到对应的内网机器，从而实现通信。</p>
-<h1 id="云服务器"><a class="header-anchor" href="#云服务器">¶</a>云服务器</h1>
-<p>云服务器的作用, 分享链接: <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/27205559/answer/772271922">买了一台云服务器到底能干什么？ - Logic的回答 - 知乎</a></p>
+
+
+<h1 id="FRP-原理"><a href="#FRP-原理" class="headerlink" title="FRP 原理"></a>FRP 原理</h1><p>附上: <a target="_blank" rel="noopener" href="https://gofrp.org/docs/">FPR文档</a><br>frp 主要由 <strong>客户端(frpc)</strong> 和 <strong>服务端(frps)</strong> 组成，服务端通常部署在具有公网 IP 的机器上，客户端通常部署在需要穿透的内网服务所在的机器上。<br>内网服务由于没有公网 IP，不能被非局域网内的其他用户访问。<br>用户通过访问服务端的 frps，由 frp 负责根据请求的端口或其他信息将请求路由到对应的内网机器，从而实现通信。</p>
+<h1 id="云服务器"><a href="#云服务器" class="headerlink" title="云服务器"></a>云服务器</h1><p>云服务器的作用, 分享链接: <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/27205559/answer/772271922">买了一台云服务器到底能干什么？ - Logic的回答 - 知乎</a>  </p>
 <blockquote>
-<p>在这条回答下有人评论: 如果只是为了远程，Sakura frp足够了，保险可以加个花生棒。免费<br>
-这里已经为了 FRP 看了很多资料了, 决定死磕 FRP , 有时间再去了解 Sakura Frp.<br>
-附上 Sakura Frp 的链接: <a target="_blank" rel="noopener" href="https://www.natfrp.com/">https://www.natfrp.com/</a></p>
+<p>在这条回答下有人评论: 如果只是为了远程，Sakura frp足够了，保险可以加个花生棒。免费<br>这里已经为了 FRP 看了很多资料了, 决定死磕 FRP , 有时间再去了解 Sakura Frp.<br>附上 Sakura Frp 的链接: <a target="_blank" rel="noopener" href="https://www.natfrp.com/">https://www.natfrp.com/</a></p>
 </blockquote>
-<h1 id="如何知道自己的电脑是什么框架"><a class="header-anchor" href="#如何知道自己的电脑是什么框架">¶</a>如何知道自己的电脑是什么框架</h1>
-<h2 id="Windows"><a class="header-anchor" href="#Windows">¶</a>Windows</h2>
-<p>在命令行中输入 <code>echO %PROCESSOR_ARCHITECTURE%</code><br>
-输出如下值之一: <code>x86</code>, <code>AMD64</code>, <code>ARM64</code><br>
-<img src="https://user-images.githubusercontent.com/73486724/193377566-e2442ef5-2444-4d91-9138-c6f820ab54a6.png" alt="image"><br>
-<img src="https://user-images.githubusercontent.com/73486724/193376900-9b297480-fe34-4fc9-bb80-8278f6943443.png" alt="image"></p>
-<h2 id="Linux"><a class="header-anchor" href="#Linux">¶</a>Linux</h2>
-<p>在命令行中输入 <code>uname -m</code>, 直接显示Linux 系统架构<br>
-我的虚拟机为 x86_64 架构.<br>
-<img src="https://user-images.githubusercontent.com/73486724/193448040-d5cc617f-38b9-41a5-a161-dd01fbf9f3e4.png" alt="image"></p>
+<h1 id="如何知道自己的电脑是什么框架"><a href="#如何知道自己的电脑是什么框架" class="headerlink" title="如何知道自己的电脑是什么框架"></a>如何知道自己的电脑是什么框架</h1><h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><p>在命令行中输入 <code>echO %PROCESSOR_ARCHITECTURE%</code><br>输出如下值之一: <code>x86</code>, <code>AMD64</code>, <code>ARM64</code><br><img src="https://user-images.githubusercontent.com/73486724/193377566-e2442ef5-2444-4d91-9138-c6f820ab54a6.png" alt="image"><br><img src="https://user-images.githubusercontent.com/73486724/193376900-9b297480-fe34-4fc9-bb80-8278f6943443.png" alt="image"></p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>在命令行中输入 <code>uname -m</code>, 直接显示Linux 系统架构<br>我的虚拟机为 x86_64 架构.<br><img src="https://user-images.githubusercontent.com/73486724/193448040-d5cc617f-38b9-41a5-a161-dd01fbf9f3e4.png" alt="image">  </p>
 <p>更多方法可查阅博客: <a target="_blank" rel="noopener" href="https://blog.51cto.com/hzj19840414/1854247">Linux 要如何查看系统架构</a></p>
-<h1 id="如何判断自己的电脑是否有公网-ip"><a class="header-anchor" href="#如何判断自己的电脑是否有公网-ip">¶</a>如何判断自己的电脑是否有公网 ip</h1>
-<p>通过这个网站, ip 地址查询网站: <a target="_blank" rel="noopener" href="https://www.ip138.com/">https://www.ip138.com/</a><br>
-<img src="https://user-images.githubusercontent.com/73486724/192097543-21fdb942-94e5-4636-88ca-0eb00b216008.png" alt="image"><br>
-打开命令行, 输入指令 <code>tracert + 搜到的ip地址</code></p>
+<h1 id="如何判断自己的电脑是否有公网-ip"><a href="#如何判断自己的电脑是否有公网-ip" class="headerlink" title="如何判断自己的电脑是否有公网 ip"></a>如何判断自己的电脑是否有公网 ip</h1><p>通过这个网站, ip 地址查询网站: <a target="_blank" rel="noopener" href="https://www.ip138.com/">https://www.ip138.com/</a><br><img src="https://user-images.githubusercontent.com/73486724/192097543-21fdb942-94e5-4636-88ca-0eb00b216008.png" alt="image"><br>打开命令行, 输入指令 <code>tracert + 搜到的ip地址</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tracert <span class="number">111.40</span><span class="number">.58</span><span class="number">.238</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/73486724/192098037-8a73fc42-0332-4c60-94cb-bec56edfbe7b.png" alt="image"><br>
-追踪公网IP，通过网站得到的公网 IP是 111.40.58.238, 而实际上我的 ip 地址是 192.168.1.118 (192.168.1.1 是路由). 第一行为节跃点数, 所以中间肯定有其它的节点也就是路由，<strong>只要跃点超过一个就说明电脑就没有获得公网IP</strong>。这里, 显然我的电脑没有公网 ip.</p>
+<p><img src="https://user-images.githubusercontent.com/73486724/192098037-8a73fc42-0332-4c60-94cb-bec56edfbe7b.png" alt="image"><br>追踪公网IP，通过网站得到的公网 IP是 111.40.58.238, 而实际上我的 ip 地址是 192.168.1.118 (192.168.1.1 是路由). 第一行为节跃点数, 所以中间肯定有其它的节点也就是路由，<strong>只要跃点超过一个就说明电脑就没有获得公网IP</strong>。这里, 显然我的电脑没有公网 ip.   </p>
 <blockquote>
 <p>假如是家庭宽带可以打电话向运营商的人工客服要, 直接说装监控需要分配公网IP. 但我这里是学校 WiFi, 这一条路是走不通的.</p>
 </blockquote>
-<p>参考: <a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12589973">作者: 云爻斋-出处：bilibili</a></p>
-<h1 id="准备工作"><a class="header-anchor" href="#准备工作">¶</a>准备工作</h1>
-<h2 id="设备"><a class="header-anchor" href="#设备">¶</a>设备</h2>
-<ul>
+<p>参考: <a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12589973">作者: 云爻斋-出处：bilibili</a> </p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><ul>
 <li>移动机器: 不需要下载任何软件</li>
 <li>实验室机器(客户端frpc): 系统: Windows 10 专业版</li>
 <li>云服务器(服务端frps): 具有公网 IP 的中转服务器,</li>
@@ -421,186 +400,97 @@ frp 主要由 <strong>客户端(frpc)</strong> 和 <strong>服务端(frps)</stro
 <blockquote>
 <p>两个内网机械是无法相连的, 公网服务器的作用是中转. 客户端先连接中转服务器, 经由中转服务器与内网服务器相连, 起到内网穿透的效果.</p>
 </blockquote>
-<p>参考教程:</p>
+<p>参考教程: </p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55306067">windows下基于frp的内网穿透部署 - 进化的monkey的文章 - 知乎</a></li>
 <li><a target="_blank" rel="noopener" href="https://oneforalone.github.io/misc/frp.html#id2">内网穿透 frp 配置 - Yuqi’s blog</a></li>
 <li></li>
 </ul>
-<h2 id="购买云服务器"><a class="header-anchor" href="#购买云服务器">¶</a>购买云服务器</h2>
-<p>这里参考其他博主, 选择了阿里云 ECS .<br>
-附购买指南链接: <a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/766515">阿里云开发者社区 - 阿里云学生机购买指南(用途和优势)(阿里云学生机购买指南(用途和优势)</a></p>
+<h2 id="购买云服务器"><a href="#购买云服务器" class="headerlink" title="购买云服务器"></a>购买云服务器</h2><p>这里参考其他博主, 选择了阿里云 ECS .<br>附购买指南链接: <a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/766515">阿里云开发者社区 - 阿里云学生机购买指南(用途和优势)(阿里云学生机购买指南(用途和优势)</a>  </p>
 <blockquote>
-<p>**飞天加速计划计划(原云翼计划)是阿里云校园扶持计划，24岁以下或拥有学信网认证信息即可享优惠产品、创业扶持等多项权益哦！包括：专属云服务器产品优惠、校园产品使用攻略等。<br>
-平均一个月9.5元，一天只需要0.3元。一年只需114元。</p>
+<p>**飞天加速计划计划(原云翼计划)是阿里云校园扶持计划，24岁以下或拥有学信网认证信息即可享优惠产品、创业扶持等多项权益哦！包括：专属云服务器产品优惠、校园产品使用攻略等。<br>平均一个月9.5元，一天只需要0.3元。一年只需114元。</p>
 </blockquote>
 <p><strong>步骤</strong></p>
 <ol>
 <li>注册阿里云账号, 阿里云: <a target="_blank" rel="noopener" href="https://www.aliyun.com/?spm=5176.authc-home.top-nav.dlogo.63834babxeYHR1">https://www.aliyun.com/?spm=5176.authc-home.top-nav.dlogo.63834babxeYHR1</a></li>
-<li>进行学生认证,建议使用支付宝认证, 不需要等待, 两分钟搞定! nice !  阿里云学生机官网地址：<a target="_blank" rel="noopener" href="https://promotion.aliyun.com/ntms/act/campus2018.html">https://promotion.aliyun.com/ntms/act/campus2018.html</a>.</li>
-<li>尝试使用阿里云 RCS 云服务器, 新手指引-实例-云服务器ECS-阿里云: <a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/25422.html">https://help.aliyun.com/document_detail/25422.html</a>
-<ol>
+<li>进行学生认证,建议使用支付宝认证, 不需要等待, 两分钟搞定! nice !  阿里云学生机官网地址：<a target="_blank" rel="noopener" href="https://promotion.aliyun.com/ntms/act/campus2018.html">https://promotion.aliyun.com/ntms/act/campus2018.html</a>.    </li>
+<li>尝试使用阿里云 RCS 云服务器, 新手指引-实例-云服务器ECS-阿里云: <a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/25422.html">https://help.aliyun.com/document_detail/25422.html</a><ol>
 <li>选型最佳实践: <a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/58291.html?spm=a2c4g.11186623.0.0.1d46637fqT7uVC">https://help.aliyun.com/document_detail/58291.html?spm=a2c4g.11186623.0.0.1d46637fqT7uVC</a></li>
 <li>现在选择了 ECS 的学生免费领取活动, 做一个实验, 再答一套题就可以领取.</li>
-<li>在选择操作系统的时候, 会发现下拉表单中的操作系统没有一个符合 Windows 10 专业版. 这里要说 Windows server 操作系统.<br>
-<img src="https://user-images.githubusercontent.com/73486724/192101045-11d2b94d-edf7-4ee6-81b6-555f588dbc63.png" alt="image">
-<ul>
-<li>Windows Server是Microsoft专门创建用于服务器的一系列操作系统。服务器是功能非常强大的计算机，旨在持续运行并为其他计算机提供资源。这意味着在几乎所有情况下，Windows Server仅在业务设置中使用。Server主要面向服务器，是一个服务器操作系统.</li>
+<li>在选择操作系统的时候, 会发现下拉表单中的操作系统没有一个符合 Windows 10 专业版. 这里要说 Windows server 操作系统.<br> <img src="https://user-images.githubusercontent.com/73486724/192101045-11d2b94d-edf7-4ee6-81b6-555f588dbc63.png" alt="image"><ul>
+<li>Windows Server是Microsoft专门创建用于服务器的一系列操作系统。服务器是功能非常强大的计算机，旨在持续运行并为其他计算机提供资源。这意味着在几乎所有情况下，Windows Server仅在业务设置中使用。Server主要面向服务器，是一个服务器操作系统. </li>
 <li>Windows的消费者版本面向个人用户.</li>
-<li>参考资料:<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/112576466">windows server和windows的区别 - 国家一级保护废物的文章 - 知乎</a><br>
-搭配 ECS 后控制台里会出现一个实例<br>
-<img src="https://user-images.githubusercontent.com/73486724/192104957-54f18f16-4517-4853-9b18-9e7fdb259d16.png" alt="image"><br>
-参考链接:CSDN - 1.学生版阿里云简单配置和win7、win10专业版及win10家庭版的远程桌面的配置详解: <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41903105/article/details/85224145">https://blog.csdn.net/qq_41903105/article/details/85224145</a></li>
+<li>参考资料:<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/112576466">windows server和windows的区别 - 国家一级保护废物的文章 - 知乎</a><br>搭配 ECS 后控制台里会出现一个实例<br><img src="https://user-images.githubusercontent.com/73486724/192104957-54f18f16-4517-4853-9b18-9e7fdb259d16.png" alt="image"><br>参考链接:CSDN - 1.学生版阿里云简单配置和win7、win10专业版及win10家庭版的远程桌面的配置详解: <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41903105/article/details/85224145">https://blog.csdn.net/qq_41903105/article/details/85224145</a></li>
 </ul>
 </li>
-<li>Windows 系统选择了<font color="#aaaa">‘2016 数据中心版…’</font>可行</li>
+<li>Windows 系统选择了<font color="#aaaa">‘2016 数据中心版….’</font>可行</li>
 </ol>
 </li>
-<li>重置密码<br>
-<img src="https://user-images.githubusercontent.com/73486724/192133503-f2dbd6ea-395a-4618-9c75-9d123ef7c09d.png" alt="image"><br>
-登录名: administrator<br>
-密码设置为: Lyh#2022<br>
-这里会给手机发一个验证码<br>
-改完之后重启实例<br>
-阿里云提供的示例中的一些基本信息<br>
-<img src="https://user-images.githubusercontent.com/73486724/192133811-a884ab33-3d16-4ee3-b76f-6671a04d47f0.png" alt="image"></li>
+<li>重置密码<br><img src="https://user-images.githubusercontent.com/73486724/192133503-f2dbd6ea-395a-4618-9c75-9d123ef7c09d.png" alt="image"><br>登录名: administrator<br>密码设置为: Lyh#2022<br>这里会给手机发一个验证码<br>改完之后重启实例<br>阿里云提供的示例中的一些基本信息<br><img src="https://user-images.githubusercontent.com/73486724/192133811-a884ab33-3d16-4ee3-b76f-6671a04d47f0.png" alt="image"></li>
 </ol>
 <blockquote>
 <p>因为刚开始不懂, 以为云主机的操作系统要和电脑操作系统一致, 现在知道完全是我多虑了… 暂时用 Windows 系统, 再换用 Linux 系统. (都云服务器了, 当然首选 Linux 啊! )</p>
 </blockquote>
-<h2 id="连接云服务器"><a class="header-anchor" href="#连接云服务器">¶</a>连接云服务器</h2>
-<p>使用阿里云提供的远程连接方式.</p>
+<h2 id="连接云服务器"><a href="#连接云服务器" class="headerlink" title="连接云服务器"></a>连接云服务器</h2><p>使用阿里云提供的远程连接方式.  </p>
 <ul>
 <li>workbench 远程连接: 通过网页可以对ECS实例进行远程控制，支持复制粘贴文本，支持多操作系统用户登录同一台实例。</li>
 <li>VNC远程连接: VNC远程连接是一种使用RFB协议的屏幕画面分享及远程操作工具，不需要单独为实例设置网络规则即可使用，但其连接质量较差，仅推荐作为临时连接方案使用。</li>
 <li>发送命令（云助手）: 发送远程命令可以帮助您在实例内部快速执行命令，即无需远程连接登录实例，即可完成查看硬盘空间、安装软件、启动停止服务等操作。</li>
 </ul>
-<p>使用workbench 远程连接方式:<br>
-选择密码认证, 输入密码即可.<br>
-<img src="https://user-images.githubusercontent.com/73486724/193378349-aae627e7-5d91-4166-88ec-151568c7c607.png" alt="image"></p>
-<p><strong>(更换系统为 Linux 系统)</strong> 选用 Alibaba Cloud Linux 3.2104 LTS 64 位.<br>
-登录上去为一个控制台<br>
-<img src="https://user-images.githubusercontent.com/73486724/193447605-74bb19ed-268a-4542-b98c-ecc5ebd83bbb.png" alt="image"></p>
+<p>使用workbench 远程连接方式:<br>选择密码认证, 输入密码即可.<br><img src="https://user-images.githubusercontent.com/73486724/193378349-aae627e7-5d91-4166-88ec-151568c7c607.png" alt="image"></p>
+<p><strong>(更换系统为 Linux 系统)</strong> 选用 Alibaba Cloud Linux 3.2104 LTS 64 位.<br>登录上去为一个控制台<br><img src="https://user-images.githubusercontent.com/73486724/193447605-74bb19ed-268a-4542-b98c-ecc5ebd83bbb.png" alt="image">  </p>
 <p>输入指令 <code>ls- l</code> 返回 total 0 信息, 刚登录是没有文件的.</p>
-<p>在命令行中输入 <code>ssh 用户名@@xxx.xx.xx.xx</code>, 此处xxx.xx.xx.xx 为 云产品资源 提供的 弹性IP）下面的两张图上边的是阿里云提供的实例中的图, 下面的是我免费领取的 ecs 实例的图. 好像是按量计费的产品才有弹性公网 IP, 包年包月的就没有.<br>
-<img src="https://user-images.githubusercontent.com/73486724/192133698-8345e40e-e6f6-4f6d-b8b7-de5b2807bdb7.png" alt="image"><br>
-<img src="https://user-images.githubusercontent.com/73486724/192134059-05656ac8-7c33-4607-a6e6-4ca4cfde256d.png" alt="image"></p>
-   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@<span class="number">101.133</span><span class="number">.151</span><span class="number">.69</span>  <span class="comment">//阿里云示例</span></span><br></pre></td></tr></table></figure>
+<p>在命令行中输入 <code>ssh 用户名@@xxx.xx.xx.xx</code>, 此处xxx.xx.xx.xx 为 云产品资源 提供的 弹性IP）下面的两张图上边的是阿里云提供的实例中的图, 下面的是我免费领取的 ecs 实例的图. 好像是按量计费的产品才有弹性公网 IP, 包年包月的就没有.<br>   <img src="https://user-images.githubusercontent.com/73486724/192133698-8345e40e-e6f6-4f6d-b8b7-de5b2807bdb7.png" alt="image"><br>   <img src="https://user-images.githubusercontent.com/73486724/192134059-05656ac8-7c33-4607-a6e6-4ca4cfde256d.png" alt="image"><br>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@<span class="number">101.133</span><span class="number">.151</span><span class="number">.69</span>  <span class="comment">//阿里云示例</span></span><br></pre></td></tr></table></figure></p>
 <ol>
 <li>手动输入 <code>yes</code></li>
 <li>输入密码, 提示:输入密码时界面是没有反应的，输入完毕直接回车即可，不要误以为出问题了。</li>
-<li>成功之后应该是这样的:<br>
-<img src="https://user-images.githubusercontent.com/73486724/192133934-3d9a4209-99a0-431f-aa64-1659d2676c68.png" alt="image"></li>
+<li>成功之后应该是这样的:<br><img src="https://user-images.githubusercontent.com/73486724/192133934-3d9a4209-99a0-431f-aa64-1659d2676c68.png" alt="image"></li>
 </ol>
-<p>参考教程: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12Z4y1h7mi?share_source=copy_web&amp;vd_source=1e1cbdd04843d6a73b76ca782123c6e0">【bilibili: 阿里云-云服务器ECS20-连接云主机】</a></p>
+<p>参考教程: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12Z4y1h7mi?share_source=copy_web&vd_source=1e1cbdd04843d6a73b76ca782123c6e0">【bilibili: 阿里云-云服务器ECS20-连接云主机】</a></p>
 <blockquote>
 <p>使用心得: 学生机注册使用体验有点差, 用开始支付宝认证还挺方便的, 后来还要在手机上下载阿里云app和人脸识别验证这一点我不是很喜欢, 个人不喜欢在手机和电脑上安装软件, 也不喜欢给一个新的 app 身份验证.</p>
 </blockquote>
-<p>目前两台电脑已经不在同一个局域网下, 在远程桌面下输入阿里云提供的公网 ip , 可以找到我的Windows账户.<br>
-<img src="https://user-images.githubusercontent.com/73486724/192136620-57e33d7a-1c96-4294-b08f-07c93176a5df.png" alt="image"><br>
-<img src="https://user-images.githubusercontent.com/73486724/192136758-292c4bf6-a923-4a0c-9e3f-5dff06da618d.png" alt="image"></p>
+<p>目前两台电脑已经不在同一个局域网下, 在远程桌面下输入阿里云提供的公网 ip , 可以找到我的Windows账户.<br><img src="https://user-images.githubusercontent.com/73486724/192136620-57e33d7a-1c96-4294-b08f-07c93176a5df.png" alt="image"><br><img src="https://user-images.githubusercontent.com/73486724/192136758-292c4bf6-a923-4a0c-9e3f-5dff06da618d.png" alt="image"></p>
 <blockquote>
-<p>现在仍然有问题, 当我像往常一样输入我的 Windows 密码时提示我: 之前用于连接到 <a target="_blank" rel="noopener" href="http://xxx.xxx.xxx.xxx">xxx.xxx.xxx.xxx</a> 的凭证无法工作, 请输入新凭证.</p>
+<p>现在仍然有问题, 当我像往常一样输入我的 Windows 密码时提示我: 之前用于连接到 xxx.xxx.xxx.xxx 的凭证无法工作, 请输入新凭证.</p>
 </blockquote>
-<h2 id="下载"><a class="header-anchor" href="#下载">¶</a>下载</h2>
-<p>下载地址: <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a><br>
-根据服务器、内网主机的系统框架，分别下载 frp.</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载地址: <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a><br>根据服务器、内网主机的系统框架，分别下载 frp.  </p>
 <ul>
-<li>客户端选择的是第一个<font color="#12345">“frp_0.44.0_darwin_amd64.tar.gz”</font> 版本</li>
-<li>服务器端为 x86_64 架构, 选择 <font color="#12345">“frp_0.44.0_linux_386.tar.gz”</font> 版本<br>
-<img src="https://user-images.githubusercontent.com/73486724/191934408-a7e39be8-678d-4fb9-808d-b3d452398acc.png" alt="image"><br>
-<img src="https://user-images.githubusercontent.com/73486724/193376900-9b297480-fe34-4fc9-bb80-8278f6943443.png" alt="image"></li>
+<li>客户端选择的是第一个<font color="#12345">“frp_0.44.0_darwin_amd64.tar.gz”</font> 版本  </li>
+<li>服务器端为 x86_64 架构, 选择 <font color="#12345">“frp_0.44.0_linux_386.tar.gz”</font> 版本<br><img src="https://user-images.githubusercontent.com/73486724/191934408-a7e39be8-678d-4fb9-808d-b3d452398acc.png" alt="image"><br><img src="https://user-images.githubusercontent.com/73486724/193376900-9b297480-fe34-4fc9-bb80-8278f6943443.png" alt="image"></li>
 </ul>
-<h3 id="服务器端"><a class="header-anchor" href="#服务器端">¶</a>服务器端</h3>
-<p>使用 <code>url</code> 指令安装</p>
+<h3 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h3><p>使用 <code>url</code> 指令安装</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -# -</span><br><span class="line"><span class="title class_">LJOhttps</span>:<span class="comment">//github.com/fatedier/frp/releases/download/v0.44.0/frp_0.44.0_linux_386.tar.gz</span></span><br></pre></td></tr></table></figure>
-<p>没有 <code>curl</code>也可以使用 <code>wget</code> 安装</p>
+<p>没有 <code>curl</code>也可以使用 <code>wget</code> 安装  </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">wgethttps</span>:<span class="comment">//github.com/fatedier/frp/releases/download/v0.44.0/frp_0.44.0_linux_386.tar.gz</span></span><br></pre></td></tr></table></figure>
-<p>以上两种方法我均失败了(…)</p>
-<p>成功方法: 使用 SSH 传输.<br>
-先在本地下载好需要的安装包, 复制路径, 然后再到<strong>相应路径下去上传</strong>(这里我没有注意到 cmd 默认在用户目录下开始, 而我的压缩包并不在 users 下面), 先一路 <code>cd</code> 出来, 然后输入命令:</p>
+
+<p>以上两种方法我均失败了(…)  </p>
+<p>成功方法: 使用 SSH 传输.<br>先在本地下载好需要的安装包, 复制路径, 然后再到<strong>相应路径下去上传</strong>(这里我没有注意到 cmd 默认在用户目录下开始, 而我的压缩包并不在 users 下面), 先一路 <code>cd</code> 出来, 然后输入命令:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scp /本地文件路径/test.<span class="property">txt</span> root@<span class="number">123.123</span><span class="number">.123</span><span class="number">.123</span>:<span class="regexp">/服务器文件路径/</span></span><br><span class="line"><span class="comment">// 我的相应命令</span></span><br><span class="line"><span class="attr">C</span>:\&gt;scp /<span class="title class_">Document</span>\<span class="title class_">GoogleDocuments</span>\frp_0<span class="number">.44</span>.0_linux_386.<span class="property">tar</span>.<span class="property">gz</span> root@<span class="number">39.101</span><span class="number">.75</span><span class="number">.147</span>:<span class="regexp">/work/</span>frp/</span><br><span class="line"><span class="comment">// 表示将该 frp 文件上传到 Linux 机器的 /work/frp/ 文件夹里</span></span><br></pre></td></tr></table></figure>
-<p>这样就成功了!<br>
-<img src="https://user-images.githubusercontent.com/73486724/193451121-b73d653c-400f-4896-b55a-6a1c2ee1d95c.png" alt="image"><br>
-然后到云服务器这里查看, <strong>注意: 云服务器中的默认路径并不是根目录</strong>, 用 <code>pwd</code> 指令查看当前路径, 发现在 <code>/root</code> 中<br>
-<img src="https://user-images.githubusercontent.com/73486724/193451214-538d50e5-78d1-433e-a69a-3b762bf2af1b.png" alt="image"><br>
-再一路 <code>cd</code> 出去, 可以看到上传上去的 frp 压缩包文件了.<br>
-<img src="https://user-images.githubusercontent.com/73486724/193451311-be12dfb4-2d70-48b3-b8a9-81b01fdf0022.png" alt="image"></p>
-<p>用 <code> tar -zxvf</code> 指令解压<br>
-用 <code>vim frp.ini</code> 编辑 frp.ini 文件<br>
-用 <code>:wq</code> 退出编辑<br>
-输入 <code>./frps -c frps.ini</code> 启动服务器端, 收到如下信息则成功</p>
+<p>这样就成功了!<br><img src="https://user-images.githubusercontent.com/73486724/193451121-b73d653c-400f-4896-b55a-6a1c2ee1d95c.png" alt="image"><br>然后到云服务器这里查看, <strong>注意: 云服务器中的默认路径并不是根目录</strong>, 用 <code>pwd</code> 指令查看当前路径, 发现在 <code>/root</code> 中<br><img src="https://user-images.githubusercontent.com/73486724/193451214-538d50e5-78d1-433e-a69a-3b762bf2af1b.png" alt="image"><br>再一路 <code>cd</code> 出去, 可以看到上传上去的 frp 压缩包文件了.<br><img src="https://user-images.githubusercontent.com/73486724/193451311-be12dfb4-2d70-48b3-b8a9-81b01fdf0022.png" alt="image">  </p>
+<p>用 <code> tar -zxvf</code> 指令解压<br>用 <code>vim frp.ini</code> 编辑 frp.ini 文件<br>用 <code>:wq</code> 退出编辑<br>输入 <code>./frps -c frps.ini</code> 启动服务器端, 收到如下信息则成功</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2022</span>/<span class="number">10</span>/<span class="number">02</span> <span class="number">19</span>:<span class="number">33</span>:<span class="number">21</span> [I] [root.<span class="property">go</span>:<span class="number">209</span>] frps uses config <span class="attr">file</span>: frps.<span class="property">ini</span></span><br><span class="line"><span class="number">2022</span>/<span class="number">10</span>/<span class="number">02</span> <span class="number">19</span>:<span class="number">33</span>:<span class="number">21</span> [I] [service.<span class="property">go</span>:<span class="number">194</span>] frps tcp listen on <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">7000</span></span><br><span class="line"><span class="number">2022</span>/<span class="number">10</span>/<span class="number">02</span> <span class="number">19</span>:<span class="number">33</span>:<span class="number">21</span> [I] [root.<span class="property">go</span>:<span class="number">218</span>] frps started successfully</span><br></pre></td></tr></table></figure>
-<p>教程:<br>
-<a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/network/271719.html">内网穿透FRP详细教程</a><br>
-<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141860859">Linux上传下载文件的几种方式 - 新睿云服务器的文章 - 知乎</a><br>
-<a target="_blank" rel="noopener" href="https://www.163.com/dy/article/FOVV1SM60548KSVT.html">教你 2 种从 Linux 终端下载文件的方法</a><br>
-<a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/754818">阿里云开发者社区 - Linux服务器怎样上传下载文件</a><br>
-<a target="_blank" rel="noopener" href="https://www.linuxbaike.com/upload-download/">从Linux服务器下载文件到本地or上传文件到Linux服务器的方法</a><br>
-<a target="_blank" rel="noopener" href="http://t.csdn.cn/qO3zq">csdn - linux 新建文件夹命令</a></p>
-<h3 id="客户端"><a class="header-anchor" href="#客户端">¶</a>客户端</h3>
-<p>直接在 GitHub 下载 ADM64 架构的文件即可.</p>
-<h1 id="配置步骤"><a class="header-anchor" href="#配置步骤">¶</a>配置步骤</h1>
-<p>下载下来的 fpr 其实就是个文件夹, 里面的文件如下所示:<br>
-<img src="https://user-images.githubusercontent.com/73486724/192106747-5170ffb1-2b5a-41af-ac0a-808d6f5514f6.png" alt="image"><br>
-<strong>注意：服务器端使用的版本和内网主机使用的要一致，不然容易出问题</strong></p>
-<h2 id="服务器端-frps"><a class="header-anchor" href="#服务器端-frps">¶</a>服务器端 frps</h2>
-<p>这里只需要修改  “frps.ini” 文件即可.<br>
-在具有公网 IP 的机器上部署 frps，修改 frps.ini 文件，这里使用了最简化的配置，设置了 frp 服务器用户接收客户端连接的端口：</p>
+<p>教程:<br><a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/network/271719.html">内网穿透FRP详细教程</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141860859">Linux上传下载文件的几种方式 - 新睿云服务器的文章 - 知乎</a><br><a target="_blank" rel="noopener" href="https://www.163.com/dy/article/FOVV1SM60548KSVT.html">教你 2 种从 Linux 终端下载文件的方法</a><br><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/754818">阿里云开发者社区 - Linux服务器怎样上传下载文件</a><br><a target="_blank" rel="noopener" href="https://www.linuxbaike.com/upload-download/">从Linux服务器下载文件到本地or上传文件到Linux服务器的方法</a><br><a target="_blank" rel="noopener" href="http://t.csdn.cn/qO3zq">csdn - linux 新建文件夹命令</a></p>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>直接在 GitHub 下载 ADM64 架构的文件即可.</p>
+<h1 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h1><p>下载下来的 fpr 其实就是个文件夹, 里面的文件如下所示:<br><img src="https://user-images.githubusercontent.com/73486724/192106747-5170ffb1-2b5a-41af-ac0a-808d6f5514f6.png" alt="image"><br><strong>注意：服务器端使用的版本和内网主机使用的要一致，不然容易出问题</strong></p>
+<h2 id="服务器端-frps"><a href="#服务器端-frps" class="headerlink" title="服务器端 frps"></a>服务器端 frps</h2><p>这里只需要修改  “frps.ini” 文件即可.<br>在具有公网 IP 的机器上部署 frps，修改 frps.ini 文件，这里使用了最简化的配置，设置了 frp 服务器用户接收客户端连接的端口：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = <span class="number">7000</span> # frp服务的端口号，可以自己定</span><br><span class="line">dashboard_port = <span class="number">7500</span> # frp的web界面的端口号</span><br><span class="line">dashboard_user = user # web界面的登陆账户，自己修改</span><br><span class="line">dashboard_pwd = pass # web界面的登陆密码，自己修改</span><br><span class="line">authentication_method = token</span><br><span class="line">token = <span class="title class_">Lyh</span>@<span class="number">2022</span> # frp客户端连接时的密码，自己修改</span><br></pre></td></tr></table></figure>
 <p><strong>注意: 实际使用要把注释删掉</strong></p>
-<h2 id="客户端-2"><a class="header-anchor" href="#客户端-2">¶</a>客户端</h2>
-<p>本地机器下载如图的版本, 注意要先点击 “查看全部” 才会出现.<br>
-<img src="https://user-images.githubusercontent.com/122464335/226323476-ec3ae3fb-40bb-4928-9ffe-e9e86362ce57.png" alt="image"></p>
+<h2 id="客户端-1"><a href="#客户端-1" class="headerlink" title="客户端"></a>客户端</h2><p>本地机器下载如图的版本, 注意要先点击 “查看全部” 才会出现.<br><img src="https://user-images.githubusercontent.com/122464335/226323476-ec3ae3fb-40bb-4928-9ffe-e9e86362ce57.png" alt="image"></p>
 <p>客户端配置:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"><span class="comment">// xx.xx.xx 是公网ip</span></span><br><span class="line">server_addr = xx.<span class="property">xx</span>.<span class="property">xx</span></span><br><span class="line">server_port = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">local_port = <span class="number">22</span></span><br><span class="line">remote_port = <span class="number">6000</span></span><br></pre></td></tr></table></figure>
-<p>服务器端的i打开相应的端口, 不然会出现<code>timeout</code>的报错<br>
-<img src="https://user-images.githubusercontent.com/122464335/226328138-f971f7fd-69ac-4215-8317-12e40b60ebce.png" alt="image"><br>
-打开方法参考阿里云官方文档: <a target="_blank" rel="noopener" href="https://www.fzxm.com/help/20210430095425001.html">https://www.fzxm.com/help/20210430095425001.html</a></p>
-<p>在 PowerShell 中启动客户端, 发现有报错<code>login to server failed</code> (在 cmd 中指令没用)<br>
-<img src="https://user-images.githubusercontent.com/122464335/226324721-ebe0baa1-ec85-469c-a813-fc3136e5a4f8.png" alt="image"><br>
-查找原因, 网上的说法是学校局域网特殊的问题, 解决: 在客户端原来的<code>[common]</code>配置中加入<code>tls_enable = true</code>即可.</p>
+<p>服务器端的i打开相应的端口, 不然会出现<code>timeout</code>的报错<br><img src="https://user-images.githubusercontent.com/122464335/226328138-f971f7fd-69ac-4215-8317-12e40b60ebce.png" alt="image"><br>打开方法参考阿里云官方文档: <a target="_blank" rel="noopener" href="https://www.fzxm.com/help/20210430095425001.html">https://www.fzxm.com/help/20210430095425001.html</a></p>
+<p>在 PowerShell 中启动客户端, 发现有报错<code>login to server failed</code> (在 cmd 中指令没用)<br><img src="https://user-images.githubusercontent.com/122464335/226324721-ebe0baa1-ec85-469c-a813-fc3136e5a4f8.png" alt="image"><br>查找原因, 网上的说法是学校局域网特殊的问题, 解决: 在客户端原来的<code>[common]</code>配置中加入<code>tls_enable = true</code>即可. </p>
 <blockquote>
 <p>事实上, 我加了, 还是没有用, 连自己的热点也报这个错, 继续…</p>
 </blockquote>
-<p>参考文献:<br>
-<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv16500867">https://www.bilibili.com/read/cv16500867</a><br>
-<a target="_blank" rel="noopener" href="https://geomatlab.com/frp-windows-rdp/#toc-head-9">https://geomatlab.com/frp-windows-rdp/#toc-head-9</a><br>
-<a target="_blank" rel="noopener" href="https://vilark.com/14.html">https://vilark.com/14.html</a></p>
-<p>换通过 Bush 启动, 给出了更加详细的报错<br>
-<img src="https://user-images.githubusercontent.com/122464335/226329308-4964d246-557b-4626-b72b-832921eebc62.png" alt="image"><br>
-字面意思是“因为目标机器主动拒绝它，所以无法进行连接。”, 这种情况应该是机器设备的配置出了问题, 而不是 FRP 的问题.</p>
-<p>参考资料:<br>
-<a target="_blank" rel="noopener" href="https://www.suajin.com/detail/721">https://www.suajin.com/detail/721</a></p>
-<h1 id="替代项目"><a class="header-anchor" href="#替代项目">¶</a>替代项目</h1>
-<p>开源项目openp2p，据说不需要公网服务器，假如只用来远程访问的话，用这个工具比做内网穿透方便多了！！！<br>
-我的免费 ECS 过期后可以尝试！！nice！</p>
-<h1 id="10-2-现场保护"><a class="header-anchor" href="#10-2-现场保护">¶</a>10.2 现场保护</h1>
-<p><a target="_blank" rel="noopener" href="https://www.iots.vip/post/synology-series-2.html">Alliot’s blog-群晖入门到进阶系列（二）：DDNS与端口转发</a><br>
-<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42081389/article/details/111745516">csdn-借助ecs的公网ip将自己家里的Windows做个内外穿透【外网可以访问的】–frp【远程连接Windows电脑】</a><br>
-<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/27205559/answer/772271922">买了一台云服务器到底能干什么？ - Logic的回答 - 知乎</a><br>
-<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55306067">windows下基于frp的内网穿透部署 - 进化的monkey的文章 - 知乎</a><br>
-<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1837482">腾讯云开发者社区-frp配置内网穿透教程（超详细）</a><br>
-<a target="_blank" rel="noopener" href="https://blog.csdn.net/YAOHAIPI/article/details/112788834">csdn-跨局域网远程连接神器——frp内网穿透</a></p>
-<p><a target="_blank" rel="noopener" href="https://chowdera.com/2022/03/202203051329130242.html">超详细frp配置实现绕过防火墙内网渗透</a><br>
-<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/2905">dial tcp IP:PORT: i/o timeout #2905</a><br>
-<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12b4y18725?p=3&amp;share_source=copy_web&amp;vd_source=1e1cbdd04843d6a73b76ca782123c6e0">【阿里云服务器ECS建站教程全套（适合0基础初学者），小白轻松拥有个人网站！| 保姆级教程</a><br>
-<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_36241363/article/details/78457359">使用frp进行内网穿透入门</a><br>
-<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46152207/article/details/114869669?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-1-114869669-null-null.pc_agg_new_rank&amp;utm_term=frpc%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E5%91%BD%E4%BB%A4&amp;spm=1000.2123.3001.4430">Windows命令窗口输入命令报错不是内部或外部命令，也不是可运行的程序 或批处理文件</a><br>
-<a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/network/271719.html">内网穿透FRP详细教程</a><br>
-<a target="_blank" rel="noopener" href="https://blog.csdn.net/YAOHAIPI/article/details/112788834">跨局域网远程连接神器——frp内网穿透</a><br>
-<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45963152/article/details/123903327">frp内网穿透实现文件共享祥细教程</a><br>
-<a target="_blank" rel="noopener" href="https://gofrp.org/docs/examples/ssh/">frp文档-通过 SSH 访问内网机器</a><br>
-<a target="_blank" rel="noopener" href="https://www.cnblogs.com/embedded-linux/p/10200831.html">博客园-局域网两个不同网段互相访问</a></p>
-<h1 id="3-20-现场保护"><a class="header-anchor" href="#3-20-现场保护">¶</a>3.20 现场保护</h1>
-<p><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/3058">login to server failed: dial tcp 182.243.33.96:7000: i/o timeout #3058</a><br>
-<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/2843">login to server failed: dial tcp {IP:PORT}: i/o timeout #2843</a><br>
-<a target="_blank" rel="noopener" href="https://serverfault.com/questions/1074292/why-am-i-getting-connection-refused">Why am I getting “Connection refused”?</a><br>
-<a target="_blank" rel="noopener" href="https://linuxdiaryblog.blogspot.com/2020/06/add-firewall-exception-to-port.html?m=1">Add a firewall exception to a port</a><br>
-<a target="_blank" rel="noopener" href="https://www.cnblogs.com/singworld/p/12304107.html">frp内网穿透，rdp远程连接Windows计算机</a><br>
-<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/2012">Configuration to disable system proxy #2012</a><br>
-<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/2021"> [W] [service.go:102] login to server failed: dial tcp 127.0.0.1:7000: connect: connection refused #2021</a><br>
-<a target="_blank" rel="noopener" href="https://www.213.name/%E5%86%8D%E8%A7%81teamviewer%EF%BC%8C5%E5%88%86%E9%92%9F%E8%87%AA%E5%BB%BA%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%9C%8D%E5%8A%A1%E5%99%A8/">再见TeamViewer，5分钟自建急速远程桌面服务器</a></p>
+<p>参考文献:<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv16500867">https://www.bilibili.com/read/cv16500867</a><br><a target="_blank" rel="noopener" href="https://geomatlab.com/frp-windows-rdp/#toc-head-9">https://geomatlab.com/frp-windows-rdp/#toc-head-9</a><br><a target="_blank" rel="noopener" href="https://vilark.com/14.html">https://vilark.com/14.html</a>  </p>
+<p>换通过 Bush 启动, 给出了更加详细的报错<br><img src="https://user-images.githubusercontent.com/122464335/226329308-4964d246-557b-4626-b72b-832921eebc62.png" alt="image"><br>字面意思是“因为目标机器主动拒绝它，所以无法进行连接。”, 这种情况应该是机器设备的配置出了问题, 而不是 FRP 的问题.</p>
+<p>参考资料:<br><a target="_blank" rel="noopener" href="https://www.suajin.com/detail/721">https://www.suajin.com/detail/721</a>  </p>
+<h1 id="替代项目"><a href="#替代项目" class="headerlink" title="替代项目"></a>替代项目</h1><p>开源项目openp2p，据说不需要公网服务器，假如只用来远程访问的话，用这个工具比做内网穿透方便多了！！！<br>我的免费 ECS 过期后可以尝试！！nice！</p>
+<h1 id="10-2-现场保护"><a href="#10-2-现场保护" class="headerlink" title="10.2 现场保护"></a>10.2 现场保护</h1><p><a target="_blank" rel="noopener" href="https://www.iots.vip/post/synology-series-2.html">Alliot’s blog-群晖入门到进阶系列（二）：DDNS与端口转发</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42081389/article/details/111745516">csdn-借助ecs的公网ip将自己家里的Windows做个内外穿透【外网可以访问的】–frp【远程连接Windows电脑】</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/27205559/answer/772271922">买了一台云服务器到底能干什么？ - Logic的回答 - 知乎</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55306067">windows下基于frp的内网穿透部署 - 进化的monkey的文章 - 知乎</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1837482">腾讯云开发者社区-frp配置内网穿透教程（超详细）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/YAOHAIPI/article/details/112788834">csdn-跨局域网远程连接神器——frp内网穿透</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://chowdera.com/2022/03/202203051329130242.html">超详细frp配置实现绕过防火墙内网渗透</a><br><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/2905">dial tcp IP:PORT: i/o timeout #2905</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12b4y18725?p=3&share_source=copy_web&vd_source=1e1cbdd04843d6a73b76ca782123c6e0">【阿里云服务器ECS建站教程全套（适合0基础初学者），小白轻松拥有个人网站！| 保姆级教程</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_36241363/article/details/78457359">使用frp进行内网穿透入门</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46152207/article/details/114869669?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-1-114869669-null-null.pc_agg_new_rank&utm_term=frpc%E4%B8%8D%E6%98%AF%E5%86%85%E9%83%A8%E5%91%BD%E4%BB%A4&spm=1000.2123.3001.4430">Windows命令窗口输入命令报错不是内部或外部命令，也不是可运行的程序 或批处理文件</a><br><a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/network/271719.html">内网穿透FRP详细教程</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/YAOHAIPI/article/details/112788834">跨局域网远程连接神器——frp内网穿透</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45963152/article/details/123903327">frp内网穿透实现文件共享祥细教程</a><br><a target="_blank" rel="noopener" href="https://gofrp.org/docs/examples/ssh/">frp文档-通过 SSH 访问内网机器</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/embedded-linux/p/10200831.html">博客园-局域网两个不同网段互相访问</a>  </p>
+<h1 id="3-20-现场保护"><a href="#3-20-现场保护" class="headerlink" title="3.20 现场保护"></a>3.20 现场保护</h1><p><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/3058">login to server failed: dial tcp 182.243.33.96:7000: i/o timeout #3058</a><br><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/2843">login to server failed: dial tcp {IP:PORT}: i/o timeout #2843</a><br><a target="_blank" rel="noopener" href="https://serverfault.com/questions/1074292/why-am-i-getting-connection-refused">Why am I getting “Connection refused”?</a><br><a target="_blank" rel="noopener" href="https://linuxdiaryblog.blogspot.com/2020/06/add-firewall-exception-to-port.html?m=1">Add a firewall exception to a port</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/singworld/p/12304107.html">frp内网穿透，rdp远程连接Windows计算机</a><br><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/2012">Configuration to disable system proxy #2012</a><br><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/issues/2021"> [W] [service.go:102] login to server failed: dial tcp 127.0.0.1:7000: connect: connection refused #2021</a><br><a target="_blank" rel="noopener" href="https://www.213.name/%E5%86%8D%E8%A7%81teamviewer%EF%BC%8C5%E5%88%86%E9%92%9F%E8%87%AA%E5%BB%BA%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%9C%8D%E5%8A%A1%E5%99%A8/">再见TeamViewer，5分钟自建急速远程桌面服务器</a></p>
 
     </div>
 
@@ -686,7 +576,7 @@ frp 主要由 <strong>客户端(frpc)</strong> 和 <strong>服务端(frps)</stro
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-FRP"><span class="nav-number">1.</span> <span class="nav-text">为什么使用 FRP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FRP-%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">FRP 原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">云服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%B5%E8%84%91%E6%98%AF%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6"><span class="nav-number">4.</span> <span class="nav-text">如何知道自己的电脑是什么框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-number">4.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">4.2.</span> <span class="nav-text">Linux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%B5%E8%84%91%E6%98%AF%E5%90%A6%E6%9C%89%E5%85%AC%E7%BD%91-ip"><span class="nav-number">5.</span> <span class="nav-text">如何判断自己的电脑是否有公网 ip</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">6.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87"><span class="nav-number">6.1.</span> <span class="nav-text">设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">6.2.</span> <span class="nav-text">购买云服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">6.3.</span> <span class="nav-text">连接云服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">6.4.</span> <span class="nav-text">下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF"><span class="nav-number">6.4.1.</span> <span class="nav-text">服务器端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">6.4.2.</span> <span class="nav-text">客户端</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="nav-number">7.</span> <span class="nav-text">配置步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF-frps"><span class="nav-number">7.1.</span> <span class="nav-text">服务器端 frps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-2"><span class="nav-number">7.2.</span> <span class="nav-text">客户端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%BF%E4%BB%A3%E9%A1%B9%E7%9B%AE"><span class="nav-number">8.</span> <span class="nav-text">替代项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-2-%E7%8E%B0%E5%9C%BA%E4%BF%9D%E6%8A%A4"><span class="nav-number">9.</span> <span class="nav-text">10.2 现场保护</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-20-%E7%8E%B0%E5%9C%BA%E4%BF%9D%E6%8A%A4"><span class="nav-number">10.</span> <span class="nav-text">3.20 现场保护</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-FRP"><span class="nav-number">1.</span> <span class="nav-text">为什么使用 FRP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FRP-%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">FRP 原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">云服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%9F%A5%E9%81%93%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%B5%E8%84%91%E6%98%AF%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6"><span class="nav-number">4.</span> <span class="nav-text">如何知道自己的电脑是什么框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows"><span class="nav-number">4.1.</span> <span class="nav-text">Windows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">4.2.</span> <span class="nav-text">Linux</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%B5%E8%84%91%E6%98%AF%E5%90%A6%E6%9C%89%E5%85%AC%E7%BD%91-ip"><span class="nav-number">5.</span> <span class="nav-text">如何判断自己的电脑是否有公网 ip</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">6.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87"><span class="nav-number">6.1.</span> <span class="nav-text">设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%AD%E4%B9%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">6.2.</span> <span class="nav-text">购买云服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">6.3.</span> <span class="nav-text">连接云服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">6.4.</span> <span class="nav-text">下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF"><span class="nav-number">6.4.1.</span> <span class="nav-text">服务器端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">6.4.2.</span> <span class="nav-text">客户端</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="nav-number">7.</span> <span class="nav-text">配置步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF-frps"><span class="nav-number">7.1.</span> <span class="nav-text">服务器端 frps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-1"><span class="nav-number">7.2.</span> <span class="nav-text">客户端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%BF%E4%BB%A3%E9%A1%B9%E7%9B%AE"><span class="nav-number">8.</span> <span class="nav-text">替代项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-2-%E7%8E%B0%E5%9C%BA%E4%BF%9D%E6%8A%A4"><span class="nav-number">9.</span> <span class="nav-text">10.2 现场保护</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-20-%E7%8E%B0%E5%9C%BA%E4%BF%9D%E6%8A%A4"><span class="nav-number">10.</span> <span class="nav-text">3.20 现场保护</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
