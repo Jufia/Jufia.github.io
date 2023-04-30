@@ -246,7 +246,7 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">57</span></a>
 
   </li>
   </ul>
@@ -278,10 +278,174 @@ mjx-container[display="true"] + br {
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-04-MCS51%E7%9A%84%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
+      <meta itemprop="name" content="Laura">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep Going Keep Fighting Keep Laughing​">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/15/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-04-MCS51%E7%9A%84%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">嵌入式原理及应用(04)-MCS51的指令系统</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-15 10:38:10" itemprop="dateCreated datePublished" datetime="2022-09-15T10:38:10+08:00">2022-09-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-25 22:17:40" itemprop="dateModified" datetime="2022-09-25T22:17:40+08:00">2022-09-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Electricity/" itemprop="url" rel="index"><span itemprop="name">Electricity</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Electricity/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>51共有指令111条</p>
+<ul>
+<li>字节<ul>
+<li>单字节指令49条</li>
+<li>双字节指令45条</li>
+<li>三字节指令17条</li>
+</ul>
+</li>
+<li>执行周期<ul>
+<li>单机器周期指令64条</li>
+<li>双机器周期指令45条</li>
+<li>4  机器周期指令 2 条</li>
+</ul>
+</li>
+</ul>
+<h2 id="汇编指令的基本结构"><a href="#汇编指令的基本结构" class="headerlink" title="汇编指令的基本结构"></a>汇编指令的基本结构</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Loop1:</span>   <span class="keyword">mov</span>   a, <span class="number">#0</span>ffh<span class="comment">;  累计器A赋值为ff</span></span><br></pre></td></tr></table></figure>
+<p><font color="34567d">LOOP1:</font> <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="0.036ex" role="img" focusable="false" viewBox="0 0 1000 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg></mjx-container>  <font color="red">mov</font> <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="0.036ex" role="img" focusable="false" viewBox="0 0 1000 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg></mjx-container> <font color="4567">a</font> , <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="0.036ex" role="img" focusable="false" viewBox="0 0 1000 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg></mjx-container> <font color="rgb010">#0ffh</font>;  <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="4.525ex" height="0.036ex" role="img" focusable="false" viewBox="0 0 2000 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg></mjx-container> <font color="aa3a">累计器A赋值为ff</font><br><font color="34567d">[标号]: </font> <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="0.036ex" role="img" focusable="false" viewBox="0 0 1000 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg></mjx-container>  <font color="red">操作码助记符  </font> <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="0.036ex" role="img" focusable="false" viewBox="0 0 1000 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg></mjx-container> <font color="4567">[第1操作数]</font> , <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="0.036ex" role="img" focusable="false" viewBox="0 0 1000 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg></mjx-container> <font color="rgb010">[第2操作数]</font>;<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="4.525ex" height="0.036ex" role="img" focusable="false" viewBox="0 0 2000 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg></mjx-container> <font color="aa3a"> 注释</font>  </p>
+<ul>
+<li><font color="34567d">[标号] </font>：表示该指令所在的符号地址，一般由字母和数字组成，第一位为字母，其余位为字母、数字任选。</li>
+<li><font color="red">操作码助记符  </font>、<font color="4567">[第1操作数]</font> 和 <font color="rgb010">[第2操作数]</font>：指令的核心部分。对于某些指令可能不存在完整的两个操作数。</li>
+<li><font color="aa3a"> 注释</font>：是由用户加入的文本，对汇编程序不起任何作用，只是方便阅读。</li>
+</ul>
+<blockquote>
+<p>第1操作数又称目的操作数，第2操作数又称源操作数<br>汇编语言可以直接对硬件进行操作, 效率高于高级语言<br>汇编语言不区分大小写<br>汇编语言用分号 ‘;’ 进行注释<br>CPU只能执行机器语言（由8位二进制代码组成，分为1字节、2字节、3字节）。所有的汇编程序都要先转化为机械码</p>
+</blockquote>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">RET</span>    &lt;=&gt;<span class="number">22</span>H</span><br><span class="line"><span class="keyword">MOV</span>   A,<span class="number">#0</span>fh    &lt;=&gt;<span class="number">74</span>H  <span class="number">0</span>FH</span><br><span class="line"><span class="keyword">MOV</span>   <span class="number">74</span>H,<span class="number">#0</span>BH    &lt;=&gt;<span class="number">75</span>H   <span class="number">74</span>H   <span class="number">0</span>BH</span><br></pre></td></tr></table></figure>
+<p>[此处插入一个关于指令和对应功能机械码的表格, 课本p62表3-2]</p>
+<p>参考文献: <a target="_blank" rel="noopener" href="https://www.wsbookshow.com/uploads/bookfile/201007/9787508462479_2.pdf">Microsoft Word - 新1-3.doc(模块三 80C51 的指令系统和程序设计)</a></p>
+<h1 id="数据传送类"><a href="#数据传送类" class="headerlink" title="数据传送类"></a>数据传送类</h1><p><strong>指令介绍中符号的说明：</strong></p>
+<ul>
+<li>Rn：当前工作寄存器区中R0~R7</li>
+<li>Ri：当前工作寄存器区中的R0,R1</li>
+<li>Direct：直接地址</li>
+<li>#data：指令中的常数（8位或16位）</li>
+<li>Dptr：数据指针</li>
+<li>@：间接寻址前缀</li>
+<li>(X) ：x中的内容（20h）</li>
+<li>((x))：在间接寻址中，由间址寄存器寻址的单元中的内容<ul>
+<li>((R0))，若R0=20H，则((R0))表示（20H）</li>
+</ul>
+</li>
+</ul>
+<h2 id="MOV"><a href="#MOV" class="headerlink" title="MOV"></a>MOV</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Mov</span>  a, Rn<span class="comment">; 以累加器为目的</span></span><br><span class="line"><span class="keyword">Mov</span>  Rn, <span class="number">#0</span>A0h<span class="comment">; 以Rn为目的操作数</span></span><br><span class="line"><span class="keyword">Mov</span>  <span class="number">40</span>H, <span class="comment">@Ri；以直接地址为目的操作数</span></span><br><span class="line"><span class="keyword">Mov</span>  <span class="comment">@Ri, #0B0h；以寄存器间接地址为目的操作数</span></span><br><span class="line"><span class="keyword">Mov</span>  dptr, <span class="number">#2000</span>h<span class="comment">; 把 16 位立即数送入 DPTR , 用来设置外部存储器的地址指针</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">MOV</span> Rn, direct<span class="comment">; 将源操作数中的内容送入到当前工作寄存器 R0 ~ R7 中的某一个寄存器</span></span><br></pre></td></tr></table></figure>
+
+<p><font color="#2ad"><strong>所有 MOV 类指令, 累加器 A 是一个非常重要的 8 位寄存器, CPU 对它具有其他存储器所没有的操作指令</strong></font></p>
+<h2 id="MOVX-x2F-访问外部数据存储器"><a href="#MOVX-x2F-访问外部数据存储器" class="headerlink" title="MOVX /访问外部数据存储器"></a>MOVX /访问外部数据存储器</h2><p>A与<strong>外部数据存储器</strong>传送  </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Movx</span>  a,<span class="comment">@dptr</span></span><br><span class="line"><span class="keyword">Movx</span> a,<span class="comment">@Ri</span></span><br><span class="line"><span class="keyword">Movx</span> <span class="comment">@dptr,a</span></span><br><span class="line"><span class="keyword">Movx</span> <span class="comment">@Ri,a</span></span><br></pre></td></tr></table></figure>
+<h2 id="MOVC-x2F-访问外部程序存储器"><a href="#MOVC-x2F-访问外部程序存储器" class="headerlink" title="MOVC /访问外部程序存储器"></a>MOVC /访问外部程序存储器</h2><p><code>MOVC</code> 用于访问<strong>外部程序存储器</strong><br>表格存放在外部程序存储器中  </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">; 查表指令</span></span><br><span class="line"><span class="symbol">Movc</span> a,<span class="comment">@a+pc（单字节）</span></span><br></pre></td></tr></table></figure>
+
+<p>若程序中这指令所在的地址为1000h，这是一条单字节指令。CPU执行此条指令时，pc=1001, 假定此时a=30h。那么，程序的执行结果，是将程序存储器1031H中内容，读入a中。  </p>
+<blockquote>
+<p>这条指令的优点是不改变特殊功能寄存器及 PC 的状态, 根据 A 中的内容就可以取出表格中的常数, 缺点是表格只能存放在该查表指令所在地址的 +256 个单元内<br><strong>只能访问该指令后面256单元</strong></p>
+</blockquote>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">; 例: 求 0~9 的平方</span></span><br><span class="line">              ORG    <span class="number">0000</span>H</span><br><span class="line">              LJMP   <span class="built_in">A1</span></span><br><span class="line">              ORG    <span class="number">0080</span>H</span><br><span class="line"><span class="symbol">A1:</span>           <span class="keyword">NOP</span></span><br><span class="line">              <span class="keyword">NOP</span></span><br><span class="line">              <span class="keyword">MOV</span>   <span class="built_in">SP</span>,<span class="number">#60</span>H</span><br><span class="line">              <span class="keyword">MOV</span>   DPTR,<span class="number">#2000</span>H</span><br><span class="line">              <span class="keyword">MOV</span>   A,<span class="number">#03</span>H；将<span class="number">0</span>~<span class="number">9</span>之内任意一个数赋值给A。</span><br><span class="line">              MOVC  A,<span class="comment">@A+DPTR</span></span><br><span class="line"><span class="symbol">A2:</span>           SJMP  <span class="built_in">A2</span></span><br><span class="line">              ORG   <span class="number">2000</span>H</span><br><span class="line">              DB    <span class="number">00</span>h,<span class="number">01</span>h,<span class="number">04</span>h,<span class="number">09</span>h,<span class="number">10</span>h,<span class="number">19</span>h,<span class="number">24</span>h,<span class="number">31</span>h,<span class="number">40</span>h,<span class="number">51</span>h</span><br><span class="line">              <span class="meta">END</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>执行 MOVC 指令时, 伴随单片机的 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="6.896ex" height="2.362ex" role="img" focusable="false" viewBox="0 -1022 3048 1044"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mover"><g data-mml-node="mrow"><g data-mml-node="mi"><path data-c="1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path></g><g data-mml-node="mi" transform="translate(751,0)"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="mi" transform="translate(1396,0)"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g><g data-mml-node="mi" transform="translate(2160,0)"><path data-c="1D441" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path></g></g><g data-mml-node="mo" transform="translate(0,637)"><svg width="3048" height="237" x="0" y="148" viewBox="762 148 3048 237"><path data-c="2013" d="M0 248V285H499V248H0Z" transform="scale(9.144,1)"></path></svg></g></g></g></g></svg></mjx-container> 引脚信号同时有效</strong></p>
+<h2 id="push-x2F-pop"><a href="#push-x2F-pop" class="headerlink" title="push / pop"></a>push / pop</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(<span class="built_in">sp</span>)<span class="number">=60</span>h,(a)<span class="number">=30</span>h,(b)<span class="number">=70</span>h</span><br><span class="line"><span class="keyword">Push</span>  a   <span class="comment">;(sp)+1=61h=&gt;sp     (a)=&gt;61h</span></span><br><span class="line"><span class="keyword">Push</span>  <span class="keyword">b</span>   <span class="comment">; (sp)+1=62h=&gt;sp    (b)=&gt;62h</span></span><br><span class="line"><span class="keyword">Pop</span>   <span class="keyword">b</span>   <span class="comment">;  (sp)=&gt;b           (sp)-1=&gt;sp =61h</span></span><br><span class="line"><span class="keyword">Pop</span>   a   <span class="comment">;   (sp)=&gt;a           (sp)-1=&gt;sp =60h</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>PUSH: 先 +1 , 后入栈<br>POP: 先出栈, 后 -1</p>
+</blockquote>
+<h2 id="XCH-x2F-字节交换指令"><a href="#XCH-x2F-字节交换指令" class="headerlink" title="XCH /字节交换指令"></a>XCH /字节交换指令</h2><p>将累加器内容与源操作数内容相互交换</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Xch</span>  a,Rn</span><br><span class="line"><span class="symbol">Xch</span>  a,<span class="number">40</span>h（直接地址）</span><br><span class="line"><span class="symbol">Xch</span> a,<span class="comment">@Ri</span></span><br><span class="line"><span class="symbol">Xch</span> a,<span class="built_in">R7</span></span><br><span class="line"><span class="comment">; 若a=55h;R7=66h，指令执行结果a=66h,R7=55h</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="XCHD-x2F-半字节交换"><a href="#XCHD-x2F-半字节交换" class="headerlink" title="XCHD /半字节交换"></a>XCHD /半字节交换</h2><p>累加器 A 的低四位与内部 RAM 低四位交换. 只变低四位, 高四位不变.</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Xchd</span> a,<span class="comment">@R0</span></span><br><span class="line"><span class="comment">; 若a=59h,R0=60h,(60h)=3eh,执行结果a=5eh,(60h)=39h</span></span><br><span class="line"><span class="comment">; 59H = 0101 1001, (60H) = 3EH = 0011 1110</span></span><br></pre></td></tr></table></figure>
+<p><em>Data 6, Data 7 同时有进位或同时没有进位, OV = 0</em></p>
+<h1 id="算数操作类"><a href="#算数操作类" class="headerlink" title="算数操作类"></a>算数操作类</h1><p><img src="https://user-images.githubusercontent.com/73486724/192147377-ba110091-6730-4717-819d-aabe10c8d6e1.png" alt="image"></p>
+<h2 id="ADD-x2F-加法指令"><a href="#ADD-x2F-加法指令" class="headerlink" title="ADD /加法指令"></a>ADD /加法指令</h2><p>共有 4 条加法指令  </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ADD</span> A, Rn</span><br><span class="line"><span class="keyword">ADD</span> A, direct</span><br><span class="line"><span class="keyword">ADD</span> A, <span class="comment">@Ri</span></span><br><span class="line"><span class="keyword">ADD</span> A, <span class="symbol">#data</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果位7有进位输出，则置“1”Cy位，否则清零；</li>
+<li>如果位3有进位输出，则置“1”Ac位，否则清零；</li>
+<li>如果位6有进位而位7没有进位，或者位7有进位而位6没有，则置位溢出标志位OV置”1”；否则对溢出标志位清零。(6 和 7 同时有进位或者都没有进位时 OV = 0)</li>
+</ul>
+<blockquote>
+<p>溢出标志位 OV 的状态, 只有在进行带符号数的加法运算时才有意义</p>
+</blockquote>
+<p><strong>例:</strong></p>
+<ol>
+<li>53H + FCH, (A) = 4FH, Cy = 1, Ac = 0, OV = 0, P = 1</li>
+<li>85H + AFH, (A) = 34H, Cy = 1, Ac = 1, OV = 1, P = 1</li>
+</ol>
+<h2 id="ADDC-x2F-带进位加法指令"><a href="#ADDC-x2F-带进位加法指令" class="headerlink" title="ADDC /带进位加法指令"></a>ADDC /带进位加法指令</h2><p>通常将进位标识符 Cy 简称为 C, <code>ADDC</code> 则意为带上进位标志位的加法指令.<br><strong>带进位标志位加法指令的特点是 Cy 参加运算, 是三个数相加</strong><br>共有 4 条加法指令  </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">ADDC</span> A, Rn</span><br><span class="line"><span class="symbol">ADDC</span> A, direct</span><br><span class="line"><span class="symbol">ADDC</span> A, <span class="comment">@Ri</span></span><br><span class="line"><span class="symbol">ADDC</span> A, <span class="symbol">#data</span></span><br></pre></td></tr></table></figure>
+<p><strong>例:</strong> (A) = 85H, (20H) = FFH, Cy = 1   </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">ADDC</span> A, <span class="number">20</span>H</span><br><span class="line"><span class="comment">; (A) = 85H, Cy = 1, Ac = 1, OV = 0, P = 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="INC-x2F-加一指令"><a href="#INC-x2F-加一指令" class="headerlink" title="INC /加一指令"></a>INC /加一指令</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/14/%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
       <meta itemprop="name" content="Laura">
       <meta itemprop="description" content="">
     </span>
@@ -355,7 +519,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/08/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6-03%E7%BB%84%E5%90%88%E6%95%B0%E5%85%AC%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
       <meta itemprop="name" content="Laura">
       <meta itemprop="description" content="">
     </span>
@@ -433,7 +597,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/06/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6-02%E5%89%8Dn%E9%A1%B9%E7%9B%B8%E5%8A%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
       <meta itemprop="name" content="Laura">
       <meta itemprop="description" content="">
     </span>
@@ -518,7 +682,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/05/%E4%B8%AD%E5%AD%A6%E6%95%B0%E5%AD%A6-01%E8%A7%A3%E4%B8%80%E5%85%83%E4%B8%89%E6%AC%A1%E6%96%B9%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
       <meta itemprop="name" content="Laura">
       <meta itemprop="description" content="">
     </span>
@@ -601,7 +765,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/04/%E6%A6%82%E7%8E%87%E8%AE%BA-99%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%BB%93%E8%AE%BA%E7%9A%84%E6%8E%A8%E5%AF%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
       <meta itemprop="name" content="Laura">
       <meta itemprop="description" content="">
     </span>
@@ -687,7 +851,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/29/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-03-MCS-51-%E7%9A%84%E5%AD%98%E5%82%A8%E5%99%A8%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
       <meta itemprop="name" content="Laura">
       <meta itemprop="description" content="">
     </span>
@@ -846,7 +1010,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/26/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-02MCS-51%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
       <meta itemprop="name" content="Laura">
       <meta itemprop="description" content="">
     </span>
@@ -1046,7 +1210,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/25/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
       <meta itemprop="name" content="Laura">
       <meta itemprop="description" content="">
     </span>
@@ -1182,7 +1346,7 @@ mjx-container[display="true"] + br {
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/07/python-10-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
+      <meta itemprop="image" content="/%5Cimages%5Claura.jpg">
       <meta itemprop="name" content="Laura">
       <meta itemprop="description" content="">
     </span>
@@ -1290,107 +1454,6 @@ mjx-container[display="true"] + br {
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/08/07/python-09-random%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/%5Cimages%5Crura.jpg">
-      <meta itemprop="name" content="Laura">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Keep Going Keep Fighting Keep Laughing​">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/07/python-09-random%E5%BA%93/" class="post-title-link" itemprop="url">python-9-random库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-08-07 18:22:07" itemprop="dateCreated datePublished" datetime="2022-08-07T18:22:07+08:00">2022-08-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-08 22:55:38" itemprop="dateModified" datetime="2022-08-08T22:55:38+08:00">2022-08-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Language/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>random 库是使用随机数的 python 标准库.</p>
-<blockquote>
-<p>标准库: 是随着 python 的解释器所自带的库, 它不需要安装, 直接用 <code>import</code> 来使用它.<br><strong>在工程中, 有很多通过随机值的方法来快速测量的情况, 计算机的思维.</strong></p>
-</blockquote>
-<p>计算机不可能产生随机值, 或者简单理解为: 真正的随机数也是在各种复杂条件下产生的确定值, 只不过我们并不充分理解这些复杂条件, 或者已经超越了我们的理解能力. 计算机虽然不能产生真正的随机数, 但是能产生伪随机数 - 采用梅森旋转算法生成的(伪)随机序列中元素. </p>
-<h1 id="基本随机函数"><a href="#基本随机函数" class="headerlink" title="基本随机函数"></a>基本随机函数</h1><p>计算机要产生一个随机数, 是需要一个随机数种子 seed 的, 计算机根据 seed 运用梅森旋转算法, 就能够根据种子产生一系列唯一确定的数据, 只要种子相同, 产生的随机序列无论是每一个数还是数之间的关系都是确定的. </p>
-<h2 id="seed"><a href="#seed" class="headerlink" title="seed()"></a>seed()</h2><p>用 <code>random.seed()</code> 给定一个种子, 在使用随机数的时候也可以不调用这个函数, 直接调用 <code>random.random</code> 来产生随机数, 不需要使用 <code>seed</code> 函数, 此时它使用当前操作系统的默认的系统时间(精确到微秒)作为种子.</p>
-<h2 id="random"><a href="#random" class="headerlink" title="random()"></a>random()</h2><p>生成一个[0.0, 1.0)之间的随机小数.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()  </span><br><span class="line"><span class="number">0.45594588118356716</span></span><br></pre></td></tr></table></figure>
-<p>若编程中给出了随机种子, 下一次程序再次运行, 只要种子相同, 产生的随机数也相同, 对于使用随机数的种子可以复现程序运行的过程, 如果不使用随机数种子, 每次运行结果可能会改变.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> random</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.seed(<span class="number">4</span>)  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()</span><br><span class="line"><span class="number">0.23604808973743452</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()</span><br><span class="line"><span class="number">0.1031660342307158</span>  <span class="comment"># 注意这里</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> random</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.seed(<span class="number">4</span>)        </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random()       </span><br><span class="line"><span class="number">0.23604808973743452</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.seed(<span class="number">4</span>)        </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.random() </span><br><span class="line"><span class="number">0.23604808973743452</span>  <span class="comment"># 注意这里</span></span><br></pre></td></tr></table></figure>
-<p>只要调用了 <code>random.seed()</code> 设置种子的函数, 后续再调用 <code>random()</code> 函数的顺序只要相同, 产生的随机数也是相同的.</p>
-<h1 id="扩展随机函数"><a href="#扩展随机函数" class="headerlink" title="扩展随机函数"></a>扩展随机函数</h1><h2 id="randint"><a href="#randint" class="headerlink" title="randint()"></a>randint()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">randint</span>(<span class="params">self, a, b</span>):</span><br><span class="line">    <span class="string">"""Return random integer in range [a, b], including both end points.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> self.randrange(a, b+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<p>生成一个位于 [a, b] 之间的整数. 每次调用会产生不同的随机数.</p>
-<h2 id="getrandbits"><a href="#getrandbits" class="headerlink" title="getrandbits()"></a>getrandbits()</h2><p>生成一个 k 比特长的随机整数, 它不是用十进制范围来确定, 而是用比特数的长度来确定, [0, <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.152ex" height="1.932ex" role="img" focusable="false" viewBox="0 -853.7 951.4 853.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(533,363) scale(0.707)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g></g></g></g></svg></mjx-container>).</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">getrandbits</span>(<span class="params">self, k</span>):</span><br><span class="line">    <span class="string">"""getrandbits(k) -&gt; x.  Generates an int with k random bits."""</span></span><br><span class="line">    <span class="keyword">if</span> k &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">'number of bits must be non-negative'</span>)</span><br><span class="line">    numbytes = (k + <span class="number">7</span>) // <span class="number">8</span>                       <span class="comment"># bits / 8 and rounded up</span></span><br><span class="line">    x = <span class="built_in">int</span>.from_bytes(_urandom(numbytes), <span class="string">'big'</span>)</span><br><span class="line">    <span class="keyword">return</span> x &gt;&gt; (numbytes * <span class="number">8</span> - k)                <span class="comment"># trim excess bits</span></span><br></pre></td></tr></table></figure>
-<h2 id="uniform"><a href="#uniform" class="headerlink" title="uniform()"></a>uniform()</h2><p>生成一个[a, b]之间的随机小数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">uniform</span>(<span class="params">self, a, b</span>):</span><br><span class="line">    <span class="string">"Get a random number in the range [a, b) or [a, b] depending on rounding."</span></span><br><span class="line">    <span class="keyword">return</span> a + (b - a) * self.random()</span><br></pre></td></tr></table></figure>
-<h2 id="randrange"><a href="#randrange" class="headerlink" title="randrange()"></a>randrange()</h2><p>生成一一个[start, stop)之间以 step 为步长的随机整数.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">randrange</span>(<span class="params">self, start, stop=<span class="literal">None</span>, step=_ONE</span>):</span><br><span class="line">    <span class="string">"""Choose a random item from range(start, stop[, step]).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    This fixes the problem with randint() which includes the</span></span><br><span class="line"><span class="string">    endpoint; in Python this is usually not what you want.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># This code is a bit messy to make it fast for the</span></span><br><span class="line">    <span class="comment"># common case while still doing adequate error checking.</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        istart = _index(start)</span><br><span class="line">    <span class="keyword">except</span> TypeError:</span><br><span class="line">        istart = <span class="built_in">int</span>(start)</span><br><span class="line">        <span class="keyword">if</span> istart != start:</span><br><span class="line">            _warn(<span class="string">'randrange() will raise TypeError in the future'</span>,</span><br><span class="line">                  DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">"non-integer arg 1 for randrange()"</span>)</span><br><span class="line">        _warn(<span class="string">'non-integer arguments to randrange() have been deprecated '</span></span><br><span class="line">              <span class="string">'since Python 3.10 and will be removed in a subsequent '</span></span><br><span class="line">              <span class="string">'version'</span>,</span><br><span class="line">              DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">if</span> stop <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="comment"># We don't check for "step != 1" because it hasn't been</span></span><br><span class="line">        <span class="comment"># type checked and converted to an integer yet.</span></span><br><span class="line">        <span class="keyword">if</span> step <span class="keyword">is</span> <span class="keyword">not</span> _ONE:</span><br><span class="line">            <span class="keyword">raise</span> TypeError(<span class="string">'Missing a non-None stop argument'</span>)</span><br><span class="line">        <span class="keyword">if</span> istart &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> self._randbelow(istart)</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">"empty range for randrange()"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># stop argument supplied.</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        istop = _index(stop)</span><br><span class="line">    <span class="keyword">except</span> TypeError:</span><br><span class="line">        istop = <span class="built_in">int</span>(stop)</span><br><span class="line">        <span class="keyword">if</span> istop != stop:</span><br><span class="line">            _warn(<span class="string">'randrange() will raise TypeError in the future'</span>,</span><br><span class="line">                  DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">"non-integer stop for randrange()"</span>)</span><br><span class="line">        _warn(<span class="string">'non-integer arguments to randrange() have been deprecated '</span></span><br><span class="line">              <span class="string">'since Python 3.10 and will be removed in a subsequent '</span></span><br><span class="line">              <span class="string">'version'</span>,</span><br><span class="line">              DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">    width = istop - istart</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        istep = _index(step)</span><br><span class="line">    <span class="keyword">except</span> TypeError:</span><br><span class="line">        istep = <span class="built_in">int</span>(step)</span><br><span class="line">        <span class="keyword">if</span> istep != step:</span><br><span class="line">            _warn(<span class="string">'randrange() will raise TypeError in the future'</span>,</span><br><span class="line">                  DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">"non-integer step for randrange()"</span>)</span><br><span class="line">        _warn(<span class="string">'non-integer arguments to randrange() have been deprecated '</span></span><br><span class="line">              <span class="string">'since Python 3.10 and will be removed in a subsequent '</span></span><br><span class="line">              <span class="string">'version'</span>,</span><br><span class="line">              DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">    <span class="comment"># Fast path.</span></span><br><span class="line">    <span class="keyword">if</span> istep == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">if</span> width &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> istart + self._randbelow(width)</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">"empty range for randrange() (%d, %d, %d)"</span> % (istart, istop, width))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Non-unit step argument supplied.</span></span><br><span class="line">    <span class="keyword">if</span> istep &gt; <span class="number">0</span>:</span><br><span class="line">        n = (width + istep - <span class="number">1</span>) // istep</span><br><span class="line">    <span class="keyword">elif</span> istep &lt; <span class="number">0</span>:</span><br><span class="line">        n = (width + istep + <span class="number">1</span>) // istep</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">"zero step for randrange()"</span>)</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">"empty range for randrange()"</span>)</span><br><span class="line">    <span class="keyword">return</span> istart + istep * self._randbelow(n)</span><br></pre></td></tr></table></figure>
-<h2 id="choice"><a href="#choice" class="headerlink" title="choice()"></a>choice()</h2><p>从序列seq中随机选择一个元素</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">def</span> <span class="title function_">choice</span>(<span class="params">self, seq</span>):</span><br><span class="line">        <span class="string">"""Choose a random element from a non-empty sequence."""</span></span><br><span class="line">        <span class="comment"># raises IndexError if seq is empty</span></span><br><span class="line">        <span class="keyword">return</span> seq[self._randbelow(<span class="built_in">len</span>(seq))]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.choice([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]) </span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure>
-<h2 id="shuffle"><a href="#shuffle" class="headerlink" title="shuffle()"></a>shuffle()</h2><p>将序列seq中元素随机排列,返回打乱后的序列. 要先赋值, 再传递给 <code>shuffle()</code> 函数, <code>shuffle()</code> 函数把打乱后的顺序给序列变量重新赋值.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">def</span> <span class="title function_">shuffle</span>(<span class="params">self, x, random=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="string">"""Shuffle list x in place, and return None.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Optional argument random is a 0-argument function returning a</span></span><br><span class="line"><span class="string">        random float in [0.0, 1.0); if it is the default None, the</span></span><br><span class="line"><span class="string">        standard random.random will be used.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> random <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            randbelow = self._randbelow</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(x))):</span><br><span class="line">                <span class="comment"># pick an element in x[:i+1] with which to exchange x[i]</span></span><br><span class="line">                j = randbelow(i + <span class="number">1</span>)</span><br><span class="line">                x[i], x[j] = x[j], x[i]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            _warn(<span class="string">'The *random* parameter to shuffle() has been deprecated\n'</span></span><br><span class="line">                  <span class="string">'since Python 3.9 and will be removed in a subsequent '</span></span><br><span class="line">                  <span class="string">'version.'</span>,</span><br><span class="line">                  DeprecationWarning, <span class="number">2</span>)</span><br><span class="line">            floor = _floor</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(x))):</span><br><span class="line">                <span class="comment"># pick an element in x[:i+1] with which to exchange x[i]</span></span><br><span class="line">                j = floor(random() * (i + <span class="number">1</span>))</span><br><span class="line">                x[i], x[j] = x[j], x[i]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>] </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>random.shuffle(s) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(s) </span><br><span class="line">[<span class="number">3</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1453,7 +1516,7 @@ mjx-container[display="true"] + br {
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Laura"
-      src="/%5Cimages%5Crura.jpg">
+      src="/%5Cimages%5Claura.jpg">
   <p class="site-author-name" itemprop="name">Laura</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -1462,7 +1525,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
