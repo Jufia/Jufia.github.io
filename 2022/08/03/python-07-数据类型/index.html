@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="数字整数十进制：二进制：以 0b 或者 0B 开头；0b010， -0B101八进制：以 0o 或者 0O 开头；十六进制：以 0x 或者 0X 开头； 浮点数 带有小数及小数点的数字； 浮点数取值范围和小数精度都存在限制； 取值范围数量级约：  到 , 精度数量级为    浮点数间运算存在不确定尾数，不是 bug&gt;&gt;&gt;0.1 + 0.20.3000000000004小数用53位">
+  <meta name="description" content="¶数字 ¶整数 十进制： 二进制：以 0b 或者 0B 开头；0b010， -0B101 八进制：以 0o 或者 0O 开头； 十六进制：以 0x 或者 0X 开头； ¶浮点数  带有小数及小数点的数字； 浮点数取值范围和小数精度都存在限制； 取值范围数量级约：  到 , 精度数量级为    浮点数间运算存在不确定尾数，不是 bug &gt;&gt;&gt;0.1 + 0.2 0.30000000">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python-7.数据类型">
 <meta property="og:url" content="http://example.com/2022/08/03/python-07-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
-<meta property="og:description" content="数字整数十进制：二进制：以 0b 或者 0B 开头；0b010， -0B101八进制：以 0o 或者 0O 开头；十六进制：以 0x 或者 0X 开头； 浮点数 带有小数及小数点的数字； 浮点数取值范围和小数精度都存在限制； 取值范围数量级约：  到 , 精度数量级为    浮点数间运算存在不确定尾数，不是 bug&gt;&gt;&gt;0.1 + 0.20.3000000000004小数用53位">
+<meta property="og:description" content="¶数字 ¶整数 十进制： 二进制：以 0b 或者 0B 开头；0b010， -0B101 八进制：以 0o 或者 0O 开头； 十六进制：以 0x 或者 0X 开头； ¶浮点数  带有小数及小数点的数字； 浮点数取值范围和小数精度都存在限制； 取值范围数量级约：  到 , 精度数量级为    浮点数间运算存在不确定尾数，不是 bug &gt;&gt;&gt;0.1 + 0.2 0.30000000">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://user-images.githubusercontent.com/73486724/181770791-944510cd-27e9-415c-9356-31eb1b9c6eae.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/73486724/183048281-2800810f-4eb0-4f56-9f60-ea4d4b470de4.png">
@@ -254,7 +254,7 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">57</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">58</span></a>
 
   </li>
   </ul>
@@ -351,235 +351,273 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h1><h2 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h2><p>十进制：<br>二进制：以 0b 或者 0B 开头；0b010， -0B101<br>八进制：以 0o 或者 0O 开头；<br>十六进制：以 0x 或者 0X 开头；</p>
-<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><ul>
+        <h1 id="数字"><a class="header-anchor" href="#数字">¶</a>数字</h1>
+<h2 id="整数"><a class="header-anchor" href="#整数">¶</a>整数</h2>
+<p>十进制：<br>
+二进制：以 0b 或者 0B 开头；0b010， -0B101<br>
+八进制：以 0o 或者 0O 开头；<br>
+十六进制：以 0x 或者 0X 开头；</p>
+<h2 id="浮点数"><a class="header-anchor" href="#浮点数">¶</a>浮点数</h2>
+<ul>
 <li>带有小数及小数点的数字；</li>
 <li>浮点数取值范围和小数精度都存在限制；</li>
 <li>取值范围数量级约： <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="6.61ex" height="2.14ex" role="img" focusable="false" viewBox="0 -864 2921.7 946"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="msup" transform="translate(778,0)"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(1033,393.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z" transform="translate(1000,0)"></path></g></g></g></g></g></svg></mjx-container> 到 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="4.85ex" height="2.005ex" role="img" focusable="false" viewBox="0 -864 2143.7 886"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(1033,393.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z" transform="translate(1000,0)"></path></g></g></g></g></g></svg></mjx-container>, 精度数量级为 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="5.295ex" height="2.005ex" role="img" focusable="false" viewBox="0 -864 2340.2 886"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(1033,393.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(778,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(500,0)"></path></g></g></g></g></g></svg></mjx-container></li>
 </ul>
 <blockquote>
-<p>浮点数间运算存在不确定尾数，不是 bug<br>&gt;&gt;&gt;0.1 + 0.2<br>0.3000000000004<br>小数用53位二进制表示，在计算机中，将浮点数现实的时候只输出了其中的16位小数。二进制表示小数，可以无限接近，但不完全相同。<br>&gt;&gt;&gt;0.2 + 0.2 == 0.3<br>False </p>
+<p>浮点数间运算存在不确定尾数，不是 bug<br>
+&gt;&gt;&gt;0.1 + 0.2<br>
+0.3000000000004<br>
+小数用53位二进制表示，在计算机中，将浮点数现实的时候只输出了其中的16位小数。二进制表示小数，可以无限接近，但不完全相同。<br>
+&gt;&gt;&gt;0.2 + 0.2 == 0.3<br>
+False</p>
 </blockquote>
 <p>二进制与十进制之间不存在严格的对应关系，浮点数间运算及比较可以通过<code>round</code>函数判断，不确定尾数一般发生在<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="5.295ex" height="2.005ex" role="img" focusable="false" viewBox="0 -864 2340.2 886"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(1033,393.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(778,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(500,0)"></path></g></g></g></g></g></svg></mjx-container>  左右，<code>round()</code>十分有效。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">round</span>(<span class="number">0.1</span>+<span class="number">0.2</span>, <span class="number">1</span>) == <span class="number">0.3</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><code>round(x,d)</code>函数对 x 四舍五入，d 是小数截取位数<br><strong>科学计数法</strong><br>&lt;a&gt;e&lt;b&gt;： <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="6.47ex" height="2.049ex" role="img" focusable="false" viewBox="0 -883.8 2859.8 905.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mo" transform="translate(751.2,0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g><g data-mml-node="msup" transform="translate(1473.4,0)"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(1033,393.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></g></g></g></g></g></svg></mjx-container></p>
+<p><code>round(x,d)</code>函数对 x 四舍五入，d 是小数截取位数<br>
+<strong>科学计数法</strong><br>
+&lt;a&gt;e&lt;b&gt;： <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="6.47ex" height="2.049ex" role="img" focusable="false" viewBox="0 -883.8 2859.8 905.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path></g><g data-mml-node="mo" transform="translate(751.2,0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g><g data-mml-node="msup" transform="translate(1473.4,0)"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(1033,393.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></g></g></g></g></g></svg></mjx-container></p>
 </blockquote>
-<h2 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h2><p>用 j 来表示虚数单位。  </p>
+<h2 id="复数"><a class="header-anchor" href="#复数">¶</a>复数</h2>
+<p>用 j 来表示虚数单位。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">z = <span class="number">1.23e-4</span>+<span class="number">5.6e+89j</span></span><br><span class="line">z.real  获得实部</span><br><span class="line">z.imag  获得虚部</span><br></pre></td></tr></table></figure>
-
-<h2 id="数值操作符"><a href="#数值操作符" class="headerlink" title="数值操作符"></a>数值操作符</h2><table>
-<thead>
-<tr>
-<th align="left">操作符及使用</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">y + x</td>
-<td align="left">加，x 与 y 之和</td>
-</tr>
-<tr>
-<td align="left">x - x</td>
-<td align="left">减，</td>
-</tr>
-<tr>
-<td align="left">x * y</td>
-<td align="left">乘</td>
-</tr>
-<tr>
-<td align="left">x / y</td>
-<td align="left">除，x 与 y 的商，10/3 = 3.3333333</td>
-</tr>
-<tr>
-<td align="left">x //y</td>
-<td align="left">整数除， x 与 y 的整数商,10//3 = 3</td>
-</tr>
-<tr>
-<td align="left">+x</td>
-<td align="left">x 本身</td>
-</tr>
-<tr>
-<td align="left">-y</td>
-<td align="left">y 的负值</td>
-</tr>
-<tr>
-<td align="left">x % y</td>
-<td align="left">余数， 10%3 = 1</td>
-</tr>
-<tr>
-<td align="left">x**y</td>
-<td align="left">1. 幂运算，x 的 y 次幂，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.266ex" height="1.553ex" role="img" focusable="false" viewBox="0 -675.5 1001.5 686.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mi" transform="translate(605,363) scale(0.707)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></g></svg></mjx-container>;2. 当 y 是小数时，开平方运算， 10<em>*0.5: ${\quad}10</em>0.5 = \sqrt{10}$</td>
-</tr>
-<tr>
-<td align="left">x += y</td>
-<td align="left">x = x+x</td>
-</tr>
-<tr>
-<td align="left">x -= y</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">x *= x</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">x /= y</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">x //= y</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">x %= y</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">x **=y</td>
-<td align="left"></td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>在其他编程语言中，两个整数除的结果是整数，而在 python 中是浮点数，若要得到整数结果则用整数除符号。<br>python 还提供了对二元运算符的增强运算</p>
-</blockquote>
-<p><strong>类型间可进行混合运算,生成结果为”最宽”类型</strong><br>复数 &gt; 浮点数 &gt; 整数  </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">123</span> + <span class="number">4.0</span> = <span class="number">127.0</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="数值运算函数"><a href="#数值运算函数" class="headerlink" title="数值运算函数"></a>数值运算函数</h2><table>
-<thead>
-<tr>
-<th align="left">函数及使用</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">abs(x)</td>
-<td align="left">x 的绝对值</td>
-</tr>
-<tr>
-<td align="left">divmod(x, y)</td>
-<td align="left">商余，(x//y, x%y),同时输出商和余数</td>
-</tr>
-<tr>
-<td align="left">pow(x, y[, z])</td>
-<td align="left">幂余，(x**y)%z，[…]表示参数 z  可省略</td>
-</tr>
-<tr>
-<td align="left">round(x[, d])</td>
-<td align="left">四舍五入, d是保留小数位数,默认值为0</td>
-</tr>
-<tr>
-<td align="left">max(x1, x2, …, xn)</td>
-<td align="left">返回最大值</td>
-</tr>
-<tr>
-<td align="left">min(x1, x2, …, xn)</td>
-<td align="left">返回最小值</td>
-</tr>
-</tbody></table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">abs</span>(-<span class="number">10.01</span>)</span><br><span class="line"><span class="number">10.01</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">divmod</span>(<span class="number">10</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">pow</span>(<span class="number">3</span>, <span class="built_in">pow</span>(<span class="number">99</span>), <span class="number">10000</span>)</span><br><span class="line"><span class="number">4587</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">round</span>(-<span class="number">10.123</span>, <span class="number">2</span>)</span><br><span class="line">-<span class="number">10.12</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>(<span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">min</span>(<span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>数字类型转换函数</strong>  </p>
+<h2 id="数值操作符"><a class="header-anchor" href="#数值操作符">¶</a>数值操作符</h2>
 <table>
 <thead>
 <tr>
-<th align="left">函数及使用</th>
-<th align="left">描述</th>
+<th style="text-align:left">操作符及使用</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">int(x)</td>
-<td align="left">将x变成整数,舍弃小数部分无论小数部分是多少，并不进行四舍五入计算，直接变为整数；若输入字符串“123“， int 也能将其变为整数 123</td>
+<tbody>
+<tr>
+<td style="text-align:left">y + x</td>
+<td style="text-align:left">加，x 与 y 之和</td>
 </tr>
 <tr>
-<td align="left">float(x)</td>
-<td align="left">与int同理</td>
+<td style="text-align:left">x - x</td>
+<td style="text-align:left">减，</td>
 </tr>
 <tr>
-<td align="left">complex(x)</td>
-<td align="left">将x变成复数，增加虚数部分</td>
+<td style="text-align:left">x * y</td>
+<td style="text-align:left">乘</td>
 </tr>
-</tbody></table>
+<tr>
+<td style="text-align:left">x / y</td>
+<td style="text-align:left">除，x 与 y 的商，10/3 = 3.3333333</td>
+</tr>
+<tr>
+<td style="text-align:left">x //y</td>
+<td style="text-align:left">整数除， x 与 y 的整数商,10//3 = 3</td>
+</tr>
+<tr>
+<td style="text-align:left">+x</td>
+<td style="text-align:left">x 本身</td>
+</tr>
+<tr>
+<td style="text-align:left">-y</td>
+<td style="text-align:left">y 的负值</td>
+</tr>
+<tr>
+<td style="text-align:left">x % y</td>
+<td style="text-align:left">余数， 10%3 = 1</td>
+</tr>
+<tr>
+<td style="text-align:left">x**y</td>
+<td style="text-align:left">1. 幂运算，x 的 y 次幂，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.266ex" height="1.553ex" role="img" focusable="false" viewBox="0 -675.5 1001.5 686.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mi" transform="translate(605,363) scale(0.707)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></g></svg></mjx-container>;2. 当 y 是小数时，开平方运算， 10**0.5: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.25ex;" xmlns="http://www.w3.org/2000/svg" width="16.762ex" height="2.398ex" role="img" focusable="false" viewBox="0 -949.5 7409 1060"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g><g data-mml-node="mn" transform="translate(1000,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g><g data-mml-node="mo" transform="translate(2222.2,0)"><path data-c="2217" d="M229 286Q216 420 216 436Q216 454 240 464Q241 464 245 464T251 465Q263 464 273 456T283 436Q283 419 277 356T270 286L328 328Q384 369 389 372T399 375Q412 375 423 365T435 338Q435 325 425 315Q420 312 357 282T289 250L355 219L425 184Q434 175 434 161Q434 146 425 136T401 125Q393 125 383 131T328 171L270 213Q283 79 283 63Q283 53 276 44T250 35Q231 35 224 44T216 63Q216 80 222 143T229 213L171 171Q115 130 110 127Q106 124 100 124Q87 124 76 134T64 161Q64 166 64 169T67 175T72 181T81 188T94 195T113 204T138 215T170 230T210 250L74 315Q65 324 65 338Q65 353 74 363T98 374Q106 374 116 368T171 328L229 286Z"></path></g><g data-mml-node="mn" transform="translate(2944.4,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(4500.2,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msqrt" transform="translate(5556,0)"><g transform="translate(853,0)"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g></g><g data-mml-node="mo" transform="translate(0,89.5)"><path data-c="221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path></g><rect width="1000" height="60" x="853" y="829.5"></rect></g></g></g></svg></mjx-container></td>
+</tr>
+<tr>
+<td style="text-align:left">x += y</td>
+<td style="text-align:left">x = x+x</td>
+</tr>
+<tr>
+<td style="text-align:left">x -= y</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">x *= x</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">x /= y</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">x //= y</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">x %= y</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">x **=y</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>在其他编程语言中，两个整数除的结果是整数，而在 python 中是浮点数，若要得到整数结果则用整数除符号。<br>
+python 还提供了对二元运算符的增强运算</p>
+</blockquote>
+<p><strong>类型间可进行混合运算,生成结果为"最宽"类型</strong><br>
+复数 &gt; 浮点数 &gt; 整数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">123</span> + <span class="number">4.0</span> = <span class="number">127.0</span></span><br></pre></td></tr></table></figure>
+<h2 id="数值运算函数"><a class="header-anchor" href="#数值运算函数">¶</a>数值运算函数</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数及使用</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">abs(x)</td>
+<td style="text-align:left">x 的绝对值</td>
+</tr>
+<tr>
+<td style="text-align:left">divmod(x, y)</td>
+<td style="text-align:left">商余，(x//y, x%y),同时输出商和余数</td>
+</tr>
+<tr>
+<td style="text-align:left">pow(x, y[, z])</td>
+<td style="text-align:left">幂余，(x**y)%z，[…]表示参数 z  可省略</td>
+</tr>
+<tr>
+<td style="text-align:left">round(x[, d])</td>
+<td style="text-align:left">四舍五入, d是保留小数位数,默认值为0</td>
+</tr>
+<tr>
+<td style="text-align:left">max(x1, x2, …, xn)</td>
+<td style="text-align:left">返回最大值</td>
+</tr>
+<tr>
+<td style="text-align:left">min(x1, x2, …, xn)</td>
+<td style="text-align:left">返回最小值</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">abs</span>(-<span class="number">10.01</span>)</span><br><span class="line"><span class="number">10.01</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">divmod</span>(<span class="number">10</span>, <span class="number">3</span>)</span><br><span class="line">(<span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">pow</span>(<span class="number">3</span>, <span class="built_in">pow</span>(<span class="number">99</span>), <span class="number">10000</span>)</span><br><span class="line"><span class="number">4587</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">round</span>(-<span class="number">10.123</span>, <span class="number">2</span>)</span><br><span class="line">-<span class="number">10.12</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>(<span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">min</span>(<span class="number">1</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>数字类型转换函数</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数及使用</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">int(x)</td>
+<td style="text-align:left">将x变成整数,舍弃小数部分无论小数部分是多少，并不进行四舍五入计算，直接变为整数；若输入字符串“123“， int 也能将其变为整数 123</td>
+</tr>
+<tr>
+<td style="text-align:left">float(x)</td>
+<td style="text-align:left">与int同理</td>
+</tr>
+<tr>
+<td style="text-align:left">complex(x)</td>
+<td style="text-align:left">将x变成复数，增加虚数部分</td>
+</tr>
+</tbody>
+</table>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="number">13.45</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">int</span>(<span class="string">"123"</span>)</span><br><span class="line"><span class="number">123</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="number">12</span>)</span><br><span class="line"><span class="number">12.0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">float</span>(<span class="string">"12.3"</span>)</span><br><span class="line"><span class="number">12.3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">complex</span>(<span class="number">4</span>)</span><br><span class="line"><span class="number">4</span> + <span class="number">0j</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="字符、字符串"><a href="#字符、字符串" class="headerlink" title="字符、字符串"></a>字符、字符串</h1><ul>
-<li><p>由一对单引号或双引号表示,仅表示单行字符串。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"低碳钢的屈服极限"</span></span><br><span class="line"><span class="string">'C'</span></span><br></pre></td></tr></table></figure></li>
-<li><p>由对三单引号或三双引号表示,可表示多行字符串</p>
+<h1 id="字符、字符串"><a class="header-anchor" href="#字符、字符串">¶</a>字符、字符串</h1>
+<ul>
+<li>
+<p>由一对单引号或双引号表示,仅表示单行字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"低碳钢的屈服极限"</span></span><br><span class="line"><span class="string">'C'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>由对三单引号或三双引号表示,可表示多行字符串</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```不积跬步</span><br><span class="line">        无以至千里```</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>python 中没有真正提供多行注释的表示方式，三单引号构成的就是字符串，但是如果在程序中出现了字符串，且这个字符串并没有给到某个变量中，或者这个字符串没有进行操作，它也可以当作注释来使用。<br>如果在字符串中出现双引号，最外层的引号就要使用单引号；同理想要表示单引号就要用双引号。<br>若希望表示单引号和双引号，可以用三单引号作为字符串的表示。</p>
+<p>python 中没有真正提供多行注释的表示方式，三单引号构成的就是字符串，但是如果在程序中出现了字符串，且这个字符串并没有给到某个变量中，或者这个字符串没有进行操作，它也可以当作注释来使用。<br>
+如果在字符串中出现双引号，最外层的引号就要使用单引号；同理想要表示单引号就要用双引号。<br>
+若希望表示单引号和双引号，可以用三单引号作为字符串的表示。</p>
 </blockquote>
 </li>
-<li><p>转义符 :</p>
+<li>
+<p>转义符 :</p>
 <ul>
-<li>转义符表达特定字符的本意.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"这里有一个双引号（\"）"</span></span><br><span class="line">这里有一个双引号（<span class="string">"）</span></span><br></pre></td></tr></table></figure></li>
-<li>转义符形成一 些组合,表达一些不可打印的含义<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"\b"</span>    回退</span><br><span class="line"><span class="string">"\n"</span>    换行(光标移动到下行首)</span><br><span class="line"><span class="string">"\r"</span>    回车(光标移动到本行首)</span><br></pre></td></tr></table></figure></li>
+<li>转义符表达特定字符的本意.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"这里有一个双引号（\"）"</span></span><br><span class="line">这里有一个双引号（<span class="string">"）</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>转义符形成一 些组合,表达一些不可打印的含义<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"\b"</span>    回退</span><br><span class="line"><span class="string">"\n"</span>    换行(光标移动到下行首)</span><br><span class="line"><span class="string">"\r"</span>    回车(光标移动到本行首)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
-<p>字符串索引的两种方式：1.正向递增序号；2.反向递减序号<br><img src="https://user-images.githubusercontent.com/73486724/181770791-944510cd-27e9-415c-9356-31eb1b9c6eae.png" alt="image"></p>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>返回字符串中单个字符。&lt;字符串名&gt;[数字]，如：<code>“低碳钢的屈服极限”[0]</code> 或者 <code>TempStr[-1]</code>表示名为 TempStr 的字符串的倒数第一位字符。</p>
-<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>返回字符串中一段字符子串。&lt;字符串名&gt;[数字:数字]，<code>“低碳钢的屈服极限”[1:3]</code> 表示输出字符串的第1个字符到第2个字符，但不到第3个字符，即“碳钢”，或者 <code>TempStr[0:-1]</code> 表示从0开始但不到字符串的最后一个字符的字符串，相当于把字符串中的最后一个字符去掉。<br><code>&lt;字符串&gt;[M, N]</code>, M 缺失表示至开头，N 缺失表示至结尾。</p>
+<p>字符串索引的两种方式：1.正向递增序号；2.反向递减序号<br>
+<img src="https://user-images.githubusercontent.com/73486724/181770791-944510cd-27e9-415c-9356-31eb1b9c6eae.png" alt="image"></p>
+<h2 id="索引"><a class="header-anchor" href="#索引">¶</a>索引</h2>
+<p>返回字符串中单个字符。&lt;字符串名&gt;[数字]，如：<code>“低碳钢的屈服极限”[0]</code> 或者 <code>TempStr[-1]</code>表示名为 TempStr 的字符串的倒数第一位字符。</p>
+<h2 id="切片"><a class="header-anchor" href="#切片">¶</a>切片</h2>
+<p>返回字符串中一段字符子串。&lt;字符串名&gt;[数字:数字]，<code>“低碳钢的屈服极限”[1:3]</code> 表示输出字符串的第1个字符到第2个字符，但不到第3个字符，即“碳钢”，或者 <code>TempStr[0:-1]</code> 表示从0开始但不到字符串的最后一个字符的字符串，相当于把字符串中的最后一个字符去掉。<br>
+<code>&lt;字符串&gt;[M, N]</code>, M 缺失表示至开头，N 缺失表示至结尾。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"低碳钢的屈服极限"</span>[:<span class="number">3</span>]</span><br><span class="line"><span class="string">"低碳的"</span></span><br></pre></td></tr></table></figure>
 <p><code>&lt;字符串&gt;[M, N, K]</code>，根据步长 K 对字符串切片</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"零一二三四五六七八九十"</span>[<span class="number">1</span>:<span class="number">8</span>:<span class="number">2</span>]</span><br><span class="line"><span class="string">"一三五七"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串从最开始到最结尾 MN 默认缺失的情况下，从最开头到最结尾，步长为 -1：从后向前逐一取出。**相当于将字符串逆序**</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"零一二三四五六七八九十"</span>[::-<span class="number">1</span>]</span><br><span class="line"><span class="string">"十九八七六五四三二一零"</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="字符串操作符"><a href="#字符串操作符" class="headerlink" title="字符串操作符"></a>字符串操作符</h2><table>
+<h2 id="字符串操作符"><a class="header-anchor" href="#字符串操作符">¶</a>字符串操作符</h2>
+<table>
 <thead>
 <tr>
-<th align="left">操作符及使用</th>
-<th align="left">描述</th>
+<th style="text-align:left">操作符及使用</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">x + y</td>
-<td align="left">连接两个字符串 x 和 y</td>
+<tbody>
+<tr>
+<td style="text-align:left">x + y</td>
+<td style="text-align:left">连接两个字符串 x 和 y</td>
 </tr>
 <tr>
-<td align="left">n*x 或 x*n</td>
-<td align="left">n 为整数，复制 n 次字符串 x</td>
+<td style="text-align:left">n*x 或 x*n</td>
+<td style="text-align:left">n 为整数，复制 n 次字符串 x</td>
 </tr>
 <tr>
-<td align="left">x in S</td>
-<td align="left">如果 x 是 S 的子串，返回 True，否则返回 False</td>
+<td style="text-align:left">x in S</td>
+<td style="text-align:left">如果 x 是 S 的子串，返回 True，否则返回 False</td>
 </tr>
-</tbody></table>
-<h2 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h2><table>
+</tbody>
+</table>
+<h2 id="字符串处理函数"><a class="header-anchor" href="#字符串处理函数">¶</a>字符串处理函数</h2>
+<table>
 <thead>
 <tr>
-<th align="left">函数及使用</th>
-<th align="left">描述</th>
+<th style="text-align:left">函数及使用</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">len(x)</td>
-<td align="left">返回字符串 x 的长度</td>
+<tbody>
+<tr>
+<td style="text-align:left">len(x)</td>
+<td style="text-align:left">返回字符串 x 的长度</td>
 </tr>
 <tr>
-<td align="left">str(x)</td>
-<td align="left">任意类型 x 所对应的字符串形式。相当于将任何类型的变量增加一个引号</td>
+<td style="text-align:left">str(x)</td>
+<td style="text-align:left">任意类型 x 所对应的字符串形式。相当于将任何类型的变量增加一个引号</td>
 </tr>
 <tr>
-<td align="left">hex(x), oct(x)</td>
-<td align="left">整数 x 的十六进制或八进制小写形式字符串</td>
+<td style="text-align:left">hex(x), oct(x)</td>
+<td style="text-align:left">整数 x 的十六进制或八进制小写形式字符串</td>
 </tr>
 <tr>
-<td align="left">chr(u)</td>
-<td align="left">u 为 Unicode 编码，返回其对应的字符</td>
+<td style="text-align:left">chr(u)</td>
+<td style="text-align:left">u 为 Unicode 编码，返回其对应的字符</td>
 </tr>
 <tr>
-<td align="left">ord(x)</td>
-<td align="left">x 为字符，返回其对应的 Unicode 编码</td>
+<td style="text-align:left">ord(x)</td>
+<td style="text-align:left">x 为字符，返回其对应的 Unicode 编码</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">hex</span>(<span class="number">425</span>)</span><br><span class="line"><span class="string">"0x1a9"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">oct</span>(<span class="number">425</span>)</span><br><span class="line"><span class="string">"0o651"</span></span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>Unicode 是 python 字符串的编码形式，python3 中所有的字符串、所有的代码，都是用 Unocode 实现的。Unicode 将世界上的所有字符纳入到一个大框架中，可以表示任意的一个字符。</p>
 </blockquote>
-<h2 id="字符串的处理方法"><a href="#字符串的处理方法" class="headerlink" title="字符串的处理方法"></a>字符串的处理方法</h2><ul>
+<h2 id="字符串的处理方法"><a class="header-anchor" href="#字符串的处理方法">¶</a>字符串的处理方法</h2>
+<ul>
 <li>方法是 python 中的一个专有名词，要用 <code>&lt;a&gt;.&lt;b&gt;()</code> 风格中的函数 <code>&lt;b&gt;()</code> ，是面向对象的一种风格使用: a 是对象，b 是某一个对象能够提供的功能，及方法。方法必须要用 . 的形式来执行。</li>
 <li>方法本身也是函数，但与 &lt;\a&gt; 有关</li>
 <li>字符串及变量也是 &lt;\a&gt;，存在一些方法</li>
@@ -587,42 +625,47 @@ mjx-container[display="true"] + br {
 <table>
 <thead>
 <tr>
-<th align="left">方法及使用</th>
-<th align="left">描述</th>
+<th style="text-align:left">方法及使用</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">str.lower() 或 str.upper()</td>
-<td align="left">返回字符串的副本,全部字符小写/大写</td>
+<tbody>
+<tr>
+<td style="text-align:left">str.lower() 或 str.upper()</td>
+<td style="text-align:left">返回字符串的副本,全部字符小写/大写</td>
 </tr>
 <tr>
-<td align="left">str.split(stp = None)</td>
-<td align="left">返回一个列表,由str根据sep被分隔的部分组成</td>
+<td style="text-align:left">str.split(stp = None)</td>
+<td style="text-align:left">返回一个列表,由str根据sep被分隔的部分组成</td>
 </tr>
 <tr>
-<td align="left">str.count(sub)</td>
-<td align="left">返回子串 sub 在 str 中出现的次数</td>
+<td style="text-align:left">str.count(sub)</td>
+<td style="text-align:left">返回子串 sub 在 str 中出现的次数</td>
 </tr>
 <tr>
-<td align="left">str.replace(old, new)</td>
-<td align="left">返回字符串 str 副本，所有的 old 子串被替换为 new</td>
+<td style="text-align:left">str.replace(old, new)</td>
+<td style="text-align:left">返回字符串 str 副本，所有的 old 子串被替换为 new</td>
 </tr>
 <tr>
-<td align="left">str.center(width[,fillchar])</td>
-<td align="left">字符串str根据宽度width居中, fillchar可选</td>
+<td style="text-align:left">str.center(width[,fillchar])</td>
+<td style="text-align:left">字符串str根据宽度width居中, fillchar可选</td>
 </tr>
 <tr>
-<td align="left">str.strip(chars)</td>
-<td align="left">从str中去掉在其左侧和右侧chars中列出的字符</td>
+<td style="text-align:left">str.strip(chars)</td>
+<td style="text-align:left">从str中去掉在其左侧和右侧chars中列出的字符</td>
 </tr>
 <tr>
-<td align="left">str.join(iter)</td>
-<td align="left">在 iter 变量除去最后元素外每个元素后增加一个 str ，主要用于字符串分割</td>
+<td style="text-align:left">str.join(iter)</td>
+<td style="text-align:left">在 iter 变量除去最后元素外每个元素后增加一个 str ，主要用于字符串分割</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"AbCdEfGh"</span>.lower()</span><br><span class="line"><span class="string">"abcdefgh"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"a,b,c"</span>.split(<span class="string">","</span>)</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"an apple a day"</span>.count(<span class="string">"a"</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"低碳钢"</span>.replace(<span class="string">"钢"</span>,<span class="string">"钢的屈服极限"</span>)</span><br><span class="line"><span class="string">"低碳钢的屈服极限"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"python"</span>.center(<span class="number">20</span>, <span class="string">"="</span>)</span><br><span class="line"><span class="string">'=======python======='</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"= python="</span>.strip(<span class="string">" =np"</span>)</span><br><span class="line"><span class="string">"ytho"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">","</span>.join(<span class="string">"12345"</span>)</span><br><span class="line"><span class="string">"1,2,3,4,5"</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="字符串类型的格式化"><a href="#字符串类型的格式化" class="headerlink" title="字符串类型的格式化"></a>字符串类型的格式化</h2><p><code>&lt;模板字符串&gt;.format(&lt;逗号分隔的参数&gt;)</code><br>槽：相当于一个占位信息符，用 {} 表示，只在字符串中有用。每一个槽所要添加的信息与 <code>.format</code> 方法中对应的参数相一致，在不指定的情况下顺序一致，参数序号从 0 开始。在确定槽中对应的关联参数之后，可以对这个参数的输出格式进行相关的控制，在槽内部使用格式化的标记来进行格式控制。<br>槽内部对格式化的配置方式：<code>{&lt;参数序号:&lt;格式控制标记&gt;}</code><br><img src="https://user-images.githubusercontent.com/73486724/183048281-2800810f-4eb0-4f56-9f60-ea4d4b470de4.png" alt="image"></p>
+<h2 id="字符串类型的格式化"><a class="header-anchor" href="#字符串类型的格式化">¶</a>字符串类型的格式化</h2>
+<p><code>&lt;模板字符串&gt;.format(&lt;逗号分隔的参数&gt;)</code><br>
+槽：相当于一个占位信息符，用 {} 表示，只在字符串中有用。每一个槽所要添加的信息与 <code>.format</code> 方法中对应的参数相一致，在不指定的情况下顺序一致，参数序号从 0 开始。在确定槽中对应的关联参数之后，可以对这个参数的输出格式进行相关的控制，在槽内部使用格式化的标记来进行格式控制。<br>
+槽内部对格式化的配置方式：<code>{&lt;参数序号:&lt;格式控制标记&gt;}</code><br>
+<img src="https://user-images.githubusercontent.com/73486724/183048281-2800810f-4eb0-4f56-9f60-ea4d4b470de4.png" alt="image"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">"{0:b}, {0:c}, {0: d}, {0: o}, {0: x}, {0: X}"</span>.<span class="built_in">format</span>(<span class="number">425</span>))</span><br><span class="line"><span class="string">'110101001, Ʃ,  425,  651,  1a9,  1A9'</span></span><br></pre></td></tr></table></figure>
     </div>
 
@@ -722,7 +765,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
