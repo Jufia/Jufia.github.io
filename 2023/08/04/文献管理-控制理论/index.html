@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Roboto&display=swap" rel="stylesheet">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文献管理-控制理论">
+<meta property="og:url" content="http://example.com/2023/08/04/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
+<meta property="og:description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-04T12:24:41.000Z">
+<meta property="article:modified_time" content="2023-08-04T12:36:56.000Z">
+<meta property="article:author" content="Laura">
+<meta property="article:tag" content="work">
+<meta property="article:tag" content="学术生产力">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/08/04/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>文献管理-控制理论 | Keep Going Keep Fighting Keep Laughing​</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Keep Going Keep Fighting Keep Laughing​</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">The past is never dead, it's not even past</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">62</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="/jufiaa@qq.com" class="github-corner" title="Contract me with Email" aria-label="Contract me with Email"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/04/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/laura.jpg">
+      <meta itemprop="name" content="Laura">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep Going Keep Fighting Keep Laughing​">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          文献管理-控制理论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-08-04 20:24:41 / 修改时间：20:36:56" itemprop="dateCreated datePublished" datetime="2023-08-04T20:24:41+08:00">2023-08-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">高效工作</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">文献管理</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="16a83aba805f976f95a11a9726c0be7d46718e0ac8a973297586da5130dd376d">31568d710e28da3e9920134e13d5e864f697668bbfeb63596cc9d75abee47f912d4a260eeb72fbee0c56191f483d90869ce9f8a6febd9ac66e639b03113a5add51d4e4a3defc778e8011a0971f98fe51bc039f84477ea63ad1477978c5c7ebaa0561bd168d97aaf0e6e5db524f724a7d94c6aceba95dfd70384df7196f653a76bf7cee335b5e4d8514c4707a2a63a90cca3f4b1a869106c0b7e8396a4e3dbd339eee09b166226fd996d3d7c1e4bf8523f1aa52b5dd09f477649220fffc55f58cbefb99a7f293162e7c0721286faffa34c5ed8d94a8218e57211a668ac6c14c601b5418d18598314240bb8f89237854601397abc05e89f421ca7e1cd1c781cf45c4c8c751375b1be762aa821af37332dc2f1bb822b555bb466a6cd3d7f66bf4a10d6545265d25ee174ff7d1a2a39af4272ce9adde6c2d2a86e1f5ada9cd5512ca2ac2511b2ee3d3287f9e3844864aa441ab61e63d65c1aee9d94aec8efcb4c83c93a20802ff56d3673475bff7da6a22163a52092b5d8ed1f90b6c9209a158cfb0a404c9d01271870062f864cd9dfbe590c934b9cfe2c55e7a1d8ca44e59ca4630803997050c52cc8be8533579a90de2e5eb167f4a455e2739e41a51c6e07835efb1732c2a50511c0e291a0285b46b77af13129d472f58bade8d32eaaf8c34fc3b7e8a2abdbcbd52032a75175c75e0635d6e5f3165a5c5316a3a138b14ce8febf0b2497ee1fdc89e4ad69902eb640d70ee016667af4513695dda2e5d07decd91c883a918d0709eb80d7c89cdd7ccd312d86d92d7b53af96dfd334a24f4a4d56a595cca19bc48af2df3a96e0b402bfd93986cd2e0c5083390bd6dd7da086422a9c4ba7310e288281dd7681fe369acd68d891d26b61e4d96926eeb49b187689babf648050991c6e4c67909df52cd044074e03c5989059eb14bc38e393f5a3a0d898f8e25c0a159cea1c53dee509485c77829b9b024d5b51e63d0e43471c481c62967038def8c68678c2be5882c693a91b0289d17d1c27178d65ff4aff0a2a5c3c8be4aed35a8d11b422d180c9a4ef8a943d8cad1456bd0803c4f3f70436681d3e2da1ad8e93f830bafb4c076c160bee45361999ab147f610a2cd97a1e83504c6228b4ce1f6c2c9abca8fd1df49d809a97bd7f624ac48696f9714ee6df857466fecd33972f9883ba8373894e6c91b401b5a2975f4d60d5075609bcd00efd2e31647f1bb7d4c5751a3a8330a8a0578adba2e3b05c68af0daa34d26a8859efdafff429ad2cf58b0dca51d4768c4f2ee73af4485d80d05a39364f2f319268624484b11ed66fb39be3817b8f6fb5e7a04fc9d23a0facddd9d844638987f84463797a810c1bab0bb8dfe964932feedbc122126b6846081720ff101fc74aae99e8bfd2296847dd216dc4071cf1c8cff588f7d0bfe46be1b8c582bc69b5edaa850e92688c3aaf56ade21a71e13663c089b09e021de1f6f8a017b9cd0452c29d7217310d1978513128ae888fff8df5e3fd28b5fe7828cc61c0253590ae24cd5e44ccd6541c27d783224b642ff5491f05f218831c84ca158d7e1507d26d59812d879056609e10e58d1f9880ebcebbdc32f2c48a8e6fdfdbf76bb23c82fe62f59442b14cc2ac5c3d928267355d55d21edfa81f0ea3182ff9e5872c0d44d2a95b0c095b7d5ed9ac9f34eac5e7039304a94f19d1cac57cfe36218773b102f00b10e7192e2cad6167c4a471221ab13662773d6fde0f874b52b03507d6e59bf17b90151dd9884dc5603255cbd403bdafff5efa1e3040e5b57b6bc7f771cb1cebae24c59d916dbb32be3f07ea0f4654348537bff6ce11eb57d114d8473689c9945f5acca4f542ea1f005557fb9f62a6f8adeea97fe7ccca9d21214f29bd855d27e273891c329d3189258dc9f702c73bf82a420c30d719dfe33e256538eae00b011360d70d22312e689ca3696898834affa7b96322a3810f6a175817c3cd0f4a3342ffd1bfa3bb1389ea506dd37b044c5cc30b80df603d96d6c893bc9137fe584562736041f787d4619d07c66c2517efccd532808dba5eda0bea3103ed22ea20f6f4148b12fcc180ef25c4dcc982a5634cc8754c0adc0e14fe267d58bbf84bb68932c47556daea66c1ba10f8b0fb69e8a18c45715e463712916c1aa6db6b1be91a29e49abbcbb36ce7390f97e74ab36842610f163e9c7e155686b5ad99151405fc544eb1d26276b91a8d9b8afc23deec8a553ee40d43b627e2117a7f690c88ea7b9d9085daae58c1d9369a503bbc15106edff9b69d215b25ec179f1f381b1ae00049a6b969ef6789eedccbe0adc67522503d6078dcdad93185b72c3bd668a2bc16e309e56c250473a42b531715f0203012b5d80e841c5c62c2069950b1bd4df46657e08035cf8e1b6fc7db5e5e447a046a1918abbb0cbf79c5ef57dee3bb81f311a3f3b15c0e082d90a87dddbc36b5f07d8b9a3aac9691508be9876945e529378651d7310637d38de7f4d904a79b2dd5c4d338b27e92c76a4f5ba807831ff45893421667f87c07bca5d1c3c090d5f12668ebde7d0315b8c756e73cba510bb60a3fe99be73773123ef91cc50a05e020ff3469df463c95af05fb17ac3d8c7775b51a2f666a6580b255deaa8d0a6f157853fb1a0c9c36e56579f5d50b717441854bd0e309e4bd1cd43e07fbeb755ec393f86c630a37225014f6d87b935f18298a04a548f8ed639f39b91e9148cc65101151f8f158342713603b75cae0a1bc175d738d0562b49b477f45d16a92495a6d592159f36ef468348052518ab0e5a3dc459c9cec5455d5105d2dde05cf133f1924985552e2da41832d99f946dc08478696dbc8c94be505fe447409777c20246f4ba82223ecbe7714a4ad5c24b18ecc3f70cdb966bccbf51b5a1a1891fe4e9687804db64a2f298df48123e1c9ff379bda843878f7c853b8c09521c83d25b20a67858531874535a6b1f3facb0d0394928d1accbad4b22d506a295359f836a102f9ae58ac76a80b4a79e4631aa761bfa3d9dff7342948efb34527f2174c654df9c0574c2b751f53d6441b8ea8475a8633f99f760fe1eccd10806e28e694bb4b82fd9a7417205b9197f2d8ef26a89bcc32145036cd56f92a1d4fe9f0c991d</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-up">
+      <input class="hbe hbe-input-field hbe-input-field-up" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-up" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-up">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/work/" rel="tag"># work</a>
+              <a href="/tags/%E5%AD%A6%E6%9C%AF%E7%94%9F%E4%BA%A7%E5%8A%9B/" rel="tag"># 学术生产力</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/05/01/%E5%AD%A6%E6%9C%AF%E5%86%99%E4%BD%9C%E4%B9%8B%E5%86%99%E4%BD%9C%E6%8A%80%E5%B7%A7/" rel="prev" title="学术写作之写作技巧">
+      <i class="fa fa-chevron-left"></i> 学术写作之写作技巧
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/08/04/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E6%95%B0%E5%AD%A6%E7%9B%B8%E5%85%B3/" rel="next" title="文献管理-数学相关">
+      文献管理-数学相关 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Laura"
+      src="/images/laura.jpg">
+  <p class="site-author-name" itemprop="name">Laura</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Jufia" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Jufia" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:jufiaa@qq.com" title="E-Mail → mailto:jufiaa@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-feather"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Laura</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("06/26/2022 20:55:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'true';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
