@@ -259,7 +259,7 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">62</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">63</span></a>
 
   </li>
   </ul>
@@ -358,29 +358,24 @@ mjx-container[display="true"] + br {
       
         <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>字体、页码、页面<br>公式内字体大小</p>
 <span id="more"></span>
-
 <h1 id="字体的包"><a href="#字体的包" class="headerlink" title="字体的包"></a>字体的包</h1><ul>
-<li>正常字体：\mathnormal{} –&gt; normal</li>
-<li>罗马体：\mathrm{} –&gt; roman</li>
-<li>斜体：\mathit{} –&gt; italic</li>
-<li>黑粗体：\mathbf{} –&gt; boldface</li>
-<li>黑板体（空心体）：\mathbb{} –&gt; blackboard</li>
-<li>书法艺术体：\mathcal{} –&gt; calligraphy</li>
-<li>书写体(圆体)：\mathscr{} –&gt; script</li>
-<li>德文尖角体（哥特体）：\mathfrak{} –&gt; fraktur (aka gothic)</li>
-<li>无衬线体：\mathsf{} –&gt; sans serif</li>
-<li>打字机体：\mathtt{} –&gt; typewriter type</li>
+<li>正常字体：\mathnormal{} —&gt; normal</li>
+<li>罗马体：\mathrm{} —&gt; roman</li>
+<li>斜体：\mathit{} —&gt; italic</li>
+<li>黑粗体：\mathbf{} —&gt; boldface</li>
+<li>黑板体（空心体）：\mathbb{} —&gt; blackboard</li>
+<li>书法艺术体：\mathcal{} —&gt; calligraphy</li>
+<li>书写体(圆体)：\mathscr{} —&gt; script</li>
+<li>德文尖角体（哥特体）：\mathfrak{} —&gt; fraktur (aka gothic)</li>
+<li>无衬线体：\mathsf{} —&gt; sans serif</li>
+<li>打字机体：\mathtt{} —&gt; typewriter type</li>
 </ul>
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>一般用fontspec包来设置字体</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>{fontspec} </span><br><span class="line"><span class="keyword">\setmainfont</span>{Times New Roman}</span><br></pre></td></tr></table></figure>
-
 <p>字体名称打开命令窗格查看：<br>fc-list :lang=zh-cn &gt; C:\font_zh-cn.txt<br>打开 C 盘根目录下的 C:\font_zh-cn.txt 纯文本文档，里面的内容就是你当前系统可用的全部中文字体，形如：   </p>
 <p><a target="_blank" rel="noopener" href="https://liam.page/uploads/teaching/LaTeX/figures/818901c1jw1e44gmvz7yuj20i40actcb.jpg">windos系统显示字体信息</a>   </p>
-<p>其中的每一行，都代表着一个可用的字体。其形式如下：<br><code>&lt;字体文件路径&gt;: &lt;字体标示名1&gt;, &lt;字体表示名2&gt;:Style=&lt;字体类型&gt;</code><br>字体大小</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\tiny</span> <span class="keyword">\scriptsize</span> <span class="keyword">\footnotesize</span> <span class="keyword">\small</span> <span class="keyword">\normalsize</span> <span class="keyword">\large</span> <span class="keyword">\large</span> <span class="keyword">\LARGE</span> <span class="keyword">\huge</span> <span class="keyword">\Huge</span></span><br></pre></td></tr></table></figure>
-
+<p>其中的每一行，都代表着一个可用的字体。其形式如下：<br><code>&lt;字体文件路径&gt;: &lt;字体标示名1&gt;, &lt;字体表示名2&gt;:Style=&lt;字体类型&gt;</code><br>字体大小<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\tiny</span> <span class="keyword">\scriptsize</span> <span class="keyword">\footnotesize</span> <span class="keyword">\small</span> <span class="keyword">\normalsize</span> <span class="keyword">\large</span> <span class="keyword">\large</span> <span class="keyword">\LARGE</span> <span class="keyword">\huge</span> <span class="keyword">\Huge</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="页码、页眉、页脚设置"><a href="#页码、页眉、页脚设置" class="headerlink" title="页码、页眉、页脚设置"></a>页码、页眉、页脚设置</h1><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 设置页码格式是罗马数字</span></span><br><span class="line"><span class="keyword">\pagenumbering</span>{roman}</span><br><span class="line"><span class="comment">% 生成目录</span></span><br><span class="line"><span class="keyword">\tableofcontents</span></span><br><span class="line"><span class="comment">% 插入新页</span></span><br><span class="line"><span class="keyword">\newpage</span></span><br><span class="line"><span class="comment">% 设置页码格式是阿拉伯数字</span></span><br><span class="line"><span class="keyword">\pagenumbering</span>{arabic}</span><br></pre></td></tr></table></figure>
-
 <p>可以用<code>\pagestyle{style}</code>设置每页的页眉<code>（\header）</code>和页脚<code>(\footer)</code>的设置，style的可选项是：</p>
 <ol>
 <li><code>\plain</code>：缺省，页码打印在页脚中间；</li>
@@ -395,89 +390,88 @@ mjx-container[display="true"] + br {
 <li>em：约等于当前字体中字母M（大写）的宽度；</li>
 <li>mu：当前采用的数学字体为参考的em，则1mu=1/18em。</li>
 </ol>
-<h1 id="添加数学公式"><a href="#添加数学公式" class="headerlink" title="添加数学公式"></a>添加数学公式</h1><p>插入行内公式<code>$ function $</code></p>
+<h1 id="添加数学公式"><a href="#添加数学公式" class="headerlink" title="添加数学公式"></a>添加数学公式</h1><p>插入行内公式<code>$$ function $$</code></p>
 <p>插入行间公式<code>[ function ]</code></p>
-<p>在一行中插入多个公式</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{displaymath} </span><br><span class="line">S<span class="built_in">_</span>{n+1} = S<span class="built_in">_</span>{n} + S<span class="built_in">_</span>{n},  </span><br><span class="line">S<span class="built_in">_</span>{n}=1=2<span class="built_in">^</span>{n} </span><br><span class="line"><span class="keyword">\end</span>{displaymath}</span><br></pre></td></tr></table></figure>
-<p>对行间公式进行编号</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{equation} </span><br><span class="line">... </span><br><span class="line"><span class="keyword">\end</span>{equation}</span><br></pre></td></tr></table></figure>
-
-<h1 id="公式字体大小"><a href="#公式字体大小" class="headerlink" title="公式字体大小"></a>公式字体大小</h1><h2 id="设置整个公式字体大小"><a href="#设置整个公式字体大小" class="headerlink" title="设置整个公式字体大小"></a>设置整个公式字体大小</h2><table>
+<p>在一行中插入多个公式<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{displaymath} </span><br><span class="line">S<span class="built_in">_</span>{n+1} = S<span class="built_in">_</span>{n} + S<span class="built_in">_</span>{n},  </span><br><span class="line">S<span class="built_in">_</span>{n}=1=2<span class="built_in">^</span>{n} </span><br><span class="line"><span class="keyword">\end</span>{displaymath}</span><br></pre></td></tr></table></figure><br>对行间公式进行编号<br><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{equation} </span><br><span class="line">... </span><br><span class="line"><span class="keyword">\end</span>{equation}</span><br></pre></td></tr></table></figure></p>
+<h1 id="公式字体大小"><a href="#公式字体大小" class="headerlink" title="公式字体大小"></a>公式字体大小</h1><h2 id="设置整个公式字体大小"><a href="#设置整个公式字体大小" class="headerlink" title="设置整个公式字体大小"></a>设置整个公式字体大小</h2><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="left">大小</th>
+<th style="text-align:left">大小</th>
 <th>字号</th>
 <th>字宽</th>
 <th>指令</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">七号</td>
-<td>5.25pt</td>
-<td>1.845mm</td>
-<td>\tiny</td>
+<tbody>
+<tr>
+<td style="text-align:left">七号</td>
+<td>　　5.25pt 　</td>
+<td>　   1.845mm　　</td>
+<td>　　\tiny</td>
 </tr>
 <tr>
-<td align="left">六号</td>
-<td>7.875pt</td>
-<td>2.768mm</td>
-<td>\scriptsize</td>
+<td style="text-align:left">六号</td>
+<td>　　7.875pt 　</td>
+<td>　 2.768mm　　　</td>
+<td>　\scriptsize</td>
 </tr>
 <tr>
-<td align="left">小五号</td>
-<td>9pt</td>
-<td>3.163mm</td>
-<td>\footnotesize</td>
+<td style="text-align:left">小五号</td>
+<td>　9pt 　　　</td>
+<td>　  3.163mm　　</td>
+<td>　　\footnotesize</td>
 </tr>
 <tr>
-<td align="left">五号</td>
-<td>10.5pt</td>
-<td>3.69mm</td>
-<td>\small</td>
+<td style="text-align:left">五号 　</td>
+<td>　10.5pt 　　</td>
+<td>3.69mm　　　</td>
+<td>　  \small</td>
 </tr>
 <tr>
-<td align="left">小四号</td>
-<td>12pt</td>
-<td>4.2175mm</td>
-<td>\normalsize</td>
+<td style="text-align:left">小四号</td>
+<td>　12pt 　　　</td>
+<td>　4.2175mm　　</td>
+<td>　 \normalsize</td>
 </tr>
 <tr>
-<td align="left">四号</td>
-<td>13.75pt</td>
-<td>4.83mm</td>
-<td>\large</td>
+<td style="text-align:left">四号 　</td>
+<td>　13.75pt 　　</td>
+<td>4.83mm　　　</td>
+<td>　  \large</td>
 </tr>
 <tr>
-<td align="left">三号</td>
-<td>15.75pt</td>
-<td>5.53mm</td>
-<td>\Large</td>
+<td style="text-align:left">三号 　</td>
+<td>　15.75pt 　　</td>
+<td>5.53mm　　　</td>
+<td>　  \Large</td>
 </tr>
 <tr>
-<td align="left">二号</td>
-<td>21pt</td>
-<td>7.38mm</td>
+<td style="text-align:left">二号 　</td>
+<td>　21pt 　　</td>
+<td>　　7.38mm</td>
 <td>\LARGE</td>
 </tr>
 <tr>
-<td align="left">一号</td>
-<td>27.5pt</td>
-<td>9.48mm</td>
-<td>\huge</td>
+<td style="text-align:left">一号 　</td>
+<td>　27.5pt 　</td>
+<td>　   9.48mm　　　</td>
+<td>　  \huge</td>
 </tr>
 <tr>
-<td align="left">小初号</td>
-<td>36pt</td>
-<td>12.65mm</td>
-<td>\Huge</td>
+<td style="text-align:left">小初号</td>
+<td>　36pt 　　</td>
+<td>　　12.65mm　　　</td>
+<td>　\Huge</td>
 </tr>
 <tr>
-<td align="left">初号</td>
-<td>42pt</td>
-<td>14.76mm</td>
-<td></td>
+<td style="text-align:left">初号 　</td>
+<td>　42pt 　　</td>
+<td>　　14.76mm　</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>{small}</span><br><span class="line"><span class="keyword">\begin</span>{equation}</span><br><span class="line">    <span class="keyword">\begin</span>{cases}</span><br><span class="line">        <span class="keyword">\begin</span>{array}{l}</span><br><span class="line">            [<span class="keyword">\bm</span>{K}<span class="built_in">_</span>0, <span class="keyword">\bm</span>{K}<span class="built_in">_</span>1] = <span class="keyword">\bm</span>{B}<span class="built_in">^</span>{-1}<span class="keyword">\bm</span>{WV}<span class="built_in">^</span>{-1} <span class="keyword">\\</span></span><br><span class="line">            <span class="keyword">\bm</span>{W} = <span class="keyword">\bm</span>{A}<span class="built_in">_</span>2<span class="keyword">\bm</span>{ZF}<span class="built_in">^</span>2 + <span class="keyword">\bm</span>{A}<span class="built_in">_</span>1<span class="keyword">\bm</span>{ZF} + <span class="keyword">\bm</span>{A}<span class="built_in">_</span>0<span class="keyword">\bm</span>{Z}</span><br><span class="line">        <span class="keyword">\end</span>{array}</span><br><span class="line">    <span class="keyword">\end</span>{cases}</span><br><span class="line"><span class="keyword">\end</span>{equation}</span><br><span class="line"><span class="keyword">\end</span>{small}</span><br></pre></td></tr></table></figure>
 <p>参考文献： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/wt869054461/p/9544779.html">https://www.cnblogs.com/wt869054461/p/9544779.html</a></p>
 <h2 id="调整公式内某个字符大小"><a href="#调整公式内某个字符大小" class="headerlink" title="调整公式内某个字符大小"></a>调整公式内某个字符大小</h2><ul>
@@ -604,7 +598,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -251,7 +251,7 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">62</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">63</span></a>
 
   </li>
   </ul>
@@ -356,19 +356,13 @@ mjx-container[display="true"] + br {
 </ul>
 <p>以 <code>turtle</code> 库为例:</p>
 <h1 id="调用库的几种方法"><a href="#调用库的几种方法" class="headerlink" title="调用库的几种方法"></a>调用库的几种方法</h1><h2 id="form-lt-库名-gt-import-lt-函数名-gt"><a href="#form-lt-库名-gt-import-lt-函数名-gt" class="headerlink" title="form <库名> import <函数名>"></a>form &lt;库名&gt; import &lt;函数名&gt;</h2><h2 id="import-调用库"><a href="#import-调用库" class="headerlink" title="import 调用库"></a>import 调用库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle</span><br></pre></td></tr></table></figure>
-<p><strong>&lt;库名&gt;.&lt;函数名&gt; 使用库函数</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">turtle.setup()</span><br><span class="line">turtle.goto()</span><br><span class="line">turtle.fd()</span><br><span class="line">turtle.bk()</span><br></pre></td></tr></table></figure>
+<p><strong>&lt;库名&gt;.&lt;函数名&gt; 使用库函数</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">turtle.setup()</span><br><span class="line">turtle.goto()</span><br><span class="line">turtle.fd()</span><br><span class="line">turtle.bk()</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>这种方法比较繁琐,每次调用都要带上<code>&lt;库名&gt;.</code><br>但好处是特指此函数是库中的函数, 不会出现函数重名的问题</p>
-</blockquote>
 <h2 id="from-lt-库名-gt-import"><a href="#from-lt-库名-gt-import" class="headerlink" title="from <库名> import*"></a>from &lt;库名&gt; import*</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">form turtle <span class="keyword">import</span>*</span><br></pre></td></tr></table></figure>
-<p>这种方式比较简洁,不需要每次都加上<code>库名.</code>来调用函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setup()</span><br><span class="line">goto()</span><br><span class="line">fd()</span><br><span class="line">bk()</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>虽然该方法调用函数比较简单,但是有发生函数重名的可能性</p>
+<p>这种方式比较简洁,不需要每次都加上<code>库名.</code>来调用函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">setup()</span><br><span class="line">goto()</span><br><span class="line">fd()</span><br><span class="line">bk()</span><br></pre></td></tr></table></figure><br>虽然该方法调用函数比较简单,但是有发生函数重名的可能性</p>
 </blockquote>
-<h2 id="import-lt-库名-gt-as-lt-库别名-gt"><a href="#import-lt-库名-gt-as-lt-库别名-gt" class="headerlink" title="import <库名> as <库别名>"></a>import &lt;库名&gt; as &lt;库别名&gt;</h2><p>给调用的外部库关联一 个更短、更适合自己的名字</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</span><br><span class="line"></span><br><span class="line">t.setup()</span><br><span class="line">t.goto()</span><br><span class="line">t.fd()</span><br><span class="line">t.bk()</span><br></pre></td></tr></table></figure>
+<h2 id="import-lt-库名-gt-as-lt-库别名-gt"><a href="#import-lt-库名-gt-as-lt-库别名-gt" class="headerlink" title="import <库名> as <库别名>"></a>import &lt;库名&gt; as &lt;库别名&gt;</h2><p>给调用的外部库关联一 个更短、更适合自己的名字<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> turtle <span class="keyword">as</span> t</span><br><span class="line"></span><br><span class="line">t.setup()</span><br><span class="line">t.goto()</span><br><span class="line">t.fd()</span><br><span class="line">t.bk()</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>用这种方式,冗余的代码量最少,同时又防止了库重名的问题.<br><strong>推荐</strong></p>
 </blockquote>
@@ -471,7 +465,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

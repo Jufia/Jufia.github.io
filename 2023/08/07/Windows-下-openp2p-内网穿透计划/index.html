@@ -23,20 +23,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="有东西被加密了, 请输入密码查看.">
+  <meta name="description" content="使用 FPR 进行内网穿透需要一台具有公网 IP 的机器且操作复杂，经过一段时间的学习最终被宣告计划破产。现在由网友建议转向基于 openp2p 开展内网穿透计划，操作简单，对设备要求低。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="奇风岁月&#x2F;罗伯特·麦卡蒙">
-<meta property="og:url" content="http://example.com/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%84-%E5%A5%87%E9%A3%8E%E5%B2%81%E6%9C%88/index.html">
+<meta property="og:title" content="Windows 下 openp2p 内网穿透计划">
+<meta property="og:url" content="http://example.com/2023/08/07/Windows-%E4%B8%8B-openp2p-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%AE%A1%E5%88%92/index.html">
 <meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
-<meta property="og:description" content="有东西被加密了, 请输入密码查看.">
+<meta property="og:description" content="使用 FPR 进行内网穿透需要一台具有公网 IP 的机器且操作复杂，经过一段时间的学习最终被宣告计划破产。现在由网友建议转向基于 openp2p 开展内网穿透计划，操作简单，对设备要求低。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-31T09:15:36.000Z">
-<meta property="article:modified_time" content="2023-01-15T08:52:12.000Z">
+<meta property="og:image" content="https://private-user-images.githubusercontent.com/122464335/258764783-28e7c80e-702c-492f-a5e0-0951b86755b7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE0MTc0NjksIm5iZiI6MTY5MTQxNzE2OSwicGF0aCI6Ii8xMjI0NjQzMzUvMjU4NzY0NzgzLTI4ZTdjODBlLTcwMmMtNDkyZi1hNWUwLTA5NTFiODY3NTViNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwN1QxNDA2MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hNTYyMWFhM2ZjZWI4ZGY4N2UyNmQ4NTE1MmNjODQ0YTY2NTYxNDYzNTE3OWEwZGU2NjRlZjc5MzNlZTM5MGExJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.g34IgSnHTGC7jzvBcEtVPy70NbGVLxUrgqeFNYQ3M3g">
+<meta property="og:image" content="https://private-user-images.githubusercontent.com/122464335/258772418-79973487-d34b-4092-a090-3e333673243d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE0MTc0NjksIm5iZiI6MTY5MTQxNzE2OSwicGF0aCI6Ii8xMjI0NjQzMzUvMjU4NzcyNDE4LTc5OTczNDg3LWQzNGItNDA5Mi1hMDkwLTNlMzMzNjczMjQzZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwN1QxNDA2MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jOTg1MDBhYjI2N2YzOWY1ZDc1Y2UwMDE2Nzc1YjkzNjk3Y2YwNDQwYzg5ZWY2NzA2ZmMxNjBlNzFiODJlMDU2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.0axy4PTTm7rOtOZ_-BYpMKxXoLQxROvQ45dMa75h_jU">
+<meta property="article:published_time" content="2023-08-07T09:24:41.000Z">
+<meta property="article:modified_time" content="2023-08-07T14:07:56.000Z">
 <meta property="article:author" content="Laura">
-<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://private-user-images.githubusercontent.com/122464335/258764783-28e7c80e-702c-492f-a5e0-0951b86755b7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE0MTc0NjksIm5iZiI6MTY5MTQxNzE2OSwicGF0aCI6Ii8xMjI0NjQzMzUvMjU4NzY0NzgzLTI4ZTdjODBlLTcwMmMtNDkyZi1hNWUwLTA5NTFiODY3NTViNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwN1QxNDA2MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hNTYyMWFhM2ZjZWI4ZGY4N2UyNmQ4NTE1MmNjODQ0YTY2NTYxNDYzNTE3OWEwZGU2NjRlZjc5MzNlZTM5MGExJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.g34IgSnHTGC7jzvBcEtVPy70NbGVLxUrgqeFNYQ3M3g">
 
-<link rel="canonical" href="http://example.com/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%84-%E5%A5%87%E9%A3%8E%E5%B2%81%E6%9C%88/">
+<link rel="canonical" href="http://example.com/2023/08/07/Windows-%E4%B8%8B-openp2p-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%AE%A1%E5%88%92/">
 
 
 <script id="page-configurations">
@@ -49,7 +51,7 @@
   };
 </script>
 
-  <title>奇风岁月/罗伯特·麦卡蒙 | Keep Going Keep Fighting Keep Laughing​</title>
+  <title>Windows 下 openp2p 内网穿透计划 | Keep Going Keep Fighting Keep Laughing​</title>
   
 
 
@@ -80,7 +82,119 @@
   </style>
 </noscript>
 
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -172,7 +286,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%84-%E5%A5%87%E9%A3%8E%E5%B2%81%E6%9C%88/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/07/Windows-%E4%B8%8B-openp2p-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E8%AE%A1%E5%88%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/laura.jpg">
@@ -185,7 +299,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          奇风岁月/罗伯特·麦卡蒙
+          Windows 下 openp2p 内网穿透计划
         </h1>
 
         <div class="post-meta">
@@ -194,28 +308,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-10-31 17:15:36" itemprop="dateCreated datePublished" datetime="2022-10-31T17:15:36+08:00">2022-10-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-15 16:52:12" itemprop="dateModified" datetime="2023-01-15T16:52:12+08:00">2023-01-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dilettantism/" itemprop="url" rel="index"><span itemprop="name">Dilettantism</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Dilettantism/%E6%96%87%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">文学</span></a>
-                </span>
+              <time title="创建时间：2023-08-07 17:24:41 / 修改时间：22:07:56" itemprop="dateCreated datePublished" datetime="2023-08-07T17:24:41+08:00">2023-08-07</time>
             </span>
 
           
@@ -236,18 +331,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="bd161dd3502ea910f8075ddffc79d5981d46b119dedb92dd395372ca2ad946d8">669722601360ff34ff111c0a0d0b6d27142d71c86f2a69f744b607849f3228b0b35f00739a3833aaeb38640b7c6aab92fda39c50e8d7df0bff22d95d36748cdde4bf11fbc869bccfe454ff5f40d521d6e68cbcdf3bf1149198666c0896700dba4deda0e79b47c408c430f30923ab74186e175b6a8aab486af4a19f30ba8bf447b1875977bf5a26f2911584263a5784d6a3a7cea1cdec928f2e068d705048b7c6c7cfbcc996379cde9f544738a231c2a498281a1b1ef12acaa0af7975ddeb7b084e31aaa76814a333be0298dbd433dd5a7261b2b18cc0c76c6c10fc46b42920d4411a585c5cece82d5bd7fcc9e56e8b640c4e98e7c68641f35c485297e004909071bd991306ea1e7bd2b280ffe944eda0851127fc0a67522f9fcfce92b2d4522fb628d39ae5fbcc8723efca7bedf8813c920b5422381931dc04ceb8fc4069f9d149ca1b81ff81066290612a3f3cbedd17986e57256d1dffd82414c393393ed59463573c7421f10c5444ae0da07fc8597f67a02108297c8dae05fe86b26c3abfa164f66903734b94ae09b3be1accbe673befcd48a28cce3f3438eac84bd54d3c615205629c20ae89b4cb81cef87caaa7e4744f93512b6d0053a1a2b9a9965e39e18c0a3de654c332dec55c937dab9e1a5e44544b40e67b54d36a75396e9a2d40372d9a8180c60ab2c60a94be51217bc9e8e50fe0e3492cf726d9097a8b84ef760e94cd4d6e2f758704cf1874c5d87e71bca8826b060a7b35d6f235b886d9cb7722022c0dc98769378deba17df1a83f01edb9f11141e229521684280ef67d26a1bd472a2b7b5a84a8585a4558bf0b6bab1e44d663fc24839c625ac2acfe02206b62c9d522b6772897c141944a386f97583aa5dfc96e1334c84e17870097945b50333afa8f13838a2614f33bbb3aa822250553345586aa14d4dc5b3df981c6beb4f2cbad30d6e6f03315f77f6f5d474013b360cdf01cafbb16b74285a285faf75fd2b648403961a67ad58ec352e30d640595210030d14cebb6f7c9bb3ba2f06344a47c61c21fb2a3799acb57cb1e821bd08d90f96d76124d05ab50c92fb891a98b9687849c80d3248486f542f8e0ef694e248dd7a1bfdbf2bb125eaa0b1ec8ad75ba7d6de481f6dba30895f335325d1a2d5ded1be2a17b36e435ef7e4faa0c7636c7c34c36018808e8669fe74343aad6bc03c8e78d6eddf92cbf059e519c3d723df2942a61d260cc9cee50940df25ef8c4faceb291de4ef67d77b7956fc48b00e293a03e7a90b48451baad2964ecb9ec89be17a0377057a8fddb9e6e7ef91cfd356ae5114892ff184ba36a572258432a977c9df3730e045da7dcc4057214fbcb92b9c6ae3167151310240925b13baada52cf4db178007eb54a4d0874f5e4f20ba64dc6789543bc0dfa1287738588aa9d7e632bf82fe93684801ca1c04edec6903ed0e0729baace04f285ccfe625b291b8d5ec789b8137854dbeb9b1748a0f9e1f83b56eb6bc81c2f3ef6624ac4bc3932718d2012eb6a19bf14638f45f1b5b6893f3c299f3e7b95af8580b436a2b24dbb769d812aac51c7810c8ed3e1f89140ab23a511516e1b65590538fcf69c67dae8f1bd85ea9b804f04ca28cd0c8f8e3a0fd5fba70b42e8cfb75ff6875c470c616c565501df25744e95ec4c2aa139e32dd521bfc04cf7c858eb8c292e7ad33f8cf25330d4f3d729d573a581c925c300d00559572283084203b07da27c6d65a212426eb73313c4a478cc9925b014f04c3da8ab8e238420039aaa94c469d50bb06b35fb99ae66e7a110aa62a7b473eba017364fb0b64f524f409c18fa8181aa440ab1e9f40c253c54c95471bac70ec5c8086bf63b1a32b4bed867cd48ca9aefec260362ecfc0c4b2def0441b0175a1f8c65e5ba55e3382fbddfe91e1b68c1f7f415ba7043e8f6f725412295d230ca637689248219edd659c85f3a6e3b8f3adcd454fe65bcf97a0282d72b2565eed0136dfa1aeefc103aa12f1f4808ffa9cccc3dc9d139bf693caa1e3611ba6f783a24971fb9670239024d98700492e21902706c471353b1ee420ed1f283fddbb3dca990f62a019e3d9eee5ea8aa94262aa0493edc4ddbfece6bbd5bb1f452c49ad7fc700757bf00fa6aeec0734f1d26cd2580e26a6595d76e986ded1b6de05e2e48da51188b581e2fe093339e94aed4a83a083b20453e0b0f6020209e2b984451164da177ea5a34a6f08aad67a48e740262e0868ee4a85816031eab6465460261e75ae98de2a4d0b9aee1392835cf2a556556381b8be5f871b4726e52054767b5b78c410c2979c9ffec5c175d0b248d9ea7cba5521f5e553d15277a6fe412db20503878eccf9473b5b0d36752e904e4805df4f1c0e14450ac1a3711593bcff91ec47044f33d042706572578d33ba80ad702443518eea3bf804c17ccdb24109464b10136ff08a4949112b75fa1a46951bfb10d435c4f8a47dbd2e87678e7a01be330872fcf2834b82fe9aac4c83ee58533ec55f31526b74d913f240a3791933bf88f441604e03d27affe8e88d57188990f50b23d9c8d3a65740c014070221b2e1208dde6ebd6349b7d120e5f6b0fd7c2c651ca4c3c49ae20d7a035f228d7f8893236999d49cbe480c8ecdfe5d0e67a26d5bd8aaa717793a440c85381507b9e7dd041dc92db5abf95dbda29f588d292578923a767cb2fb92230603b3ef9812fe52397b19faa50e38aab9379cca05fc0529efbe7e91cb9fd1d04d76f722ee9df6820c0df1ee3128a9642470060da217129ea084693237b3cb38ca12c004db32be165cf01a07797d6b684320fe7a06081fe7216cdc6ad179bc465c099fcd9316526afbcafbc49362d0221dcc19ae11e7c7480b5b148e76ec87d44caf37d692c13b3c4f593277063a9a01a09610118e486c334fbc2c17b5ca3ca764bef42925f4be58248897347452480227ef21d4fd68f8e9466b396fb9b3245a5e2455ba5fec21646bc7554c7f508acb53c864a37b9154b8821fe95fb9c5c063c6a70502d67fc2c052c886a7038c9be426b9958e040b8c0c2d997f504a27b8a614500a307e6cb4456259d6ec6235495a6dafcdfad5603c929ce8fdda6f8ea7c000bd891fc4aa24b0dec1718096c86ae95d79a305c1402898d3ceec9c37abaf7fb96ff2ac9b3e2d8406b83dec1c9aeac907aeee550d2e9d13a5f3aefe16f8d252e1094b815b3ac9b0c3e053f7ad0da0441e09773d4882b1e068ca92e1747ccc4a6bbfcf077014d6f7058d867df5159cbb9e13659f8fe9388ae94c84654adfe48ddeb6ac98c2e550025e84d93cef9fbeb28cdd93588e05f90c793963ee193ccead74bf04bf0815fbd5157afe001267702deab8de7f6e0e7776c00d784a552107e9a27a11a852e022b586e25d5f4c89ddcf3cd82f0d9f8f75c7d7b71e01f21ec5c2d77877ebc0806d511c94957151b4d28aec178ffb2164c2253763c3917b65550fcd6121d465e1bc620ca8b384c03ec15520dba42719e15f993e119867e4ada1e86ca66795f073fd99bc8f83042e0655d7be8d3235aea037b273d248a013d0478e44861a08de0bec022243eef71f10e8b092ff506c2883891c139ecba3494cc8302e680bae3f897a4411b7ad55ae8af3716135ba558b68882dec1b57a59469c05264c6245c21f9ad036ac09d0470e38f1120a85a3660b622dcfcb23f496d64c88ce4143ffdac744eb51e8954b45123a7a0c3dd306d63a7290e940921d28145f44c8bafc1f5e8a24ee8e2d5b1048fbe55671742fe18ad323f635fef5f13e764e6ff27300f868c21cd437661ce0b55b4fcad99b80d82efab018599d9dc2fa6e185d1c7b3b0a5ef898772343dca9f05a4570a09d05aea621c87c316d3b953f774d8ed48b3196c92d698380e4d9828ca50bbb76cf871a02217f5b273069136f91b0431d3fd03fdacee22ba8524a659a796cf1cf6eaa4117a0868c67fe8d7ccac3d35e2a93f4d6dd922c3b4bd00f5c7002f8d4361ffdd250b0dbe0f28725c2b6e63c5ae55615ba956e914377a31de00349469aa282dface42e09c4fdaae258b614d36d710598019601fa424942757f6d85f5517923311fd41e49434dc8dff0c37ab7fc638e1a1d59671bf18d429ca3497e15f7001c26d456184bf5706db0de7fbc85edc565f94cd010b52a330f5fda3053650158b0215b2b1acee409bc0c73bc38c56fe2a30287a733df022e2f9579c161b307e7bce5b121aaa51d4dba6b46d149cc31cb0fdfc97c1bb9fc6c48586524c16ebc68d02d7623dfec3ecb6dd1d89dd33949be5b2fb125d4433dee308a9ad4a817dee5ab41b3479c4fc119fb1e97c689665746a9ed00aba9d518fe2e51b1d91ad44fa7e37897e73659e6a68b6f66e506b4d2beabc1497778e4dcb8ecc0986e7a4314302d0ddd6128fd25978568fafd1d0672979fa0079063b25a1731c01acdb0d2d8</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-up">
-      <input class="hbe hbe-input-field hbe-input-field-up" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-up" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-up">您好, 这里需要密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        <!-- # 摘要 -->
+<p>使用 FPR 进行内网穿透需要一台具有公网 IP 的机器且操作复杂，经过一段时间的学习最终被宣告计划破产。现在由网友建议转向基于 openp2p 开展内网穿透计划，操作简单，对设备要求低。</p>
+<span id="more"></span>
+<h1 id="OpenP2P是什么"><a href="#OpenP2P是什么" class="headerlink" title="OpenP2P是什么"></a>OpenP2P是什么</h1><p>OpenP2P是一个开源、免费、轻量级的P2P共享网络，可以实现不同局域网下的远程办公。<br><a target="_blank" rel="noopener" href="https://github.com/openp2p-cn/openp2p">Openp2pGitHub项目仓库</a><br><a target="_blank" rel="noopener" href="https://github.com/openp2p-cn/openp2p">OpenP2P中文文档</a>  </p>
+<h1 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1tG4y1f7b6/?vd_source=04094711feab038c5969fd9e83d31c8f">bilibili-【openp2p】远程办公、远程4K流媒体、私有云【好用的内网穿透工具】</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Et4y1P7bF/?vd_source=04094711feab038c5969fd9e83d31c8f">bilibili-[openp2p] 开源的免费不限速不用购买服务器的内网穿透，Nas和群辉有福了</a></p>
+<p>非常简单，按照文档说的做就好了。<br>安装完成后会出现一个弹窗：</p>
+<p><img src="https://private-user-images.githubusercontent.com/122464335/258764783-28e7c80e-702c-492f-a5e0-0951b86755b7.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE0MTc0NjksIm5iZiI6MTY5MTQxNzE2OSwicGF0aCI6Ii8xMjI0NjQzMzUvMjU4NzY0NzgzLTI4ZTdjODBlLTcwMmMtNDkyZi1hNWUwLTA5NTFiODY3NTViNy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwN1QxNDA2MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hNTYyMWFhM2ZjZWI4ZGY4N2UyNmQ4NTE1MmNjODQ0YTY2NTYxNDYzNTE3OWEwZGU2NjRlZjc5MzNlZTM5MGExJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.g34IgSnHTGC7jzvBcEtVPy70NbGVLxUrgqeFNYQ3M3g" alt="image"></p>
+<p>上面有一些信息，只需要注意这两条：’文件地址：C:\Program Files\OpenP2P’ 和 ‘Visit WebUI on <a target="_blank" rel="noopener" href="https://console.openp2p.cn">https://console.openp2p.cn</a>‘<br>先前往应用程序地址处<code>C:\Program Files\OpenP2P</code>运行<code>openp2p.exe</code>，然后打开网址，进入到“新建P2P应用”步骤。  </p>
+<p><img src="https://private-user-images.githubusercontent.com/122464335/258772418-79973487-d34b-4092-a090-3e333673243d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE0MTc0NjksIm5iZiI6MTY5MTQxNzE2OSwicGF0aCI6Ii8xMjI0NjQzMzUvMjU4NzcyNDE4LTc5OTczNDg3LWQzNGItNDA5Mi1hMDkwLTNlMzMzNjczMjQzZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwODA3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDgwN1QxNDA2MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jOTg1MDBhYjI2N2YzOWY1ZDc1Y2UwMDE2Nzc1YjkzNjk3Y2YwNDQwYzg5ZWY2NzA2ZmMxNjBlNzFiODJlMDU2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.0axy4PTTm7rOtOZ_-BYpMKxXoLQxROvQ45dMa75h_jU" alt="image"><br>此时的“控制计算机”和“被控计算机”都会显示在线，去到“控制计算机”的窗台，点击“P2P应用”添加实例</p>
+<p>总是显示连接超时，是防火墙的原因…</p>
+<p>已经尝试过关闭防火墙，仍然连接不上，8月7日，暂且这样，已添加qq群希望得到回复。</p>
+<p>也可以选择手动运作。</p>
+
     </div>
 
     
@@ -255,9 +351,6 @@
     
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"># 随笔</a>
-          </div>
 
         
 
@@ -265,13 +358,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/10/31/%E9%9A%8F%E7%AC%94%E6%91%98%E6%8A%842022/" rel="prev" title="2022 年随笔摘抄">
-      <i class="fa fa-chevron-left"></i> 2022 年随笔摘抄
+    <a href="/2023/08/04/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E5%BA%94%E7%94%A8%E5%B1%82%E9%9D%A2/" rel="prev" title="文献管理-应用层面">
+      <i class="fa fa-chevron-left"></i> 文献管理-应用层面
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/11/24/python-ERRORandWORMING/" rel="next" title="python-ERRORandWORMING">
-      python-ERRORandWORMING <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -330,6 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenP2P%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">OpenP2P是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">安装教程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
