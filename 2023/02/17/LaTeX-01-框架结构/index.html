@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="摘要latex的基本用法">
+  <meta name="description" content="¶摘要 latex的基本用法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTeX(01)-框架结构">
 <meta property="og:url" content="http://example.com/2023/02/17/LaTeX-01-%E6%A1%86%E6%9E%B6%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
-<meta property="og:description" content="摘要latex的基本用法">
+<meta property="og:description" content="¶摘要 latex的基本用法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-17T12:59:13.000Z">
 <meta property="article:modified_time" content="2023-02-17T13:01:26.000Z">
@@ -342,179 +342,189 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>latex的基本用法</p>
+        <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
+<p>latex的基本用法</p>
 <span id="more"></span>
-
-<h1 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h1><!-- more -->
-
-<h1 id="document"><a href="#document" class="headerlink" title="document"></a>document</h1><p>当 latex 处理源文件时， 首先需要知道的就是作者所要创建的文档类型。 文档类型可由\documentclass 命令来指定。</p>
+<h1 id="框架结构"><a class="header-anchor" href="#框架结构">¶</a>框架结构</h1>
+<!-- more -->
+<h1 id="document"><a class="header-anchor" href="#document">¶</a>document</h1>
+<p>当 latex 处理源文件时， 首先需要知道的就是作者所要创建的文档类型。 文档类型可由\documentclass 命令来指定。</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[option]{class}</span><br></pre></td></tr></table></figure>
-
 <p>clsss 指定想要的文档类型。表1给出了一些用到的文档类型。通过options 参数可以定制文档类的属性。 不同的选项之间须用逗号隔开。标准文档类的最常用选项如表2所示。</p>
 <p>例如：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[11pt, twosid, a4paper]{article}</span><br></pre></td></tr></table></figure>
-
 <p>这条命令会引导 latex 使用article 格式、 11 磅大小的字体来排版该文档， 并得到在A4 纸上双面打印的效果。</p>
 <table>
 <thead>
 <tr>
-<th align="center">article</th>
-<th align="center">排版科学期刊、 演示文档、 短报告、 程序文档、 邀请函…… 支持中文形式：ctexart</th>
+<th style="text-align:center">article</th>
+<th style="text-align:center">排版科学期刊、 演示文档、 短报告、 程序文档、 邀请函…… 支持中文形式：ctexart</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">proc</td>
-<td align="center">一个基于 article 的会议文集类, 支持中文形式：\ctexrep</td>
+<tbody>
+<tr>
+<td style="text-align:center">proc</td>
+<td style="text-align:center">一个基于 article 的会议文集类, 支持中文形式：\ctexrep</td>
 </tr>
 <tr>
-<td align="center">minimal</td>
-<td align="center">非常小的文档类。 只设置了页面尺寸和基本字体。 主要用来查错。</td>
+<td style="text-align:center">minimal</td>
+<td style="text-align:center">非常小的文档类。 只设置了页面尺寸和基本字体。 主要用来查错。</td>
 </tr>
 <tr>
-<td align="center">report</td>
-<td align="center">排版多章节长报告、 短篇书籍、 博士论文……</td>
+<td style="text-align:center">report</td>
+<td style="text-align:center">排版多章节长报告、 短篇书籍、 博士论文……</td>
 </tr>
 <tr>
-<td align="center">book</td>
-<td align="center">排版书籍。支持中文形式：\ctexbook</td>
+<td style="text-align:center">book</td>
+<td style="text-align:center">排版书籍。支持中文形式：\ctexbook</td>
 </tr>
 <tr>
-<td align="center">slides</td>
-<td align="center">排版幻灯片。 该文档类使用大号 sans serif 字体。 也可以选用 FoilTEXa 来得到相同的效果。</td>
+<td style="text-align:center">slides</td>
+<td style="text-align:center">排版幻灯片。 该文档类使用大号 sans serif 字体。 也可以选用 FoilTEXa 来得到相同的效果。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>表2：文档选项</p>
 <table>
 <thead>
 <tr>
-<th align="center">10pt, 11pt, 12pt</th>
-<th align="center">设置文档中所使用的字体的大小。 如果该项没有指定， 默认使用10pt 字体。</th>
+<th style="text-align:center">10pt, 11pt, 12pt</th>
+<th style="text-align:center">设置文档中所使用的字体的大小。 如果该项没有指定， 默认使用10pt 字体。</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">a4paper, letterpaper, . . .</td>
-<td align="center">定义纸张的尺寸。 缺省设置为letterpaper。 此外， 还可以使用a5paper, b5paper, executivepaper 以及legalpaper。</td>
+<tbody>
+<tr>
+<td style="text-align:center">a4paper, letterpaper, . . .</td>
+<td style="text-align:center">定义纸张的尺寸。 缺省设置为letterpaper。 此外， 还可以使用a5paper, b5paper, executivepaper 以及legalpaper。</td>
 </tr>
 <tr>
-<td align="center">fleqn</td>
-<td align="center">设置行间公式为左对齐， 而不是居中对齐。</td>
+<td style="text-align:center">fleqn</td>
+<td style="text-align:center">设置行间公式为左对齐， 而不是居中对齐。</td>
 </tr>
 <tr>
-<td align="center">leqno</td>
-<td align="center">设置行间公式的编号为左对齐， 而不是右对齐。</td>
+<td style="text-align:center">leqno</td>
+<td style="text-align:center">设置行间公式的编号为左对齐， 而不是右对齐。</td>
 </tr>
 <tr>
-<td align="center">titlepage, notitlepage</td>
-<td align="center">指定是否在文档标题(document title) 后另起一页。 article 文档类缺省设置为不开始新页， report 和book 类则相反。</td>
+<td style="text-align:center">titlepage, notitlepage</td>
+<td style="text-align:center">指定是否在文档标题(document title) 后另起一页。 article 文档类缺省设置为不开始新页， report 和book 类则相反。</td>
 </tr>
 <tr>
-<td align="center">onecolumn, twocolumn</td>
-<td align="center">latex 以单栏(one column) 或双栏(two column) 的方式来排版文档。</td>
+<td style="text-align:center">onecolumn, twocolumn</td>
+<td style="text-align:center">latex 以单栏(one column) 或双栏(two column) 的方式来排版文档。</td>
 </tr>
 <tr>
-<td align="center">twoside, oneside</td>
-<td align="center">指定文档为双面或单面打印格式。 article 和report 类为单面(single sided) 格式， book 类缺省为双面(double sided) 格式。 注意该选项只是作用于文档样式， 而不会通知打印机以双面格式打印文档。</td>
+<td style="text-align:center">twoside, oneside</td>
+<td style="text-align:center">指定文档为双面或单面打印格式。 article 和report 类为单面(single sided) 格式， book 类缺省为双面(double sided) 格式。 注意该选项只是作用于文档样式， 而不会通知打印机以双面格式打印文档。</td>
 </tr>
 <tr>
-<td align="center">landscape</td>
-<td align="center">将文档的打印输出布局设置为 landscape 模式。</td>
+<td style="text-align:center">landscape</td>
+<td style="text-align:center">将文档的打印输出布局设置为 landscape 模式。</td>
 </tr>
 <tr>
-<td align="center">openright, openany</td>
-<td align="center">决定新的一章仅在奇数页开始还是在下一页开始。 在文档类型为article 时该选项不起作用， 因为该类中没有定义“章” (chapter)。 report 类默认在下一页开始新一章而book 类的新一章总是在奇数页开始。</td>
+<td style="text-align:center">openright, openany</td>
+<td style="text-align:center">决定新的一章仅在奇数页开始还是在下一页开始。 在文档类型为article 时该选项不起作用， 因为该类中没有定义“章” (chapter)。 report 类默认在下一页开始新一章而book 类的新一章总是在奇数页开始。</td>
 </tr>
-</tbody></table>
-<h1 id="usepackage"><a href="#usepackage" class="headerlink" title="usepackage"></a>usepackage</h1><p>排版文档时， 你可能会发现某些时候基本的LATEX 并不能解决你的问题。 如果想插入图形(graphics)、 彩色文本(coloured text) 或源代码到你的文档中， 你就需要使用宏包来增强LATEX 的功能。 可使用如下命令调用宏包</p>
-<p>—————–<strong>支持中文<code>\usepackage[UTF8]{ctex}</code></strong>——————-</p>
+</tbody>
+</table>
+<h1 id="usepackage"><a class="header-anchor" href="#usepackage">¶</a>usepackage</h1>
+<p>排版文档时， 你可能会发现某些时候基本的LATEX 并不能解决你的问题。 如果想插入图形(graphics)、 彩色文本(coloured text) 或源代码到你的文档中， 你就需要使用宏包来增强LATEX 的功能。 可使用如下命令调用宏包</p>
+<p>-----------------<strong>支持中文<code>\usepackage[UTF8]{ctex}</code></strong>-------------------</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>[options]{package}</span><br></pre></td></tr></table></figure>
 <p>这里package 是宏包的名称， options 是用来激活宏包特殊功能的一组关键词。很多宏包随LATEX 基本发行版一起发布。</p>
 <table>
 <thead>
 <tr>
-<th align="center">doc</th>
-<th align="center">排版LATEX 的说明文档。</th>
+<th style="text-align:center">doc</th>
+<th style="text-align:center">排版LATEX 的说明文档。</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">exscale</td>
-<td align="center">提供了按比例伸缩的数学扩展字体。</td>
+<tbody>
+<tr>
+<td style="text-align:center">exscale</td>
+<td style="text-align:center">提供了按比例伸缩的数学扩展字体。</td>
 </tr>
 <tr>
-<td align="center">fontenc</td>
-<td align="center">指明使用哪种LATEX 字体编码(font encoding)。</td>
+<td style="text-align:center">fontenc</td>
+<td style="text-align:center">指明使用哪种LATEX 字体编码(font encoding)。</td>
 </tr>
 <tr>
-<td align="center">ifthen</td>
-<td align="center">提供如下形式的命令‘if . . . then do . . . otherwise do . . . .’</td>
+<td style="text-align:center">ifthen</td>
+<td style="text-align:center">提供如下形式的命令‘if . . . then do . . . otherwise do . . . .’</td>
 </tr>
 <tr>
-<td align="center">latexsym</td>
-<td align="center">提供LATEX 符号字体。</td>
+<td style="text-align:center">latexsym</td>
+<td style="text-align:center">提供LATEX 符号字体。</td>
 </tr>
 <tr>
-<td align="center">makeidx</td>
-<td align="center">提供排版索引的命令</td>
+<td style="text-align:center">makeidx</td>
+<td style="text-align:center">提供排版索引的命令</td>
 </tr>
 <tr>
-<td align="center">syntonly</td>
-<td align="center">编译文档而不生成 dvi 文件</td>
+<td style="text-align:center">syntonly</td>
+<td style="text-align:center">编译文档而不生成 dvi 文件</td>
 </tr>
 <tr>
-<td align="center">inputenc</td>
-<td align="center">指明使用哪种输入编码， 如 ASCII, ISO Latin-1, ISO Latin-2, 437/850IBM code pages, Apple Macintosh, Next, ANSI-Windows 或用户自定义编码。</td>
+<td style="text-align:center">inputenc</td>
+<td style="text-align:center">指明使用哪种输入编码， 如 ASCII, ISO Latin-1, ISO Latin-2, 437/850IBM code pages, Apple Macintosh, Next, ANSI-Windows 或用户自定义编码。</td>
 </tr>
 <tr>
-<td align="center">amsmath</td>
-<td align="center">数学公式</td>
+<td style="text-align:center">amsmath</td>
+<td style="text-align:center">数学公式</td>
 </tr>
 <tr>
-<td align="center">graphicx</td>
-<td align="center">插图</td>
+<td style="text-align:center">graphicx</td>
+<td style="text-align:center">插图</td>
 </tr>
 <tr>
-<td align="center">xcolor</td>
-<td align="center">颜色</td>
+<td style="text-align:center">xcolor</td>
+<td style="text-align:center">颜色</td>
 </tr>
 <tr>
-<td align="center">array</td>
-<td align="center">表格</td>
+<td style="text-align:center">array</td>
+<td style="text-align:center">表格</td>
 </tr>
 <tr>
-<td align="center">ctex, xecjk</td>
-<td align="center">中文</td>
+<td style="text-align:center">ctex, xecjk</td>
+<td style="text-align:center">中文</td>
 </tr>
 <tr>
-<td align="center">fontspec</td>
-<td align="center">西文 otf 字体</td>
+<td style="text-align:center">fontspec</td>
+<td style="text-align:center">西文 otf 字体</td>
 </tr>
-</tbody></table>
-<h1 id="页面样式pagestyle"><a href="#页面样式pagestyle" class="headerlink" title="页面样式pagestyle"></a>页面样式pagestyle</h1><p>LATEX 支持三种预定义的页眉/页脚(header/footer) 样式， 称为页面样式(pagestyle)。 </p>
+</tbody>
+</table>
+<h1 id="页面样式pagestyle"><a class="header-anchor" href="#页面样式pagestyle">¶</a>页面样式pagestyle</h1>
+<p>LATEX 支持三种预定义的页眉/页脚(header/footer) 样式， 称为页面样式(pagestyle)。</p>
 <p>语法：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\pagestyle</span>{style}</span><br></pre></td></tr></table></figure>
-
 <p>其中的 style 参数确定了使用哪一种页面样式 。该表列出了预定义的页面样式。</p>
 <table>
 <thead>
 <tr>
-<th align="center">plain</th>
-<th align="center">在页脚正中显示页码。 这是页面样式的缺省设置。</th>
+<th style="text-align:center">plain</th>
+<th style="text-align:center">在页脚正中显示页码。 这是页面样式的缺省设置。</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">headings</td>
-<td align="center">在页眉中显示章节名及页码， 页脚空白。</td>
+<tbody>
+<tr>
+<td style="text-align:center">headings</td>
+<td style="text-align:center">在页眉中显示章节名及页码， 页脚空白。</td>
 </tr>
 <tr>
-<td align="center">empty</td>
-<td align="center">将页眉页脚都设为空白。</td>
+<td style="text-align:center">empty</td>
+<td style="text-align:center">将页眉页脚都设为空白。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>可以通过如下命令来改变当前页面的页面样式</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\thispagestyle</span>{style}</span><br></pre></td></tr></table></figure>
-
-<h1 id="添加注释"><a href="#添加注释" class="headerlink" title="添加注释"></a>添加注释</h1><p>用 % ，</p>
+<h1 id="添加注释"><a class="header-anchor" href="#添加注释">¶</a>添加注释</h1>
+<p>用 % ，</p>
 <p>若要转义，则用%</p>
-<h1 id="添加标题、作者、日期等信息，制作目录"><a href="#添加标题、作者、日期等信息，制作目录" class="headerlink" title="添加标题、作者、日期等信息，制作目录"></a>添加标题、作者、日期等信息，制作目录</h1><p>在导言区添加<br><code> \title{}</code> 语句添加标题， <code>\date{月/日/年}</code>与<code>\dete{today}    %显示当前日期</code></p>
+<h1 id="添加标题、作者、日期等信息，制作目录"><a class="header-anchor" href="#添加标题、作者、日期等信息，制作目录">¶</a>添加标题、作者、日期等信息，制作目录</h1>
+<p>在导言区添加<br>
+<code> \title{}</code> 语句添加标题， <code>\date{月/日/年}</code>与<code>\dete{today}    %显示当前日期</code></p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{article}  </span><br><span class="line"><span class="keyword">\title</span>{My first Latex document} </span><br><span class="line"><span class="keyword">\author</span>{Yingshan Li} </span><br><span class="line"><span class="keyword">\date</span>{8/26/2018} </span><br><span class="line"><span class="keyword">\begin</span>{document} </span><br><span class="line"><span class="keyword">\maketitle</span>  <span class="comment">%放置在\begin{document}后,制作标题</span></span><br><span class="line"><span class="keyword">\tableofcontents</span>    <span class="comment">%制作目录</span></span><br><span class="line"></span><br><span class="line">Hello world! </span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></table></figure>
 
     </div>
