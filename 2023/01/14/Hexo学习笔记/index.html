@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://user-images.githubusercontent.com/122464335/212477838-0dc1dbdd-6625-4352-bb7c-1b93d231f7f0.png">
 <meta property="og:image" content="https://github.com/Jufia/image/assets/122464335/a1b6ecde-a0c5-4550-be55-2cb6f3827624">
 <meta property="article:published_time" content="2023-01-14T15:05:32.410Z">
-<meta property="article:modified_time" content="2023-09-10T03:01:00.000Z">
+<meta property="article:modified_time" content="2023-09-10T04:20:06.000Z">
 <meta property="article:author" content="Laura">
 <meta property="article:tag" content="work">
 <meta name="twitter:card" content="summary">
@@ -209,7 +209,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-09-10 11:01:00" itemprop="dateModified" datetime="2023-09-10T11:01:00+08:00">2023-09-10</time>
+                <time title="修改时间：2023-09-10 12:20:06" itemprop="dateModified" datetime="2023-09-10T12:20:06+08:00">2023-09-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@
 <ol>
 <li>以管理员身份运行 PowerShell</li>
 <li>输入 <code>Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force</code></li>
-<li>然后，为了安装和使用这个升级器工具，请运行以下命令（也可以从高位的PowerShell或cmd.exe）。注意：这个工具至少需要Node v6。对于低于4.0的Node版本，请使用<a href="mailto:&#110;&#x70;&#x6d;&#45;&#x77;&#x69;&#x6e;&#x64;&#x6f;&#119;&#115;&#45;&#x75;&#112;&#103;&#114;&#x61;&#x64;&#101;&#x40;&#x33;&#46;&#x31;&#46;&#x31;">&#110;&#x70;&#x6d;&#45;&#x77;&#x69;&#x6e;&#x64;&#x6f;&#119;&#115;&#45;&#x75;&#112;&#103;&#114;&#x61;&#x64;&#101;&#x40;&#x33;&#46;&#x31;&#46;&#x31;</a>，对于低于6.0的Node版本，请使用<a href="mailto:&#110;&#x70;&#109;&#x2d;&#x77;&#105;&#x6e;&#x64;&#x6f;&#x77;&#x73;&#45;&#117;&#112;&#103;&#114;&#97;&#x64;&#x65;&#x40;&#52;&#46;&#x31;&#46;&#x31;">&#110;&#x70;&#109;&#x2d;&#x77;&#105;&#x6e;&#x64;&#x6f;&#x77;&#x73;&#45;&#117;&#112;&#103;&#114;&#97;&#x64;&#x65;&#x40;&#52;&#46;&#x31;&#46;&#x31;</a>。</li>
+<li>然后，为了安装和使用这个升级器工具，请运行以下命令（也可以从高位的PowerShell或cmd.exe）。注意：这个工具至少需要Node v6。对于低于4.0的Node版本，请使用<a href="mailto:&#x6e;&#x70;&#109;&#45;&#x77;&#x69;&#110;&#100;&#111;&#x77;&#115;&#45;&#117;&#x70;&#103;&#114;&#97;&#x64;&#101;&#64;&#51;&#x2e;&#x31;&#x2e;&#x31;">&#x6e;&#x70;&#109;&#45;&#x77;&#x69;&#110;&#100;&#111;&#x77;&#115;&#45;&#117;&#x70;&#103;&#114;&#97;&#x64;&#101;&#64;&#51;&#x2e;&#x31;&#x2e;&#x31;</a>，对于低于6.0的Node版本，请使用<a href="mailto:&#110;&#112;&#x6d;&#x2d;&#x77;&#105;&#x6e;&#100;&#111;&#x77;&#x73;&#x2d;&#117;&#x70;&#x67;&#x72;&#x61;&#x64;&#101;&#x40;&#x34;&#x2e;&#x31;&#x2e;&#x31;">&#110;&#112;&#x6d;&#x2d;&#x77;&#105;&#x6e;&#100;&#111;&#x77;&#x73;&#x2d;&#117;&#x70;&#x67;&#x72;&#x61;&#x64;&#101;&#x40;&#x34;&#x2e;&#x31;&#x2e;&#x31;</a>。</li>
 <li>输入：<code>npm install --global --production npm-windows-upgrade</code></li>
 <li>输入：<code>npm-windows-upgrade</code></li>
 <li>输入：<code>npm-windows-upgrade --npm-version latest</code></li>
@@ -324,6 +324,9 @@
 <p>这时候事情有了一些转机: 出现了新的报错, 幸运的时并不是更加复杂的错误</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">fatal</span>: unable to access <span class="string">&#x27;https://github.com/usename/usename.github.io.git/&#x27;</span>: </span><br><span class="line"><span class="title class_">Failed</span> to connect to github.<span class="property">com</span> port <span class="number">443</span> after <span class="number">21075</span> <span class="attr">ms</span>: <span class="title class_">Timed</span> out</span><br></pre></td></tr></table></figure>
 <p>提示 <code>time out</code> 把就代理关掉, 终于又可以写博客啦!<br>纪念一下 2023&#x2F;1&#x2F;3 把去年堆积的问题解决了好耶!</p>
+<p>2023&#x2F;09&#x2F;10 前来更新，这个代理还关不掉了。。。这样来取消代理：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="variable language_">global</span> --unset http.<span class="property">proxy</span></span><br><span class="line">git config --<span class="variable language_">global</span> --unset https.<span class="property">proxy</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="fatal-unable-to-access-‘https-github-com-username-nsername-github-io-git-‘-The-requested-URL-returned-error-403"><a href="#fatal-unable-to-access-‘https-github-com-username-nsername-github-io-git-‘-The-requested-URL-returned-error-403" class="headerlink" title="fatal: unable to access ‘https://github.com/username/nsername.github.io.git/‘: The requested URL returned error: 403"></a>fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://github.com/username/nsername.github.io.git/">https://github.com/username/nsername.github.io.git/</a>‘: The requested URL returned error: 403</h2><p>报错提示：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">remote</span>: <span class="title class_">Permission</span> to username/username.<span class="property">github</span>.<span class="property">io</span>.<span class="property">git</span> denied to &lt;otheruser&gt;.</span><br></pre></td></tr></table></figure>
 <p>错误可能是，电脑保存了一个git用户名和密码，所以如果你转移到另一个账户，就会出现错误403。<br><a target="_blank" rel="noopener" href="https://github.com/trilbymedia/grav-plugin-git-sync/issues/39#issuecomment-546016249">https://github.com/trilbymedia/grav-plugin-git-sync/issues/39#issuecomment-546016249</a>  </p>
