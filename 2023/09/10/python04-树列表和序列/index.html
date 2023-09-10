@@ -20,23 +20,23 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="输入input大多数情况下都使用 input() 函数从控制台获得用户输入。 123&lt;变量&gt; &#x3D; input(&lt;提示信息字符串&gt;)TempStr &#x3D; input(&quot;请输入：&quot;)input 括号中表达的信息是提示信息字符串，并不作为 变量 字符串中的一部分  输出print以字符形式向控制台输出结果的函数. print 函数默认输出字符串之后会换行, 想要不换行, 就要在 p">
+  <meta name="description" content="摘要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python-2.输入输出">
-<meta property="og:url" content="http://example.com/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/index.html">
+<meta property="og:title" content="python04-树列表和序列">
+<meta property="og:url" content="http://example.com/2023/09/10/python04-%E6%A0%91%E5%88%97%E8%A1%A8%E5%92%8C%E5%BA%8F%E5%88%97/index.html">
 <meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
-<meta property="og:description" content="输入input大多数情况下都使用 input() 函数从控制台获得用户输入。 123&lt;变量&gt; &#x3D; input(&lt;提示信息字符串&gt;)TempStr &#x3D; input(&quot;请输入：&quot;)input 括号中表达的信息是提示信息字符串，并不作为 变量 字符串中的一部分  输出print以字符形式向控制台输出结果的函数. print 函数默认输出字符串之后会换行, 想要不换行, 就要在 p">
+<meta property="og:description" content="摘要">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-30T07:53:43.000Z">
-<meta property="article:modified_time" content="2022-08-08T14:45:26.000Z">
+<meta property="article:published_time" content="2023-09-10T02:25:33.000Z">
+<meta property="article:modified_time" content="2023-09-10T02:34:58.000Z">
 <meta property="article:author" content="Laura">
 <meta property="article:tag" content="Language">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">
+<link rel="canonical" href="http://example.com/2023/09/10/python04-%E6%A0%91%E5%88%97%E8%A1%A8%E5%92%8C%E5%BA%8F%E5%88%97/">
 
 
 <script id="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>python-2.输入输出 | Keep Going Keep Fighting Keep Laughing​</title>
+  <title>python04-树列表和序列 | Keep Going Keep Fighting Keep Laughing​</title>
   
 
 
@@ -246,12 +246,12 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">24</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">63</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">55</span></a>
 
   </li>
   </ul>
@@ -284,7 +284,7 @@ mjx-container[display="true"] + br {
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/30/python-02-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/10/python04-%E6%A0%91%E5%88%97%E8%A1%A8%E5%92%8C%E5%BA%8F%E5%88%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/laura.jpg">
@@ -297,7 +297,7 @@ mjx-container[display="true"] + br {
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          python-2.输入输出
+          python04-树列表和序列
         </h1>
 
         <div class="post-meta">
@@ -306,16 +306,10 @@ mjx-container[display="true"] + br {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-07-30 15:53:43" itemprop="dateCreated datePublished" datetime="2022-07-30T15:53:43+08:00">2022-07-30</time>
+              <time title="创建时间：2023-09-10 10:25:33 / 修改时间：10:34:58" itemprop="dateCreated datePublished" datetime="2023-09-10T10:25:33+08:00">2023-09-10</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-08 22:45:26" itemprop="dateModified" datetime="2022-08-08T22:45:26+08:00">2022-08-08</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -348,22 +342,33 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><h2 id="input"><a href="#input" class="headerlink" title="input"></a>input</h2><p>大多数情况下都使用 <code>input()</code> 函数从控制台获得用户输入。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;变量&gt; = input(&lt;提示信息字符串&gt;)</span><br><span class="line">TempStr = input("请输入：")</span><br><span class="line">input 括号中表达的信息是提示信息字符串，并不作为 变量 字符串中的一部分</span><br></pre></td></tr></table></figure>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><span id="more"></span>
 
-<h1 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h1><h2 id="print"><a href="#print" class="headerlink" title="print"></a>print</h2><p>以字符形式向控制台输出结果的函数. <code>print</code> 函数默认输出字符串之后会换行, 想要不换行, 就要在 <code>print</code> 函数中增加一定的控制.<br>python 中的定义:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print</span>(<span class="params">self, *args, sep=<span class="string">' '</span>, end=<span class="string">'\n'</span>, file=<span class="literal">None</span></span>): <span class="comment"># known special case of print</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Prints the values to a stream, or to sys.stdout by default.</span></span><br><span class="line"><span class="string">    Optional keyword arguments:</span></span><br><span class="line"><span class="string">    file:  a file-like object (stream); defaults to the current sys.stdout.</span></span><br><span class="line"><span class="string">    sep:   string inserted between values, default a space.</span></span><br><span class="line"><span class="string">    end:   string appended after the last value, default a newline.</span></span><br><span class="line"><span class="string">    flush: whether to forcibly flush the stream.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>\r</code> : 打印后光标退回到之前的位置;</li>
-<li><code>\n</code> : 打印后换行.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(&lt;拟输出字符串变量&gt;)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"低碳钢的屈服极限"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print 函数的格式化</span></span><br><span class="line"><span class="built_in">print</span>((<span class="string">"转换后的温度是{:.2f}C"</span>.<span class="built_in">format</span>(C)))</span><br><span class="line"><span class="comment"># {:.2f}表示将变量C填充到这个位置时取小数点后2位,并不会四舍五入</span></span><br><span class="line"></span><br><span class="line">dayup = <span class="built_in">pow</span>(<span class="number">1.001</span>, <span class="number">365</span>)</span><br><span class="line">daydown = <span class="built_in">pow</span>(<span class="number">0.999</span>, <span class="number">365</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"向上{:.2f}, 向下{:.2f}"</span>. <span class="built_in">format</span>{dayup, daydown})</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span>  random</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    x, y = random(), random()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"(x, y) = ({}, {})"</span>.<span class="built_in">format</span>(x, y))</span><br></pre></td></tr></table></figure>
+
+<h1 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h1><h2 id="bound-and-index"><a href="#bound-and-index" class="headerlink" title="bound and index"></a>bound and index</h2><p>Use <code>[]</code> to bound a list argument and use <code>[]</code> to index. eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>odds = [<span class="number">41</span>, <span class="number">43</span>, <span class="number">47</span>, <span class="number">49</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>odds[<span class="number">0</span>]</span><br><span class="line"><span class="number">41</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>odds[<span class="number">1</span>]</span><br><span class="line"><span class="number">43</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>{:.2f}表示将变量C填充到这个位置时取小数点后2位,并不会四舍五入</p>
+<p>The number of a list is begin with number 0, which differ with MTLAB beinging with number 1.<br>The way to find an element is same with how lists are bound, that is <code>[]</code>, while the way to find elements is using <code>()</code> in MATLAB.</p>
 </blockquote>
-</li>
-</ul>
-<p>print 内加逗号<font color="red">,</font> 起到空格的作用.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"it is:"</span>, i)</span><br><span class="line"></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">0</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">1</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">2</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">3</span></span><br><span class="line">it <span class="keyword">is</span>: <span class="number">4</span></span><br></pre></td></tr></table></figure>
-<p>在原逗号的位置,逗号消失,变成了空格.</p>
+<h2 id="gititem"><a href="#gititem" class="headerlink" title="gititem()"></a>gititem()</h2><p>This is the other way disugned for selecting elements, usage:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>getitem(odds, <span class="number">0</span>)</span><br><span class="line"><span class="number">41</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="length-of-lists"><a href="#length-of-lists" class="headerlink" title="length of lists"></a>length of lists</h2><p>Use function <code>len(lstName)</code> to calculate how long a list argument is. eg:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(odds)</span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
+<h2 id="Concatenation-and-repetition"><a href="#Concatenation-and-repetition" class="headerlink" title="Concatenation and repetition"></a>Concatenation and repetition</h2><p>In Lists, the operator <code>*</code> means repetition and <code>+</code> stands for concatenation.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>digits = [<span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">8</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">2</span>, <span class="number">7</span>] + digits *<span class="number">2</span></span><br><span class="line">[<span class="number">2</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+
+<p>We could also use the <code>add()</code> and <code>mul()</code> functions</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>add([<span class="number">2</span>, <span class="number">7</span>], mul(digits, <span class="number">2</span>))</span><br><span class="line">[<span class="number">2</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="Nested-lists"><a href="#Nested-lists" class="headerlink" title="Nested lists"></a>Nested lists</h2><p>The elements of Lists could be anything including other lists.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pairs = [[<span class="number">10</span>, <span class="number">20</span>], [<span class="number">30</span>, <span class="number">40</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pairs[<span class="number">1</span>]</span><br><span class="line">[<span class="number">30</span>, <span class="number">40</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pairs[<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line"><span class="number">30</span></span><br></pre></td></tr></table></figure>
+<h2 id="Whether-an-element-in-a-List"><a href="#Whether-an-element-in-a-List" class="headerlink" title="Whether an element in a List"></a>Whether an element in a List</h2><p>Use operator <code>in</code> and <code>not in</code> for judgement.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> <span class="keyword">in</span> digits</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> <span class="keyword">in</span> digits</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">5</span> <span class="keyword">not</span> <span class="keyword">in</span> digits</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>, <span class="number">8</span>] <span class="keyword">in</span> digits</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>, <span class="number">2</span>] <span class="keyword">in</span> [<span class="number">3</span>, [<span class="number">1</span>, <span class="number">2</span>], <span class="number">4</span>]</span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>, <span class="number">2</span>] <span class="keyword">in</span> [<span class="number">3</span>, [[<span class="number">1</span>, <span class="number">2</span>]], <span class="number">4</span>]</span><br><span class="line"><span class="literal">False</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Lists-in-contol-flows"><a href="#Lists-in-contol-flows" class="headerlink" title="Lists in contol flows"></a>Lists in contol flows</h2><p><code>s</code> is a name of one list and requirement of <code>for</code> cycles would be </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; for elements in S:</span><br><span class="line">...     &lt;statements&gt;</span><br></pre></td></tr></table></figure>
+<p>For that usage, <code>elements</code> will be bound to the value in the current frame and then execute the <statements>.</statements></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>pairs = [[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">3</span>], [<span class="number">3</span>, <span class="number">5</span>], [<span class="number">2</span>, <span class="number">2</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pairs</span><br><span class="line">[[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">3</span>], [<span class="number">3</span>, <span class="number">5</span>], [<span class="number">2</span>, <span class="number">2</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> x, y <span class="keyword">in</span> pairs:</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(x, y)</span><br><span class="line">...</span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">3</span></span><br><span class="line"><span class="number">3</span> <span class="number">5</span></span><br><span class="line"><span class="number">2</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -382,13 +387,10 @@ mjx-container[display="true"] + br {
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/07/29/python-01-%E6%A0%BC%E5%BC%8F%E6%A1%86%E6%9E%B6/" rel="prev" title="python-1.格式框架">
-      <i class="fa fa-chevron-left"></i> python-1.格式框架
+    <a href="/2023/09/10/python03-%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0%E4%B8%8E%E9%80%92%E5%BD%92/" rel="prev" title="pythono03-高阶函数与递归">
+      <i class="fa fa-chevron-left"></i> pythono03-高阶函数与递归
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/07/30/python-03-eval/" rel="next" title="python-3.eval">
-      python-3.eval <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -447,7 +449,7 @@ mjx-container[display="true"] + br {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">输入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#input"><span class="nav-number">1.1.</span> <span class="nav-text">input</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-number">2.</span> <span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#print"><span class="nav-number">2.1.</span> <span class="nav-text">print</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lists"><span class="nav-number">2.</span> <span class="nav-text">Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bound-and-index"><span class="nav-number">2.1.</span> <span class="nav-text">bound and index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gititem"><span class="nav-number">2.2.</span> <span class="nav-text">gititem()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#length-of-lists"><span class="nav-number">2.3.</span> <span class="nav-text">length of lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Concatenation-and-repetition"><span class="nav-number">2.4.</span> <span class="nav-text">Concatenation and repetition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nested-lists"><span class="nav-number">2.5.</span> <span class="nav-text">Nested lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Whether-an-element-in-a-List"><span class="nav-number">2.6.</span> <span class="nav-text">Whether an element in a List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lists-in-contol-flows"><span class="nav-number">2.7.</span> <span class="nav-text">Lists in contol flows</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -463,14 +465,14 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">63</span>
+          <span class="site-state-item-count">55</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
