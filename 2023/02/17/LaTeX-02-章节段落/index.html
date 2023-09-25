@@ -344,82 +344,85 @@ mjx-container[display="true"] + br {
       
         <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>latex文档章节的定义</p>
 <span id="more"></span>
+
+
 <h1 id="添加章节"><a href="#添加章节" class="headerlink" title="添加章节"></a>添加章节</h1><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>{} </span><br><span class="line"><span class="keyword">\subsection</span>{} </span><br><span class="line"><span class="keyword">\subsubsection</span>{}</span><br></pre></td></tr></table></figure>
+
 <p><code>selection</code><br>创建章、节，可用的段落有：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">\part：</th>
-<th style="text-align:center">部</th>
-<th style="text-align:center">深度：-1</th>
-<th style="text-align:center">不能用在letter</th>
+<th align="center">\part：</th>
+<th align="center">部</th>
+<th align="center">深度：-1</th>
+<th align="center">不能用在letter</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">\chapter：</td>
-<td style="text-align:center">章</td>
-<td style="text-align:center">深度：0</td>
-<td style="text-align:center">可以用在book和report</td>
+<tbody><tr>
+<td align="center">\chapter：</td>
+<td align="center">章</td>
+<td align="center">深度：0</td>
+<td align="center">可以用在book和report</td>
 </tr>
 <tr>
-<td style="text-align:center">\section：</td>
-<td style="text-align:center">节</td>
-<td style="text-align:center">深度：1</td>
-<td style="text-align:center">不能用在letter</td>
+<td align="center">\section：</td>
+<td align="center">节</td>
+<td align="center">深度：1</td>
+<td align="center">不能用在letter</td>
 </tr>
 <tr>
-<td style="text-align:center">\subsection：</td>
-<td style="text-align:center">小节</td>
-<td style="text-align:center">深度：2</td>
-<td style="text-align:center">不能用在letter</td>
+<td align="center">\subsection：</td>
+<td align="center">小节</td>
+<td align="center">深度：2</td>
+<td align="center">不能用在letter</td>
 </tr>
 <tr>
-<td style="text-align:center">\subsubsection：</td>
-<td style="text-align:center">小小节</td>
-<td style="text-align:center">深度：3</td>
-<td style="text-align:center">不能用在letter</td>
+<td align="center">\subsubsection：</td>
+<td align="center">小小节</td>
+<td align="center">深度：3</td>
+<td align="center">不能用在letter</td>
 </tr>
 <tr>
-<td style="text-align:center">\paragraph：</td>
-<td style="text-align:center">带标题的段落（用{ }）</td>
-<td style="text-align:center">深度：5</td>
-<td style="text-align:center">不能用在letter</td>
+<td align="center">\paragraph：</td>
+<td align="center">带标题的段落（用{ }）</td>
+<td align="center">深度：5</td>
+<td align="center">不能用在letter</td>
 </tr>
 <tr>
-<td style="text-align:center">\subparagraph：</td>
-<td style="text-align:center">带标题的次级段落（用{ }）</td>
-<td style="text-align:center">深度：6</td>
-<td style="text-align:center">不能用在letter</td>
+<td align="center">\subparagraph：</td>
+<td align="center">带标题的次级段落（用{ }）</td>
+<td align="center">深度：6</td>
+<td align="center">不能用在letter</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>深度5、6一般不会被计入content中</p>
 <p><strong>若太长或有格式异常，可以通过设置可选标题（用[]来包含），在编入目录时如果有可选标题会自动选用，参考下例：</strong></p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>[编入目录的标题]{实际的太长的标题}</span><br></pre></td></tr></table></figure>
+
 <p><strong>章节标题会自动编号</strong></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">part</th>
-<th style="text-align:center">罗马数字</th>
-<th style="text-align:center">Part I, Part II, …</th>
+<th align="center">part</th>
+<th align="center">罗马数字</th>
+<th align="center">Part I, Part II, …</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
+<tbody><tr>
+<td align="center">chapter、section</td>
+<td align="center">阿拉伯数字</td>
+<td align="center">Chapter 2，2.1 xxx</td>
 </tr>
-</tbody>
-</table>
-</div>
-<p>chapter、section|阿拉伯数字|Chapter 2，2.1 xxx<br>附录Appendix|拉丁字母|Appendix A, Appendix B, …</p>
+<tr>
+<td align="center">附录Appendix</td>
+<td align="center">拉丁字母</td>
+<td align="center">Appendix A, Appendix B, …</td>
+</tr>
+</tbody></table>
 <h1 id="添加段落"><a href="#添加段落" class="headerlink" title="添加段落"></a>添加段落</h1><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\paragraph</span>{} </span><br><span class="line"><span class="keyword">\subparagraph</span>{} </span><br><span class="line"><span class="keyword">\subsubparagraph</span>{}</span><br></pre></td></tr></table></figure>
+
 <ol>
-<li><strong>段间距设定</strong><code>\setlength{\parskip}{1cm}</code></li>
+<li><strong>段间距设定</strong><code>\setlength{\parskip}{1cm} </code></li>
 <li><strong>行首缩进</strong><code>\setlength{\parindent}{4em}</code>也可以在每一个段落前用<code>\indent</code>单独设置这一段第一行缩进，也可以用下条语句以倍数设置行间距<code>\renewcommand{\baselinestretch}{1.5}</code></li>
 </ol>
 <p><em>注意：%要写在preamble也就是\begin{document}命令之前</em></p>
