@@ -251,7 +251,7 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">55</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
 
   </li>
   </ul>
@@ -353,12 +353,11 @@ mjx-container[display="true"] + br {
 <ul>
 <li>嵌入性：微控制器嵌入到物体中去;</li>
 <li>专用性：一个专门用在某类对象上的系统不能用在其他对象上;</li>
-<li>计算机系统：一个嵌入式系统就是一个小型计算机系统</li>
-</ul>
-<h1 id="单片机的概念"><a href="#单片机的概念" class="headerlink" title="单片机的概念"></a>单片机的概念</h1><p>单片机就是一块具有一台计算机属性的芯片，在一块硅片上集成了<font color="red">微处理器</font>（CPU）、<font color="red">存储器</font>（RAM,ROM,EPROM）和<font color="red">各种输入、输出接口</font>（定时器/计数器，并行I/O口，串行口，A/D转换器以及脉冲调制器PWM等），被称为单片微型计算机，简称单片机。<br>单片机主要体现在其控制属性上.  </p>
-<blockquote>
+<li>计算机系统：一个嵌入式系统就是一个小型计算机系统<h1 id="单片机的概念"><a href="#单片机的概念" class="headerlink" title="单片机的概念"></a>单片机的概念</h1>单片机就是一块具有一台计算机属性的芯片，在一块硅片上集成了<font color="red">微处理器</font>（CPU）、<font color="red">存储器</font>（RAM,ROM,EPROM）和<font color="red">各种输入、输出接口</font>（定时器/计数器，并行I/O口，串行口，A/D转换器以及脉冲调制器PWM等），被称为单片微型计算机，简称单片机。<br>单片机主要体现在其控制属性上.  <blockquote>
 <p>计算机只能处理数字量, 模拟量的数据需要通过模数转换(A/D转换)变为数字量. 若单片机内部没有内置A/D转换功能则需要外置A/D转换芯片.</p>
 </blockquote>
+</li>
+</ul>
 <p>1976～1978年，美国英特尔、仙童、莫斯特克等公司相继推出8位单片机。限于当时所能达到的集成度,这些8位单片机的性能只达到中、低档水平:内存寻址范围小于4千字节，只有并行的输入输出接口,只读存储器容量小于2千字节，随机存储器容量小于128字节，指令系统是专用的并以单字节指令为主。直至目前产量最大应用最广的仍为这类单片机，其中典型产品有英特尔公司的MCS48、仙童公司的F8和莫斯特克公司的3870等。1978～1983年期间各种高性能单片机相继问世。它们的寻址范围扩大到64～128千字节,只读存储器容量达4～8千字节,随机存储器容量达128～256字节,并增加了串行输入输出接口和模数转换器。这类高性能单片机可适用于更复杂的系统，如智能终端、局部网的接口等。典型产品有英特尔公司的MCS51,美国莫托洛拉公司的6801和泽洛格公司的Z8等。1983年以后，16位单片机问世。随着集成工艺水平的提高，有可能在一块芯片上集成十几万个管子,如英特尔公司的16位单片机MCS96的集成度达12万管子／片。它有5个8位并行输入输出接口,4个全双工串行接口,8级中断处理系统,4个16位可编程序定时器／计数器。莫托洛拉公司的16位单片机8096-A6有8个通道的10位模数转换器，指令系统能处理位、字节、字和双字的操作，16位加法计算时间达1微秒,指令平均执行时间为1～2微秒。它还配备面向工业控制的高级语言(如PL/M、FORTH、C语言等),工作电压为5伏、功耗1瓦。一块16位单片机的功能已能达到一台多片机系统的水平。 </p>
 <h2 id="一些概念的辨析"><a href="#一些概念的辨析" class="headerlink" title="一些概念的辨析"></a>一些概念的辨析</h2><ol>
 <li>单片机是微处理器（CPU）、存储器（RAM、ROM、EPROM、flash存储器）、各种输入输出接口（定时/计数器、串行口、并行I/O口等），集成在一块集成电路芯片中，从而构成完整的微型计算机。</li>
@@ -374,39 +373,43 @@ mjx-container[display="true"] + br {
 <h2 id="现场可编程逻辑门阵列-Field-Programmable-Gate-Array-FPGA"><a href="#现场可编程逻辑门阵列-Field-Programmable-Gate-Array-FPGA" class="headerlink" title="现场可编程逻辑门阵列(Field Programmable Gate Array, FPGA)"></a>现场可编程逻辑门阵列(Field Programmable Gate Array, FPGA)</h2><p>FPGA 由若干基本门组成, 以硬件描述语言（Verilog或VHDL）描述的逻辑电路，可以利用逻辑合成和布局、布线工具软件，编程逻辑组件可以被用来实现一些基本的逻辑门数字电路（比如与门、或门、异或门、非门）或者更复杂一些的组合逻辑功能，比如译码器等。</p>
 <blockquote>
 <p>FPGA 的执行速度比 DSP 要更快.</p>
-</blockquote>
 <h1 id="ROM-FLASH和RAM的区别"><a href="#ROM-FLASH和RAM的区别" class="headerlink" title="ROM, FLASH和RAM的区别"></a>ROM, FLASH和RAM的区别</h1><h2 id="ROM-Read-Only-Memory-程序存储器"><a href="#ROM-Read-Only-Memory-程序存储器" class="headerlink" title="ROM (Read Only Memory)程序存储器"></a>ROM (Read Only Memory)程序存储器</h2><p>ROM全称Read Only Memory，顾名思义，它是一种只能读出事先所存的数据的固态半导体存储器。ROM中所存数据稳定，一旦存储数据就再也无法将之改变或者删除，断电后所存数据也不会消失。其结构简单，因而常用于存储各种固化程序和数据。<br>在单片机中用来存储程序数据及常量数据或变量数据，凡是c文件及h文件中所有代码、全局变量、局部变量、‘const’限定符定义的常量数据、startup.asm文件中的代码（类似ARM中的bootloader或者X86中的BIOS，一些低端的单片机是没有这个的）通通都存储在ROM中。<br>为了便于使用和大批量生产，进一步发展出了可编程只读存储器（PROM）、可擦除可编程只读存储器（EPROM）。EPROM需要用紫外线长时间照射才能擦除，使用很不方便。1980s又出现了电可擦除可编程只读存储器（EEPROM），它克服了EPROM的不足，但是集成度不高、价格较贵。于是又发展出了一种新型的存储单元结构同EPROM类似的快闪存储器（FLASH MEMORY）。FLASH集成度高、功耗低、体积小，又能在线快速擦除，因而获得了快速发展。  </p>
 <h1 id="FLASH-存储器"><a href="#FLASH-存储器" class="headerlink" title="FLASH 存储器"></a>FLASH 存储器</h1><p>Flash 存储器（FLASH EEPROM）又称闪存，快闪。它是EEPROM的一种。它结合了ROM和RAM的长处。不仅具备电子可擦除可编辑（EEPROM）的性能，还不会断电丢失数据同时可以快速读取数据。它于EEPROM的最大区别是，FLASH按扇区（block）操作，而EEPROM按照字节操作。FLASH的电路结构较简单，同样容量占芯片面积较小，成本自然比EEPROM低，因此适合用于做程序存储器。  </p>
 <h1 id="RAM-Random-Access-Memory-随机访问存储器"><a href="#RAM-Random-Access-Memory-随机访问存储器" class="headerlink" title="RAM (Random Access Memory)随机访问存储器"></a>RAM (Random Access Memory)随机访问存储器</h1><p>RAM又称随机存取存储器，存储单元的内容可按照需要随机取出或存入，且存取的速度与存储单元的位置无关。这种存储器在断电时，将丢失其存储内容，所以主要用于存储短时间使用的程序。<br>它主要用来存储程序中用到的变量。凡是整个程序中，所用到的需要被改写的量（包括全局变量、局部变量、堆栈段等），都存储在RAM中。  </p>
 <h1 id="ROM-FLASH和RAM的区别-1"><a href="#ROM-FLASH和RAM的区别-1" class="headerlink" title="ROM, FLASH和RAM的区别"></a>ROM, FLASH和RAM的区别</h1><p>对于RAM, ROM以及FLASH的区别，简单地说，在计算机中，RAM 、ROM都是数据存储器。RAM 是随机存取存储器，它的特点是易挥发性，即掉电失忆。   ROM 通常指固化存储器(一次写入，反复读取)，它的特点与RAM 相反。ROM又分一次性固化、光擦除和电擦除重写两种类型。<br>在应用中，常规上ROM是用来存储固化程序的，RAM是用来存放数据的。由于FLASH ROM比普通的ROM读写速度快，擦写方便，一般用来存储用户程序和需要永久保存的数据。譬如说，现在家用的电子式电度表，它的内核是一款单片机，该单片机的程序就是存放在ROM里的。电度表在工作过程中，是要运算数据的，要采集电压和电流，并根据电压和电流计算出电度来。电压和电流时一个适时的数据，用户不关心，它只是用来计算电度用，计算完后该次采集的数据就用完了，然后再采集下一次，因此这些值就没必要永久存储，就把它放在RAM里边。然而计算完的电度，是需要永久保存的，单片机会定时或者在停电的瞬间将电度数存入到FLASH里。  </p>
+</blockquote>
 <p>原文: <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/38339306">知乎: Choris- ROM, FLASH和RAM的区别</a></p>
-<h1 id="存储单位转换"><a href="#存储单位转换" class="headerlink" title="存储单位转换"></a>存储单位转换</h1><table>
+<h1 id="存储单位转换"><a href="#存储单位转换" class="headerlink" title="存储单位转换"></a>存储单位转换</h1><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="right">名称</th>
-<th align="left">字符表示</th>
-<th align="center">说明</th>
+<th style="text-align:right">名称</th>
+<th style="text-align:left">字符表示</th>
+<th style="text-align:center">说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="right">位</td>
-<td align="left">bit</td>
-<td align="center">一个二进制数据0或1，是1bit</td>
+<tbody>
+<tr>
+<td style="text-align:right">位</td>
+<td style="text-align:left">bit</td>
+<td style="text-align:center">一个二进制数据0或1，是1bit</td>
 </tr>
 <tr>
-<td align="right">机器字长</td>
-<td align="left">字</td>
-<td align="center">一个机器字长在32位系统中是4个字节, 在64位系统中是8个字节</td>
+<td style="text-align:right">机器字长</td>
+<td style="text-align:left">字</td>
+<td style="text-align:center">一个机器字长在32位系统中是4个字节, 在64位系统中是8个字节</td>
 </tr>
 <tr>
-<td align="right">字节</td>
-<td align="left">byte/B</td>
-<td align="center">1 byte = 8 bit一个8位的二进制数称为一个字节;存储空间的基本计量单位，如：MySQL中定义 VARCHAR(45)  即是指 45个字节；一个英文字符占一个字节(1 byte = 8 bit)；一个汉字占2个字节2 byte = 16 bit；</td>
+<td style="text-align:right">字节</td>
+<td style="text-align:left">byte/B</td>
+<td style="text-align:center">1 byte = 8 bit一个8位的二进制数称为一个字节;存储空间的基本计量单位，如：MySQL中定义 VARCHAR(45)  即是指 45个字节；一个英文字符占一个字节(1 byte = 8 bit)；一个汉字占2个字节2 byte = 16 bit；</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>1 Byte = 8 Bits<br>1 KB = 1024 Bytes<br>1 MB = 1024 KB<br>1 GB = 1024 MB  </p>
 <h2 id="各种类型数据的占用大小"><a href="#各种类型数据的占用大小" class="headerlink" title="各种类型数据的占用大小"></a>各种类型数据的占用大小</h2><p>一个int型是4B，也就是4个字节，一个字节8bit（位），所以就是32位  </p>
-<p>参考: <a href="%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%84%E5%8D%95%E4%BD%8D%E9%97%B4%E8%BD%AC%E6%8D%A2%EF%BC%88%E4%BD%8D%EF%BC%8C%E5%AD%97%E8%8A%82%EF%BC%8C%E8%BF%9B%E5%88%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%EF%BC%89">计算机各单位间转换（位，字节，进制间转换）</a></p>
+<p>参考: <a href="计算机各单位间转换（位，字节，进制间转换）">计算机各单位间转换（位，字节，进制间转换）</a></p>
 
     </div>
 
@@ -506,7 +509,7 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">55</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
