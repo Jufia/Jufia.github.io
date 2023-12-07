@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="¶摘要 代码高亮、行号">
+  <meta name="description" content="摘要代码高亮、行号">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTeX(06)-代码块 listings">
 <meta property="og:url" content="http://example.com/2023/02/17/LaTeX-06-%E4%BB%A3%E7%A0%81%E5%9D%97/index.html">
 <meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
-<meta property="og:description" content="¶摘要 代码高亮、行号">
+<meta property="og:description" content="摘要代码高亮、行号">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149059456-ab8d3d22-7a1f-4823-a09a-26667a7cc215.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/73486724/149057367-0249c5a1-870b-41ef-96b1-31691c6ef3ca.png">
@@ -347,42 +347,33 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="摘要"><a class="header-anchor" href="#摘要">¶</a>摘要</h1>
-<p>代码高亮、行号</p>
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>代码高亮、行号</p>
 <span id="more"></span>
-<h1 id="说明"><a class="header-anchor" href="#说明">¶</a>说明</h1>
-<p>“listing”这个名字比较短，的确。 但是其他包已经使用该名称定义环境。 <strong>为了与此类包兼容，所有命令清单包的环境和环境使用前缀“lst”</strong></p>
+
+
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p> “listing”这个名字比较短，的确。 但是其他包已经使用该名称定义环境。 <strong>为了与此类包兼容，所有命令清单包的环境和环境使用前缀“lst”</strong>    </p>
 <p>最小格式如下</p>
  <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>{article}</span><br><span class="line"><span class="keyword">\usepackage</span>{listings}</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>{document}</span><br><span class="line"><span class="keyword">\lstset</span>{language=Pascal}</span><br><span class="line"></span><br><span class="line">  Insert Pascal examples here.</span><br><span class="line">  </span><br><span class="line"><span class="keyword">\end</span>{document}</span><br></pre></td></tr></table></figure>
 <p><img src="https://user-images.githubusercontent.com/73486724/149059456-ab8d3d22-7a1f-4823-a09a-26667a7cc215.png" alt="image"></p>
-<h1 id="代码片段"><a class="header-anchor" href="#代码片段">¶</a>代码片段</h1>
-<p>代码片段是指在 paragraphs 间的代码片段</p>
-<p>环境提供了一个可选参数。 它告诉包执行特殊任务，例如，仅打印第 2-5 行：</p>
+<h1 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h1><p> 代码片段是指在 paragraphs 间的代码片段</p>
+<p> 环境提供了一个可选参数。 它告诉包执行特殊任务，例如，仅打印第 2-5 行：</p>
  <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">\begin</span>{lstlisting}[firstline=2,</span><br><span class="line">                  lastline=5]</span><br><span class="line">  for i:=maxint to 0 do</span><br><span class="line">  begin</span><br><span class="line">      { do nothing }</span><br><span class="line">  end;</span><br><span class="line">  </span><br><span class="line">  Write(’Case insensitive ’);</span><br><span class="line">  WritE(’Pascal keywords.’);</span><br><span class="line"><span class="keyword">\end</span>{lstlisting}</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://user-images.githubusercontent.com/73486724/149057367-0249c5a1-870b-41ef-96b1-31691c6ef3ca.png" alt="image"></p>
-<p><em>默认存在框架，此例中第五行为空行，框架显示空行不打印。但事实上有时候我们或许并不需要框格，或者需要显示空行，就必须告诉 listing宏包不能丢弃他们。关键‘showlines’‘showspeace’ 控制这些空行</em></p>
+<p><em>默认存在框架，此例中第五行为空行，框架显示空行不打印。但事实上有时候我们或许并不需要框格，或者需要显示空行，就必须告诉 listing宏包不能丢弃他们。关键‘showlines’’showspeace’ 控制这些空行</em></p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\lstset</span>{showspaces=true,      <span class="comment">%显示空格：开</span></span><br><span class="line">        showtabs=true,        <span class="comment">%显示tab：开</span></span><br><span class="line">        tab=<span class="keyword">\rightarrowfill</span>}  <span class="comment">%tab格式为右箭头</span></span><br></pre></td></tr></table></figure>
+
 <p><img src="https://user-images.githubusercontent.com/73486724/149065546-8c81c726-a0c4-42d6-8c7a-e0331d4d9e64.png" alt="image"></p>
-<h1 id="默认设置"><a class="header-anchor" href="#默认设置">¶</a>默认设置</h1>
-<p>关键字：粗体排版，斜体注释；<br>
-字符串中的空格用‘.’显示</p>
+<h1 id="默认设置"><a href="#默认设置" class="headerlink" title="默认设置"></a>默认设置</h1><p>关键字：粗体排版，斜体注释；<br>字符串中的空格用‘.’显示   </p>
 <p>修改设置：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\lstset</span>{<span class="comment">% general command to set parameter(s)</span></span><br><span class="line">  basicstyle=<span class="keyword">\small</span>,  <span class="comment">% print whole listing small</span></span><br><span class="line">  keywordstyle=<span class="keyword">\color</span>{black}<span class="keyword">\bfseries</span><span class="keyword">\underbar</span>,</span><br><span class="line">                     <span class="comment">% underlined bold black keywords</span></span><br><span class="line">  identifierstyle=,  <span class="comment">% nothing happens</span></span><br><span class="line">  commentstyle=<span class="keyword">\color</span>{white}, <span class="comment">% white comments</span></span><br><span class="line">  stringstyle=<span class="keyword">\ttfamily</span>, <span class="comment">% typewriter type for strings</span></span><br><span class="line">  showstringspaces=false} <span class="comment">% no special string spaces</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://user-images.githubusercontent.com/73486724/149059892-e4d481e9-f016-48c7-a953-90a72185e6fd.png" alt="image"></p>
-<p>您请求了白色评论，但我可以在左侧看到评论。<br>
-有几个可能的原因：<br>
-(1)您将文档打印在非白色上纸。<br>
-(2) 如果您以 .dvi 文件的形式查看本文档，您的查看器似乎有颜色特价的问题。 尝试在白纸上打印页面。<br>
-(3) 如果打印输出白皮书显示评论，颜色特价不适合您的打印机或打印机司机。 重新创建文档并再试一次——并确保颜色包是配置良好。</p>
-<h1 id="行号"><a class="header-anchor" href="#行号">¶</a>行号</h1>
-<p>设置：</p>
+
+<p><img src="https://user-images.githubusercontent.com/73486724/149059892-e4d481e9-f016-48c7-a953-90a72185e6fd.png" alt="image">   </p>
+<p>您请求了白色评论，但我可以在左侧看到评论。<br>有几个可能的原因：<br>(1)您将文档打印在非白色上纸。<br>(2) 如果您以 .dvi 文件的形式查看本文档，您的查看器似乎有颜色特价的问题。 尝试在白纸上打印页面。<br>(3) 如果打印输出白皮书显示评论，颜色特价不适合您的打印机或打印机司机。 重新创建文档并再试一次——并确保颜色包是配置良好。   </p>
+<h1 id="行号"><a href="#行号" class="headerlink" title="行号"></a>行号</h1><p>设置：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\lstset</span>{</span><br><span class="line">  numbers=left, </span><br><span class="line">  numberstyle=<span class="keyword">\tiny</span>, </span><br><span class="line">  stepnumber=2, </span><br><span class="line">  numbersep=5pt</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="布局元素"><a class="header-anchor" href="#布局元素">¶</a>布局元素</h1>
-<h2 id="垂直空间"><a class="header-anchor" href="#垂直空间">¶</a>垂直空间</h2>
-<p>The keys <code>aboveskip</code> and <code>belowskip</code> control the vertical space above and below displayed listings.<br>
-Both keys get a dimension or skip as value and are initialized to <code>\medskipamount</code>.</p>
-<h2 id="框架"><a class="header-anchor" href="#框架">¶</a>框架</h2>
-<p>The key <code>frame</code> takes the verbose values <code>none</code>, <code>leftline</code>, <code>topline</code>, <code>bottomline</code>, <code>lines (top and bottom)</code>, <code>single for single frames</code>, or <code>shadowbox</code>.</p>
+<h1 id="布局元素"><a href="#布局元素" class="headerlink" title="布局元素"></a>布局元素</h1><h2 id="垂直空间"><a href="#垂直空间" class="headerlink" title="垂直空间"></a>垂直空间</h2><p>The keys <code>aboveskip</code> and <code>belowskip</code> control the vertical space above and below displayed listings.<br>Both keys get a dimension or skip as value and are initialized to <code>\medskipamount</code>.</p>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>The key <code>frame</code> takes the verbose values <code>none</code>, <code>leftline</code>, <code>topline</code>, <code>bottomline</code>, <code>lines (top and bottom)</code>, <code>single for single frames</code>, or <code>shadowbox</code>.</p>
 
     </div>
 
