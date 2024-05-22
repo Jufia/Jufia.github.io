@@ -23,15 +23,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Keep Going Keep Fighting Keep Laughing​">
-<meta property="og:url" content="http://example.com/archives/2023/page/4/index.html">
+  <meta name="description" content="摘要在写hexo，学习CS61A，机器学习、深度学习的过程中逐渐摸清了python、pip、anacanda、npm等之间的关系，这里记录一些我们之间的“爱恨情仇”，主要是出现问题和解决问题的过程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="与pip和canda的爱恨情仇">
+<meta property="og:url" content="http://example.com/2024/02/29/%E4%B8%8Epip%E5%92%8Ccanda%E7%9A%84%E7%88%B1%E6%81%A8%E6%83%85%E4%BB%87/index.html">
 <meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
+<meta property="og:description" content="摘要在写hexo，学习CS61A，机器学习、深度学习的过程中逐渐摸清了python、pip、anacanda、npm等之间的关系，这里记录一些我们之间的“爱恨情仇”，主要是出现问题和解决问题的过程。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/Jufia/image/assets/122464335/15e19940-7030-43d8-93ad-68f4dea7792a">
+<meta property="article:published_time" content="2024-02-29T12:44:53.000Z">
+<meta property="article:modified_time" content="2024-02-29T13:05:02.000Z">
 <meta property="article:author" content="Laura">
+<meta property="article:tag" content="work">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/Jufia/image/assets/122464335/15e19940-7030-43d8-93ad-68f4dea7792a">
 
-<link rel="canonical" href="http://example.com/archives/2023/page/4/">
+<link rel="canonical" href="http://example.com/2024/02/29/%E4%B8%8Epip%E5%92%8Ccanda%E7%9A%84%E7%88%B1%E6%81%A8%E6%83%85%E4%BB%87/">
 
 
 <script id="page-configurations">
@@ -39,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Keep Going Keep Fighting Keep Laughing​</title>
+  <title>与pip和canda的爱恨情仇 | Keep Going Keep Fighting Keep Laughing​</title>
   
 
 
@@ -129,12 +136,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">20</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">54</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">40</span></a>
 
   </li>
   </ul>
@@ -160,115 +167,107 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        
-        <span class="collection-header">不错! 目前共计 54 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/29/%E4%B8%8Epip%E5%92%8Ccanda%E7%9A%84%E7%88%B1%E6%81%A8%E6%83%85%E4%BB%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/laura.jpg">
+      <meta itemprop="name" content="Laura">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Keep Going Keep Fighting Keep Laughing​">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          与pip和canda的爱恨情仇
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-02-29 20:44:53 / 修改时间：21:05:02" itemprop="dateCreated datePublished" datetime="2024-02-29T20:44:53+08:00">2024-02-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">高效工作</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%AB%98%E6%95%88%E5%B7%A5%E4%BD%9C/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-01-14T23:05:32+08:00"
-              content="2023-01-14">
-          01-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/01/14/%E7%BB%93%E6%9E%84%E5%8A%A8%E5%8A%9B%E5%AD%A6-0%E5%89%8D%E8%A8%80/" itemprop="url">
-            <span itemprop="name">结构动力学-0前言</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-01-14T23:05:32+08:00"
-              content="2023-01-14">
-          01-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/01/14/Hexo%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">Hexo 学习笔记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-01-11T21:24:42+08:00"
-              content="2023-01-11">
-          01-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/01/11/%E7%BD%97%E5%BE%B7%E9%87%8C%E6%A0%BC%E6%96%AF%E6%97%8B%E8%BD%AC%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/" itemprop="url">
-            <span itemprop="name">罗德里格斯旋转公式推导</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-01-05T00:09:07+08:00"
-              content="2023-01-05">
-          01-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/01/05/%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86-%E5%8A%A8%E5%8A%9B%E5%AD%A6%E5%BB%BA%E6%A8%A1/" itemprop="url">
-            <span itemprop="name">文献管理-动力学建模</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>在写hexo，学习CS61A，机器学习、深度学习的过程中逐渐摸清了python、pip、anacanda、npm等之间的关系，这里记录一些我们之间的“爱恨情仇”，主要是出现问题和解决问题的过程。</p>
+<span id="more"></span>
+<h1 id="‘-SSL-UNEXPECTED-EOF-WHILE-READING-EOF-occurred-in-violation-of-protocol-ssl-c-1000-’-’"><a href="#‘-SSL-UNEXPECTED-EOF-WHILE-READING-EOF-occurred-in-violation-of-protocol-ssl-c-1000-’-’" class="headerlink" title="‘[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)’))’"></a>‘[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)’))’</h1><p>背景：在实验室用pip下载tensorflow的时候报的错，乍一看是代理的问题，但把代理关掉后依然报错后我开始反思。当时的电脑环境的确变化比较大，给python升了个级，安装了anaconda，(因为太菜不知道什么原因)原来下载过的包也没了，一时慌乱神，上网也没有达到解答，于是寻找了本科的大佬。</p>
+<p><img src="https://github.com/Jufia/image/assets/122464335/15e19940-7030-43d8-93ad-68f4dea7792a" alt="V_ C4H%N{2%)A0R@{TUVON9"></p>
+<p>大佬提示是hit镜像源不稳定的原因，让我换成清华源，这才注意到hit镜像源，我不记得我有配过这个镜像源，可能是本科做大创时队友弄的。</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pursuiting/p/14255231.html">博客园-pip和conda添加和删除镜像源</a></p>
+<p>换成清华园后发现下载速度还不如不用镜像快，就也删掉了，参考文献先留着，万一以后hit源又支楞起来了呢。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/work/" rel="tag"># work</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/12/05/python05-%E5%8A%9F%E8%83%BD%E4%B8%8E%E8%B0%83%E8%AF%95/" rel="prev" title="python05-功能与调试">
+      <i class="fa fa-chevron-left"></i> python05-功能与调试
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2023/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2023/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2023/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
+  
+  
 
 
 
@@ -320,6 +319,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E2%80%98-SSL-UNEXPECTED-EOF-WHILE-READING-EOF-occurred-in-violation-of-protocol-ssl-c-1000-%E2%80%99-%E2%80%99"><span class="nav-number">2.</span> <span class="nav-text">‘[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)’))’</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -335,14 +335,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -383,7 +383,7 @@
 <div class="copyright">
   
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-feather"></i>
   </span>
