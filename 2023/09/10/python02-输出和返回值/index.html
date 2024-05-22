@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="In this section, we will make our way to explain these problems:  How to name an argument in Python. How to define a user function. What will python display? Print and None. About print display and re">
+  <meta name="description" content="In this section, we will make our way to explain these problems:  How to name an argument in Python. How to define a user function. What will python display? Print and None.  About print display and r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python02-输出和返回值">
 <meta property="og:url" content="http://example.com/2023/09/10/python02-%E8%BE%93%E5%87%BA%E5%92%8C%E8%BF%94%E5%9B%9E%E5%80%BC/index.html">
 <meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
-<meta property="og:description" content="In this section, we will make our way to explain these problems:  How to name an argument in Python. How to define a user function. What will python display? Print and None. About print display and re">
+<meta property="og:description" content="In this section, we will make our way to explain these problems:  How to name an argument in Python. How to define a user function. What will python display? Print and None.  About print display and r">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/Jufia/image/assets/122464335/9208af39-8e60-4d0e-ae59-e3aefeafd7ca">
 <meta property="article:published_time" content="2023-09-10T02:24:08.000Z">
@@ -248,12 +248,12 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">40</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">35</span></a>
 
   </li>
   </ul>
@@ -354,28 +354,36 @@ mjx-container[display="true"] + br {
 <ol>
 <li>How to name an argument in Python.</li>
 <li>How to define a user function.</li>
-<li>What will python display? Print and None.<ul>
-<li>About <code>print</code> display and <code>return</code> value.<span id="more"></span></li>
+<li>What will python display? Print and None.
+<ul>
+<li>About <code>print</code> display and <code>return</code> value.</li>
 </ul>
 </li>
 </ol>
-<h1 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h1><p>We name an argument <code>CS61A</code>, and <code>CS61A</code> can be bound to any Value type including Numbers, Functions, Lambdas… It’s worthy to be noticed that one name mast be bound to one and only one value.</p>
+<span id="more"></span>
+<h1 id="Variables"><a class="header-anchor" href="#Variables">¶</a>Variables</h1>
+<p>We name an argument <code>CS61A</code>, and <code>CS61A</code> can be bound to any Value type including Numbers, Functions, Lambdas… It’s worthy to be noticed that one name mast be bound to one and only one value.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> math <span class="keyword">import</span> pi</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pi</span><br><span class="line"><span class="number">3.141592653589793</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">TwoTimes</span>(<span class="params">x</span>):</span><br><span class="line"><span class="meta">... </span>    y = <span class="number">2</span>*x</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> y</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pi = TwoTimes</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pi</span><br><span class="line">&lt;function TwoTimes at <span class="number">0x0000023A7B953E20</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>pi(<span class="number">2</span>)</span><br><span class="line"><span class="number">4</span></span><br></pre></td></tr></table></figure>
-<p>We can learn that when <code>pi</code> dosen’t bound, <code>pi</code> presents a number definded in &lt;module&gt; ‘math’ ,  and <code>pi</code> can become other value such as a Function we have just done.<br>python supports giving values to several variables at one time.</p>
+<p>We can learn that when <code>pi</code> dosen’t bound, <code>pi</code> presents a number definded in &lt;module&gt; ‘math’ ,  and <code>pi</code> can become other value such as a Function we have just done.<br>
+python supports giving values to several variables at one time.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
 <p>Furthermore, python can split the values in a sequence to multiple variables which can only one by one in MATLAB.</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>sequence = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = sequence</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line"><span class="number">3</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sequence = [<span class="number">1</span>, <span class="number">2</span>, <span class="string">'str'</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k <span class="keyword">in</span> sequence:</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">print</span>(k)</span><br><span class="line">...</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="built_in">str</span></span><br><span class="line">[<span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
 <p>It’s clear that <strong>elements in a sequence are NOT required to be same type</strong>.</p>
-<h1 id="What-will-Python-display"><a href="#What-will-Python-display" class="headerlink" title="What will Python display"></a>What will Python display</h1><h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><p>Defindining functions</p>
+<h1 id="What-will-Python-display"><a class="header-anchor" href="#What-will-Python-display">¶</a>What will Python display</h1>
+<h2 id="Functions"><a class="header-anchor" href="#Functions">¶</a>Functions</h2>
+<p>Defindining functions</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> &lt;name&gt;(&lt;formal parameters&gt;):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> &lt;reture expresstion&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="None"><a href="#None" class="headerlink" title="None"></a>None</h2><p><code>None</code> dosen’t mean the string ‘None’, not even a number, it is a special value indicating Nothing in Python.</p>
+<h2 id="None"><a class="header-anchor" href="#None">¶</a>None</h2>
+<p><code>None</code> dosen’t mean the string ‘None’, not even a number, it is a special value indicating Nothing in Python.</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="literal">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = <span class="string">'None'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line"><span class="string">'None'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x + <span class="number">4</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: unsupported operand <span class="built_in">type</span>(s) <span class="keyword">for</span> +: <span class="string">'NoneType'</span> <span class="keyword">and</span> <span class="string">'int'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y + <span class="string">'123'</span></span><br><span class="line"><span class="string">'None123'</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="print-and-return"><a href="#print-and-return" class="headerlink" title="print and return"></a>print and return</h2><p>A return statement completes the evaluation of a call expression and provides its value.<br>The returned statement can be a very value, an equation and a function with parameters.</p>
+<h2 id="print-and-return"><a class="header-anchor" href="#print-and-return">¶</a>print and return</h2>
+<p>A return statement completes the evaluation of a call expression and provides its value.<br>
+The returned statement can be a very value, an equation and a function with parameters.</p>
 <p>If a function has nothing to return, it returns None, Such as <code>print</code>.Look at this:</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">print</span>(<span class="number">1</span>), <span class="built_in">print</span>(<span class="number">2</span>))</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="literal">None</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
-<p>If the argument to <code>print</code> is a constant, the value of constant will be display directly, if it is a function the output would depends on what return is.<br>Notice: <strong><code>print</code> ends in ‘/n’ by default.</strong>  </p>
+<p>If the argument to <code>print</code> is a constant, the value of constant will be display directly, if it is a function the output would depends on what return is.<br>
+Notice: <strong><code>print</code> ends in ‘/n’ by default.</strong></p>
 <img src="https://github.com/Jufia/image/assets/122464335/9208af39-8e60-4d0e-ae59-e3aefeafd7ca" width="70%">   
     </div>
 
@@ -475,14 +483,14 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
