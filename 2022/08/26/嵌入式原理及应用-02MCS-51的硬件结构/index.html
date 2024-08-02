@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="¶MCS-51 的引脚功能  ¶电源以及时钟引脚  电源引脚 Vcc: 接 +5v 电源 电源引脚 Vss: 接数字地(GND) 时钟引脚 XTAL1: 如果采用外接晶体振荡器时，此引脚应接地。使用片内振荡器，应接外部石英晶体和微调电容。使用片外振荡器，该脚接外部时钟振荡器输出的信号。 时钟引脚 XTAL2: 片内振荡器反相放大器的输出端。使用片内振荡器，接外部石英晶体和微调电容。使用片外振荡器，">
+  <meta name="description" content="MCS-51 的引脚功能 电源以及时钟引脚 电源引脚 Vcc: 接 +5v 电源 电源引脚 Vss: 接数字地(GND) 时钟引脚 XTAL1: 如果采用外接晶体振荡器时，此引脚应接地。使用片内振荡器，应接外部石英晶体和微调电容。使用片外振荡器，该脚接外部时钟振荡器输出的信号。 时钟引脚 XTAL2: 片内振荡器反相放大器的输出端。使用片内振荡器，接外部石英晶体和微调电容。使用片外振荡器，悬空。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="嵌入式原理及应用(02)-MCS-51的硬件结构">
 <meta property="og:url" content="http://example.com/2022/08/26/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8-02MCS-51%E7%9A%84%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
-<meta property="og:description" content="¶MCS-51 的引脚功能  ¶电源以及时钟引脚  电源引脚 Vcc: 接 +5v 电源 电源引脚 Vss: 接数字地(GND) 时钟引脚 XTAL1: 如果采用外接晶体振荡器时，此引脚应接地。使用片内振荡器，应接外部石英晶体和微调电容。使用片外振荡器，该脚接外部时钟振荡器输出的信号。 时钟引脚 XTAL2: 片内振荡器反相放大器的输出端。使用片内振荡器，接外部石英晶体和微调电容。使用片外振荡器，">
+<meta property="og:description" content="MCS-51 的引脚功能 电源以及时钟引脚 电源引脚 Vcc: 接 +5v 电源 电源引脚 Vss: 接数字地(GND) 时钟引脚 XTAL1: 如果采用外接晶体振荡器时，此引脚应接地。使用片内振荡器，应接外部石英晶体和微调电容。使用片外振荡器，该脚接外部时钟振荡器输出的信号。 时钟引脚 XTAL2: 片内振荡器反相放大器的输出端。使用片内振荡器，接外部石英晶体和微调电容。使用片外振荡器，悬空。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://user-images.githubusercontent.com/73486724/186866165-0cb462c3-733b-4e97-b184-225d8f6745a5.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/73486724/186869348-1498bfc9-e569-48ac-a0b2-f351e80db1c3.png">
@@ -261,7 +261,7 @@ mjx-container[display="true"] + br {
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a>
 
   </li>
   </ul>
@@ -358,28 +358,22 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="MCS-51-的引脚功能"><a class="header-anchor" href="#MCS-51-的引脚功能">¶</a>MCS-51 的引脚功能</h1>
-<p><img src="https://user-images.githubusercontent.com/73486724/186866165-0cb462c3-733b-4e97-b184-225d8f6745a5.png" alt="image"></p>
-<h2 id="电源以及时钟引脚"><a class="header-anchor" href="#电源以及时钟引脚">¶</a>电源以及时钟引脚</h2>
-<ul>
+        <h1 id="MCS-51-的引脚功能"><a href="#MCS-51-的引脚功能" class="headerlink" title="MCS-51 的引脚功能"></a>MCS-51 的引脚功能</h1><p><img src="https://user-images.githubusercontent.com/73486724/186866165-0cb462c3-733b-4e97-b184-225d8f6745a5.png" alt="image"></p>
+<h2 id="电源以及时钟引脚"><a href="#电源以及时钟引脚" class="headerlink" title="电源以及时钟引脚"></a>电源以及时钟引脚</h2><ul>
 <li>电源引脚 Vcc: 接 +5v 电源</li>
 <li>电源引脚 Vss: 接数字地(GND)</li>
 <li>时钟引脚 XTAL1: 如果采用外接晶体振荡器时，此引脚应接地。使用片内振荡器，应接外部石英晶体和微调电容。使用片外振荡器，该脚接外部时钟振荡器输出的信号。</li>
 <li>时钟引脚 XTAL2: 片内振荡器反相放大器的输出端。使用片内振荡器，接外部石英晶体和微调电容。使用片外振荡器，悬空。</li>
 </ul>
-<h2 id="控制引脚"><a class="header-anchor" href="#控制引脚">¶</a>控制引脚</h2>
-<ul>
+<h2 id="控制引脚"><a href="#控制引脚" class="headerlink" title="控制引脚"></a>控制引脚</h2><ul>
 <li>RST/VPD(9脚): 复位信号/备用电源的输入端。RST是复位信号输入端，高电平有效。加上<font color="red">两个机器周期</font>的<font color="red">高电平</font>时，就可以完成复位操作。在单片机正常工作时,此脚应该为 &lt;0.5v 低电平. RST引脚的第二功能是VPD，即备用电源的输入端, 接上备用电源，系统掉电时向内部RAM供电，使其保持数据。</li>
-<li>ALE/ PROG(30脚)
-<ul>
-<li>ALE(address lock enable): P0 口既做地址总线(AB) 又做数据总线(DB), 当访问单片机外部存储器时，ALE (地址锁存允许)输出脉冲的负跳沿用于16位地址的低8位的锁存信号。在P0 口做DB时用 地址锁存器ALE 来保存下降沿左端的地址信息, 示意图如下:<br>
-<img src="https://user-images.githubusercontent.com/73486724/186869348-1498bfc9-e569-48ac-a0b2-f351e80db1c3.png" alt="image"></li>
+<li>ALE/ PROG(30脚)<ul>
+<li>ALE(address lock enable): P0 口既做地址总线(AB) 又做数据总线(DB), 当访问单片机外部存储器时，ALE (地址锁存允许)输出脉冲的负跳沿用于16位地址的低8位的锁存信号。在P0 口做DB时用 地址锁存器ALE 来保存下降沿左端的地址信息, 示意图如下:<br><img src="https://user-images.githubusercontent.com/73486724/186869348-1498bfc9-e569-48ac-a0b2-f351e80db1c3.png" alt="image"></li>
 <li>即使不访问外部锁存器，ALE端仍有正脉冲信号输出，此频率约为时钟振荡器频率的1 / 6。但在执行某些指令时会不发出ALE信号，因而用户不能用做时钟源或定时。<font color="red"><strong>约为</strong>时钟振荡器频率的1 / 6, 每当执行访问外部RAM或I/O指令时会丢失一个 ALE 脉冲, 故并不是精确的1 / 6 周期.</font></li>
 </ul>
 </li>
 <li>PSEN（29脚）：程序存储允许输出信号端（片外ROM选通线）。在 PSEN脚为低电平时, 选中片外程序存储器。此引脚接EPROM的OE端。</li>
-<li>EA(31脚)
-<ul>
+<li>EA(31脚)<ul>
 <li>当 EA 端保持<font color="red">高电平</font>时, 51单片机先访问内部程序存储器, 但当 PC(程序计数器) 值超过 0FFFH 时(8051, 8751), 将自动转向执行外部程序存储器内的程序.</li>
 <li>当 EA 保持<font color="red">低电平</font>时, 不管是否有内部程序存储器, 只访问外部程序存储器.</li>
 </ul>
@@ -388,46 +382,37 @@ mjx-container[display="true"] + br {
 <blockquote>
 <p>0000H ~ 0FFFH: 4k个存储单元, <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.919ex" height="1.887ex" role="img" focusable="false" viewBox="0 -833.9 1290.1 833.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500,0)"></path></g></g></g></g></g></svg></mjx-container> byte, 1k = <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="2.919ex" height="1.887ex" role="img" focusable="false" viewBox="0 -833.9 1290.1 833.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g></g></g></g></g></svg></mjx-container> byte</p>
 </blockquote>
-<h2 id="I-O-口引脚"><a class="header-anchor" href="#I-O-口引脚">¶</a>I/O 口引脚</h2>
-<h3 id="I-O-口的功能"><a class="header-anchor" href="#I-O-口的功能">¶</a>I/O 口的功能</h3>
-<p>为4个并行8位I/O口，输入输出 8 位数据。</p>
+<h2 id="I-x2F-O-口引脚"><a href="#I-x2F-O-口引脚" class="headerlink" title="I/O 口引脚"></a>I/O 口引脚</h2><h3 id="I-x2F-O-口的功能"><a href="#I-x2F-O-口的功能" class="headerlink" title="I/O 口的功能"></a>I/O 口的功能</h3><p>为4个并行8位I/O口，输入输出 8 位数据。</p>
 <ol>
-<li>P0口：双向8位三态I/O口，此口为地址总线（低8位）及数据总线分时复用口，由ALE信号作为地址锁存, 可驱动8个LS型TTL负载。
-<ul>
+<li>P0口：双向8位三态I/O口，此口为地址总线（低8位）及数据总线分时复用口，由ALE信号作为地址锁存, 可驱动8个LS型TTL负载。<ul>
 <li>漏极开路的 8 位并行双向 I/O 口</li>
 <li>当扩展外部存储器及 I/O 接口芯片时, P0 为口分时复用的低 8 位地址/数据总线.</li>
 <li>向 P0 口输入 1 后就成为了高阻态的输入口</li>
 <li>P0 口做通用 I/O 口使用时, 需外加上拉电阻, 此时为准双向口</li>
 </ul>
 </li>
-<li>P1口：8位准双向I/O口，可驱动4个LS型TTL负载, 供用户使用。
-<ul>
+<li>P1口：8位准双向I/O口，可驱动4个LS型TTL负载, 供用户使用。  <ul>
 <li>准双向 I/O 口, 具有内部上拉电阻</li>
 </ul>
 </li>
-<li>P2口：8位准双向I/O口，与地址总线（高8位）使用，可驱动4个LS型TTL负载。当扩展的外部存储器小于64k时，即有未用到的P2口线，可作为一般I/O口使用。
-<ul>
+<li>P2口：8位准双向I/O口，与地址总线（高8位）使用，可驱动4个LS型TTL负载。当扩展的外部存储器小于64k时，即有未用到的P2口线，可作为一般I/O口使用。<ul>
 <li>准双向 I/O 口, 具有内部上拉电阻</li>
 <li>当访问外部存储器及 I/O 口时, P2 作为高 8 位地址总线使用, 输出高 8 位地址.</li>
 <li>不做地址总线时, 可作为通用 I/O 口使用.</li>
 </ul>
 </li>
-<li>P3口：8位准双向I/O口，即可作为一般I/O口使用，也可作为第二功能口使用. 控制总线, 可驱动4个LS型TTL负载。
-<ul>
+<li>P3口：8位准双向I/O口，即可作为一般I/O口使用，也可作为第二功能口使用. 控制总线, 可驱动4个LS型TTL负载。<ul>
 <li>准双向 I/O 口, 具有内部上拉电阻</li>
 <li>P3 的第二功能要熟记</li>
 </ul>
 </li>
 </ol>
-<p>P3 口的第二功能:<br>
-<img src="https://user-images.githubusercontent.com/73486724/190151915-121305c3-0f74-4a4d-8ea2-e295a53f8f33.png" alt="image"></p>
+<p>P3 口的第二功能:<br><img src="https://user-images.githubusercontent.com/73486724/190151915-121305c3-0f74-4a4d-8ea2-e295a53f8f33.png" alt="image">  </p>
 <blockquote>
 <p>P0 口作为地址总线(低 8 位)及数据总线使用时, 为双向口. 作为通用的 I/O 口使用时需要加上拉电阻, 为准双向口. P1, P2, P3 口内部均有上拉电阻, 均为准双向口, 没有高阻’悬浮态’.</p>
 </blockquote>
-<h3 id="I-O-口的内部结构"><a class="header-anchor" href="#I-O-口的内部结构">¶</a>I/O 口的内部结构</h3>
-<p><img src="https://user-images.githubusercontent.com/73486724/190152596-184e1ea5-38cb-4e37-a989-1cb3aa3e5efa.png" alt="image"></p>
-<p><font color="#34567"><strong>每一位引脚由锁存器、输出驱动器和输入缓冲器组成。</strong></font><br>
-P1口作为输出使用:</p>
+<h3 id="I-x2F-O-口的内部结构"><a href="#I-x2F-O-口的内部结构" class="headerlink" title="I/O 口的内部结构"></a>I/O 口的内部结构</h3><p><img src="https://user-images.githubusercontent.com/73486724/190152596-184e1ea5-38cb-4e37-a989-1cb3aa3e5efa.png" alt="image"></p>
+<p><font color="#34567"><strong>每一位引脚由锁存器、输出驱动器和输入缓冲器组成。</strong></font><br>P1口作为输出使用:</p>
 <ul>
 <li>输出高电平: Q为1，Q非为0，驱动管截止，P1口引脚在上拉电阻作用下，输出高电平；</li>
 <li>输出低电平: Q为0，Q非为1，驱动管导通，P1口引脚输出低电平；</li>
@@ -437,27 +422,19 @@ P1口作为输出使用:</p>
 <li>首先要通过内部总线写高电平1，Q非为0，使驱动管截止，这样由外部电路引起的P1口引脚的状态就能通过下面的缓冲器送到内部总线上；</li>
 <li>如果做输入之前写低电平0，则Q非为1，驱动管导通，P1口引脚始终被拉低为低电平，外部电路无法在引脚上施加高电平1，从而无法作为双向口使用。</li>
 </ul>
-<p><font color="#1234"><strong>P1口作为输入使用前必须先写高电平</strong></font><br>
-上下两个缓冲器，数据可通过锁存器、上面的缓冲器送到内部总线，也可通过引脚、下面的缓冲器送到内部总线。</p>
-<h3 id="双向口与准双向口"><a class="header-anchor" href="#双向口与准双向口">¶</a>双向口与准双向口</h3>
-<p><strong>注意:准双向口与双向三态口的差别，当3个准双向I/O口作输入口使用时，要向该口先写“1”。准双向I/O口无高阻的“浮空”状态。</strong></p>
+<p><font color="#1234"><strong>P1口作为输入使用前必须先写高电平</strong></font><br>上下两个缓冲器，数据可通过锁存器、上面的缓冲器送到内部总线，也可通过引脚、下面的缓冲器送到内部总线。</p>
+<h3 id="双向口与准双向口"><a href="#双向口与准双向口" class="headerlink" title="双向口与准双向口"></a>双向口与准双向口</h3><p><strong>注意:准双向口与双向三态口的差别，当3个准双向I/O口作输入口使用时，要向该口先写“1”。准双向I/O口无高阻的“浮空”状态。</strong></p>
 <blockquote>
-<p>TTL电平信号被利用的最多是因为通常数据表示采用二进制规定，+5V等价于逻辑“1”，0V等价于逻辑“0”，这被称做TTL（晶体管-晶体管逻辑电平）信号系统，这是计算机处理器控制的设备内部各部分之间通信的标准技术。<br>
-TTL电平信号对于计算机处理器控制的设备内部的数据传输是很理想的，首先计算机处理器控制的设备内部的数据传输对于电源的要求不高以及热损耗也较低，另外TTL电平信号直接与集成电路连接而不需要价格昂贵的线路驱动器以及接收器电路；再者，计算机处理器控制的设备内部的数据传输是在高速下进行的，而TTL接口的操作恰能满足这个要求。TTL型通信大多数情况下，是采用并行数据传输方式，而并行数据传输对于超过10英尺的距离就不适合了。这是由于可靠性和成本两面的原因。因为在并行接口中存在着偏相和不对称的问题，这些问题对可靠性均有影响。<br>
-TTL输出高电平&gt;2.4V，输出低电平&lt;0.4V。在室温下，一般输出高电平是3.5V，输出低电平是0.2V。最小输入高电平和低电平：输入高电平&gt;=2.0V，输入低电平&lt;=0.8V，噪声容限是0.4V。<br>
-TTL门电路是双极型集成电路，与分立元件相比，具有速度快、可靠性高和微型化等优点。</p>
+<p>TTL电平信号被利用的最多是因为通常数据表示采用二进制规定，+5V等价于逻辑“1”，0V等价于逻辑“0”，这被称做TTL（晶体管-晶体管逻辑电平）信号系统，这是计算机处理器控制的设备内部各部分之间通信的标准技术。<br>TTL电平信号对于计算机处理器控制的设备内部的数据传输是很理想的，首先计算机处理器控制的设备内部的数据传输对于电源的要求不高以及热损耗也较低，另外TTL电平信号直接与集成电路连接而不需要价格昂贵的线路驱动器以及接收器电路；再者，计算机处理器控制的设备内部的数据传输是在高速下进行的，而TTL接口的操作恰能满足这个要求。TTL型通信大多数情况下，是采用并行数据传输方式，而并行数据传输对于超过10英尺的距离就不适合了。这是由于可靠性和成本两面的原因。因为在并行接口中存在着偏相和不对称的问题，这些问题对可靠性均有影响。<br>TTL输出高电平&gt;2.4V，输出低电平&lt;0.4V。在室温下，一般输出高电平是3.5V，输出低电平是0.2V。最小输入高电平和低电平：输入高电平&gt;=2.0V，输入低电平&lt;=0.8V，噪声容限是0.4V。<br>TTL门电路是双极型集成电路，与分立元件相比，具有速度快、可靠性高和微型化等优点。  </p>
 </blockquote>
 <blockquote>
 <p><strong>高阻态即不外接</strong></p>
 </blockquote>
 <p>参考资料: <a target="_blank" rel="noopener" href="https://blog.csdn.net/huzhipeng771926716/article/details/5564529">CSDN: LS型TTL负载</a></p>
-<h3 id="I-O-口的读操作"><a class="header-anchor" href="#I-O-口的读操作">¶</a>I/O 口的读操作</h3>
-<ul>
-<li>读锁存器
-<ul>
+<h3 id="I-x2F-O-口的读操作"><a href="#I-x2F-O-口的读操作" class="headerlink" title="I/O 口的读操作"></a>I/O 口的读操作</h3><ul>
+<li>读锁存器<ul>
 <li><em>读锁存器指令是从锁存器中读取数据</em>，进行处理，并把处理后的数据重新写入锁存器中，这类指令称为<strong>读、修改、写指令</strong>。在ANL、ORL、XRL；  JBC；  CPL；  INC、DEC；  DJNZ；  MOV、 CLR、  SETB等指令中，当<strong>目的操作数</strong>为某一I／O口或I／O口的某一位时，这些指令均为读、修改、写指令。</li>
-<li>当给 I/O 口锁存器写入某一状态后，相应的口引脚是否呈现锁存器的状态，是与外电路的连接有关。
-<ul>
+<li>当给 I/O 口锁存器写入某一状态后，相应的口引脚是否呈现锁存器的状态，是与外电路的连接有关。<ul>
 <li>例如，用I/O口线驱动外部三极管基极时，该口线被 <strong>锁存器写入“1”</strong> 后使外部三极管导通，而三极管一旦导通后，基极电平为“0”。口锁存器与引脚状态不一致</li>
 </ul>
 </li>
@@ -465,75 +442,45 @@ TTL门电路是双极型集成电路，与分立元件相比，具有速度快�
 <li><font color="#2345"><strong>由此可见，在设计8051系统时，对51的I/O管脚要统一规划使用，一个管脚不能既作为输入，又作为输出。换言之，一个管脚如果第一次用其为输入，一直用其作为输入管脚</strong></font></li>
 </ul>
 </li>
-<li>读引脚
-<ul>
+<li>读引脚<ul>
 <li><em>读引脚指令一般都是以I/O端口为源操作数的指令</em>，执行读引脚指令时，打开三态门，输入口状态。例如，读P1口的输入状态时，读引脚指令为：MOV  A，P1。</li>
 </ul>
 </li>
 </ul>
-<h1 id="MCS-51-的CPU"><a class="header-anchor" href="#MCS-51-的CPU">¶</a>MCS-51 的CPU</h1>
-<p>MSC-51 单片机的 CPU 为8位的CPU，且内含一个1位的位处理器，可进行字节数据和位变量的处理，是由<font color="red">运算器和控制器</font>组成的。<br>
-<img src="https://user-images.githubusercontent.com/73486724/187156867-9cffa320-146b-4e87-8eeb-1e8842f30aab.png" alt="image"></p>
-<h2 id="运算器"><a class="header-anchor" href="#运算器">¶</a>运算器</h2>
-<h3 id="算数运算逻辑单元-ALU"><a class="header-anchor" href="#算数运算逻辑单元-ALU">¶</a>算数运算逻辑单元 ALU</h3>
-<p>功能强大，它不仅可对8位变量进行逻辑"与、或异或”循环、求补和清零等基本操作，还可以进行加、减、乘、除等基本运算, ALU还具有位处理操作，如置位、清零、求补、测试。转移及逻辑“与、或”等操作。</p>
-<h3 id="累加器-A"><a class="header-anchor" href="#累加器-A">¶</a>累加器 A</h3>
-<p>累加器 A 是CPU 中使用最频繁的一个8位寄存器。<br>
-<strong>是 ALU 的输入数据源之一, 也是ALU 的运算结果存放单元, 是 ALU 的主要寄存器</strong>.<br>
-<font color="#339"> <strong>累加器中的进位位 Cy (位于程序状态字特殊功能寄存器 PSW 中) 是特殊的, 因为它同时又是位处理器的累加器.</strong></font></p>
+<h1 id="MCS-51-的CPU"><a href="#MCS-51-的CPU" class="headerlink" title="MCS-51 的CPU"></a>MCS-51 的CPU</h1><p>MSC-51 单片机的 CPU 为8位的CPU，且内含一个1位的位处理器，可进行字节数据和位变量的处理，是由<font color="red">运算器和控制器</font>组成的。<br><img src="https://user-images.githubusercontent.com/73486724/187156867-9cffa320-146b-4e87-8eeb-1e8842f30aab.png" alt="image"></p>
+<h2 id="运算器"><a href="#运算器" class="headerlink" title="运算器"></a>运算器</h2><h3 id="算数运算逻辑单元-ALU"><a href="#算数运算逻辑单元-ALU" class="headerlink" title="算数运算逻辑单元 ALU"></a>算数运算逻辑单元 ALU</h3><p>功能强大，它不仅可对8位变量进行逻辑”与、或异或”循环、求补和清零等基本操作，还可以进行加、减、乘、除等基本运算, ALU还具有位处理操作，如置位、清零、求补、测试。转移及逻辑“与、或”等操作。</p>
+<h3 id="累加器-A"><a href="#累加器-A" class="headerlink" title="累加器 A"></a>累加器 A</h3><p>累加器 A 是CPU 中使用最频繁的一个8位寄存器。<br><strong>是 ALU 的输入数据源之一, 也是ALU 的运算结果存放单元, 是 ALU 的主要寄存器</strong>.<br><font color="#339"> <strong>累加器中的进位位 Cy (位于程序状态字特殊功能寄存器 PSW 中) 是特殊的, 因为它同时又是位处理器的累加器.</strong></font></p>
 <blockquote>
 <p>CPU 中的数据大多数通过 A 传送, 大部分指令都会用到它(语言听上去不是全部指令都用上, 有一部分是不会经过 A 的数据传输指令)</p>
 </blockquote>
-<h3 id="寄存器-B"><a class="header-anchor" href="#寄存器-B">¶</a>寄存器 B</h3>
-<p>是为执行乘法和除法操作设置的，在不执行乘除法操作的一般情况下可把它当作一个 普通寄存器使用。<br>
-在乘法运算时，累加器A和寄存器B在乘法运算前存放乘数和被乘数，运算完，寄存器B存放低八位, 累加器A存放高八位。<br>
-除法运算前，累加器A和寄存器B存入被除数和除数，运算完用于存放商和余数。</p>
-<h3 id="程序状态字寄存器-PSW-Program-Status-Word"><a class="header-anchor" href="#程序状态字寄存器-PSW-Program-Status-Word">¶</a>程序状态字寄存器 PSW (Program Status Word)</h3>
-<p><img src="https://user-images.githubusercontent.com/73486724/187157336-9f36a6c6-0c69-44b1-8446-c38e473ae0a1.png" alt="image"><br>
-Cy (PSW.7)：进位标志位。在进行加法或减法运算时，若运算结果最高位有进位或借位，则Cy自动置 <strong>“1”</strong>，否则Cy置 <strong>“0”</strong>；在进行布尔操作运算时，Cy （简称C）作为布尔处理器。<br>
-AC (PSW.6/)：辅助进位标志位。当进行加法或减法运算时，若低4位向高4位有进位或借位时，AC被置 <strong>"1”</strong>，否则AC被置 <strong>“0”</strong>。在十进制调整指令中AC还作为十进制调整的判别位。<br>
-F0 (PSW.5)：用户标志位。用户可用软件对F0位置 <strong>“1”</strong> 或清 <strong>“0”</strong>，以决定程序的流向。<br>
-RSI、RS0 (PSW.4, PSW.3)：工作寄存器区选择位，用来选择当前工作的寄存器区。用户通过改变RS1、RS0的内容来选择当前工作寄存器区。RSI、RS0的内容与工作寄存器区的对应关系如表2-2所示。<br>
-<img src="https://user-images.githubusercontent.com/73486724/187157753-024e308a-866c-4bed-b23d-04aea91ba789.png" alt="image"></p>
-<p>OV (PSW.2)：溢出标志位，当运算结果溢出时，OV为 <strong>“1”</strong>，否则为 <strong>“0”</strong>。此标志位反映了运算结果是否溢出。<br>
-D1 (PSW.1)：未定义位。<br>
-P (PSW.0)：奇偶标志位。MCS-51单片机采用偶校验。当累加器A中 “1”的个数为奇数时，P置 <strong>“1"</strong>,否则P置 <strong>“0"</strong>。此位反映累加器A中内容“1"的奇偶性，它常常用于机间通信。在串行通信中常用奇偶校验的方法检验数据串行传输的可靠性.</p>
+<h3 id="寄存器-B"><a href="#寄存器-B" class="headerlink" title="寄存器 B"></a>寄存器 B</h3><p>是为执行乘法和除法操作设置的，在不执行乘除法操作的一般情况下可把它当作一个 普通寄存器使用。<br>在乘法运算时，累加器A和寄存器B在乘法运算前存放乘数和被乘数，运算完，寄存器B存放低八位, 累加器A存放高八位。<br>除法运算前，累加器A和寄存器B存入被除数和除数，运算完用于存放商和余数。</p>
+<h3 id="程序状态字寄存器-PSW-Program-Status-Word"><a href="#程序状态字寄存器-PSW-Program-Status-Word" class="headerlink" title="程序状态字寄存器 PSW (Program Status Word)"></a>程序状态字寄存器 PSW (Program Status Word)</h3><p><img src="https://user-images.githubusercontent.com/73486724/187157336-9f36a6c6-0c69-44b1-8446-c38e473ae0a1.png" alt="image"><br>Cy (PSW.7)：进位标志位。在进行加法或减法运算时，若运算结果最高位有进位或借位，则Cy自动置 <strong>“1”</strong>，否则Cy置 <strong>“0”</strong>；在进行布尔操作运算时，Cy （简称C）作为布尔处理器。<br>AC (PSW.6/)：辅助进位标志位。当进行加法或减法运算时，若低4位向高4位有进位或借位时，AC被置 <strong>“1”</strong>，否则AC被置 <strong>“0”</strong>。在十进制调整指令中AC还作为十进制调整的判别位。<br>F0 (PSW.5)：用户标志位。用户可用软件对F0位置 <strong>“1”</strong> 或清 <strong>“0”</strong>，以决定程序的流向。<br>RSI、RS0 (PSW.4, PSW.3)：工作寄存器区选择位，用来选择当前工作的寄存器区。用户通过改变RS1、RS0的内容来选择当前工作寄存器区。RSI、RS0的内容与工作寄存器区的对应关系如表2-2所示。<br><img src="https://user-images.githubusercontent.com/73486724/187157753-024e308a-866c-4bed-b23d-04aea91ba789.png" alt="image"></p>
+<p>OV (PSW.2)：溢出标志位，当运算结果溢出时，OV为 <strong>“1”</strong>，否则为 <strong>“0”</strong>。此标志位反映了运算结果是否溢出。<br>D1 (PSW.1)：未定义位。<br>P (PSW.0)：奇偶标志位。MCS-51单片机采用偶校验。当累加器A中 “1”的个数为奇数时，P置 <strong>“1”</strong>,否则P置 **“0”**。此位反映累加器A中内容“1”的奇偶性，它常常用于机间通信。在串行通信中常用奇偶校验的方法检验数据串行传输的可靠性.   </p>
 <blockquote>
 <p>串行通信（英语：Serial communication） 串口类似于一条车道，而并口就是有8个车道同一时刻能传送8位（一个字节）数据。但并不是并口快，由于8位通道之间的互相干扰。传输时速度就受到了限制。而且当传输出错时，要同时重新传8个位的数据。串口没有干扰，传输出错后重发一位就可以了，所以要比并口快。</p>
 </blockquote>
-<h2 id="控制器"><a class="header-anchor" href="#控制器">¶</a>控制器</h2>
-<p>控制部件是单片机的神经中枢，以主振频率为基准(每个主振周期称为<strong>振荡周期</strong>),控制器控制CPU的<strong>时序</strong>，对指令进行<strong>译码</strong>，然后发出各种控制信号，它将各个硬件环节组织在一起。<br>
-它的功能是根据程序计数器PC的内容取指令，然后进行指令译码，并严格按照定时控制电路依据指令译码的内容产生相应的控制信号，协调各部分的工作，完成指令所规定的操作。</p>
-<h3 id="程序计数器PC"><a class="header-anchor" href="#程序计数器PC">¶</a>程序计数器PC</h3>
-<p>是控制器内独立的16位计数器寄存器, 是程序存储器的地址指针. 它<strong>用来存放CPU执行的<font color="#7759">下一条指令</font>的地址</strong>。当一条指令按照PC所指的地址从程序存储器中取出后，PC会自动加1，指向下一条指令。程序计数器PC是一个16位的寄存器，可寻址64KB的程序存储器空间。</p>
+<h2 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h2><p>控制部件是单片机的神经中枢，以主振频率为基准(每个主振周期称为<strong>振荡周期</strong>),控制器控制CPU的<strong>时序</strong>，对指令进行<strong>译码</strong>，然后发出各种控制信号，它将各个硬件环节组织在一起。<br>它的功能是根据程序计数器PC的内容取指令，然后进行指令译码，并严格按照定时控制电路依据指令译码的内容产生相应的控制信号，协调各部分的工作，完成指令所规定的操作。</p>
+<h3 id="程序计数器PC"><a href="#程序计数器PC" class="headerlink" title="程序计数器PC"></a>程序计数器PC</h3><p>是控制器内独立的16位计数器寄存器, 是程序存储器的地址指针. 它<strong>用来存放CPU执行的<font color="#7759">下一条指令</font>的地址</strong>。当一条指令按照PC所指的地址从程序存储器中取出后，PC会自动加1，指向下一条指令。程序计数器PC是一个16位的寄存器，可寻址64KB的程序存储器空间。  </p>
 <blockquote>
-<p>当单片机复位时, PC 内容变为 0000H. 因而程序总是从程序存储器的0000H处开始执行。<br>
-一些指令会影响到PC的连续性，例如跳转类，中断响应等。<br>
-PC不是SFR</p>
+<p>当单片机复位时, PC 内容变为 0000H. 因而程序总是从程序存储器的0000H处开始执行。<br>一些指令会影响到PC的连续性，例如跳转类，中断响应等。<br>PC不是SFR</p>
 </blockquote>
-<h3 id="指令寄存器、指令译码器及控制逻辑电路"><a class="header-anchor" href="#指令寄存器、指令译码器及控制逻辑电路">¶</a>指令寄存器、指令译码器及控制逻辑电路</h3>
-<p>分别用来存放指令操作码、对指令译码、根据译码结果发出一 系列控制信号,使微控制器的各组成部件进行相应的工作，执行指令。</p>
-<h1 id="复位电路"><a class="header-anchor" href="#复位电路">¶</a>复位电路</h1>
-<ul>
-<li>复位为单片机提供了初始化手段，当RST引脚保持24个时钟周期以上的高电平将引起复位。</li>
-<li>在复位有效期间（即高电平），ALE引脚为高电平，且内部RAM不受复位的影响。</li>
-<li>复位后的部分寄存器状态
-<ul>
+<h3 id="指令寄存器、指令译码器及控制逻辑电路"><a href="#指令寄存器、指令译码器及控制逻辑电路" class="headerlink" title="指令寄存器、指令译码器及控制逻辑电路"></a>指令寄存器、指令译码器及控制逻辑电路</h3><p>分别用来存放指令操作码、对指令译码、根据译码结果发出一 系列控制信号,使微控制器的各组成部件进行相应的工作，执行指令。</p>
+<h1 id="复位电路"><a href="#复位电路" class="headerlink" title="复位电路"></a>复位电路</h1><ul>
+<li>复位为单片机提供了初始化手段，当RST引脚保持24个时钟周期以上的高电平将引起复位。 </li>
+<li>在复位有效期间（即高电平），ALE引脚为高电平，且内部RAM不受复位的影响。  </li>
+<li>复位后的部分寄存器状态<ul>
 <li>PC=0000H</li>
 <li>PSW=00H  选择工作寄存器0区</li>
 <li>SP=07H</li>
 </ul>
 </li>
 </ul>
-<h1 id="时钟电路"><a class="header-anchor" href="#时钟电路">¶</a>时钟电路</h1>
-<h2 id="内部方式"><a class="header-anchor" href="#内部方式">¶</a>内部方式</h2>
-<p><img src="https://user-images.githubusercontent.com/73486724/190157153-7139fe6a-53ac-456a-9570-df13231aabb1.png" alt="image"></p>
+<h1 id="时钟电路"><a href="#时钟电路" class="headerlink" title="时钟电路"></a>时钟电路</h1><h2 id="内部方式"><a href="#内部方式" class="headerlink" title="内部方式"></a>内部方式</h2><p><img src="https://user-images.githubusercontent.com/73486724/190157153-7139fe6a-53ac-456a-9570-df13231aabb1.png" alt="image">  </p>
 <ul>
 <li>晶振 1.2MHz~12MHz</li>
 <li>电容 20pF~100pF, 典型值：30pF</li>
 </ul>
-<h2 id="外部方式"><a class="header-anchor" href="#外部方式">¶</a>外部方式</h2>
-<p><img src="https://user-images.githubusercontent.com/73486724/190157442-afb5b901-dcef-44a8-a1a9-89846c4e5fa5.png" alt="image"></p>
+<h2 id="外部方式"><a href="#外部方式" class="headerlink" title="外部方式"></a>外部方式</h2><p><img src="https://user-images.githubusercontent.com/73486724/190157442-afb5b901-dcef-44a8-a1a9-89846c4e5fa5.png" alt="image"></p>
 
     </div>
 
@@ -617,7 +564,7 @@ PC不是SFR</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MCS-51-%E7%9A%84%E5%BC%95%E8%84%9A%E5%8A%9F%E8%83%BD"><span class="nav-number">1.</span> <span class="nav-text">MCS-51 的引脚功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E6%BA%90%E4%BB%A5%E5%8F%8A%E6%97%B6%E9%92%9F%E5%BC%95%E8%84%9A"><span class="nav-number">1.1.</span> <span class="nav-text">电源以及时钟引脚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%BC%95%E8%84%9A"><span class="nav-number">1.2.</span> <span class="nav-text">控制引脚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O-%E5%8F%A3%E5%BC%95%E8%84%9A"><span class="nav-number">1.3.</span> <span class="nav-text">I&#x2F;O 口引脚</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O-%E5%8F%A3%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">1.3.1.</span> <span class="nav-text">I&#x2F;O 口的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O-%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.2.</span> <span class="nav-text">I&#x2F;O 口的内部结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E5%90%91%E5%8F%A3%E4%B8%8E%E5%87%86%E5%8F%8C%E5%90%91%E5%8F%A3"><span class="nav-number">1.3.3.</span> <span class="nav-text">双向口与准双向口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-O-%E5%8F%A3%E7%9A%84%E8%AF%BB%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.4.</span> <span class="nav-text">I&#x2F;O 口的读操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MCS-51-%E7%9A%84CPU"><span class="nav-number">2.</span> <span class="nav-text">MCS-51 的CPU</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E5%99%A8"><span class="nav-number">2.1.</span> <span class="nav-text">运算器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83-ALU"><span class="nav-number">2.1.1.</span> <span class="nav-text">算数运算逻辑单元 ALU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%AF%E5%8A%A0%E5%99%A8-A"><span class="nav-number">2.1.2.</span> <span class="nav-text">累加器 A</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8-B"><span class="nav-number">2.1.3.</span> <span class="nav-text">寄存器 B</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%8A%B6%E6%80%81%E5%AD%97%E5%AF%84%E5%AD%98%E5%99%A8-PSW-Program-Status-Word"><span class="nav-number">2.1.4.</span> <span class="nav-text">程序状态字寄存器 PSW (Program Status Word)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">控制器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8PC"><span class="nav-number">2.2.1.</span> <span class="nav-text">程序计数器PC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E5%AF%84%E5%AD%98%E5%99%A8%E3%80%81%E6%8C%87%E4%BB%A4%E8%AF%91%E7%A0%81%E5%99%A8%E5%8F%8A%E6%8E%A7%E5%88%B6%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="nav-number">2.2.2.</span> <span class="nav-text">指令寄存器、指令译码器及控制逻辑电路</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E4%BD%8D%E7%94%B5%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">复位电路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%B6%E9%92%9F%E7%94%B5%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">时钟电路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">内部方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">外部方式</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MCS-51-%E7%9A%84%E5%BC%95%E8%84%9A%E5%8A%9F%E8%83%BD"><span class="nav-number">1.</span> <span class="nav-text">MCS-51 的引脚功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E6%BA%90%E4%BB%A5%E5%8F%8A%E6%97%B6%E9%92%9F%E5%BC%95%E8%84%9A"><span class="nav-number">1.1.</span> <span class="nav-text">电源以及时钟引脚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%BC%95%E8%84%9A"><span class="nav-number">1.2.</span> <span class="nav-text">控制引脚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-x2F-O-%E5%8F%A3%E5%BC%95%E8%84%9A"><span class="nav-number">1.3.</span> <span class="nav-text">I&#x2F;O 口引脚</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#I-x2F-O-%E5%8F%A3%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">1.3.1.</span> <span class="nav-text">I&#x2F;O 口的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-x2F-O-%E5%8F%A3%E7%9A%84%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.2.</span> <span class="nav-text">I&#x2F;O 口的内部结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E5%90%91%E5%8F%A3%E4%B8%8E%E5%87%86%E5%8F%8C%E5%90%91%E5%8F%A3"><span class="nav-number">1.3.3.</span> <span class="nav-text">双向口与准双向口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#I-x2F-O-%E5%8F%A3%E7%9A%84%E8%AF%BB%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.4.</span> <span class="nav-text">I&#x2F;O 口的读操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MCS-51-%E7%9A%84CPU"><span class="nav-number">2.</span> <span class="nav-text">MCS-51 的CPU</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E5%99%A8"><span class="nav-number">2.1.</span> <span class="nav-text">运算器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83-ALU"><span class="nav-number">2.1.1.</span> <span class="nav-text">算数运算逻辑单元 ALU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%AF%E5%8A%A0%E5%99%A8-A"><span class="nav-number">2.1.2.</span> <span class="nav-text">累加器 A</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8-B"><span class="nav-number">2.1.3.</span> <span class="nav-text">寄存器 B</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%8A%B6%E6%80%81%E5%AD%97%E5%AF%84%E5%AD%98%E5%99%A8-PSW-Program-Status-Word"><span class="nav-number">2.1.4.</span> <span class="nav-text">程序状态字寄存器 PSW (Program Status Word)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">控制器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8PC"><span class="nav-number">2.2.1.</span> <span class="nav-text">程序计数器PC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E5%AF%84%E5%AD%98%E5%99%A8%E3%80%81%E6%8C%87%E4%BB%A4%E8%AF%91%E7%A0%81%E5%99%A8%E5%8F%8A%E6%8E%A7%E5%88%B6%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="nav-number">2.2.2.</span> <span class="nav-text">指令寄存器、指令译码器及控制逻辑电路</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E4%BD%8D%E7%94%B5%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">复位电路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%B6%E9%92%9F%E7%94%B5%E8%B7%AF"><span class="nav-number">4.</span> <span class="nav-text">时钟电路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">内部方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">外部方式</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -633,7 +580,7 @@ PC不是SFR</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
