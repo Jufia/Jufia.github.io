@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="check and Test  How to use assert How to tast .py program Print Debugging Interactive Debugging (交互式调试)   Error types in Python How to read Tracebacks try statement">
+  <meta name="description" content="check and Test How to use assert How to tast .py program Print Debugging Interactive Debugging (交互式调试)   Error types in Python How to read Tracebacks try statement">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python05-功能与调试">
 <meta property="og:url" content="http://example.com/2023/12/05/python05-%E5%8A%9F%E8%83%BD%E4%B8%8E%E8%B0%83%E8%AF%95/index.html">
 <meta property="og:site_name" content="Keep Going Keep Fighting Keep Laughing​">
-<meta property="og:description" content="check and Test  How to use assert How to tast .py program Print Debugging Interactive Debugging (交互式调试)   Error types in Python How to read Tracebacks try statement">
+<meta property="og:description" content="check and Test How to use assert How to tast .py program Print Debugging Interactive Debugging (交互式调试)   Error types in Python How to read Tracebacks try statement">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-05T06:34:15.000Z">
 <meta property="article:modified_time" content="2023-12-07T08:11:46.000Z">
@@ -349,8 +349,7 @@ mjx-container[display="true"] + br {
 
       
         <ul>
-<li>check and Test
-<ul>
+<li>check and Test<ul>
 <li>How to use <code>assert</code></li>
 <li>How to tast .py program</li>
 <li>Print Debugging</li>
@@ -362,21 +361,14 @@ mjx-container[display="true"] + br {
 <li>try statement</li>
 </ul>
 <span id="more"></span>
-<h1 id="Try-Statements"><a class="header-anchor" href="#Try-Statements">¶</a>Try Statements</h1>
-<p>Try statements handle exceptions</p>
+<h1 id="Try-Statements"><a href="#Try-Statements" class="headerlink" title="Try Statements"></a>Try Statements</h1><p>Try statements handle exceptions</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    &lt;<span class="keyword">try</span> suite&gt;</span><br><span class="line"><span class="keyword">except</span> &lt;exception <span class="keyword">class</span>&gt; <span class="keyword">as</span> &lt;name&gt;:</span><br><span class="line">    &lt;<span class="keyword">except</span> suite&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p><strong>Execution rule</strong>:<br>
-The <code>&lt;try suite&gt;</code> is executed first.<br>
-If， during the course of executing the <code>&lt;try suite&gt;</code>, an exception is raised that is not handled otherwise, and<br>
-If the class of the exception inherits from <code>&lt;exception class&gt;</code>, then<br>
-The <code>&lt;except suite&gt;</code> is executed, with <code>&lt;name&gt;</code> bound to the exception.</p>
+<p><strong>Execution rule</strong>:<br>The <code>&lt;try suite&gt;</code> is executed first.<br>If， during the course of executing the <code>&lt;try suite&gt;</code>, an exception is raised that is not handled otherwise, and<br>If the class of the exception inherits from <code>&lt;exception class&gt;</code>, then<br>The <code>&lt;except suite&gt;</code> is executed, with <code>&lt;name&gt;</code> bound to the exception.  </p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">invert</span>(<span class="params">x</span>):</span><br><span class="line">    y = <span class="number">1</span>/x</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Never printed if x is 0'</span>)</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">invert_safe</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> invert(x)</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'handle'</span>, e)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>&gt;&gt;&gt; invert_safe(<span class="number">1</span>) </span><br><span class="line">Never printed <span class="keyword">if</span> x <span class="keyword">is</span> <span class="number">0</span></span><br><span class="line"><span class="number">1.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>invert_safe(<span class="number">0</span>) </span><br><span class="line">handle division by zero</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h1 id="assert"><a class="header-anchor" href="#assert">¶</a>assert</h1>
-<p>Using <code>assert</code> will make error detection easeier, for example:</p>
+<h1 id="assert"><a href="#assert" class="headerlink" title="assert"></a>assert</h1><p>Using <code>assert</code> will make error detection easeier, for example:</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fac</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">isinstance</span>(x, <span class="built_in">int</span>)</span><br><span class="line">    <span class="keyword">assert</span> x &gt;= <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> x == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> x*fac(x-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">half_fact</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">return</span> fac(x/<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>half_fact(<span class="number">5</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">  File <span class="string">"E:\document\U\language\python\main.py"</span>, line <span class="number">11</span>, <span class="keyword">in</span> half_fact</span><br><span class="line">    <span class="keyword">return</span> fac(x/<span class="number">2</span>)</span><br><span class="line">  File <span class="string">"E:\document\U\language\python\main.py"</span>, line <span class="number">3</span>, <span class="keyword">in</span> fac</span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">isinstance</span>(x, <span class="built_in">int</span>)</span><br><span class="line">AssertionError</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>If no <code>assert</code> statement, we will get massgaes <code>RecursionError: maximum recursion depth exceeded in comparison</code>.</p>
-<h1 id="Testing"><a class="header-anchor" href="#Testing">¶</a>Testing</h1>
-<p>The advantages of Testing:</p>
+<h1 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h1><p>The advantages of Testing:</p>
 <ul>
 <li>Detect errors in your code</li>
 <li>Have confidence in the correctness of subcomponents</li>
@@ -386,50 +378,40 @@ The <code>&lt;except suite&gt;</code> is executed, with <code>&lt;name&gt;</code
 <p>Python provides a way to write tests as part of the docstring:</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># in file.py</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):</span><br><span class="line"> <span class="string">"""Fibonacci</span></span><br><span class="line"><span class="string"> &gt;&gt;&gt; fib(2)</span></span><br><span class="line"><span class="string"> 1</span></span><br><span class="line"><span class="string"> &gt;&gt;&gt; fib(10)</span></span><br><span class="line"><span class="string"> 55</span></span><br><span class="line"><span class="string"> """</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>Just run <code> python -m doctest file.py</code>, if everything is ok, there will be nothing to show. It is worthy holding as brief as possible.</p>
-<h1 id="Print-Debugging"><a class="header-anchor" href="#Print-Debugging">¶</a>Print Debugging</h1>
-<p>Compared to two above mathod for program checking, print debugging is more simple and easer, it will gives you an insight into what is<br>
-going on quickly.</p>
-<h1 id="Interactive-Debugging"><a class="header-anchor" href="#Interactive-Debugging">¶</a>Interactive Debugging</h1>
-<p>You can step through your code line by line on PythonTutor, Just copy your code into <a target="_blank" rel="noopener" href="https://pythontutor.com/cp/composingprograms.html#mode=edit">tutor.cs61a.org</a>.</p>
-<h1 id="Error-Types"><a class="header-anchor" href="#Error-Types">¶</a>Error Types</h1>
-<ul>
-<li>SyntaxError
-<ul>
+<h1 id="Print-Debugging"><a href="#Print-Debugging" class="headerlink" title="Print Debugging"></a>Print Debugging</h1><p>Compared to two above mathod for program checking, print debugging is more simple and easer, it will gives you an insight into what is<br>going on quickly.</p>
+<h1 id="Interactive-Debugging"><a href="#Interactive-Debugging" class="headerlink" title="Interactive Debugging"></a>Interactive Debugging</h1><p>You can step through your code line by line on PythonTutor, Just copy your code into <a target="_blank" rel="noopener" href="https://pythontutor.com/cp/composingprograms.html#mode=edit">tutor.cs61a.org</a>.</p>
+<h1 id="Error-Types"><a href="#Error-Types" class="headerlink" title="Error Types"></a>Error Types</h1><ul>
+<li>SyntaxError<ul>
 <li>The file you ran isn’t valid python syntax. (您运行的文件不是有效的 python 语法)</li>
 <li>Extra or missing parentheses (多余或缺失的括号)</li>
 <li>Missing colon at the end of an if or while statement (if 或 while 语句末尾缺少冒号)</li>
 <li>You started writing a statement but forgot to put anything inside (您开始写一个表达式，却忘了在里面写什么)</li>
 </ul>
 </li>
-<li>IndentationError
-<ul>
+<li>IndentationError<ul>
 <li>The file you ran isn’t valid python syntax, because of indentation inconsistency (您运行的文件不是有效的 python 语法，因为缩进不一致)</li>
 <li>You made a typo and misaligned something (你打错字了，有些地方对不上号)</li>
 <li>You accidentally mixed tabs and spaces (您不小心混用了制表符和空格)</li>
 <li>You used the wrong kind of spaces (你用错了空格)</li>
 </ul>
 </li>
-<li>TypeError: … ‘X’ object is not callable …
-<ul>
+<li>TypeError: … ‘X’ object is not callable …<ul>
 <li>Objects of type X cannot be treated as functions (X 类型的对象不能被视为函数)</li>
 <li>Variables that should be functions being assigned to non-functions (本应属于函数的变量被分配给非函数)</li>
 <li>Local variables that do not contain functions having the same name as functions in the global frame (不包含与全局框架中函数同名的函数的局部变量)</li>
 </ul>
 </li>
-<li>TypeError: … NoneType …
-<ul>
+<li>TypeError: … NoneType …<ul>
 <li>You used None in some operation it wasn’t meant for (您在某些操作中使用了 “None”，而它并不是用来执行这些操作的)</li>
 <li>check Functions missing return statements (缺少返回语句的函数)</li>
 </ul>
 </li>
-<li>NameError or UnboundLocalError
-<ul>
+<li>NameError or UnboundLocalError<ul>
 <li>Python looked up a name but didn’t find it, it practically means you made a typo</li>
 </ul>
 </li>
 </ul>
-<h1 id="Tracebacks"><a class="header-anchor" href="#Tracebacks">¶</a>Tracebacks</h1>
-
+<h1 id="Tracebacks"><a href="#Tracebacks" class="headerlink" title="Tracebacks"></a>Tracebacks</h1>
     </div>
 
     
